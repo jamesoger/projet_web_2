@@ -8,21 +8,8 @@
 ## Demande globale (dans vos mots/pas de copié-collé du devis)
 Le client (festival) souhaite créer une image marque pour son site web et nous fait confiance sur la conception du site.
 
-Il faut créer le logo
-
-La page des activités doit être interactive et peut se modifier depuis la zone admin.
-La page actualités doit pouvoir être modifiée par les admins.
-Il doit y avoir une carte avec l'emplacement du site
-Il doit y avoir une section pour réserver des forfaits( minimum 3) avec date d'arrivée et de départ.
-L'usager va devoir se connecter pour réserver et il pourra voir sa réservation et il doit pouvoir l'annuler AVANT le départ.
-Les admins peuvent être supprimés, modifiés et on doit pouvoir en ajouter.
-les admins peuvent voir la liste des clients, les modifier, ajouter et supprimer.
-On doit intégrer google analytics dans le site web.
-Et, pour finir, les admins peuvent modifier les actualités et les activités.
-
-
 ## Demandes spécifiques des clients (dans vos mots/pas de copié-collé du devis)
-
+Ils veulent un logo qui représente bien leur festival.
 ## Besoins additionnels déterminés   
 
 ## Demandes additionnelles (dans vos mots/pas de copié-collé du devis)
@@ -30,20 +17,34 @@ Et, pour finir, les admins peuvent modifier les actualités et les activités.
 ### Besoins additionnels déterminés  
 
 ## Public cible
-
+Les jeunes adultes qui aiment la musique Électro.
 ### Besoins additionnels déterminés  
 
 
 
 # 2. Présentation du concept
 ## Nom du festival fictif
-
+FestX
 ## Thème 
-
+Électro
 ## Inspiration
+<p align="center">
+    <p align="center">https://www.echoesfromagartha.com/book-now/</p>
+    <p align="center">Inspiration des forfaits</p> 
+    <img src="./images/Capture d’écran 2023-09-06 133824.png" alt="">
+</p>
+
+<p align="center">
+    <p align="center">https://en.worldclubdome.com/</p>
+    <p align="center">Inspiration pour le menu déroulant</p>
+    <p align="center">Version fermer</p>
+    <img src="./images/menu_deroulant_fermer.png" alt="">
+    <p align="center">Version Ouvert</p>
+    <img src="./images/menu_deroulant_ouvert.png" alt="">
+</p>
 
 ## Identité visuelle
-
+Neon Design sur font sombre
 ### Le logo 
 
 ### La palette de couleurs
@@ -53,6 +54,15 @@ Et, pour finir, les admins peuvent modifier les actualités et les activités.
 
 # 3. Choix technologiques 
 ## Choix des technologies de développement
+  ### Développement
+    Laravel
+    Javascript/vue.js
+    scss
+    Sourcetree
+    GitHub
+  ### Planification
+  Click-up
+  Adobe XD
 ## Forces
 ## Faiblesses
 ## Choix et organisation des technologies de planification
