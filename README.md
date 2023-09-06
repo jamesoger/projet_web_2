@@ -1,6 +1,6 @@
 # Projet synthèse
-## Nom de l'équipe
-### Membre d'équipe 1
+## Les Darons
+### James Oger
 ### Membre d'équipe 2
 ### Membre d'équipe 3
 
