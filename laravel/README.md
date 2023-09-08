@@ -1,3 +1,4 @@
+
 # Projet synthèse
 ## Les Darons
 ### James Oger
@@ -118,3 +119,4 @@ Bien que ClickUp propose une version gratuite, ses fonctionnalités les plus ava
 #### Sous-catégories       
 ## Apport au travail synthèse de chaque membre de l’équipe (qui fait quoi et quand ?)                        
 ## Rétroaction globale sur le travail d’équipe (motivation, charge de travail, organisation, problèmes, etc.)                        
+
