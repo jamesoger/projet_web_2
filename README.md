@@ -10,10 +10,10 @@ Le client (festival) souhaite créer une image marque pour son site web et nous 
 
 ## Demandes spécifiques des clients (dans vos mots/pas de copié-collé du devis)
 Ils veulent un logo qui représente bien leur festival.
-## Besoins additionnels déterminés   
-
+### Besoins additionnels déterminés   
+Page admin avec des sous-admin pour la modification ou l'annulation des forfaits.
 ## Demandes additionnelles (dans vos mots/pas de copié-collé du devis)
-
+Le site doit pouvoir enregistrer les statistiques du nombre de pages vues avec Google Analytics.
 ### Besoins additionnels déterminés  
 
 ## Public cible
