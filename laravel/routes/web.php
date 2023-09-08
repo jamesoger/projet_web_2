@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\ActualiteController;
+use App\Http\Controllers\ProgrammationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*****************
+ * ACCUEIL
+ */
+Route::get('/', [AccueilController::class, 'index'])
+    ->name('acceuil');
+
+
+/*****************
+ * ACTUALITÉS
+ */
+Route::get('/actualites', [ActualiteController::class, 'index'])
+    ->name('actualites.index');
+
+
+/*****************
+ * PROGRAMMATION
+ */
+
+Route::get('/programmation', [ProgrammationController::class, 'index'])
+    ->name('programmation.index');
