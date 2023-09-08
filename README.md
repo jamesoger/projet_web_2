@@ -49,6 +49,18 @@ Neon Design sur fond sombre
 <img src="./images/logo.png" alt="">
 
 ### La palette de couleurs
+<table>
+    <tr>
+        <td>
+            <p>#1DA5F3</p>
+            <img src="./images/couleur_1DA5F3.png" alt="" width="50">
+        </td>
+        <td>
+            <p>#06162F</p>
+            <img src="./images/couleur_06162F.png" alt="" width="50">
+        </td>
+    </tr>
+</table>
 
 ### Les typographies
 
