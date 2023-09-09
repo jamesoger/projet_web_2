@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ConnexionUserController extends Controller
+class ConnexionAdminController extends Controller
 {
     public function create() {
-        return view('auth.user.connexion.create');
+        return view('auth.admin.create');
     }
 
     public function authentifier(Request $request) {
@@ -22,11 +22,11 @@ class ConnexionUserController extends Controller
             "password.required" => "Le mot de passe est requis"
         ]);
 
-        if(Auth::guard('web')->attempt($valides)){
+        if(Auth::guard('admin')->attempt($valides)){
             $request->session()->regenerate();
 
             return redirect()
-                    ->intended(route('user.index'))
+                    ->intended(route('admin.index'))
                     ->with('succes', 'Vous êtes connectés!');
         }
 
@@ -49,5 +49,4 @@ class ConnexionUserController extends Controller
                 ->with('succes', "Vous êtes déconnectés!");
 
     }
-
 }

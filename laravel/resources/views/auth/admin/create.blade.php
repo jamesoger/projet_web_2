@@ -12,13 +12,13 @@
         @endif
 
         <div >
-          <form action="{{ route('user_connexion.authentifier') }}" method="POST">
+          <form action="{{ route('admin_connexion.authentifier') }}" method="POST">
             @csrf
 
             <div>
               <label for="email" >Courriel</label>
 
-               {{-- <x-forms.erreur champ="email" /> --}}
+               <x-forms.erreur champ="email" />
               <div >
                 <input id="email" name="email" type="email" autocomplete="email" value="{{ old('email') }}">
               </div>
@@ -31,7 +31,7 @@
                 </label>
               </div>
 
-              {{-- <x-forms.erreur champ="password" /> --}}
+              <x-forms.erreur champ="password" />
               <div class="mt-2">
                 <input id="password" name="password" type="password" autocomplete="current-password" >
               </div>

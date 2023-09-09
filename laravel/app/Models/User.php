@@ -43,7 +43,15 @@ class User extends Authenticatable
     ];
 
 
-    public function forfaits(){
-        return $this->belongsToMany(Forfait::class,'user_forfait');
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+
+
+    public function forfaits()
+    {
+        return $this->belongsToMany(Forfait::class, 'user_forfait');
     }
 }
