@@ -64,7 +64,16 @@ Neon Design sur fond sombre
 </table>
 
 ### Les typographies
-
+<p> Ethnocentric Light</p>
+<img src="./images/EthnocentricLight.PNG" alt="" width="300">
+<p>P22 Arts And Crafts Regular</p>
+<img src="./images/P22ArtsAndCraftsRegular.PNG" alt="" width="300">
+<p>All Round Gothic Book</p>
+<img src="./images/AllRoundGothicBook.PNG" alt="" width="300">
+<p>All Round Gothic Demi</p>
+<img src="./images/AllRoundGothicDemi.PNG" alt="" width="300">
+<p>All Round Gothic Medium</p>
+<img src="./images/AllRoundGothicMedium.PNG" alt="" width="300">
 
 # 3. Choix technologiques 
 ## Choix des technologies de développement
@@ -113,7 +122,9 @@ On peux collaborer en temps réel sur les tâches, les documents et les commanta
 Bien que ClickUp propose une version gratuite, ses fonctionnalités les plus avancées et ses options de personnalisation nécessitent un abonnement payant.
 # 4. Présentation de la planification du travail synthèse 
 ## Liens
-### Lien vers le logiciel de gestion de projet choisi                    
+https://app.clickup.com/9014031901/v/s/90140067744
+### Lien vers le logiciel de gestion de projet choisi                 
+https://github.com/Geoffpas/projet_web_2   
 ## Portrait global 
 ### Catégories     
 #### Sous-catégories       
