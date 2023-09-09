@@ -2,14 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Forfait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ConnexionUserController extends Controller
 {
-    public function create() {
-        return view('auth.user.connexion.create');
+    public function create(Request $request) {
+        $forfaitId = $request->input('forfait_id');
+        $forfait = Forfait::find($forfaitId);
+
+        if (!$forfait) {
+            return redirect()->route('accueil')->with('error', 'Le forfait sélectionné n\'existe pas.');
+        }
+
+        // Stockez les informations du forfait dans la session de l'utilisateur
+        $request->session()->put('selected_forfait', [
+            'nom' => $forfait->nom,
+            'prix' => $forfait->prix,
+        ]);
+
+
+
+        return view('auth.user.connexion.create'); // Redirigez l'utilisateur vers la page de connexion
     }
+
 
     public function authentifier(Request $request) {
         // Valider

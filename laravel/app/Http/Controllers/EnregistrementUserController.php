@@ -19,7 +19,6 @@ class EnregistrementUserController extends Controller
             "nom" => "required",
             "email" => "required|email|unique:users,email",
             "password" => "required|min:8",
-            "avatar" => "nullable|mimes:png,jpg,jpeg",
             "confirmation_password" => "required|same:password"
         ],[
             "prenom.required" => "Le prénom est requis",
@@ -27,7 +26,6 @@ class EnregistrementUserController extends Controller
             "email.required" => "Le courriel est requis",
             "email.email" => "Le courriel doit avoir un format valide",
             "email.unique" => "Ce courriel ne peut pas être utilisé",
-            "avatar.mimes" => "L'avatar doit avoir une des extensions suivantes: PNG, JPG, JPEG",
             "password.required" => "Le mot de passe est requis",
             "password.min" => "Le mot de passe doit avoir une longueur de :min caractères",
             "confirmation_password.required" => "La confirmation du mot de passe est requise",

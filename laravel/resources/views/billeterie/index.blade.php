@@ -1,5 +1,9 @@
 <x-layout>
     <h1>Billeterie!</h1>
-    <p>choix de forfait blabla..</p>
-    <a href="{{ route('user_connexion.create')}}">connectez-vous</a>
+    <h1>@foreach ($forfaits as $forfait )
+        <p>{{ $forfait->nom}}</p>
+        <p>{{ $forfait->prix}}</p>
+         <a href="{{ route('user_connexion.create', ['forfait_id' => $forfait->id])}}">Réservez</a>
+    @endforeach</h1>
+
 </x-layout>

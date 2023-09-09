@@ -1,10 +1,7 @@
 <x-layout titre="Connexion">
     <div>
         <div >
-
-          <h2 >
-            Connexion
-          </h2>
+            <h1>Pour réserver ce forfait, il faut vous connecter</h1>
         </div>
 
         @if(session('email'))
