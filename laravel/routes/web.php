@@ -4,6 +4,7 @@ use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\BilleterieController;
 use App\Http\Controllers\ConnexionUserController;
+use App\Http\Controllers\InfoController;
 use App\Http\Controllers\ProgrammationController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,12 @@ Route::get('/actualites', [ActualiteController::class, 'index'])
 Route::get('/programmation', [ProgrammationController::class, 'index'])
     ->name('programmation.index');
 
+    /*****************
+ * PAGE À PROPOS
+ */
+
+ Route::get('/a-propos', [InfoController::class, 'index'])
+    ->name('info.index');
 
 /*****************
  * BILLETERIE
