@@ -8,24 +8,29 @@ use Illuminate\Support\Facades\Auth;
 
 class ConnexionUserController extends Controller
 {
-    public function create(Request $request) {
-        $forfaitId = $request->input('forfait_id');
-        $forfait = Forfait::find($forfaitId);
+    public function create($forfaitId = null) {
+        if ($forfaitId) {
+            // Si un forfaitId est présent, c'est le cas de la billetterie avec sélection de forfait
+            $forfait = Forfait::find($forfaitId);
 
-        if (!$forfait) {
-            return redirect()->route('accueil')->with('error', 'Le forfait sélectionné n\'existe pas.');
+            if (!$forfait) {
+                return redirect()->route('accueil')->with('error', 'Le forfait sélectionné n\'existe pas.');
+            }
+
+            // Stockez les informations du forfait dans la session de l'utilisateur
+            session(['selected_forfait' => [
+                'nom' => $forfait->nom,
+                'prix' => $forfait->prix,
+            ]]);
+
+            return redirect()->route('user.index'); // Redirigez l'utilisateur vers la page user.index
+        } else {
+            // Sinon, c'est le cas de la connexion directe
+            return view('auth.user.connexion.create');
         }
-
-        // Stockez les informations du forfait dans la session de l'utilisateur
-        $request->session()->put('selected_forfait', [
-            'nom' => $forfait->nom,
-            'prix' => $forfait->prix,
-        ]);
-
-
-
-        return view('auth.user.connexion.create'); // Redirigez l'utilisateur vers la page de connexion
     }
+
+
 
 
     public function authentifier(Request $request) {

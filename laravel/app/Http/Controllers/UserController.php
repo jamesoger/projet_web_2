@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
+        // Récupérez la liste de tous les forfaits
+        $forfaits = Forfait::all();
+
         return view('user.index', [
-            "forfaits" => Forfait::all()
+            'forfaits' => $forfaits
         ]);
     }
+
+
 }
