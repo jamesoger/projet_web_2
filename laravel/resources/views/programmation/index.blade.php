@@ -7,6 +7,12 @@
             {{ $artiste->nom_scene }}
             {{ $artiste->heure_show }}
         @endforeach
+        <br>
+        @foreach ($prog->spectacles as $spectacle)
+            {{ $spectacle->nom }}
+            {{ $spectacle->heure }}
+   <img src="{{asset($spectacle->image)}}" alt="">
+        @endforeach
     </p>
 @endforeach
 

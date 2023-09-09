@@ -44,6 +44,6 @@ class User extends Authenticatable
 
 
     public function forfaits(){
-        return $this->belongsToMany(Forfait::class);
+        return $this->belongsToMany(Forfait::class,'user_forfait');
     }
 }

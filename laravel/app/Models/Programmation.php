@@ -15,6 +15,6 @@ class Programmation extends Model
 
 
     public function spectacles(){
-        return $this->belongsToMany(Spectacle::class);
+        return $this->belongsToMany(Spectacle::class, 'spectacle_programmation');
     }
 }

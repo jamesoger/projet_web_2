@@ -10,6 +10,6 @@ class Forfait extends Model
     use HasFactory;
 
     public function users(){
-        return $this->belongsToMany(Forfait::class);
+        return $this->belongsToMany(Forfait::class, 'user_forfait');
     }
 }

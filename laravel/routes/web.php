@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\ActualiteController;
+use App\Http\Controllers\BilleterieController;
+use App\Http\Controllers\ConnexionUserController;
 use App\Http\Controllers\ProgrammationController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +23,7 @@ use Illuminate\Support\Facades\Route;
  * ACCUEIL
  */
 Route::get('/', [AccueilController::class, 'index'])
-    ->name('acceuil');
+    ->name('accueil');
 
 
 /*****************
@@ -36,3 +39,31 @@ Route::get('/actualites', [ActualiteController::class, 'index'])
 
 Route::get('/programmation', [ProgrammationController::class, 'index'])
     ->name('programmation.index');
+
+
+/*****************
+ * BILLETERIE
+ */
+Route::get('/billeterie', [BilleterieController::class, 'index'])
+    ->name('billeterie.index');
+
+
+/*****************
+ * PAGE USER
+ */
+
+Route::get('/user', [UserController::class, 'index'])
+    ->name('user.index');
+
+/*****************
+ * CONNEXION USER
+ */
+Route::get("/connexion_user", [ConnexionUserController::class, 'create'])
+    ->name('user_connexion.create')
+    ->middleware('guest');
+
+Route::post("/connexion_user", [ConnexionUserController::class, 'authentifier'])
+    ->name('user_connexion.authentifier');
+
+    Route::post("/deconnexion_user", [ConnexionUserController::class, 'deconnecter'])
+    ->name('deconnexion_user');
