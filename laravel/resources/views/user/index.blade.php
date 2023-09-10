@@ -1,33 +1,22 @@
 <x-layout>
-    <h1>{{ auth()->user()->prenom }}</h1>
-    <h1>Mes billets</h1>
-
-    <h2>Forfait sélectionné :</h2>
-    @if (session()->has('selected_forfait'))
-        <?php $forfaitDetails = session('selected_forfait'); ?>
-        <p>Nom du forfait : {{ $forfaitDetails['nom'] }}</p>
-        <p>Prix du forfait : {{ $forfaitDetails['prix'] }}</p>
-        {{-- <form action="{{ route('valider_forfait') }}" method="POST">
-            @csrf
-            <input type="hidden" name="forfait_id" value="{{ $forfait->id }}">
-            <button type="submit">Commander</button>
-        </form> --}}
-    @else
-        <p>Aucun forfait sélectionné.</p>
-    @endif
-
-    <h2>Liste de vos forfaits :</h2>
-    @foreach ($forfaits as $forfait)
-        <p>{{ $forfait->nom }}</p>
-        <p>{{ $forfait->prix }}</p>
+    <h1>Mes forfaits!</h1>
+    @foreach (auth()->user()->forfaits as $forfait)
+        <div>
+            <p>{{ $forfait->nom }} {{ $forfait->prix }}</p>
+            <form action="{{ route('forfait.destroy', $forfait->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Supprimer</button>
+            </form>
+        </div>
     @endforeach
-
-    <form action="{{ route('deconnexion_user') }}" method="POST">
-        @csrf
-        {{-- <input type="hidden" name="forfait_id" value=""> --}}
-        <input type="submit" value="Déconnexion">
-    </form>
 </x-layout>
+
+
+
+
+
+
 
 
 

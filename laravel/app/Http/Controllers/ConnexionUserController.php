@@ -24,6 +24,7 @@ class ConnexionUserController extends Controller
             session(['selected_forfait' => [
                 'nom' => $forfait->nom,
                 'prix' => $forfait->prix,
+                'id' => $forfait->id,
             ]]);
         } else {
             $message = 'Pour réserver ce forfait, il faut vous connecter.';
@@ -54,7 +55,7 @@ class ConnexionUserController extends Controller
             $request->session()->regenerate();
 
             return redirect()
-                ->intended(route('user.index'))
+                ->intended(route('user.panier'))
                 ->with('succes', 'Vous êtes connectés!');
         }
 

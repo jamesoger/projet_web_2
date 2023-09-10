@@ -88,13 +88,22 @@ Route::post('/enregistrement_user', [EnregistrementUserController::class, 'store
  * PAGE USER
  */
 
+Route::get('/user_panier', [UserController::class, 'buy'])
+    ->name('user.panier')
+    ->middleware('auth');
+
+Route::post('/user_panier', [UserController::class, 'store'])
+    ->name('forfait_user.store')
+    ->middleware('auth');
+
 Route::get('/user', [UserController::class, 'index'])
     ->name('user.index')
     ->middleware('auth');
 
-Route::post('/valider_forfait', [UserController::class], 'store')
-    ->name('valider_forfait')
-    ->middleware('auth');
+
+Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])
+    ->name('forfait.destroy');
+
 
 /*****************
  * CONNEXION ADMIN
