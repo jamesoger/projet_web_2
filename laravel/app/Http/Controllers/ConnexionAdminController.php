@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Admin;
 
 class ConnexionAdminController extends Controller
 {
@@ -12,6 +13,11 @@ class ConnexionAdminController extends Controller
     }
 
     public function authentifier(Request $request) {
+        if (auth()->guard('admin')->check()) {
+            // Si l'utilisateur est déjà authentifié en tant qu'administrateur, redirigez-le vers la page d'accueil de l'administration.
+            return redirect()->route('admin.index')->with('success', 'You are already logged in.');
+        }
+
         // Valider
         $valides = $request->validate([
             "email" => "required|email",
@@ -22,21 +28,19 @@ class ConnexionAdminController extends Controller
             "password.required" => "Le mot de passe est requis"
         ]);
 
-        if(Auth::guard('admin')->attempt($valides)){
-            $request->session()->regenerate();
-
-            return redirect()
-                    ->intended(route('admin.index'))
-                    ->with('succes', 'Vous êtes connectés!');
+        if (auth()->guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
+            // Vérifiez le rôle de l'utilisateur directement à partir de la session
+            if (auth()->guard('admin')->user()->role === 'admin') {
+                return redirect()->route('admin.index')->with('success', 'You are logged in successfully.');
+            }
+        } else {
+            return back()->with('error', 'Une erreur est survenue, veuillez réessayer plus tard');
         }
-
-        return back()
-                ->withErrors([
-                    "email" => "Les informations fournies ne sont pas valides"
-                ])
-                ->onlyInput('email');
-
     }
+
+
+
+
 
     public function deconnecter(Request $request) {
         Auth::logout();
@@ -46,7 +50,7 @@ class ConnexionAdminController extends Controller
 
         return redirect()
                 ->route('accueil')
-                ->with('succes', "Vous êtes déconnectés!");
+                ->with('success', "Vous êtes déconnectés!");
 
     }
 }
