@@ -7,6 +7,11 @@
         <?php $forfaitDetails = session('selected_forfait'); ?>
         <p>Nom du forfait : {{ $forfaitDetails['nom'] }}</p>
         <p>Prix du forfait : {{ $forfaitDetails['prix'] }}</p>
+        {{-- <form action="{{ route('valider_forfait') }}" method="POST">
+            @csrf
+            <input type="hidden" name="forfait_id" value="{{ $forfait->id }}">
+            <button type="submit">Commander</button>
+        </form> --}}
     @else
         <p>Aucun forfait sélectionné.</p>
     @endif
@@ -19,6 +24,7 @@
 
     <form action="{{ route('deconnexion_user') }}" method="POST">
         @csrf
+        {{-- <input type="hidden" name="forfait_id" value=""> --}}
         <input type="submit" value="Déconnexion">
     </form>
 </x-layout>

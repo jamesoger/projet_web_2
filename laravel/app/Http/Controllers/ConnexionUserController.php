@@ -8,9 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class ConnexionUserController extends Controller
 {
-    public function create($forfaitId = null) {
+    public function create($forfaitId = null)
+    {
+
         if ($forfaitId) {
-            // Si un forfaitId est présent, c'est le cas de la billetterie avec sélection de forfait
+            // Si forfait_id est présent dans la requête, c'est le cas de la billetterie avec sélection de forfait
+
             $forfait = Forfait::find($forfaitId);
 
             if (!$forfait) {
@@ -22,18 +25,21 @@ class ConnexionUserController extends Controller
                 'nom' => $forfait->nom,
                 'prix' => $forfait->prix,
             ]]);
-
-            return redirect()->route('user.index'); // Redirigez l'utilisateur vers la page user.index
         } else {
+            $message = 'Pour réserver ce forfait, il faut vous connecter.';
             // Sinon, c'est le cas de la connexion directe
-            return view('auth.user.connexion.create');
+
         }
+        return view('auth.user.connexion.create');
     }
 
 
 
 
-    public function authentifier(Request $request) {
+
+
+    public function authentifier(Request $request)
+    {
         // Valider
         $valides = $request->validate([
             "email" => "required|email",
@@ -44,32 +50,30 @@ class ConnexionUserController extends Controller
             "password.required" => "Le mot de passe est requis"
         ]);
 
-        if(Auth::guard('web')->attempt($valides)){
+        if (Auth::guard('web')->attempt($valides)) {
             $request->session()->regenerate();
 
             return redirect()
-                    ->intended(route('user.index'))
-                    ->with('succes', 'Vous êtes connectés!');
+                ->intended(route('user.index'))
+                ->with('succes', 'Vous êtes connectés!');
         }
 
         return back()
-                ->withErrors([
-                    "email" => "Les informations fournies ne sont pas valides"
-                ])
-                ->onlyInput('email');
-
+            ->withErrors([
+                "email" => "Les informations fournies ne sont pas valides"
+            ])
+            ->onlyInput('email');
     }
 
-    public function deconnecter(Request $request) {
+    public function deconnecter(Request $request)
+    {
         Auth::logout();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
         return redirect()
-                ->route('accueil')
-                ->with('succes', "Vous êtes déconnectés!");
-
+            ->route('accueil')
+            ->with('succes', "Vous êtes déconnectés!");
     }
-
 }

@@ -64,13 +64,7 @@ Route::get('/billeterie', [BilleterieController::class, 'index'])
  * CONNEXION ET ENREGISTREMENT USER
  */
 
-// Pour la connexion directe
 
-Route::get("/connexion_user", [ConnexionUserController::class, 'create'])
-    ->name('user_connexion.create')
-    ->middleware('guest');
-
-//pour le forfait selectionné
 Route::get("/connexion_user/{forfait_id?}", [ConnexionUserController::class, 'create'])
     ->name('user_connexion.create')
     ->middleware('guest');
@@ -96,6 +90,10 @@ Route::post('/enregistrement_user', [EnregistrementUserController::class, 'store
 
 Route::get('/user', [UserController::class, 'index'])
     ->name('user.index')
+    ->middleware('auth');
+
+Route::post('/valider_forfait', [UserController::class], 'store')
+    ->name('valider_forfait')
     ->middleware('auth');
 
 /*****************

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use App\Models\Forfait;
 use Illuminate\Http\Request;
 
@@ -16,5 +16,12 @@ class UserController extends Controller
         ]);
     }
 
+//    public function store(Request $request){
 
+//     $forfaitId = $request->input('forfait_id');
+//     $user = auth()->user();
+//     $user->forfaits()->attach($forfaitId);
+
+
+//    }
 }

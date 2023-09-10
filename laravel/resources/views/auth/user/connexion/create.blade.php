@@ -1,9 +1,10 @@
 <x-layout titre="Connexion">
     <div>
+        @if(request()->route()->hasParameter('forfait_id'))
         <div >
             <h1>Pour réserver ce forfait, il faut vous connecter</h1>
         </div>
-
+    @endif
         @if(session('email'))
             <p>{{ session('email') }}</p>
         @endif

@@ -45,9 +45,8 @@
           </form>
 
           <p >
-            {{-- <a href="{{ route('enregistrement.create') }}"> --}}
-              Pas un membre?
-            </a>
+
+
           </p>
         </div>
       </div>
