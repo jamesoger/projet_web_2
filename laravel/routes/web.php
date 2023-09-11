@@ -65,21 +65,21 @@ Route::get('/billeterie', [BilleterieController::class, 'index'])
  */
 
 
-Route::get("/connexion_user/{forfait_id?}", [ConnexionUserController::class, 'create'])
+Route::get("/connexion/user/{forfait_id?}", [ConnexionUserController::class, 'create'])
     ->name('user_connexion.create')
     ->middleware('guest');
 
-Route::post("/connexion_user", [ConnexionUserController::class, 'authentifier'])
+Route::post("/connexion/user", [ConnexionUserController::class, 'authentifier'])
     ->name('user_connexion.authentifier')
     ->middleware('guest');
 
-Route::post("/deconnexion_user", [ConnexionUserController::class, 'deconnecter'])
+Route::post("/deconnexion/user", [ConnexionUserController::class, 'deconnecter'])
     ->name('deconnexion_user');
 
-Route::get("/enregistrement_user", [EnregistrementUserController::class, 'create'])
+Route::get("/enregistrement/user", [EnregistrementUserController::class, 'create'])
     ->name('enregistrement_user.create');
 
-Route::post('/enregistrement_user', [EnregistrementUserController::class, 'store'])
+Route::post('/enregistrement/user', [EnregistrementUserController::class, 'store'])
     ->name('enregistrement_user.store');
 
 
@@ -88,11 +88,11 @@ Route::post('/enregistrement_user', [EnregistrementUserController::class, 'store
  * PAGE USER
  */
 
-Route::get('/user_panier', [UserController::class, 'buy'])
+Route::get('/user/panier', [UserController::class, 'buy'])
     ->name('user.panier')
     ->middleware('auth');
 
-Route::post('/user_panier', [UserController::class, 'store'])
+Route::post('/user/panier', [UserController::class, 'store'])
     ->name('forfait_user.store')
     ->middleware('auth');
 
@@ -110,13 +110,13 @@ Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])
  */
 
 // Définir la route de connexion en dehors du groupe 'admin'
-Route::get("/connexion_admin", [ConnexionAdminController::class, 'create'])
+Route::get("/connexion/admin", [ConnexionAdminController::class, 'create'])
     ->name('admin_connexion.create');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
-    Route::post("/connexion_admin", [ConnexionAdminController::class, 'authentifier'])
+    Route::post("/connexion/admin", [ConnexionAdminController::class, 'authentifier'])
         ->name('admin_connexion.authentifier');
-    Route::post("/deconnexion_admin", [ConnexionAdminController::class, 'deconnecter'])
+    Route::post("/deconnexion/admin", [ConnexionAdminController::class, 'deconnecter'])
         ->name('deconnexion_admin');
 });
 
