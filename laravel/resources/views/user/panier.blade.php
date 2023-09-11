@@ -6,16 +6,21 @@
         <?php $forfaitDetails = session('selected_forfait'); ?>
         <p>Nom du forfait : {{ $forfaitDetails['nom'] }}</p>
         <p>Prix du forfait : {{ $forfaitDetails['prix'] }}</p>
-
-         <form action="{{ route('forfait_user.store') }}" method="POST">
+        <form action="{{ route('forfait_user.store') }}" method="POST">
             @csrf
             <input type="hidden" name="forfait_id" value="{{ $forfaitDetails['id'] }}">
-            <button type="submit">Commander</button>
+
+            <label for="date_arrivee">Date d'arrivée :</label>
+            <input type="date" id="date_arrivee" name="date_arrivee" required>
+
+            <label for="date_depart">Date de départ :</label>
+            <input type="date" id="date_depart" name="date_depart" required>
+
+            <input type="submit" value="Commander">
         </form>
     @else
         <p>Aucun forfait sélectionné.</p>
-
-@endif
+    @endif
 
     <h2>Liste de vos forfaits :</h2>
     @foreach ($forfaits as $forfait)
@@ -25,7 +30,8 @@
 
     <form action="{{ route('deconnexion_user') }}" method="POST">
         @csrf
-        {{-- <input type="hidden" name="forfait_id" value=""> --}}
         <input type="submit" value="Déconnexion">
     </form>
 </x-layout>
+
+

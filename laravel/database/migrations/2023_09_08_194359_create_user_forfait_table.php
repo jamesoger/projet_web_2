@@ -17,6 +17,8 @@ class CreateUserForfaitTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('forfait_id')->constrained()->cascadeOnDelete();
+            $table->date('date_arrivee');
+            $table->date('date_depart');
             $table->timestamps();
         });
     }

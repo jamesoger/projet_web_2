@@ -24,14 +24,22 @@ class UserController extends Controller
 {
     // Récupérez l'ID du forfait à partir de la requête
     $forfaitId = $request->input('forfait_id');
+    $dateArrivee = $request->input('date_arrivee');
+    $dateDepart = $request->input('date_depart');
 
+    if (!$dateArrivee || !$dateDepart) {
+        return redirect()->back()->with('error', 'Veuillez spécifier des dates valides.');
+    }
     // Récupérez l'ID de l'utilisateur actuellement authentifié
     $userId = auth()->id();
 
     if ($userId && $forfaitId) {
         // Attachez le forfait à l'utilisateur
         $user = User::find($userId);
-        $user->forfaits()->attach($forfaitId);
+        $user->forfaits()->attach($forfaitId, [
+            'date_arrivee' => $dateArrivee,
+            'date_depart' => $dateDepart,
+        ]);
     }
 
     return redirect()->route('user.index');

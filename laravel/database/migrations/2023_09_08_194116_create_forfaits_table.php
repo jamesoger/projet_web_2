@@ -16,8 +16,6 @@ class CreateForfaitsTable extends Migration
         Schema::create('forfaits', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->date('date_arrivee');
-            $table->date('date_depart');
             $table->decimal('prix');
             $table->timestamps();
         });
