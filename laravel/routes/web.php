@@ -101,9 +101,11 @@ Route::get('/user', [UserController::class, 'index'])
     ->middleware('auth');
 
 
-Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])
+Route::post('/user/destroy/{forfait_id}', [UserController::class, 'destroy'])
     ->name('forfait.destroy');
 
+Route::post('/user/deconnecter', [UserController::class, 'deconnecter'])
+    ->name('user.deconnecter');
 
 /*****************
  * CONNEXION ADMIN

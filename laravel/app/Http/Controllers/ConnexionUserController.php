@@ -9,63 +9,64 @@ use Illuminate\Support\Facades\Auth;
 class ConnexionUserController extends Controller
 {
     public function create($forfaitId = null)
-    {
+{
+    if ($forfaitId) {
+        $forfait = Forfait::find($forfaitId);
 
-        if ($forfaitId) {
-            // Si forfait_id est présent dans la requête, c'est le cas de la billetterie avec sélection de forfait
-
-            $forfait = Forfait::find($forfaitId);
-
-            if (!$forfait) {
-                return redirect()->route('accueil')->with('error', 'Le forfait sélectionné n\'existe pas.');
-            }
-
-            // Stockez les informations du forfait dans la session de l'utilisateur
-            session(['selected_forfait' => [
-                'nom' => $forfait->nom,
-                'prix' => $forfait->prix,
-                'id' => $forfait->id,
-            ]]);
-        } else {
-            $message = 'Pour réserver ce forfait, il faut vous connecter.';
-            // Sinon, c'est le cas de la connexion directe
-
-        }
-        return view('auth.user.connexion.create');
+        session(['selected_forfait' => [
+            'nom' => $forfait->nom,
+            'prix' => $forfait->prix,
+            'id' => $forfait->id,
+        ]]);
+    } else {
+        // Si aucun forfait n'est sélectionné, retirez-le de la session (au cas où il y en aurait un précédemment)
+        session()->forget('selected_forfait');
     }
 
-
-
-
-
+    return view('auth.user.connexion.create');
+}
 
     public function authentifier(Request $request)
+
     {
         // Valider
-        $valides = $request->validate([
-            "email" => "required|email",
-            "password" => "required"
+         $valides = $request->validate([
+             "email" => "required|email",
+              "password" => "required"
+
         ], [
-            "email.required" => "Le courriel est obligatoire",
+             "email.required" => "Le courriel est obligatoire",
             "email.email" => "Le courriel doit avoir un format valide",
-            "password.required" => "Le mot de passe est requis"
+             "password.required" => "Le mot de passe est requis"
+
         ]);
 
         if (Auth::guard('web')->attempt($valides)) {
-            $request->session()->regenerate();
 
-            return redirect()
-                ->intended(route('user.panier'))
-                ->with('succes', 'Vous êtes connectés!');
+            // Si l'utilisateur est en train de réserver un forfait
+
+            if (session("selected_forfait")) {
+                return redirect()
+                      ->intended(route('user.panier'))
+                     ->with('succes', 'Vous êtes connectés!');
+
+                // Si l'utilisateur se connecte normalement
+
+            } else {
+
+                return redirect()->route('user.index');
+            }
         }
 
-        return back()
-            ->withErrors([
+                 return back()
+                       ->withErrors([
+
                 "email" => "Les informations fournies ne sont pas valides"
+
             ])
+
             ->onlyInput('email');
     }
-
     public function deconnecter(Request $request)
     {
         Auth::logout();
