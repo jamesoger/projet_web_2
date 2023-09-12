@@ -47,6 +47,6 @@ class User extends Authenticatable
     public function forfaits()
     {
         return $this->belongsToMany(Forfait::class, 'user_forfait')
-        ->withPivot('date_arrivee', 'date_depart');
+        ->withPivot('date_arrivee', 'date_depart', 'id');
     }
 }

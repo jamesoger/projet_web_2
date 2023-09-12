@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Models\Forfait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 
 class UserController extends Controller
 {
@@ -53,27 +55,28 @@ class UserController extends Controller
         ]);
     }
 
-    public function destroy($forfait_id)
-    {
-        // Récupérez l'ID de l'utilisateur actuellement authentifié
-        $userId = auth()->id();
-
-        if ($userId) {
-            $user = User::find($userId);
-
-            if ($user) {
-                // Détachez le forfait de l'utilisateur dans la table pivot
-                //  $user->forfaits()->detach($forfait_id);
-                $user->forfaits()->wherePivot('forfait_id', $forfait_id)->detach();
 
 
-                return redirect()->route('user.index')->with('success', "Le forfait a été détaché de l'utilisateur!");
-            }
-        }
+public function destroy($id)
+{
+    // Récupérez l'ID de l'utilisateur actuellement authentifié
+    $userId = auth()->id();
 
-        // Redirigez en cas d'échec ou de non-authentification
-        return redirect()->route('user.index')->with('error', "La suppression du forfait a échoué!");
+    if ($userId) {
+        // Supprimez l'entrée de la table user_forfait en fonction de l'ID
+        DB::table('user_forfait')->where('id', $id)->delete();
+
+        return redirect()->route('user.index')->with('success', "L'entrée de la table user_forfait a été supprimée!");
     }
+
+    // Redirigez en cas d'échec ou de non-authentification
+    return redirect()->route('user.index')->with('error', "La suppression de l'entrée de la table user_forfait a échoué!");
+}
+
+
+
+
+
 
 
     public function deconnecter(Request $request)

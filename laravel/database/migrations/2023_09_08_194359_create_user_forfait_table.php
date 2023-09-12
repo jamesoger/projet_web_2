@@ -15,8 +15,8 @@ class CreateUserForfaitTable extends Migration
     {
         Schema::create('user_forfait', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('forfait_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('forfait_id')->constrained();
             $table->date('date_arrivee');
             $table->date('date_depart');
             $table->timestamps();

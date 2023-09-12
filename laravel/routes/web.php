@@ -96,14 +96,15 @@ Route::post('/user/panier', [UserController::class, 'store'])
     ->name('forfait_user.store')
     ->middleware('auth');
 
+
+
+
 Route::get('/user', [UserController::class, 'index'])
     ->name('user.index')
     ->middleware('auth');
 
-
-Route::post('/user/destroy/{forfait_id}', [UserController::class, 'destroy'])
+Route::post('/user/destroy/{id}', [UserController::class, 'destroy'])
     ->name('forfait.destroy');
-
 Route::post('/user/deconnecter', [UserController::class, 'deconnecter'])
     ->name('user.deconnecter');
 
