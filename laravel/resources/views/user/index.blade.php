@@ -17,13 +17,3 @@
         <input type="submit" value="Déconnexion">
     </form>
 </x-layout>
-
-
-
-
-
-
-
-
-
-

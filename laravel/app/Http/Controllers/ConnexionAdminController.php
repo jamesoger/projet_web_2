@@ -8,11 +8,13 @@ use App\Models\Admin;
 
 class ConnexionAdminController extends Controller
 {
-    public function create() {
+    public function create()
+    {
         return view('auth.admin.create');
     }
 
-    public function authentifier(Request $request) {
+    public function authentifier(Request $request)
+    {
         if (auth()->guard('admin')->check()) {
             // Si l'utilisateur est déjà authentifié en tant qu'administrateur, redirigez-le vers la page d'accueil de l'administration.
             return redirect()->route('admin.index')->with('success', 'You are already logged in.');
@@ -28,9 +30,17 @@ class ConnexionAdminController extends Controller
             "password.required" => "Le mot de passe est requis"
         ]);
 
+
         if (auth()->guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
+
             // Vérifiez le rôle de l'utilisateur directement à partir de la session
+
             if (auth()->guard('admin')->user()->role === 'admin') {
+
+                session(["droits" => [
+                    "droits" => auth()->guard('admin')->user()->droits,
+
+                ]]);
                 return redirect()->route('admin.index')->with('success', 'You are logged in successfully.');
             }
         } else {
@@ -42,15 +52,15 @@ class ConnexionAdminController extends Controller
 
 
 
-    public function deconnecter(Request $request) {
+    public function deconnecter(Request $request)
+    {
         Auth::logout();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
         return redirect()
-                ->route('accueil')
-                ->with('success', "Vous êtes déconnectés!");
-
+            ->route('accueil')
+            ->with('success', "Vous êtes déconnectés!");
     }
 }

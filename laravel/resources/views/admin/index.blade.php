@@ -2,7 +2,7 @@
     <h1>Admin</h1>
     <h2>Users</h2>
     @foreach ($users as $user)
-        <p>{{$user->prenom}} {{$user->nom}}</p>
+        <p>{{ $user->prenom }} {{ $user->nom }}</p>
         @if ($user->forfaits)
             @if ($user->forfaits->count() > 0)
                 <p>Forfaits associés :</p>
@@ -12,8 +12,6 @@
                         <li>Prix : {{ $forfait->prix }}</li>
                         <li>date d'arrivée : {{ $forfait->pivot->date_arrivee }}</li>
                         <li>date de départ : {{ $forfait->pivot->date_depart }}</li>
-
-
                     @endforeach
                 </ul>
             @else
@@ -21,9 +19,14 @@
             @endif
         @endif
     @endforeach
+    <ul>
+        <h3>Liste des administrateurs</h3>
+        @foreach ($admins as $admin)
+            <p>{{ $admin->prenom }} {{ $admin->nom }}</p>
+        @endforeach
+    </ul>
     <form action="{{ route('deconnexion_admin') }}" method="POST">
         @csrf
         <input type="submit" value="Déconnexion">
     </form>
 </x-layout>
-

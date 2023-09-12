@@ -63,7 +63,8 @@ class UserController extends Controller
 
             if ($user) {
                 // Détachez le forfait de l'utilisateur dans la table pivot
-             $user->forfaits()->detach($forfait_id);
+                //  $user->forfaits()->detach($forfait_id);
+                $user->forfaits()->wherePivot('forfait_id', $forfait_id)->detach();
 
 
                 return redirect()->route('user.index')->with('success', "Le forfait a été détaché de l'utilisateur!");
