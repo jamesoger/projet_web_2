@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Artiste;
+use App\Models\Programmation;
+use App\Models\Spectacle;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -13,9 +16,15 @@ class AdminController extends Controller
 
         $users = User::all();
         $admins = Admin::all();
+        $programmations = Programmation::all();
+        $artistes = Artiste::all();
+        $spectacles = Spectacle::all();
         return view('admin.index', [
             "users" => $users,
             "admins" => $admins,
+            "programmations" => $programmations,
+            "artistes" => $artistes,
+            "spectacles" => $spectacles,
         ]);
     }
 }

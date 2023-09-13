@@ -1,7 +1,7 @@
 require('./bootstrap');
 
-import {createApp} from 'vue';
-import Carroussel from './components/Forfait'
+import { createApp } from 'vue';
+import Forfait from './components/Forfait'
 
 const app = createApp([])
 

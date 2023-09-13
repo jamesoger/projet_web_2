@@ -1,3 +1,8 @@
 <x-layout>
-    <h1>Actualités!</h1>
+    <div id="app">
+
+        <h1>Actualités!</h1>
+        <Forfait></Forfait>
+
+    </div>
 </x-layout>

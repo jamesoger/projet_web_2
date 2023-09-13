@@ -44,6 +44,17 @@ Route::get('/actualites', [ActualiteController::class, 'index'])
 Route::get('/programmation', [ProgrammationController::class, 'index'])
     ->name('programmation.index');
 
+Route::get('/programmation/create', [ProgrammationController::class, 'create'])
+    ->name('programmation.create');
+// ->middleware('auth');
+
+Route::get('/programmation/store', [ProgrammationController::class, 'store'])
+    ->name('programmation.store')
+    ->middleware('auth');
+
+Route::post('/programmation/update', [ProgrammationController::class, 'update'])
+    ->name('programmation.update')
+    ->middleware('auth');
 /*****************
  * PAGE À PROPOS
  */
