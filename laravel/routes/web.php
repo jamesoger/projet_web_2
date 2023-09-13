@@ -3,11 +3,13 @@
 use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AproposController;
 use App\Http\Controllers\BilleterieController;
 use App\Http\Controllers\ConnexionAdminController;
 use App\Http\Controllers\ConnexionUserController;
+use App\Http\Controllers\EnregistrementAdminController;
 use App\Http\Controllers\EnregistrementUserController;
-use App\Http\Controllers\InfoController;
+use App\Http\Controllers\ForfaitController;
 use App\Http\Controllers\ProgrammationController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -45,10 +47,10 @@ Route::get('/programmation', [ProgrammationController::class, 'index'])
     ->name('programmation.index');
 
 Route::get('/programmation/create', [ProgrammationController::class, 'create'])
-    ->name('programmation.create');
-// ->middleware('auth');
+    ->name('programmation.create')
+    ->middleware('auth');
 
-Route::get('/programmation/store', [ProgrammationController::class, 'store'])
+Route::post('/programmation/store', [ProgrammationController::class, 'store'])
     ->name('programmation.store')
     ->middleware('auth');
 
@@ -59,7 +61,7 @@ Route::post('/programmation/update', [ProgrammationController::class, 'update'])
  * PAGE À PROPOS
  */
 
-Route::get('/a-propos', [InfoController::class, 'index'])
+Route::get('/a-propos', [AproposController::class, 'index'])
     ->name('info.index');
 
 /*****************
@@ -99,33 +101,30 @@ Route::post('/enregistrement/user', [EnregistrementUserController::class, 'store
  * PAGE USER
  */
 
-Route::get('/user/panier/{forfait_id?}', [UserController::class, 'buy'])
+Route::get('/user/panier/{forfait_id?}', [ForfaitController::class, 'buy'])
     ->name('user.panier')
     ->middleware('auth');
 
-Route::post('/user/panier', [UserController::class, 'store'])
+Route::post('/user/panier', [ForfaitController::class, 'store'])
     ->name('forfait_user.store')
     ->middleware('auth');
 
-
+Route::post('/user/destroy/{id}', [ForfaitController::class, 'destroy'])
+    ->name('forfait.destroy');
 
 
 Route::get('/user', [UserController::class, 'index'])
     ->name('user.index')
     ->middleware('auth');
 
-Route::post('/user/destroy/{id}', [UserController::class, 'destroy'])
-    ->name('forfait.destroy');
-Route::post('/user/deconnecter', [UserController::class, 'deconnecter'])
-    ->name('user.deconnecter');
 
 /*****************
  * CONNEXION ADMIN
  */
 
 // Définir la route de connexion en dehors du groupe 'admin'
-Route::get("/connexion/admin", [ConnexionAdminController::class, 'create'])
-    ->name('admin_connexion.create');
+Route::get("/connexion/admin", [ConnexionAdminController::class, 'login'])
+    ->name('admin_connexion.login');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post("/connexion/admin", [ConnexionAdminController::class, 'authentifier'])
@@ -134,6 +133,17 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         ->name('deconnexion_admin');
 });
 
+/*****************
+ * ENREGISTREMENT NOUVEL ADMIN
+ */
+Route::get("/admin/create", [EnregistrementAdminController::class, 'create'])
+    ->name('enregistrement_admin.create')
+    ->middleware('auth');
+
+Route::post("/admin/create", [EnregistrementAdminController::class, 'store'])
+    ->name('enregistrement_admin.store')
+    ->middleware('auth');
+
 
 /*****************
  * PAGE ADMIN
@@ -141,4 +151,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 Route::middleware(['admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])
         ->name('admin.index');
+
+    Route::post("/admin/destroy", [AdminController::class, 'destroy'])
+        ->name('admin.destroy');
+
+    Route::post("/admin/user/destroy", [UserController::class, 'destroy'])
+        ->name('user.destroy');
+
+        Route::post("/admin/forfait/{id}/destroy", [ForfaitController::class, 'destroyForfaitAdmin'])
+        ->name('forfait_admin.destroy');
 });
+
+
+

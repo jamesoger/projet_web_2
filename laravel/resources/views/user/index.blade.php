@@ -13,7 +13,7 @@
         </div>
     @endforeach
     <a href="{{route('billeterie.index')}}">Réservez un autre forfait?</a>
-    <form action="{{ route('user.deconnecter') }}" method="POST">
+    <form action="{{ route('deconnexion_user') }}" method="POST">
         @csrf
         <input type="submit" value="Déconnexion">
     </form>
