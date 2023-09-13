@@ -8,8 +8,13 @@ use Illuminate\Http\Request;
 class BilleterieController extends Controller
 {
     public function index() {
+        $forfaits = Forfait::all();
+
+
+
         return view('billeterie.index', [
-            "forfaits"=> Forfait::all()
+            "forfaits"=> $forfaits,
+            'selectedForfait' => $selectedForfait ?? null,
         ]);
     }
 }

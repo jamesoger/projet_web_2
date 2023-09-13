@@ -88,7 +88,7 @@ Route::post('/enregistrement/user', [EnregistrementUserController::class, 'store
  * PAGE USER
  */
 
-Route::get('/user/panier', [UserController::class, 'buy'])
+Route::get('/user/panier/{forfait_id?}', [UserController::class, 'buy'])
     ->name('user.panier')
     ->middleware('auth');
 

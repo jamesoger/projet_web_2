@@ -11,9 +11,29 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function buy()
+    public function buy($forfaitId = null)
     {
+        if (auth()->check()) {
+            // Si l'utilisateur est déjà connecté, récupérez le forfait sélectionné (s'il existe)
+            $selectedForfait = session('selected_forfait');
+
+            // Si un forfait est sélectionné, stockez-le à nouveau dans la session de l'utilisateur actuel
+            if ($selectedForfait) {
+                session(['selected_forfait' => $selectedForfait]);
+            }
+        }
+
+        if ($forfaitId) {
+            $forfait = Forfait::find($forfaitId);
+
+            session(['selected_forfait' => [
+                'nom' => $forfait->nom,
+                'prix' => $forfait->prix,
+                'id' => $forfait->id,
+            ]]);
+        }
         // Récupérez la liste de tous les forfaits
+
         $forfaits = Forfait::all();
 
 

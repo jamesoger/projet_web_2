@@ -1,6 +1,5 @@
 <x-layout>
     <h1>{{ auth()->user()->prenom }}</h1>
-
     <h2>Forfait sélectionné :</h2>
     @if (session()->has('selected_forfait'))
         <?php $forfaitDetails = session('selected_forfait'); ?>
@@ -18,11 +17,9 @@
 
             <input type="submit" value="Commander">
         </form>
-    @else
-        <p>Aucun forfait sélectionné.</p>
     @endif
 
-    <h2>Liste de vos forfaits :</h2>
+    <h2>Liste des forfaits :</h2>
     @foreach ($forfaits as $forfait)
         <p>{{ $forfait->nom }}</p>
         <p>{{ $forfait->prix }}</p>
