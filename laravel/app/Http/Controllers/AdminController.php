@@ -27,4 +27,11 @@ class AdminController extends Controller
             "spectacles" => $spectacles,
         ]);
     }
+
+    public function destroy(Request $request){
+        Admin::destroy($request->id);
+
+        return redirect()->route('admin.index')
+            ->with('succes', " Cet admin a bien été supprimé");
+    }
 }

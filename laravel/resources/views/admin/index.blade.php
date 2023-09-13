@@ -2,6 +2,15 @@
     <h1>Admin</h1>
     <h2>Users</h2>
     @foreach ($users as $user)
+    <p>{{ $user->prenom }} {{ $user->nom }}</p>
+    <form action="{{ route('user.destroy') }}" method="POST">
+        @csrf
+        <input type="hidden" name="id" value="{{ $user->id }}">
+        <input type="submit" value="supprimer">
+    </form>
+    @endforeach
+    <h2>Forfaits</h2>
+    @foreach ($users as $user)
         <p>{{ $user->prenom }} {{ $user->nom }}</p>
         @if ($user->forfaits)
             @if ($user->forfaits->count() > 0)
@@ -12,6 +21,10 @@
                         <li>Prix : {{ $forfait->prix }}</li>
                         <li>date d'arrivée : {{ $forfait->pivot->date_arrivee }}</li>
                         <li>date de départ : {{ $forfait->pivot->date_depart }}</li>
+                        <form action="{{ route('forfait_admin.destroy',$forfait->pivot->id) }}" method="POST">
+                            @csrf
+                            <input type="submit" value="supprimer">
+                        </form>
                     @endforeach
                 </ul>
             @else
@@ -21,8 +34,17 @@
     @endforeach
     <ul>
         <h3>Liste des administrateurs</h3>
+        <a href="{{route('enregistrement_admin.create')}}">Ajouter un nouvel administrateur</a>
         @foreach ($admins as $admin)
             <p>{{ $admin->prenom }} {{ $admin->nom }}</p>
+         {{-- SUPPRESSION --}}
+         <form action="{{ route('admin.destroy') }}" method="POST">
+            @csrf
+
+            <input type="hidden" name="id" value="{{ $admin->id }}">
+            <input type="submit" value="supprimer">
+
+        </form>
         @endforeach
     </ul>
     <h3>Programmations</h3>

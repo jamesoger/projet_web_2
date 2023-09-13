@@ -8,9 +8,9 @@ use App\Models\Admin;
 
 class ConnexionAdminController extends Controller
 {
-    public function create()
+    public function login()
     {
-        return view('auth.admin.create');
+        return view('auth.admin.connexion.login');
     }
 
     public function authentifier(Request $request)
@@ -31,7 +31,7 @@ class ConnexionAdminController extends Controller
         ]);
 
 
-        if (auth()->guard('admin')->attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
+        if (auth()->guard('admin')->attempt($valides)) {
 
             // Vérifiez le rôle de l'utilisateur directement à partir de la session
 
@@ -44,7 +44,12 @@ class ConnexionAdminController extends Controller
                 return redirect()->route('admin.index')->with('success', 'You are logged in successfully.');
             }
         } else {
-            return back()->with('error', 'Une erreur est survenue, veuillez réessayer plus tard');
+            return back()
+            ->withErrors([
+
+                "email" => "Les informations fournies ne sont pas valides"
+
+            ]) ->onlyInput('email');
         }
     }
 

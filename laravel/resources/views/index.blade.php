@@ -7,7 +7,7 @@
         <a href="{{route('programmation.index')}}">Programmation</a>
         <a href="{{route('info.index')}}">À propos</a>
         <a href="{{route('user_connexion.create')}}">Connexion User</a>
-        <a href="{{route('admin_connexion.create')}}">admin</a>
+        <a href="{{route('admin_connexion.login')}}">admin</a>
     </nav>
 
     <header class="acc-header">
