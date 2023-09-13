@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="33" height="36" viewBox="0 0 33 36">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1da5f3;
+      }
+    </style>
+  </defs>
+  <g id="Groupe_97" data-name="Groupe 97" transform="translate(-963 -885)">
+    <rect id="Rectangle_59" data-name="Rectangle 59" class="cls-1" width="11" height="20" rx="2" transform="translate(974 885)"/>
+    <path id="Polygone_1" data-name="Polygone 1" class="cls-1" d="M15.745.869a1,1,0,0,1,1.51,0L31.562,17.344A1,1,0,0,1,30.807,19H2.193a1,1,0,0,1-.755-1.656Z" transform="translate(996 921) rotate(180)"/>
+  </g>
+</svg>
