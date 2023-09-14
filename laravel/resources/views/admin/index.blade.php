@@ -67,19 +67,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                     <a href="{{ route('programmation.edit', ['id' => $programmation->id]) }}">Ajouter à la programmation!</a>
+                    <a href="{{ route('programmation.edit', ['id' => $programmation->id]) }}">Ajouter à la
+                        programmation!</a>
                     @foreach ($programmation->artistes as $artiste)
                         <tr>
                             <td>{{ $artiste->nom_scene }}</td>
                             <td>{{ $artiste->heure_show }}</td>
-                         </tr>
-
-
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
     @endforeach
+    <a href="{{ route('actualites.create') }}">Ajouter une nouvelle activité</a>
     <form action="{{ route('deconnexion_admin') }}" method="POST">
         @csrf
         <input type="submit" value="Déconnexion">

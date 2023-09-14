@@ -140,6 +140,24 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     Route::post('/programmation/update/{id}', [ProgrammationController::class, 'update'])
         ->name('programmation.update');
+
+    Route::get('/actualites/create', [ActualiteController::class, 'create'])
+        ->name('actualites.create');
+
+
+    Route::post('/actualites', [ActualiteController::class, 'store'])
+        ->name('actualites.store');
+
+
+    Route::get('/actualites/edit/{id}', [ActualiteController::class, 'edit'])
+        ->name('actualites.edit');
+
+
+    Route::post('/actualites/update/{id}', [ActualiteController::class, 'update'])
+        ->name('actualites.update');
+
+    Route::delete('/actualites/{id}', [ActualiteController::class, 'destroy'])
+        ->name('actualites.destroy');
 });
 
 
