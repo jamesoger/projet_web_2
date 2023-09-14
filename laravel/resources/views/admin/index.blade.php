@@ -64,29 +64,21 @@
                     <tr>
                         <th>Artiste</th>
                         <th>Heure</th>
-                        {{-- <th>Équipe 1</th>
-              <th>Équipe 2</th>
-              <th>Équipe gagnante</th> --}}
                     </tr>
                 </thead>
                 <tbody>
+                     <a href="{{ route('programmation.edit', ['id' => $programmation->id]) }}">Ajouter à la programmation!</a>
                     @foreach ($programmation->artistes as $artiste)
                         <tr>
                             <td>{{ $artiste->nom_scene }}</td>
                             <td>{{ $artiste->heure_show }}</td>
-                            <a href="{{ route('programmation.create') }}">Ajouter</a>
-                            {{-- <td>{{ match.equipe1_nom }}</td>
-              <td>{{ match.equipe2_nom }}</td>
-              <td>{{ match.equipe_gagnante_nom || 'À venir...' }}</td> --}}
-                        </tr>
+                         </tr>
+
+
                     @endforeach
                 </tbody>
             </table>
         </div>
-        {{-- <p>{{ $programmation->date }}</p>
-    @endforeach
-    @foreach ($programmation->artistes as $artiste)
-        <p>nom de scène: {{ $artiste->nom_scene }}</p> --}}
     @endforeach
     <form action="{{ route('deconnexion_admin') }}" method="POST">
         @csrf
