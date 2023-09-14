@@ -28,7 +28,8 @@ class AdminController extends Controller
         ]);
     }
 
-    public function destroy(Request $request){
+    public function destroy(Request $request)
+    {
         Admin::destroy($request->id);
 
         return redirect()->route('admin.index')

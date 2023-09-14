@@ -45,11 +45,11 @@ class ConnexionAdminController extends Controller
             }
         } else {
             return back()
-            ->withErrors([
+                ->withErrors([
 
-                "email" => "Les informations fournies ne sont pas valides"
+                    "email" => "Les informations fournies ne sont pas valides"
 
-            ]) ->onlyInput('email');
+                ])->onlyInput('email');
         }
     }
 
