@@ -2,15 +2,15 @@
     <h1>{{ $programmation->date }}</h1>
     <form action="{{ route('programmation.update', ['id' => $programmation->id]) }}" method="POST" enctype="multipart/form-data">
         @csrf
-        @method('POST')
+
         <input type="hidden" name="id" value="{{ $programmation->id }}">
 
         <!-- Section Artistes -->
         <div>
             <h2>Artistes ajoutés</h2>
             <div>
-                <label for="nom_scene">Nom de la scène</label>
-                <input type="text" name="nom_scene" placeholder="Nom de la scène">
+                <label for="nom_scene">Nom d'artiste</label>
+                <input type="text" name="nom_scene" placeholder="Nom d'artiste">
             </div>
             <div>
                 <label for="heure_show">Heure de la représentation</label>
