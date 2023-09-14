@@ -1,4 +1,12 @@
 <x-layout>
+
+    @if (session('success'))
+    <p style="color: green">{{ session('success') }}</p>
+@endif
+@if (session('error'))
+    <p style="color: red">{{ session('error') }}</p>
+@endif
+
     <h1>Admin</h1>
     <h2>Users</h2>
     @foreach ($users as $user)
