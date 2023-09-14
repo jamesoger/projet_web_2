@@ -36,8 +36,8 @@ class ProgrammationController extends Controller
 
     // Définissez des règles de validation pour les artistes et les spectacles
     $validationRules = [
-        'nom_scene' => 'required',
-        'heure_show' => 'required',
+        'nom_scene' =>'nullable',
+        'heure_show' => 'nullable',
         'image' => 'nullable|image',
         'nom_spectacle' => 'nullable',
         'heure_spectacle' => 'nullable',
@@ -46,16 +46,14 @@ class ProgrammationController extends Controller
 
     // Validez les données principales (scène, heure de représentation)
     $valides = $request->validate($validationRules, [
-        'nom_scene.required' => 'Le champ Nom de la scène est obligatoire.',
-        'heure_show.required' => 'Le champ Heure de la représentation est obligatoire.',
+
         'image.image' => 'Le fichier doit être une image valide.',
-        'nom_spectacle.required' => 'Le champ Nom du spectacle est obligatoire.',
-        'heure_spectacle.required' => 'Le champ Heure de la représentation du spectacle est obligatoire.',
         'image_spectacle.image' => 'Le fichier doit être une image valide.',
     ]);
 
+
     // Vérifiez s'il y a des données d'artiste
-    if ($request->filled('nom_scene') || $request->filled('heure_show') || $request->hasFile('image')) {
+    if ($request->filled('nom_scene') && $request->filled('heure_show')) {
         $artiste = new Artiste;
         $artiste->nom_scene = $valides['nom_scene'];
         $artiste->heure_show = $valides['heure_show'];
@@ -69,10 +67,11 @@ class ProgrammationController extends Controller
 
         // Attachez l'artiste à la programmation existante
         $programmation->artistes()->attach($artiste->id);
+
     }
 
     // Vérifiez s'il y a des données de spectacle
-    if ($request->filled('nom_spectacle') || $request->filled('heure_spectacle') || $request->hasFile('image_spectacle')) {
+    if ($request->filled('nom_spectacle') && $request->filled('heure_spectacle')) {
 
         $spectacle = new Spectacle;
         $spectacle->nom = $valides['nom_spectacle'];
@@ -83,9 +82,16 @@ class ProgrammationController extends Controller
             $spectacle->image = $imagePathSpectacle;
         }
 
+
       $spectacle->save();
 
       $programmation->spectacles()->attach($spectacle->id);
+    }
+
+    if (!$programmation->artistes()->exists() && !$programmation->spectacles()->exists()) {
+        return redirect()
+            ->back()
+            ->with('error', 'Le formulaire est vide. Veuillez remplir au moins une partie (artistes ou spectacles).');
     }
 
     return redirect()
