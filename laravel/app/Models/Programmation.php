@@ -10,7 +10,7 @@ class Programmation extends Model
     use HasFactory;
 
     public function artistes(){
-        return $this->belongsToMany(Artiste::class);
+        return $this->belongsToMany(Artiste::class, 'artiste_programmation');
     }
 
 

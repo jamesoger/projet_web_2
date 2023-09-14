@@ -46,17 +46,7 @@ Route::get('/actualites', [ActualiteController::class, 'index'])
 Route::get('/programmation', [ProgrammationController::class, 'index'])
     ->name('programmation.index');
 
-Route::get('/programmation/create', [ProgrammationController::class, 'create'])
-    ->name('programmation.create')
-    ->middleware('auth');
 
-Route::post('/programmation/store', [ProgrammationController::class, 'store'])
-    ->name('programmation.store')
-    ->middleware('auth');
-
-Route::post('/programmation/update', [ProgrammationController::class, 'update'])
-    ->name('programmation.update')
-    ->middleware('auth');
 /*****************
  * PAGE À PROPOS
  */
@@ -129,20 +119,25 @@ Route::get("/connexion/admin", [ConnexionAdminController::class, 'login'])
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post("/connexion/admin", [ConnexionAdminController::class, 'authentifier'])
         ->name('admin_connexion.authentifier');
+
     Route::post("/deconnexion/admin", [ConnexionAdminController::class, 'deconnecter'])
         ->name('deconnexion_admin');
+
+    Route::get("/admin/create", [EnregistrementAdminController::class, 'create'])
+        ->name('enregistrement_admin.create');
+
+    Route::post("/admin/create", [EnregistrementAdminController::class, 'store'])
+        ->name('enregistrement_admin.store');
+
+    Route::get('/programmation/edit/{id}', [ProgrammationController::class, 'edit'])
+        ->name('programmation.edit');
+
+    Route::post('/programmation/update/{id}', [ProgrammationController::class, 'update'])
+        ->name('programmation.update');
+
+
+
 });
-
-/*****************
- * ENREGISTREMENT NOUVEL ADMIN
- */
-Route::get("/admin/create", [EnregistrementAdminController::class, 'create'])
-    ->name('enregistrement_admin.create')
-    ->middleware('auth');
-
-Route::post("/admin/create", [EnregistrementAdminController::class, 'store'])
-    ->name('enregistrement_admin.store')
-    ->middleware('auth');
 
 
 /*****************
@@ -158,9 +153,6 @@ Route::middleware(['admin'])->group(function () {
     Route::post("/admin/user/destroy", [UserController::class, 'destroy'])
         ->name('user.destroy');
 
-        Route::post("/admin/forfait/{id}/destroy", [ForfaitController::class, 'destroyForfaitAdmin'])
+    Route::post("/admin/forfait/{id}/destroy", [ForfaitController::class, 'destroyForfaitAdmin'])
         ->name('forfait_admin.destroy');
 });
-
-
-
