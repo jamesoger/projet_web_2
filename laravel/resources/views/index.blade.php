@@ -16,13 +16,12 @@
                 <img src="{{ asset('icones/facebook.png') }}" alt="" class="acc-fb">
             </li>
             <li class="acc-media-fb">
-                <img src="{{ asset('icones/twitter.png') }}" alt="" class="acc-fb">
+                <img src="{{ asset('icones/twitter.png') }}" alt="" class="acc-tw">
             </li>
             <li class="acc-media-fb">
-                <img src="{{ asset('icones/instagram.png') }}" alt="" class="acc-fb">
+                <img src="{{ asset('icones/instagram.png') }}" alt="" class="acc-in">
             </li>
         </ul>
-
         <div class="acc-centre">
             <p class="acc-date">
                 9.08 au 11.08
@@ -36,7 +35,6 @@
                 </div>
             </div>
         </div>
-
         <div class="acc-btn-menu">
             <div class="acc-btn">
                 <img src="{{ asset('icones/menu_9_points.png') }}" alt="">

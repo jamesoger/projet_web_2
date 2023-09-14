@@ -79,8 +79,51 @@ $font-gothic: all-round-gothic, sans-serif;
 }
 
 .acc-header {
+    display: flex;
     position: relative;
-    overflow: hidden;
+    justify-content: space-evenly;
+
+    .acc-media {
+        li {
+            img {
+                filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+            }
+        }
+    }
+
+    .acc-centre {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .acc-date {
+            font-family: $font-gothic;
+            font-size: 3em;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .acc-logo {
+            img {
+                width: 800px;
+            }
+        }
+
+        .acc-fleche {
+            .cercle {
+
+            }
+        }
+    }
+
+    .acc-btn-menu {
+        .acc-btn {
+
+        }
+
+        .acc-menu  {
+
+        }
+    }
 }
 
 .video-background {
@@ -90,8 +133,12 @@ $font-gothic: all-round-gothic, sans-serif;
     width: 100%;
     height: 100%;
     z-index: -1;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-video {
-    object-fit: cover;
+    video {
+        object-fit: contain;
+        width: 100%;
+    }
 }
