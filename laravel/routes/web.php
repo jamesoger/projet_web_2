@@ -145,7 +145,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         ->name('actualites.create');
 
 
-    Route::post('/actualites', [ActualiteController::class, 'store'])
+    Route::post('/actualites/store', [ActualiteController::class, 'store'])
         ->name('actualites.store');
 
 

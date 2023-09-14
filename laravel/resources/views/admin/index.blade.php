@@ -75,11 +75,17 @@
                             <td>{{ $artiste->heure_show }}</td>
                         </tr>
                     @endforeach
+                    @foreach ($programmation->spectacles as $spectacle)
+                    <tr>
+                        <td>{{ $spectacle->nom }}</td>
+                        <td>{{ $spectacle->heure }}</td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
     @endforeach
-    <a href="{{ route('actualites.create') }}">Ajouter une nouvelle activité</a>
+    <a href="{{ route('actualites.create') }}">Ajouter une nouvelle actualité</a>
     <form action="{{ route('deconnexion_admin') }}" method="POST">
         @csrf
         <input type="submit" value="Déconnexion">
