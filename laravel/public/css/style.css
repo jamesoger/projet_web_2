@@ -76,10 +76,26 @@ body {
 }
 
 .acc-header {
+  display: flex;
   position: relative;
-  overflow: hidden;
+  justify-content: space-evenly;
 }
-
+.acc-header .acc-media li img {
+  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+}
+.acc-header .acc-centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.acc-header .acc-centre .acc-date {
+  font-family: all-round-gothic, sans-serif;
+  font-size: 3em;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+.acc-header .acc-centre .acc-logo img {
+  width: 800px;
+}
 .video-background {
   position: absolute;
   top: 0;
@@ -87,9 +103,12 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-video {
-  -o-object-fit: cover;
-     object-fit: cover;
+.video-background video {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
