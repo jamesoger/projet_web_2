@@ -126,6 +126,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get("/admin/create", [EnregistrementAdminController::class, 'create'])
         ->name('enregistrement_admin.create');
 
+    Route::get("/admin/edit/{id}", [EnregistrementAdminController::class, 'edit'])
+        ->name('enregistrement_admin.edit');
+
+    Route::post("/admin/update/{id}", [EnregistrementAdminController::class, 'update'])
+        ->name('enregistrement_admin.update');
+
     Route::post("/admin/create", [EnregistrementAdminController::class, 'store'])
         ->name('enregistrement_admin.store');
 
@@ -134,9 +140,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     Route::post('/programmation/update/{id}', [ProgrammationController::class, 'update'])
         ->name('programmation.update');
-
-
-
 });
 
 
