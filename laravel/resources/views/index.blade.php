@@ -44,12 +44,12 @@
             </p>
         </div>
 
-        <div class="video-background">
+        {{-- <div class="video-background">
             <video autoplay loop muted poster="{{ asset('images/cadre_header.jpg') }}">
-                <source src="{{ asset('videos/cadre_header.mp4') }}" type="video/mp4">
+                <source src="{{ asset('videos/montage.mp4') }}" type="video/mp4">
                 Votre navigateur ne prend pas en charge la lecture de vidéos.
             </video>
-        </div>
+        </div> --}}
     </header>
 
     <main>
