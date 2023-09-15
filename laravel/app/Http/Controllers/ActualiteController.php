@@ -23,9 +23,9 @@ class ActualiteController extends Controller
     public function store(Request $request)
     {
         $valides = $request->validate([
-            'titre' => 'required|min:6|max:40',
+            'titre' => 'required|min:6|max:150',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif',
-            'details' => 'required|min:30|max:250',
+            'details' => 'required|min:30|max:450',
         ], [
             "titre.min"=> "Le titre doit avoir un minimum de :min caractères",
             "titre.max"=>"Le titre doit avoir un maximum de :max caracteres",
@@ -59,19 +59,40 @@ class ActualiteController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id)
-    {
-        $actualite = Actualite::findOrFail($id);
-
-        $request->validate([
-            'titre' => 'required',
-            'image' => 'required',
-            'details' => 'required',
+    public function update(Request $request ){
+        $valides = $request->validate([
+            'id' => 'required',
+            'titre' => 'required|min:6|max:150',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'details' => 'required|min:30|max:450',
+        ], [
+            'id.required' =>'id est requis',
+            "titre.min"=> "Le titre doit avoir un minimum de :min caractères",
+            "titre.max"=>"Le titre doit avoir un maximum de :max caracteres",
+            "image"=> " L'image n,'est pas du bon format, veuillez réessayez",
+            "details.min"=>"Le texte doit avoir un minimum de :min caractères",
+            "details.max"=>"Le titre doit avoir un maximum de :max caracteres",
         ]);
 
 
+        // Récupération de la note à modifier, suivi de la modification et sauvegarde
+        $actualite = Actualite::findOrFail($valides["id"]);
+        $actualite->titre = $valides["titre"];
+        $actualite->details = $valides["details"];
 
-        return redirect()->route('actualites.index')->with('success', 'Actualité mise à jour avec succès.');
+        if($request->hasFile('image')){
+            // Déplacer
+            Storage::putFile("public/uploads", $request->image);
+            // Sauvegarder le "bon" chemin qui sera inséré dans la BDD et utilisé par le navigateur
+            $actualite->image = "/storage/uploads/" . $request->image->hashName();
+        }
+
+        $actualite->save();
+
+        // Rediriger
+        return redirect()
+                ->route('admin.index')
+                ->with('succes', "Cette actualité a été modifiée avec succès!");
     }
 
     public function destroy($id)

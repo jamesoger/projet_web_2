@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Actualite;
 use App\Models\Admin;
 use App\Models\Artiste;
 use App\Models\Programmation;
@@ -19,12 +20,14 @@ class AdminController extends Controller
         $programmations = Programmation::all();
         $artistes = Artiste::all();
         $spectacles = Spectacle::all();
+        $actualites = Actualite::all();
         return view('admin.index', [
             "users" => $users,
             "admins" => $admins,
             "programmations" => $programmations,
             "artistes" => $artistes,
             "spectacles" => $spectacles,
+            "actualites" => $actualites,
         ]);
     }
 

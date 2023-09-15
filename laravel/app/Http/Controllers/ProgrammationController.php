@@ -15,20 +15,7 @@ class ProgrammationController extends Controller
             "programmation" => Programmation::all()
         ]);
     }
-    public function edit($id)
-    {
-        $programmation = Programmation::find($id);
 
-        // Récupérez les artistes et les spectacles liés à cette programmation
-        $artistes = $programmation->artistes;
-        $spectacles = $programmation->spectacles;
-
-        return view('programmation.edit', [
-            'programmation' => $programmation,
-            'artistes' => $artistes,
-            'spectacles' => $spectacles,
-        ]);
-    }
     public function update(Request $request, $id)
 {
 
@@ -88,17 +75,39 @@ class ProgrammationController extends Controller
       $programmation->spectacles()->attach($spectacle->id);
     }
 
-//     if ((!$request->filled('nom_scene') && !$request->filled('heure_show') ) ||
-//     (!$request->filled('nom_spectacle') && !$request->filled('heure_spectacle'))) {
-//     return redirect()
-//         ->back()
-//         ->with('error', 'Le formulaire est vide. Veuillez remplir au moins une partie (artistes ou spectacles).');
-// }
+    if ((!$request->filled('nom_scene') && !$request->filled('heure_show') ) &&
+    (!$request->filled('nom_spectacle') && !$request->filled('heure_spectacle'))) {
+    return redirect()
+        ->back()
+        ->with('error', 'Le formulaire est vide. Veuillez remplir au moins une partie (artistes ou spectacles).');
+}
 
 
 return redirect()
     ->route('admin.index')
     ->with('success', 'Les artistes et spectacles ont été ajoutés à la programmation');
 }
+
+
+public function destroy($id, $type, $artisteOuSpectacleId)
+{
+    // Recherchez la programmation par son ID
+    $programmation = Programmation::findOrFail($id);
+
+    // Vérifiez le type (artiste ou spectacle)
+    if ($type === 'artiste') {
+        // Détachez l'artiste de la programmation en utilisant detach()
+        $programmation->artistes()->detach($artisteOuSpectacleId);
+        return redirect()->back()->with('success', 'L\'artiste a été retiré de la programmation avec succès.');
+    } elseif ($type === 'spectacle') {
+        // Détachez le spectacle de la programmation en utilisant detach()
+        $programmation->spectacles()->detach($artisteOuSpectacleId);
+        return redirect()->back()->with('success', 'Le spectacle a été retiré de la programmation avec succès.');
+    } else {
+        return redirect()->back()->with('error', 'Type invalide.');
+    }
+}
+
+
 
 }

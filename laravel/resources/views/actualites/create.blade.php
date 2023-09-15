@@ -1,9 +1,9 @@
 <x-layout>
     <h1>Créer une nouvelle actualité</h1>
 
-    {{-- @if (session('success'))
+    @if (session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
-    @endif --}}
+    @endif
 
     <form action="{{ route('actualites.store') }}" method="POST" enctype="multipart/form-data">
         @csrf

@@ -4,8 +4,9 @@
         <h1>Actualités!</h1>
         @foreach ($actualites  as $actualite)
             <h2>{{$actualite->titre}}</h2>
-        <p>{{$actualite->date}}</p>
-        <p>{{$actualite->details}}</p>
+            <p>{{$actualite->details}}</p>
+            <img src="{{ asset($actualite->image) }}" width="800px" alt="">
+
         @endforeach
 
 

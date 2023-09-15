@@ -4,6 +4,7 @@ use App\Http\Controllers\AccueilController;
 use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AproposController;
+use App\Http\Controllers\ArtisteController;
 use App\Http\Controllers\BilleterieController;
 use App\Http\Controllers\ConnexionAdminController;
 use App\Http\Controllers\ConnexionUserController;
@@ -141,6 +142,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/programmation/update/{id}', [ProgrammationController::class, 'update'])
         ->name('programmation.update');
 
+    Route::post('programmation/{id}/{type}/{artisteOuSpectacleId}',[ProgrammationController::class,'destroy'])
+        ->name('programmation.destroy');
+
     Route::get('/actualites/create', [ActualiteController::class, 'create'])
         ->name('actualites.create');
 
@@ -153,11 +157,14 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         ->name('actualites.edit');
 
 
-    Route::post('/actualites/update/{id}', [ActualiteController::class, 'update'])
+    Route::post('/actualites/update', [ActualiteController::class, 'update'])
         ->name('actualites.update');
 
     Route::delete('/actualites/{id}', [ActualiteController::class, 'destroy'])
         ->name('actualites.destroy');
+
+    Route::get('/admin/artiste/edit/{id}', [ArtisteController::class, 'edit'])
+        ->name('programmation.artiste.edit');
 });
 
 
@@ -174,6 +181,12 @@ Route::middleware(['admin'])->group(function () {
 
     Route::post("/admin/user/destroy", [UserController::class, 'destroy'])
         ->name('user.destroy');
+
+    Route::get("/admin/user/edit/{id}", [UserController::class, 'edit'])
+        ->name('user.edit');
+
+        Route::post('/admin/user/update', [UserController::class, 'update'])
+        ->name('user.update');
 
     Route::post("/admin/forfait/{id}/destroy", [ForfaitController::class, 'destroyForfaitAdmin'])
         ->name('forfait_admin.destroy');
