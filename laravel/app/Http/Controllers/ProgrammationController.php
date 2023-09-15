@@ -31,7 +31,7 @@ class ProgrammationController extends Controller
     }
     public function update(Request $request, $id)
 {
-    // Récupérez la programmation existante
+
     $programmation = Programmation::findOrFail($id);
 
     // Définissez des règles de validation pour les artistes et les spectacles
