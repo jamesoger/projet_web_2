@@ -22,6 +22,7 @@
                 <img src="{{ asset('icones/instagram.png') }}" alt="" class="acc-in">
             </li>
         </ul>
+
         <div class="acc-centre">
             <p class="acc-date">
                 9.08 au 11.08
@@ -35,6 +36,7 @@
                 </div>
             </div>
         </div>
+
         <div class="acc-btn-menu">
             <div class="acc-btn">
                 <img src="{{ asset('icones/menu_9_points.png') }}" alt="">
@@ -43,18 +45,21 @@
                 menu
             </p>
         </div>
-
-        {{-- <div class="video-background">
-            <video autoplay loop muted poster="{{ asset('images/cadre_header.jpg') }}">
-                <source src="{{ asset('videos/montage.mp4') }}" type="video/mp4">
-                Votre navigateur ne prend pas en charge la lecture de vidéos.
-            </video>
-        </div> --}}
     </header>
 
     <main>
         <section class="acc-text-events">
-
+            <div class="phrases">
+                <p>dj spectacles événements</p>
+                <p>drones dj laser light</p>
+                <p>laser light spectacles dj</p>
+            </div>
+            <div class="video-background">
+                <video autoplay loop muted poster="{{ asset('images/cadre_header.jpg') }}">
+                    <source src="{{ asset('videos/montage.mp4') }}" type="video/mp4">
+                    Votre navigateur ne prend pas en charge la lecture de vidéos.
+                </video>
+            </div>
         </section>
         <section class="acc-events">
 
