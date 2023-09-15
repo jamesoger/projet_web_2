@@ -11,5 +11,6 @@ class Artiste extends Model
 
     public function programmations(){
         return $this->belongsToMany(Programmation::class, 'artiste_programmation');
+
     }
 }

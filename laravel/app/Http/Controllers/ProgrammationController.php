@@ -16,6 +16,22 @@ class ProgrammationController extends Controller
         ]);
     }
 
+
+    public function edit($id){
+        $programmation = Programmation::find($id);
+
+        $artistes= $programmation->artistes;
+        $spectacles = $programmation->spectacles;
+
+        return view('programmation.edit', [
+            'programmation'=>$programmation,
+            'artistes'=>$artistes,
+            'spectacles'=>$spectacles,
+
+        ]);
+
+    }
+
     public function update(Request $request, $id)
 {
 

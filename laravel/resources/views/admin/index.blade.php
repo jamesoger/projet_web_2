@@ -110,6 +110,7 @@
                                     <button type="submit">Supprimer</button>
                                 </form>
                             </td>
+                            <td><a href="{{ route('programmation.spectacle.edit', $spectacle->id)}}">Modifier</a></td>
                         </tr>
                     @endforeach
                 </tbody>

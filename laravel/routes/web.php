@@ -12,6 +12,7 @@ use App\Http\Controllers\EnregistrementAdminController;
 use App\Http\Controllers\EnregistrementUserController;
 use App\Http\Controllers\ForfaitController;
 use App\Http\Controllers\ProgrammationController;
+use App\Http\Controllers\SpectacleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,13 +33,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [AccueilController::class, 'index'])
     ->name('accueil');
 
-
 /*****************
  * ACTUALITÉS
  */
 Route::get('/actualites', [ActualiteController::class, 'index'])
     ->name('actualites.index');
-
 
 /*****************
  * PROGRAMMATION
@@ -62,8 +61,6 @@ Route::get('/billeterie', [BilleterieController::class, 'index'])
     ->name('billeterie.index');
 
 
-
-
 /*****************
  * CONNEXION ET ENREGISTREMENT USER
  */
@@ -85,7 +82,6 @@ Route::get("/enregistrement/user", [EnregistrementUserController::class, 'create
 
 Route::post('/enregistrement/user', [EnregistrementUserController::class, 'store'])
     ->name('enregistrement_user.store');
-
 
 
 /*****************
@@ -113,11 +109,16 @@ Route::get('/user', [UserController::class, 'index'])
  * CONNEXION ADMIN
  */
 
-// Définir la route de connexion en dehors du groupe 'admin'
 Route::get("/connexion/admin", [ConnexionAdminController::class, 'login'])
     ->name('admin_connexion.login');
 
+/*****************
+ *  ADMIN
+ */
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+
+
+
     Route::post("/connexion/admin", [ConnexionAdminController::class, 'authentifier'])
         ->name('admin_connexion.authentifier');
 
@@ -165,6 +166,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     Route::get('/admin/artiste/edit/{id}', [ArtisteController::class, 'edit'])
         ->name('programmation.artiste.edit');
+
+    Route::post('/admin/artiste/update', [ArtisteController::class, 'update'])
+        ->name('programmation.artiste.update');
+
+    Route::get('/admin/spectacle/edit/{id}', [SpectacleController::class, 'edit'])
+        ->name('programmation.spectacle.edit');
+
+    Route::post('/admin/spectacle/update', [SpectacleController::class, 'update'])
+        ->name('programmation.spectacle.update');
 });
 
 
