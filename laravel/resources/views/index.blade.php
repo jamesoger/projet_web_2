@@ -50,9 +50,9 @@
     <main>
         <section class="acc-text-events">
             <div class="phrases">
-                <p>dj spectacles événements</p>
-                <p>drones dj laser light</p>
-                <p>laser light spectacles dj</p>
+                <p>dj spectacles événements laserlight</p>
+                <p>événements drones dj laserlight</p>
+                <p>événements laserlight spectacles dj</p>
             </div>
             <div class="video-background">
                 <video autoplay loop muted poster="{{ asset('images/cadre_header.jpg') }}">
@@ -62,7 +62,33 @@
             </div>
         </section>
         <section class="acc-events">
-
+            <div class="events">
+                <div class="vignettes-events">
+                    <div class="vignettes">
+                        <img src="{{ asset('images/evenement1.jpg') }}" alt="">
+                        <h2>laser light</h2>
+                    </div>
+                    <div class="vignettes">
+                        <img src="{{ asset('images/evenement2.jpg') }}" alt="">
+                        <h2>laser light</h2>
+                    </div>
+                    <div class="vignettes">
+                        <img src="{{ asset('images/evenement3.jpg') }}" alt="">
+                        <h2>laser light</h2>
+                    </div>
+                    <div class="vignettes">
+                        <img src="{{ asset('images/evenement4.jpg') }}" alt="">
+                        <h2>laser light</h2>
+                    </div>
+                    <div class="vignettes">
+                        <img src="{{ asset('images/evenement5.jpg') }}" alt="">
+                        <h2>laser light</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="events-bg">
+                <img src="{{ asset('images/lignes.jpg') }}" alt="">
+            </div>
         </section>
         <section class="acc-logo-video">
 
