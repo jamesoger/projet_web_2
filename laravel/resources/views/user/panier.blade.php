@@ -6,7 +6,7 @@
         <?php $forfaitDetails = session('selected_forfait'); ?>
         <p>Nom du forfait : {{ $forfaitDetails['nom'] }}</p>
         <p>Prix du forfait : {{ $forfaitDetails['prix'] }}</p>
-        {{-- <form action="{{ route('forfait_user.store') }}" method="POST">
+         <form action="{{ route('forfait_user.store') }}" method="POST">
             @csrf
             <input type="hidden" name="forfait_id" value="{{ $forfaitDetails['id'] }}">
 
@@ -17,16 +17,31 @@
             <input type="date" id="date_depart" name="date_depart" required>
 
             <input type="submit" value="Commander">
-        </form> --}}
-        <form action="{{ route('forfait_user.store') }}" method="POST">
+        </form>
+        {{-- <form action="{{ route('forfait_user.store') }}" method="POST">
             @csrf
             <input type="hidden" name="forfait_id" value="{{ $forfaitDetails['id'] }}">
 
-            <label for="date_depart">Date de départ :</label>
-            <input type="date" id="date_depart" name="date_depart" min="2023-08-10" max="2023-08-12" required>
+            <label for="forfait">Forfait :</label>
+            <select id="forfait" name="forfait" required>
+                <option value="1">Forfait une journée</option>
+                <option value="2">Forfait deux jours</option>
+
+            </select>
+
+            <label for="date_arrivee">Date d'arrivée :</label>
+            <input type="date" id="date_arrivee" name="date_arrivee" required
+                   <?php if ($forfaitDetails['id'] == 1): ?>
+                       min="<?= date('Y-m-d') ?>" max="<?= date('Y-m-d', strtotime('+1 day')) ?>"
+                   <?php elseif ($forfaitDetails['id'] == 2): ?>
+                       min="<?= date('Y-m-d') ?>" max="<?= date('Y-m-d', strtotime('+2 days')) ?>"
+                   <?php endif; ?>
+            >
 
             <input type="submit" value="Commander">
-        </form>
+        </form> --}}
+
+
     @endif
 
     <h2>Liste des forfaits :</h2>

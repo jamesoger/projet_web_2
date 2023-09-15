@@ -95,11 +95,10 @@ class ActualiteController extends Controller
                 ->with('succes', "Cette actualité a été modifiée avec succès!");
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $actualite = Actualite::findOrFail($id);
-        $actualite->delete();
+        Actualite::destroy($request->id);
 
-        return redirect()->route('actualites.index')->with('success', 'Actualité supprimée avec succès.');
+        return redirect()->route('admin.index')->with('success', 'Actualité supprimée avec succès.');
     }
 }

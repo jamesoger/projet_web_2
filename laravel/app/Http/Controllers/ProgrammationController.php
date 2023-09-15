@@ -126,4 +126,6 @@ public function destroy($id, $type, $artisteOuSpectacleId)
 
 
 
+
+
 }

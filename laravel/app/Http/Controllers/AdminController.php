@@ -16,11 +16,17 @@ class AdminController extends Controller
     {
 
         $users = User::all();
+
+        $users->each(function ($user) {
+            $user->forfaits = $user->forfaits->sortBy('pivot.date_arrivee');
+        });
         $admins = Admin::all();
         $programmations = Programmation::all();
         $artistes = Artiste::all();
         $spectacles = Spectacle::all();
         $actualites = Actualite::all();
+
+
         return view('admin.index', [
             "users" => $users,
             "admins" => $admins,

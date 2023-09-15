@@ -60,4 +60,14 @@ class SpectacleController extends Controller
             ->route('admin.index')
             ->with('succes', "ce spectacle été modifié avec succès!");
     }
+
+    public function destroy(Request $request)
+    {
+        Spectacle::destroy($request->id);
+
+        return redirect()->route('admin.index')->with('success', 'Actualité supprimée avec succès.');
+    }
+
+
+
 }

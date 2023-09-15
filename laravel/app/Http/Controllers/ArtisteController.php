@@ -64,4 +64,12 @@ class ArtisteController extends Controller
             ->route('admin.index')
             ->with('succes', "cet artiste a été modifié avec succès!");
     }
+
+
+    public function destroy(Request $request)
+    {
+        Artiste::destroy($request->id);
+
+        return redirect()->route('admin.index')->with('success', 'Actualité supprimée avec succès.');
+    }
 }

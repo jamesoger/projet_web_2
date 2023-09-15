@@ -143,8 +143,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/programmation/update/{id}', [ProgrammationController::class, 'update'])
         ->name('programmation.update');
 
-    Route::post('programmation/{id}/{type}/{artisteOuSpectacleId}',[ProgrammationController::class,'destroy'])
-        ->name('programmation.destroy');
 
     Route::get('/actualites/create', [ActualiteController::class, 'create'])
         ->name('actualites.create');
@@ -161,7 +159,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/actualites/update', [ActualiteController::class, 'update'])
         ->name('actualites.update');
 
-    Route::delete('/actualites/{id}', [ActualiteController::class, 'destroy'])
+    Route::post('/actualites/destroy', [ActualiteController::class, 'destroy'])
         ->name('actualites.destroy');
 
     Route::get('/admin/artiste/edit/{id}', [ArtisteController::class, 'edit'])
@@ -170,11 +168,17 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::post('/admin/artiste/update', [ArtisteController::class, 'update'])
         ->name('programmation.artiste.update');
 
+    Route::post('admin/artiste/destroy', [ArtisteController::class, 'destroy'])
+        ->name('artiste.destroy');
+
     Route::get('/admin/spectacle/edit/{id}', [SpectacleController::class, 'edit'])
         ->name('programmation.spectacle.edit');
 
     Route::post('/admin/spectacle/update', [SpectacleController::class, 'update'])
         ->name('programmation.spectacle.update');
+
+        Route::post('admin/spectacle/destroy', [SpectacleController::class, 'destroy'])
+        ->name('spectacle.destroy');
 });
 
 
