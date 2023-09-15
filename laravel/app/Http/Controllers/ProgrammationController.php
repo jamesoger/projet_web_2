@@ -88,12 +88,12 @@ class ProgrammationController extends Controller
       $programmation->spectacles()->attach($spectacle->id);
     }
 
-    if ((!$request->filled('nom_scene') && !$request->filled('heure_show') ) ||
-    (!$request->filled('nom_spectacle') && !$request->filled('heure_spectacle'))) {
-    return redirect()
-        ->back()
-        ->with('error', 'Le formulaire est vide. Veuillez remplir au moins une partie (artistes ou spectacles).');
-}
+//     if ((!$request->filled('nom_scene') && !$request->filled('heure_show') ) ||
+//     (!$request->filled('nom_spectacle') && !$request->filled('heure_spectacle'))) {
+//     return redirect()
+//         ->back()
+//         ->with('error', 'Le formulaire est vide. Veuillez remplir au moins une partie (artistes ou spectacles).');
+// }
 
 
 return redirect()
