@@ -182,15 +182,13 @@ nav { // A SUPPRIMER
 
         p {
             margin: 100px 0px;
+            word-spacing: 100px;
         }
     }
 
     .video-background {
         position: relative;
-        top: 0;
-        left: 0;
         width: 100%;
-        height: 100%;
         z-index: -1;
         display: flex;
         align-items: center;
@@ -198,11 +196,47 @@ nav { // A SUPPRIMER
 
         video {
             width: 100%;
-            height: 100%;
             min-width: fit-content;
         }
     }
 }
+
+.acc-events {
+    .events {
+      .vignettes-events {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .vignettes {
+        flex: 0 0 30%;
+        padding: 10px;
+        text-align: center;
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .events-bg {
+      position: relative;
+      width: 100%;
+      z-index: -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
 
 /*******************************/
 /*********** ACCUEIL ***********/

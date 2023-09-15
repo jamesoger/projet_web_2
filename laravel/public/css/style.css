@@ -156,13 +156,11 @@ nav a {
 }
 .acc-text-events .phrases p {
   margin: 100px 0px;
+  word-spacing: 100px;
 }
 .acc-text-events .video-background {
   position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
   z-index: -1;
   display: flex;
   align-items: center;
@@ -170,9 +168,37 @@ nav a {
 }
 .acc-text-events .video-background video {
   width: 100%;
-  height: 100%;
   min-width: -moz-fit-content;
   min-width: fit-content;
+}
+
+.acc-events .events .vignettes-events {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.acc-events .events .vignettes {
+  flex: 0 0 30%;
+  padding: 10px;
+  text-align: center;
+}
+.acc-events .events .vignettes img {
+  max-width: 100%;
+  height: auto;
+}
+.acc-events .events-bg {
+  position: relative;
+  width: 100%;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.acc-events .events-bg img {
+  max-width: 100%;
+  height: auto;
 }
 
 /*******************************/
