@@ -1,4 +1,7 @@
 <x-layout>
+    @if (session('error'))
+    <p style="color: red">{{ session('error') }}</p>
+@endif
     <h1>{{ $programmation->date }}</h1>
     <form action="{{ route('programmation.update', ['id' => $programmation->id]) }}" method="POST" enctype="multipart/form-data">
         @csrf

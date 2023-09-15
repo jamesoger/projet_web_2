@@ -31,7 +31,7 @@ class ProgrammationController extends Controller
     }
     public function update(Request $request, $id)
 {
-    // Récupérez la programmation existante
+
     $programmation = Programmation::findOrFail($id);
 
     // Définissez des règles de validation pour les artistes et les spectacles
@@ -88,15 +88,17 @@ class ProgrammationController extends Controller
       $programmation->spectacles()->attach($spectacle->id);
     }
 
-    if (!$programmation->artistes()->exists() && !$programmation->spectacles()->exists()) {
-        return redirect()
-            ->back()
-            ->with('error', 'Le formulaire est vide. Veuillez remplir au moins une partie (artistes ou spectacles).');
-    }
-
+    if ((!$request->filled('nom_scene') && !$request->filled('heure_show') ) ||
+    (!$request->filled('nom_spectacle') && !$request->filled('heure_spectacle'))) {
     return redirect()
-        ->route('admin.index')
-        ->with('success', 'Les artistes et spectacles ont été ajoutés à la programmation');
+        ->back()
+        ->with('error', 'Le formulaire est vide. Veuillez remplir au moins une partie (artistes ou spectacles).');
+}
+
+
+return redirect()
+    ->route('admin.index')
+    ->with('success', 'Les artistes et spectacles ont été ajoutés à la programmation');
 }
 
 }
