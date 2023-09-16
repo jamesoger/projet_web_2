@@ -174,16 +174,26 @@ nav a {
 
 .acc-events {
   display: grid;
+  position: relative;
+  overflow: hidden;
 }
 .acc-events h2 {
   position: absolute;
-  display: flex;
   justify-self: center;
+  margin: 50px 0px;
   font-family: all-round-gothic, sans-serif;
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 600;
   text-transform: uppercase;
   color: #1DA5F3;
+  text-shadow: 0px 0px 10px #1DA5F3;
+}
+.acc-events h2 .ligne-h2 {
+  margin: 20px 0px;
+  height: 1px;
+  width: 100%;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  background: linear-gradient(to left, transparent, #1DA5F3, transparent), linear-gradient(to right, transparent, #1DA5F3, transparent);
 }
 .acc-events .events {
   position: absolute;
@@ -192,16 +202,24 @@ nav a {
   align-items: center;
 }
 .acc-events .events .vignettes {
-  margin: 10px;
+  position: relative;
+  display: flex;
+  margin: 50px;
   box-shadow: 0px 0px 20px #1DA5F3;
   width: 390px;
   height: 425px;
+  align-items: end;
 }
 .acc-events .events .vignettes img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.acc-events .events .vignettes .cadre {
+  position: absolute;
+  background-color: #06162F;
+  padding: 10px;
 }
 .acc-events .events .vignettes .cadre .titre {
   font-family: all-round-gothic, sans-serif;
@@ -224,7 +242,7 @@ nav a {
 }
 .acc-events .events-bg img {
   max-width: 100%;
-  height: auto;
+  opacity: 0.5;
 }
 
 /*******************************/
