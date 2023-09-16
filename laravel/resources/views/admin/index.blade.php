@@ -1,5 +1,5 @@
 <x-layout>
-    <h1>{{ auth()->guard('admin')->user()->prenom . ' ' . auth()->guard('admin')->user()->nom }} </h1>
+    <h1>{{ auth()->guard('admin')->user()->prenom .' ' .auth()->guard('admin')->user()->nom }} </h1>
     @if (session('success'))
         <p style="color: green">{{ session('success') }}</p>
     @endif
@@ -11,8 +11,8 @@
     <h2>Users</h2>
     @foreach ($users as $user)
         <p>{{ $user->prenom }} {{ $user->nom }}</p>
-        <form onclick="return confirm('Are you sure you want to delete?');"
-        action="{{ route('user.destroy') }}" method="POST">
+        <form onclick="return confirm('Are you sure you want to delete?');" action="{{ route('user.destroy') }}"
+            method="POST">
             @csrf
             <input type="hidden" name="id" value="{{ $user->id }}">
             <input type="submit" value="supprimer">
@@ -32,7 +32,8 @@
                         <li>date d'arrivée : {{ $forfait->pivot->date_arrivee }}</li>
                         <li>date de départ : {{ $forfait->pivot->date_depart }}</li>
                         @if (auth()->guard('admin')->user()->droits == 1)
-                            <form action="{{ route('forfait_admin.destroy', $forfait->pivot->id) }}" method="POST">
+                            <form onclick="return confirm('Are you sure you want to delete?');"
+                                action="{{ route('forfait_admin.destroy', $forfait->pivot->id) }}" method="POST">
                                 @csrf
                                 <input type="submit" value="supprimer">
                             </form>
@@ -58,7 +59,7 @@
                     administrateur</a>
                 {{-- SUPPRESSION --}}
                 <form onclick="return confirm('Are you sure you want to delete?');"
-                action="{{ route('admin.destroy') }}" method="POST">
+                    action="{{ route('admin.destroy') }}" method="POST">
                     @csrf
 
                     <input type="hidden" name="id" value="{{ $admin->id }}">
@@ -122,6 +123,7 @@
     <a href="{{ route('actualites.create') }}">Ajouter une nouvelle actualité</a>
     @foreach ($actualites as $actualite)
         <h2>{{ $actualite->titre }}</h2>
+        <h3>{{ $actualite->date}}</h3>
         <p>{{ $actualite->details }}</p>
         <a href="{{ route('actualites.edit', $actualite->id) }}">Modifier</a>
         <form onclick="return confirm('Are you sure you want to delete?');" action="{{ route('actualites.destroy') }}"

@@ -12,15 +12,13 @@ class ForfaitController extends Controller
     public function buy($forfaitId = null)
     {
         if (auth()->check()) {
-            // Si l'utilisateur est déjà connecté, récupérez le forfait sélectionné (s'il existe)
+
             $selectedForfait = session('selected_forfait');
 
-            // Si un forfait est sélectionné, stockez-le à nouveau dans la session de l'utilisateur actuel
             if ($selectedForfait) {
                 session(['selected_forfait' => $selectedForfait]);
             }
         }
-
         if ($forfaitId) {
             $forfait = Forfait::find($forfaitId);
 
@@ -30,75 +28,82 @@ class ForfaitController extends Controller
                 'id' => $forfait->id,
             ]]);
         }
-        // Récupérez la liste de tous les forfaits
-
         $forfaits = Forfait::all();
-
 
         return view('user.panier', [
             'forfaits' => $forfaits
         ]);
     }
-
     public function store(Request $request)
     {
-        // Récupérez l'ID du forfait à partir de la requête
         $forfaitId = $request->input('forfait_id');
-        $dateArrivee = $request->input('date_arrivee');
-        $dateDepart = $request->input('date_depart');
+        $dateArrivee = $request->input('dates');
+        $dateMaxEvenement = '2024-08-11';
+        $quantite = $request->input('quantite');
 
-        if (!$dateArrivee || !$dateDepart) {
-            return redirect()->back()->with('error', 'Veuillez spécifier des dates valides.');
+        if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $dateArrivee)) {
+            return redirect()->back()->with('error', 'Le format de date est incorrect.');
         }
-        // Récupérez l'ID de l'utilisateur actuellement authentifié
+
+        $nombreDeJoursAajouter = 0;
+
+        if ($forfaitId == 1) {
+            $nombreDeJoursAajouter = 0;
+        } elseif ($forfaitId == 2) {
+            $nombreDeJoursAajouter = 1;
+        } elseif($forfaitId == 3){
+            $nombreDeJoursAajouter = 2;
+        }
+
+        $dateDepart = date('Y-m-d', strtotime($dateArrivee . " +$nombreDeJoursAajouter days"));
+
+        if (strtotime($dateDepart) > strtotime($dateMaxEvenement)) {
+            // ajuster ce code pour mettre des erreurs.
+            $dateDepart = $dateMaxEvenement;
+        }
         $userId = auth()->id();
 
-        if ($userId && $forfaitId) {
-            // Attachez le forfait à l'utilisateur
+
+        if ($userId && $forfaitId && $quantite > 0) {
             $user = User::find($userId);
-            $user->forfaits()->attach($forfaitId, [
-                'date_arrivee' => $dateArrivee,
-                'date_depart' => $dateDepart,
-            ]);
-        }
+
+
+            for ($i = 0; $i < $quantite; $i++) {
+                $user->forfaits()->attach($forfaitId, [
+                    'date_arrivee' => $dateArrivee,
+                    'date_depart' => $dateDepart,
+                ]);
+            }
 
         return redirect()->route('user.index');
     }
-//     public function store(Request $request)
-// {
-//     // Récupérez l'ID du forfait à partir de la requête
-//     $forfaitId = $request->input('forfait_id');
-//     $dateArrivee = $request->input('date_arrivee');
 
-//     // Calculer la date de départ en fonction du forfait
-//     $dateDepart = $dateArrivee;
+    }
 
-//     if ($forfaitId == 1) {
-//         // Ajoutez 1 jour pour le forfait une journée
-//         $dateDepart = date('Y-m-d', strtotime($dateDepart . ' +1 day'));
-//     } elseif ($forfaitId == 2) {
-//         // Ajoutez 2 jours pour le forfait deux jours
-//         $dateDepart = date('Y-m-d', strtotime($dateDepart . ' +2 days'));
-//     }
+    // public function store(Request $request)
+    // {
+    //     // Récupérez l'ID du forfait à partir de la requête
+    //     $forfaitId = $request->input('forfait_id');
+    //     $dateArrivee = $request->input('date_arrivee');
+    //     $dateDepart = $request->input('date_depart');
 
-//     if (!$dateArrivee || !$dateDepart) {
-//         return redirect()->back()->with('error', 'Veuillez spécifier des dates valides.');
-//     }
+    //     if (!$dateArrivee || !$dateDepart) {
+    //         return redirect()->back()->with('error', 'Veuillez spécifier des dates valides.');
+    //     }
+    //     // Récupérez l'ID de l'utilisateur actuellement authentifié
+    //     $userId = auth()->id();
 
-//     // Récupérez l'ID de l'utilisateur actuellement authentifié
-//     $userId = auth()->id();
+    //     if ($userId && $forfaitId) {
+    //         // Attachez le forfait à l'utilisateur
+    //         $user = User::find($userId);
+    //         $user->forfaits()->attach($forfaitId, [
+    //             'date_arrivee' => $dateArrivee,
+    //             'date_depart' => $dateDepart,
+    //         ]);
+    //     }
 
-//     if ($userId && $forfaitId) {
-//         // Attachez le forfait à l'utilisateur
-//         $user = User::find($userId);
-//         $user->forfaits()->attach($forfaitId, [
-//             'date_arrivee' => $dateArrivee,
-//             'date_depart' => $dateDepart,
-//         ]);
-//     }
-
-//     return redirect()->route('user.index');
-// }
+    //     return redirect()->route('user.index');
+    // }
 
 
     public function destroy($id)
@@ -113,7 +118,8 @@ class ForfaitController extends Controller
         return redirect()->route('user.index')->with('error', "La suppression de l'entrée de la table user_forfait a échoué!");
     }
 
-    public function destroyForfaitAdmin($id){
+    public function destroyForfaitAdmin($id)
+    {
 
         DB::table('user_forfait')->where('id', $id)->delete();
 

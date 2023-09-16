@@ -15,6 +15,7 @@ class CreateActualitesTable extends Migration
     {
         Schema::create('actualites', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
             $table->string('titre');
             $table->string('image');
             $table->text('details');

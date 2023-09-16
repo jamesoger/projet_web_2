@@ -7,7 +7,13 @@
 
     <form action="{{ route('actualites.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-
+        <div>
+            <label for="date">Date :</label>
+            @error('date')
+                <p>{{ $message }}</p>
+            @enderror
+            <input type="date" name="date" id="date" required>
+        </div>
         <div>
             <label for="titre">Titre :</label>
             @error('titre')

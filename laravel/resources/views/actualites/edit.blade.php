@@ -6,6 +6,13 @@
     <form action="{{ route('actualites.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="hidden" name="id" value="{{ $actualites->id }}">
+        <div>
+            <label for="date">Date :</label>
+            @error('date')
+                <p>{{ $message }}</p>
+            @enderror
+            <input type="date" name="date" id="date" value="{{ $actualites->date }}" required>
+        </div>
         <div class="form-group">
             <label for="titre">Titre:</label>
             @error('titre')

@@ -5,7 +5,8 @@
             <p>{{ $forfait->nom }} {{ $forfait->prix }} </p>
             <p>Date d'arrivée : {{ $forfait->pivot->date_arrivee }}</p>
             <p>Date de départ : {{ $forfait->pivot->date_depart }}</p>
-            <form action="{{ route('forfait.destroy',  $forfait->pivot->id) }}" method="POST">
+            <form onclick="return confirm('Are you sure you want to delete?');"
+            action="{{ route('forfait.destroy',  $forfait->pivot->id) }}" method="POST">
                 @csrf
                 <button type="submit">Supprimer</button>
             </form>
