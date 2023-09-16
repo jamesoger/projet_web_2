@@ -101,7 +101,14 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
                     </div>
                 </div>
+
             </div>
+
+            <div class="btn-reservation">
+                <a href="{{route('billeterie.index')}}">Billeterie</a>
+                <a href="{{route('programmation.index')}}">Programmation</a>
+            </div>
+
             <div class="events-bg">
                 <img src="{{ asset('images/lignes.jpg') }}" alt="">
             </div>
