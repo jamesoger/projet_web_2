@@ -390,36 +390,32 @@ nav { // A SUPPRIMER
         a {
             display: block;
             border: 2px solid white;
-            height: 40px;
+            height: 40px; // Ajustez la hauteur selon vos préférences
             text-align: center;
             text-decoration: none;
             position: relative;
             top: 80%;
-            margin: 0 auto;
             font-family: $font-ethno;
             text-transform: uppercase;
             font-weight: 300;
             font-size: 1.5em;
             color: white;
-            padding: 1em;
+            padding: 0.25em;
+            margin: 0 auto;
+            width: 280px;
             border: 3px solid white;
             box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
             text-shadow: 0px 0px 5px white;
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
             &:hover {
-
                 background-color: $blue;
-
                 color: $blue-fonce;
-
                 text-shadow: 0px 0px 5px $blue-fonce;
-
                 box-shadow: 0px 0px 10px $blue;
-
                 border: 3px solid $blue;
-
             }
         }
+        }
     }
-}
+
