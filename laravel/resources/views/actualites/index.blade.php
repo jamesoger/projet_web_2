@@ -5,7 +5,7 @@
         @foreach ($actualites  as $actualite)
             <h2>{{$actualite->titre}}</h2>
             <p>{{$actualite->details}}</p>
-            <img src="{{ asset($actualite->image) }}" width="800px" alt="">
+            <img src="{{ $actualite->image }}" width="800px" alt="">
 
         @endforeach
 
