@@ -48,12 +48,16 @@ class ArtisteController extends Controller
         $artiste->nom_scene = $valides["nom_scene"];
         $artiste->heure_show = $valides["heure_show"];
 
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $imagePath = $request->file('image')->store('images', 'public');
-            $artiste->image = $imagePath;
+        // if ($request->hasFile('image') && $request->file('image')->isValid()) {
+        //     $imagePath = $request->file('image')->store('images', 'public');
+        //     $artiste->image = $imagePath;
+        // }
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+            // Déplacer
+            Storage::putFile("public/uploads", $request->image);
+            // Sauvegarder le "bon" chemin qui sera inséré dans la BDD et utilisé par le navigateur
+            $artiste->image = "/storage/uploads/" . $request->image->hashName();
         }
-
-
 
         $artiste->programmations()->sync([$request->date]);
 

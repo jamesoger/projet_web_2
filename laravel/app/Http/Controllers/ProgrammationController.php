@@ -6,6 +6,7 @@ use App\Models\Artiste;
 use App\Models\Programmation;
 use App\Models\Spectacle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProgrammationController extends Controller
 {
@@ -61,9 +62,15 @@ class ProgrammationController extends Controller
         $artiste->nom_scene = $valides['nom_scene'];
         $artiste->heure_show = $valides['heure_show'];
 
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $imagePath = $request->file('image')->store('images', 'public');
-            $artiste->image = $imagePath;
+        // if ($request->hasFile('image') && $request->file('image')->isValid()) {
+        //     $imagePath = $request->file('image')->store('images', 'public');
+        //     $artiste->image = $imagePath;
+        // }
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+            // Déplacer
+            Storage::putFile("public/uploads", $request->image);
+            // Sauvegarder le "bon" chemin qui sera inséré dans la BDD et utilisé par le navigateur
+            $artiste->image = "/storage/uploads/" . $request->image->hashName();
         }
 
         $artiste->save();
@@ -80,10 +87,17 @@ class ProgrammationController extends Controller
         $spectacle->nom = $valides['nom_spectacle'];
         $spectacle->heure = $valides['heure_spectacle'];
 
-        if ($request->hasFile('image_spectacle') && $request->file('image_spectacle')->isValid()) {
-            $imagePathSpectacle = $request->file('image_spectacle')->store('images', 'public');
-            $spectacle->image = $imagePathSpectacle;
+        // if ($request->hasFile('image_spectacle') && $request->file('image_spectacle')->isValid()) {
+        //     $imagePathSpectacle = $request->file('image_spectacle')->store('images', 'public');
+        //     $spectacle->image = $imagePathSpectacle;
+        // }
+        if($request->hasFile('image_spectacle') && $request->file('image_spectacle')->isValid()){
+
+            Storage::putFile("public/uploads", $request->file('image_spectacle'));
+            $spectacle->image = "/storage/uploads/" . $request->file('image_spectacle')->hashName();
         }
+
+
 
 
       $spectacle->save();

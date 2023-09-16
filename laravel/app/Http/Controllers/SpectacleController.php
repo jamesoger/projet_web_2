@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Programmation;
 use App\Models\Spectacle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SpectacleController extends Controller
 {
@@ -46,9 +47,15 @@ class SpectacleController extends Controller
         $spectacle->nom = $valides["nom"];
         $spectacle->heure = $valides["heure"];
 
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            $imagePath = $request->file('image')->store('images', 'public');
-            $spectacle->image = $imagePath;
+        // if ($request->hasFile('image') && $request->file('image')->isValid()) {
+        //     $imagePath = $request->file('image')->store('images', 'public');
+        //     $spectacle->image = $imagePath;
+        // }
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+            // Déplacer
+            Storage::putFile("public/uploads", $request->image);
+            // Sauvegarder le "bon" chemin qui sera inséré dans la BDD et utilisé par le navigateur
+            $spectacle->image = "/storage/uploads/" . $request->image->hashName();
         }
 
         $spectacle->programmations()->sync([$request->date]);
