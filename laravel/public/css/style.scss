@@ -204,17 +204,30 @@ nav { // A SUPPRIMER
 
 .acc-events {
     display: grid;
+    position: relative;
+    overflow: hidden;
 
     h2 {
         position: absolute;
-        display: flex;
         justify-self: center;
+        margin: 50px 0px;
         font-family: $font-gothic;
-        font-size: 3em;
+        font-size: 4em;
         font-weight: 600;
         text-transform: uppercase;
         color: $blue;
+        text-shadow: 0px 0px 10px #1DA5F3;
+
+        .ligne-h2 {
+            margin: 20px 0px;
+            height: 1px;
+            width: 100%;
+            box-shadow: 0px 0px 10px #1DA5F3;
+            background: linear-gradient(to left, transparent, #1DA5F3, transparent),
+                        linear-gradient(to right, transparent, #1DA5F3, transparent);
+        }
     }
+
     .events {
         position: absolute;
         display: flex;
@@ -222,11 +235,13 @@ nav { // A SUPPRIMER
         align-items: center;
 
         .vignettes {
-            margin: 10px;
-            // background-color: #06162F;
+            position: relative;
+            display: flex;
+            margin: 50px;
             box-shadow: 0px 0px 20px #1DA5F3;
             width: 390px;
             height: 425px;
+            align-items: end;
 
             img {
                 width: 100%;
@@ -235,8 +250,9 @@ nav { // A SUPPRIMER
             }
 
             .cadre {
-                // background-color: $blue-fonce;
-                // padding: 10px;
+                position: absolute;
+                background-color: $blue-fonce;
+                padding: 10px;
 
                 .titre {
                     font-family: $font-gothic;
@@ -264,7 +280,7 @@ nav { // A SUPPRIMER
 
       img {
         max-width: 100%;
-        height: auto;
+        opacity: 0.5;
       }
     }
   }
