@@ -1,4 +1,7 @@
 <x-layout>
+    @if (session('error'))
+    <p style="color: red">{{ session('error') }}</p>
+@endif
     <h1>Mes forfaits!</h1>
     @foreach (auth()->user()->forfaits as $forfait)
         <div>
@@ -8,6 +11,9 @@
             <form onclick="return confirm('Are you sure you want to delete?');"
             action="{{ route('forfait.destroy',  $forfait->pivot->id) }}" method="POST">
                 @csrf
+                @error('submit')
+                <p>{{ $message }}</p>
+            @enderror
                 <button type="submit">Supprimer</button>
             </form>
 
