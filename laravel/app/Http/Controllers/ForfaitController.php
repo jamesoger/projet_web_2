@@ -80,6 +80,26 @@ class ForfaitController extends Controller
 
     }
 
+    public function update(Request $request, $forfaitId)
+{
+
+    $forfait = Forfait::find($forfaitId);
+
+    if ($forfait) {
+        session(['selected_forfait' => [
+            'nom' => $forfait->nom,
+            'prix' => $forfait->prix,
+            'id' => $forfait->id,
+        ]]);
+
+        return redirect()->route('user.panier')->with('success', 'Forfait sélectionné avec succès.');
+    }
+
+    return redirect()->route('user.panier')->with('error', 'Forfait introuvable.');
+}
+
+
+
     // public function store(Request $request)
     // {
     //     // Récupérez l'ID du forfait à partir de la requête
