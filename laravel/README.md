@@ -129,5 +129,7 @@ https://github.com/Geoffpas/projet_web_2
 ### Catégories     
 #### Sous-catégories       
 ## Apport au travail synthèse de chaque membre de l’équipe (qui fait quoi et quand ?)                        
-## Rétroaction globale sur le travail d’équipe (motivation, charge de travail, organisation, problèmes, etc.)                        
+## Rétroaction globale sur le travail d’équipe (motivation, charge de travail, organisation, problèmes, etc.)
+La communication au sein de notre équipe est loin d'être une faiblesse. Chaque membre de l'équipe sait ce qu'il doit faire, personne n'hésite à demander de l'aide et tout le monde reste super compréhensif. Les tapes dans le dos et les encouragements ne sont pas ce qui manque, et on n'hésite pas à dire à un autre membre de prendre une pause, surtout s'il a travaillé toute la fin de semaine sur un problème ; le repos est important.
+
 
