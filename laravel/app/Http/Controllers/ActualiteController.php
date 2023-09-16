@@ -23,18 +23,21 @@ class ActualiteController extends Controller
     public function store(Request $request)
     {
         $valides = $request->validate([
+            'date' =>'required',
             'titre' => 'required|min:6|max:150',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif',
-            'details' => 'required|min:30|max:450',
+            'details' => 'required|min:30|max:750',
         ], [
+            "date.required" => "lda date est requise",
             "titre.min"=> "Le titre doit avoir un minimum de :min caractères",
             "titre.max"=>"Le titre doit avoir un maximum de :max caracteres",
             "image"=> " L'image n,'est pas du bon format, veuillez réessayez",
             "details.min"=>"Le texte doit avoir un minimum de :min caractères",
-            "details.max"=>"Le titre doit avoir un maximum de :max caracteres",
+            "details.max"=>"Le texte doit avoir un maximum de :max caracteres",
         ]);
 
        $actualite = new Actualite;
+       $actualite->date = $valides["date"];
        $actualite->titre = $valides["titre"];
        $actualite->details = $valides["details"];
 
@@ -47,7 +50,7 @@ class ActualiteController extends Controller
     }
        $actualite->save();
 
-        return redirect()->route('actualites.index')->with('success', 'Actualité créée avec succès.');
+        return redirect()->route('admin.index')->with('success', 'Actualité créée avec succès.');
     }
 
 
@@ -62,21 +65,24 @@ class ActualiteController extends Controller
     public function update(Request $request ){
         $valides = $request->validate([
             'id' => 'required',
+            'date' =>'required',
             'titre' => 'required|min:6|max:150',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif',
-            'details' => 'required|min:30|max:450',
+            'details' => 'required|min:30|max:750',
         ], [
             'id.required' =>'id est requis',
+            "date.required" => "lda date est requise",
             "titre.min"=> "Le titre doit avoir un minimum de :min caractères",
             "titre.max"=>"Le titre doit avoir un maximum de :max caracteres",
             "image"=> " L'image n,'est pas du bon format, veuillez réessayez",
             "details.min"=>"Le texte doit avoir un minimum de :min caractères",
-            "details.max"=>"Le titre doit avoir un maximum de :max caracteres",
+            "details.max"=>"Le texte doit avoir un maximum de :max caracteres",
         ]);
 
 
         // Récupération de la note à modifier, suivi de la modification et sauvegarde
         $actualite = Actualite::findOrFail($valides["id"]);
+        $actualite->date = $valides["date"];
         $actualite->titre = $valides["titre"];
         $actualite->details = $valides["details"];
 

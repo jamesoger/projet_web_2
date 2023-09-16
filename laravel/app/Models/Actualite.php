@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Actualite extends Model
 {
     use HasFactory;
-    protected $fillable = ['titre', 'image', 'details'];
+    protected $fillable = ['date','titre', 'image', 'details'];
 }
