@@ -62,28 +62,42 @@
             </div>
         </section>
         <section class="acc-events">
+            <h2>reserver vos billets</h2>
             <div class="events">
-                <div class="vignettes-events">
-                    <div class="vignettes">
-                        <img src="{{ asset('images/evenement1.jpg') }}" alt="">
-                        <h2>laser light</h2>
-                    </div>
-                    <div class="vignettes">
-                        <img src="{{ asset('images/evenement2.jpg') }}" alt="">
-                        <h2>laser light</h2>
-                    </div>
-                    <div class="vignettes">
-                        <img src="{{ asset('images/evenement3.jpg') }}" alt="">
-                        <h2>laser light</h2>
-                    </div>
-                    <div class="vignettes">
-                        <img src="{{ asset('images/evenement4.jpg') }}" alt="">
-                        <h2>laser light</h2>
-                    </div>
-                    <div class="vignettes">
-                        <img src="{{ asset('images/evenement5.jpg') }}" alt="">
-                        <h2>laser light</h2>
-                    </div>
+                <div class="vignettes">
+                    <img src="{{ asset('images/evenement1.jpg') }}" alt="">
+                    {{-- <div class="cadre">
+                        <p class="titre">laser light</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                    </div> --}}
+                </div>
+                <div class="vignettes">
+                    <img src="{{ asset('images/evenement2.jpg') }}" alt="">
+                    {{-- <div class="cadre">
+                        <p class="titre">spectacles</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                    </div> --}}
+                </div>
+                <div class="vignettes">
+                    <img src="{{ asset('images/evenement3.jpg') }}" alt="">
+                    {{-- <div class="cadre">
+                        <p class="titre">concours dj</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                    </div> --}}
+                </div>
+                <div class="vignettes">
+                    <img src="{{ asset('images/evenement4.jpg') }}" alt="">
+                    {{-- <div class="cadre">
+                        <p class="titre">drones</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                    </div> --}}
+                </div>
+                <div class="vignettes">
+                    <img src="{{ asset('images/evenement5.jpg') }}" alt="">
+                    {{-- <div class="cadre">
+                        <p class="titre">événements</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
+                    </div> --}}
                 </div>
             </div>
             <div class="events-bg">
@@ -91,7 +105,6 @@
             </div>
         </section>
         <section class="acc-logo-video">
-
         </section>
     </main>
 

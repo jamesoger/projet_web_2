@@ -69,6 +69,7 @@ body {
 $font-ethno: ethnocentric, sans-serif;
 $font-gothic: all-round-gothic, sans-serif;
 $blue: #1DA5F3;
+$blue-fonce: #06162F;
 
 
 /*******************************/
@@ -173,7 +174,7 @@ nav { // A SUPPRIMER
 
     .phrases {
         position: absolute;
-        font-family: 'all-round-gothic';
+        font-family: $font-gothic;
         font-weight: 600;
         font-size: 10em;
         text-transform: uppercase;
@@ -202,25 +203,55 @@ nav { // A SUPPRIMER
 }
 
 .acc-events {
-    .events {
-      .vignettes-events {
+    display: grid;
+
+    h2 {
         position: absolute;
         display: flex;
-        justify-content: space-between;
+        justify-self: center;
+        font-family: $font-gothic;
+        font-size: 3em;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $blue;
+    }
+    .events {
+        position: absolute;
+        display: flex;
+        place-self: center;
         align-items: center;
-        overflow: hidden;
-      }
 
-      .vignettes {
-        flex: 0 0 30%;
-        padding: 10px;
-        text-align: center;
+        .vignettes {
+            margin: 10px;
+            // background-color: #06162F;
+            box-shadow: 0px 0px 20px #1DA5F3;
+            width: 390px;
+            height: 425px;
 
-        img {
-          max-width: 100%;
-          height: auto;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .cadre {
+                // background-color: $blue-fonce;
+                // padding: 10px;
+
+                .titre {
+                    font-family: $font-gothic;
+                    font-size: 1.5em;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+
+                p:nth-child(2) {
+                    font-family: 'all-round-gothic';
+                    color: #1DA5F3;
+                }
+            }
         }
-      }
     }
 
     .events-bg {
