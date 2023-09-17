@@ -1,51 +1,137 @@
-
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+    list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 body {
@@ -76,16 +162,20 @@ $blue-fonce: #06162F;
 /*********** ACCUEIL ***********/
 /*******************************/
 
-nav { // A SUPPRIMER
-    position: absolute;  // A SUPPRIMER
+nav {
+    // A SUPPRIMER
+    position: absolute; // A SUPPRIMER
     top: 280px; // A SUPPRIMER
     left: 549px; // A SUPPRIMER
     z-index: 1000; // A SUPPRIMER
 
-    a { // A SUPPRIMER
+    a {
+        // A SUPPRIMER
         text-decoration: none; // A SUPPRIMER
         color: white; // A SUPPRIMER
-    } // A SUPPRIMER
+    }
+
+    // A SUPPRIMER
 }
 
 .titre-hidden {
@@ -157,7 +247,7 @@ nav { // A SUPPRIMER
             font-size: 1.3em;
         }
 
-        .acc-menu  {
+        .acc-menu {
             font-family: $font-gothic;
         }
     }
@@ -240,7 +330,7 @@ nav { // A SUPPRIMER
             width: 100%;
             box-shadow: 0px 0px 10px #1DA5F3;
             background: linear-gradient(to left, transparent, #1DA5F3, transparent),
-                        linear-gradient(to right, transparent, #1DA5F3, transparent);
+                linear-gradient(to right, transparent, #1DA5F3, transparent);
         }
     }
 
@@ -401,7 +491,7 @@ nav { // A SUPPRIMER
         .boite_1 {
             z-index: 3;
             width: 450px;
-            height: 600px!important;
+            height: 600px !important;
             background-color: rgba(255, 255, 255, 0.591);
             position: absolute;
             top: 50%;
@@ -413,18 +503,23 @@ nav { // A SUPPRIMER
             width: 450px;
             height: 500px;
             box-shadow: 0px 0px 5px white;
+            transition: transform 0.3s ease-in-out;
+
+
 
 
             &.boite_gauche {
-                position: relative;
-                left: calc(35% - 800px); // Décalage vers la gauche
+                // position: relative;
+                // left: calc(35% - 800px); // Décalage vers la gauche
+                margin-right: 10%;
+
 
             }
 
             &.boite_droite {
-                position: relative;
-                left: calc(50% - 800px); // Décalage vers la droite
-
+                // position: relative;
+                // left: calc(50% - 800px); // Décalage vers la droite
+                margin-left: 10%;
             }
         }
 
@@ -470,6 +565,106 @@ nav { // A SUPPRIMER
                 border: 3px solid $blue;
             }
         }
-        }
+    }
+}
+
+
+/*******************************/
+/*********** CONNEXION ***********/
+/*******************************/
+.connexion_user {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    padding-top: 8em;
+    font-family: $font-gothic;
+
+    h1 {
+        text-align: center;
+        font-size: 5em;
+        font-weight: 500;
+        text-transform: uppercase;
     }
 
+    h2 {
+        text-align: center;
+        font-size: 2em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .connexion_user_form {
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 5px white;
+        width: 600px;
+        height: 400px;
+        margin: 5rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        label{
+           font-size: 1.25em;
+
+        }
+
+        input {
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 400px;
+            height: 50px;
+            margin: 2rem;
+            box-shadow: 0px 0px 5px white;
+            text-align: center;
+            font-family: $font-gothic;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px 10px;
+            width: 350px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        font-size: 2em;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: white;
+        &:hover{
+            color: $blue;
+
+        }
+
+    }
+}
