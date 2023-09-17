@@ -36,7 +36,7 @@
                 <select name="date">
                     @foreach ($programmations as $programmation)
                         <option value="{{ $programmation->id }}"
-                            {{ $spectacle->pivot && $spectacle->pivot->date == $programmation->id ? 'selected' : '' }}>
+                            {{ $spectacle->programmations->contains('id', $programmation->id) ? 'selected' : '' }}>
                             {{ $programmation->date }}
                         </option>
                     @endforeach

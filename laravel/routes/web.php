@@ -96,6 +96,9 @@ Route::post('/user/panier', [ForfaitController::class, 'store'])
     ->name('forfait_user.store')
     ->middleware('auth');
 
+Route::post('/user/panier/update//{forfait_id}', [ForfaitController::class, 'update'])
+    ->name('forfait_user_update');
+
 Route::post('/user/destroy/{id}', [ForfaitController::class, 'destroy'])
     ->name('forfait.destroy');
 

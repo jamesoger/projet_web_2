@@ -80,6 +80,26 @@ class ForfaitController extends Controller
 
     }
 
+    public function update(Request $request, $forfaitId)
+{
+
+    $forfait = Forfait::find($forfaitId);
+
+    if ($forfait) {
+        session(['selected_forfait' => [
+            'nom' => $forfait->nom,
+            'prix' => $forfait->prix,
+            'id' => $forfait->id,
+        ]]);
+
+        return redirect()->route('user.panier')->with('success', 'Forfait sélectionné avec succès.');
+    }
+
+    return redirect()->route('user.panier')->with('error', 'Forfait introuvable.');
+}
+
+
+
     // public function store(Request $request)
     // {
     //     // Récupérez l'ID du forfait à partir de la requête
@@ -106,17 +126,46 @@ class ForfaitController extends Controller
     // }
 
 
+    // public function destroy($id)
+    // {
+    //     $userId = auth()->id();
+
+    //     if ($userId) {
+    //         DB::table('user_forfait')->where('id', $id)->delete();
+    //         return redirect()->route('user.index')->with('success', "L'entrée de la table user_forfait a été supprimée!");
+    //     }
+
+    //     return redirect()->route('user.index')->with('error', "La suppression de l'entrée de la table user_forfait a échoué!");
+    // }
+
+
+
+    // a verifier
     public function destroy($id)
     {
         $userId = auth()->id();
 
         if ($userId) {
-            DB::table('user_forfait')->where('id', $id)->delete();
-            return redirect()->route('user.index')->with('success', "L'entrée de la table user_forfait a été supprimée!");
+            $userForfait = DB::table('user_forfait')->find($id);
+
+            if ($userForfait) {
+                $dateArrivee = $userForfait->date_arrivee;
+                $dateMaxEvenement = '2024-08-11';
+
+                if (strtotime($dateArrivee) > strtotime($dateMaxEvenement)) {
+                    return redirect()->route('user.index')->with('error', "La date est dépassée. La suppression n'est pas autorisée.");
+                }
+
+                DB::table('user_forfait')->where('id', $id)->delete();
+                return redirect()->route('user.index')->with('success', "L'entrée de la table user_forfait a été supprimée!");
+            }
         }
 
         return redirect()->route('user.index')->with('error', "La suppression de l'entrée de la table user_forfait a échoué!");
     }
+
+
+
 
     public function destroyForfaitAdmin($id)
     {

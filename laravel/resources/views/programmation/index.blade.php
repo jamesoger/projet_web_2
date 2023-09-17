@@ -6,15 +6,14 @@
         @foreach ($prog->artistes as $artiste)
             {{ $artiste->nom_scene }}
             {{ $artiste->heure_show }}
-            <img src="{{ asset('storage/' . $artiste->image) }}" alt="" width="100px">
+            <img src="{{  $artiste->image}}" alt="" width="100px">
 
         @endforeach
         <br>
         @foreach ($prog->spectacles as $spectacle)
             {{ $spectacle->nom }}
             {{ $spectacle->heure }}
-           <img src="{{asset('storage/' .$spectacle->image) }}" alt="" width="100px">
-   <img src="{{asset($spectacle->image)}}" alt="">
+           <img src="{{$spectacle->image}}" alt="" width="100px">
         @endforeach
     </p>
 @endforeach

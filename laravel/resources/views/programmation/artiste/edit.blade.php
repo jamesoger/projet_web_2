@@ -35,14 +35,25 @@
                 @error('date')
                     <p>{{ $message }}</p>
                 @enderror
+
                 <select name="date">
+                    @foreach ($programmations as $programmation)
+                        <option value="{{ $programmation->id }}"
+                            {{ $artiste->programmations->contains('id', $programmation->id) ? 'selected' : '' }}>
+                            {{ $programmation->date }}
+                        </option>
+                    @endforeach
+                </select>
+
+                {{-- <select name="date">
+                    @dd( $artiste->pivot->date)
                     @foreach ($programmations as $programmation)
                         <option value="{{ $programmation->id }}"
                             {{ $artiste->pivot && $artiste->pivot->date == $programmation->id ? 'selected' : '' }}>
                             {{ $programmation->date }}
                         </option>
                     @endforeach
-                </select>
+                </select> --}}
 
             </div>
         </div>
@@ -50,3 +61,5 @@
 
     </form>
 </x-layout>
+
+
