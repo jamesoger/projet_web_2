@@ -91,7 +91,7 @@ nav a {
   display: flex;
   position: relative;
   justify-content: space-evenly;
-  padding: 50px 0;
+  height: 100vh;
 }
 .acc-header .acc-media li img {
   filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
@@ -135,6 +135,20 @@ nav a {
 }
 .acc-header .acc-btn-menu .acc-menu {
   font-family: all-round-gothic, sans-serif;
+}
+.acc-header .video-bg-header {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  min-width: 1390px;
+  overflow: hidden;
+}
+.acc-header .video-bg-header video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.5;
 }
 
 /*********** MAIN ***********/
@@ -277,6 +291,39 @@ nav a {
   border: 3px solid #1DA5F3;
 }
 
+.acc-logo-video {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+.acc-logo-video .acc-logo {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.acc-logo-video .acc-logo img {
+  width: 60%;
+}
+.acc-logo-video .acc-logo p {
+  font-family: all-round-gothic, sans-serif;
+  font-size: 3em;
+  text-shadow: 0px 0px 10px white;
+}
+.acc-logo-video .video-bg-logo {
+  height: 600px;
+  width: 100%;
+  min-width: 1390px;
+  overflow: hidden;
+}
+.acc-logo-video .video-bg-logo video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*********** FOOTER ***********/
 /*******************************/
 /*********** ACCUEIL ***********/
 /*******************************//*# sourceMappingURL=style.css.map */

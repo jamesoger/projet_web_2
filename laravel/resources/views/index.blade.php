@@ -45,6 +45,13 @@
                 menu
             </p>
         </div>
+
+        <div class="video-bg-header">
+            <video autoplay loop muted poster="{{ asset('images/poster_lignes.jpg') }}">
+                <source src="{{ asset('videos/video_game.mp4') }}" type="video/mp4">
+                Votre navigateur ne prend pas en charge la lecture de vidéos.
+            </video>
+        </div>
     </header>
 
     <main>
@@ -114,6 +121,17 @@
             </div>
         </section>
         <section class="acc-logo-video">
+            <div class="acc-logo">
+                <img src="{{ asset('logos/plat_color_blanc.png')}}" alt="" class="logo">
+                <p>9.08 au 11.08</p>
+            </div>
+
+            <div class="video-bg-logo">
+                <video autoplay loop muted poster="{{ asset('images/poster_lignes.jpg') }}">
+                    <source src="{{ asset('videos/neon_accueil.mp4') }}" type="video/mp4">
+                    Votre navigateur ne prend pas en charge la lecture de vidéos.
+                </video>
+            </div>
         </section>
     </main>
 
