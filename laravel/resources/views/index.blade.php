@@ -47,7 +47,7 @@
         </div>
 
         <div class="video-bg-header">
-            <video autoplay loop muted poster="{{ asset('images/poster_lignes.jpg') }}">
+            <video autoplay loop muted poster="{{ asset('images/poster_header.jpg') }}">
                 <source src="{{ asset('videos/video_game.mp4') }}" type="video/mp4">
                 Votre navigateur ne prend pas en charge la lecture de vidéos.
             </video>
