@@ -191,7 +191,11 @@ nav {
     height: 100vh;
 
     .acc-media {
+        margin-top: 50px;
+
         li {
+            margin-bottom: 10px;
+
             img {
                 filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
             }
@@ -202,6 +206,7 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 50px;
 
         .acc-date {
             font-family: $font-gothic;
@@ -235,6 +240,7 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 50px;
 
         .acc-btn {
             img {
@@ -464,15 +470,175 @@ nav {
 
 /*********** FOOTER ***********/
 
+footer {
+    display: flex;
+    flex-direction: column;
 
-/*******************************/
-/*********** ACCUEIL ***********/
-/*******************************/
+    .footer-media {
+        display: flex;
+        align-items: center;
+        align-self: center;
+        margin-top: 100px;
+
+        .ligne-gauche {
+            display: flex;
+            margin-right: 30px;
+            height: 1px;
+            width: 500px;
+            box-shadow: 0px 0px 10px #1DA5F3;
+            background: linear-gradient(to left, #ffffff, transparent);
+        }
+
+        .foot-media {
+            display: flex;
+            align-items: center;
+
+            li {
+                margin: 0px 30px;
+
+                img {
+                    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+                }
+            }
+        }
+
+        .ligne-droite {
+            display: flex;
+            margin-left: 30px;
+            height: 1px;
+            width: 500px;
+            box-shadow: 0px 0px 10px #1DA5F3;
+            background: linear-gradient(to right, #ffffff, transparent);
+        }
+    }
+
+    .foot-nav-adresse {
+        display: flex;
+        justify-content: space-around;
+        margin: 80px 0px;
+
+        .foot-menu {
+            display: flex;
+            flex-direction: column;
+
+            .menu {
+                font-family: $font-gothic;
+                font-size: 2em;
+                font-weight: 500;
+            }
+
+            li {
+                font-family: $font-ethno;
+                font-weight: 300;
+                margin: 10px 0px;
+            }
+        }
+
+        .foot-map {
+            align-self: center;
+            text-align: center;
+            margin-left: 75px;
+
+            img {
+                height: 60px;
+            }
+
+            p {
+                font-family: $font-gothic;
+                font-size: 1.3em;
+            }
+        }
+
+        .foot-logo {
+            align-self: center;
+
+            img {
+                height: 200px;
+            }
+
+            p {
+                text-align: center;
+                font-family: $font-ethno;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .foot-app {
+        display: flex;
+        align-items: center;
+        align-self: center;
+
+        .ligne-gauche {
+            display: flex;
+            margin-right: 80px;
+            height: 1px;
+            width: 500px;
+            box-shadow: 0px 0px 10px #1DA5F3;
+            background: linear-gradient(to left, #ffffff, transparent);
+        }
+
+        p {
+            font-family: $font-gothic;
+            font-size: 1.3em;
+            text-transform: uppercase;
+            font-weight: 500;
+            text-shadow: 0px 0px 20px white;
+        }
+
+        .ligne-droite {
+            display: flex;
+            margin-left: 80px;
+            height: 1px;
+            width: 500px;
+            box-shadow: 0px 0px 10px #1DA5F3;
+            background: linear-gradient(to right, #ffffff, transparent);
+        }
+    }
+
+    .foot-store {
+        display: flex;
+        align-self: center;
+        justify-content: space-evenly;
+        width: 400px;
+        margin-top: 30px;
+
+        .apple {
+            display: flex;
+            height: 60px;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+
+        .google {
+            display: flex;
+            height: 60px;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+    }
+
+    .foot-copy {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0px;
+
+        img {
+            width: 16px;
+        }
+
+        p {
+            font-family: $font-gothic;
+            text-transform: uppercase;
+        }
+    }
+}
 
 
 /*******************************/
 /********** BILLETERIE *********/
 /*******************************/
+
 .bill {
     width: 100vw;
     height: 100vh;
@@ -486,7 +652,7 @@ nav {
         width: 100%;
         display: flex;
         justify-content: center;
-        position: relative; // Position relative pour positionner les boîtes par rapport à ce conteneur
+        position: relative;
 
         .boite_1 {
             z-index: 3;
@@ -496,7 +662,7 @@ nav {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); // Centrer la boîte 1 verticalement et horizontalement
+            transform: translate(-50%, -50%);
         }
 
         .bill_boite {
@@ -572,6 +738,7 @@ nav {
 /*******************************/
 /*********** MESSAGES ***********/
 /*******************************/
+
 .erreur {
     color: rgba(218, 16, 16, 0.902);
     font-style: italic;
@@ -658,7 +825,6 @@ nav {
                 border: 3px solid $blue;
             }
         }
-
     }
 
     a {
@@ -674,13 +840,13 @@ nav {
             color: $blue;
 
         }
-
     }
 }
 
 /*******************************/
-/*********** ENREGISTREMENT ***********/
+/******** ENREGISTREMENT *******/
 /*******************************/
+
 .enregistrement_user {
     width: 100vw;
     height: 100vh;
@@ -716,6 +882,7 @@ nav {
             align-items: center;
             margin: 1rem auto;
         }
+
         .enregistrement_user_form_group.user-names {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -754,7 +921,7 @@ nav {
             }
         }
 
-        button{
+        button {
             margin-top: 1rem;
             cursor: pointer;
             background-color: rgba(255, 255, 255, 0.005);

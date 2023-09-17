@@ -3,7 +3,7 @@
     <h1 class="titre-hidden">Bienvenue sur l'accueil de FestX.com</h1>
     <nav>
         <a href="{{route('actualites.index')}}">Actualités</a>
-        <a href="{{route('billeterie.index')}}">Billeterie</a>
+        <a href="{{route('billeterie.index')}}">Billetterie</a>
         <a href="{{route('programmation.index')}}">Programmation</a>
         <a href="{{route('info.index')}}">À propos</a>
         <a href="{{route('user_connexion.create')}}">Connexion User</a>
@@ -136,6 +136,67 @@
     </main>
 
     <footer>
+        <div class="footer-media">
+            <div class="ligne-gauche"></div>
+            <ul class="foot-media">
+                <li class="foot-media-fb">
+                    <img src="{{ asset('icones/facebook.png') }}" alt="" class="foot-fb">
+                </li>
+                <li class="foot-media-fb">
+                    <img src="{{ asset('icones/twitter.png') }}" alt="" class="foot-tw">
+                </li>
+                <li class="foot-media-fb">
+                    <img src="{{ asset('icones/instagram.png') }}" alt="" class="foot-in">
+                </li>
+            </ul>
+            <div class="ligne-droite"></div>
+        </div>
 
+        <div class="foot-nav-adresse">
+            <ul class="foot-menu">
+                <li class="menu">menu</li>
+                <li class="liste">accueil</li>
+                <li class="liste">programmation</li>
+                <li class="liste">billetterie</li>
+                <li class="liste">actualités</li>
+                <li class="liste">à propos</li>
+                <li class="liste">mon compte</li>
+            </ul>
+
+            <div class="foot-map">
+                <img src="{{ asset('icones/map-marker.png') }}" alt="">
+                <p>FestX</p>
+                <p>189 rue des darons</p>
+                <p>Saint-Fulgeance</p>
+                <p>JJT222</p>
+                <p>festx@electro.ca</p>
+                <p>418-222-1899</p>
+            </div>
+
+            <div class="foot-logo">
+                <img src="{{ asset('logos/centre_color_blanc.png') }}" alt="">
+                <p>admin</p>
+            </div>
+        </div>
+
+        <div class="foot-app">
+            <div class="ligne-gauche"></div>
+            <p>télécharger l'app</p>
+            <div class="ligne-droite"></div>
+        </div>
+
+        <div class="foot-store">
+            <div class="apple">
+                <img src="{{ asset('icones/google.svg') }}" alt="">
+            </div>
+            <div class="google">
+                <img src="{{ asset('icones/apple.svg') }}" alt="">
+            </div>
+        </div>
+
+        <div class="foot-copy">
+            <img src="{{ asset('icones/copyright.png') }}" alt="">
+            <p>2023 festx</p>
+        </div>
     </footer>
 </x-layout>

@@ -174,6 +174,12 @@ nav a {
   justify-content: space-evenly;
   height: 100vh;
 }
+.acc-header .acc-media {
+  margin-top: 50px;
+}
+.acc-header .acc-media li {
+  margin-bottom: 10px;
+}
 .acc-header .acc-media li img {
   filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
 }
@@ -181,6 +187,7 @@ nav a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 50px;
 }
 .acc-header .acc-centre .acc-date {
   font-family: all-round-gothic, sans-serif;
@@ -206,6 +213,7 @@ nav a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 50px;
 }
 .acc-header .acc-btn-menu .acc-btn img {
   filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
@@ -405,9 +413,144 @@ nav a {
 }
 
 /*********** FOOTER ***********/
-/*******************************/
-/*********** ACCUEIL ***********/
-/*******************************/
+footer {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer-media {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  margin-top: 100px;
+}
+footer .footer-media .ligne-gauche {
+  display: flex;
+  margin-right: 30px;
+  height: 1px;
+  width: 500px;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+footer .footer-media .foot-media {
+  display: flex;
+  align-items: center;
+}
+footer .footer-media .foot-media li {
+  margin: 0px 30px;
+}
+footer .footer-media .foot-media li img {
+  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+}
+footer .footer-media .ligne-droite {
+  display: flex;
+  margin-left: 30px;
+  height: 1px;
+  width: 500px;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+footer .foot-nav-adresse {
+  display: flex;
+  justify-content: space-around;
+  margin: 80px 0px;
+}
+footer .foot-nav-adresse .foot-menu {
+  display: flex;
+  flex-direction: column;
+}
+footer .foot-nav-adresse .foot-menu .menu {
+  font-family: all-round-gothic, sans-serif;
+  font-size: 2em;
+  font-weight: 500;
+}
+footer .foot-nav-adresse .foot-menu li {
+  font-family: ethnocentric, sans-serif;
+  font-weight: 300;
+  margin: 10px 0px;
+}
+footer .foot-nav-adresse .foot-map {
+  align-self: center;
+  text-align: center;
+  margin-left: 75px;
+}
+footer .foot-nav-adresse .foot-map img {
+  height: 60px;
+}
+footer .foot-nav-adresse .foot-map p {
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.3em;
+}
+footer .foot-nav-adresse .foot-logo {
+  align-self: center;
+}
+footer .foot-nav-adresse .foot-logo img {
+  height: 200px;
+}
+footer .foot-nav-adresse .foot-logo p {
+  text-align: center;
+  font-family: ethnocentric, sans-serif;
+  font-weight: 300;
+}
+footer .foot-app {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+footer .foot-app .ligne-gauche {
+  display: flex;
+  margin-right: 80px;
+  height: 1px;
+  width: 500px;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+footer .foot-app p {
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-shadow: 0px 0px 20px white;
+}
+footer .foot-app .ligne-droite {
+  display: flex;
+  margin-left: 80px;
+  height: 1px;
+  width: 500px;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+footer .foot-store {
+  display: flex;
+  align-self: center;
+  justify-content: space-evenly;
+  width: 400px;
+  margin-top: 30px;
+}
+footer .foot-store .apple {
+  display: flex;
+  height: 60px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+footer .foot-store .google {
+  display: flex;
+  height: 60px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+footer .foot-copy {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+footer .foot-copy img {
+  width: 16px;
+}
+footer .foot-copy p {
+  font-family: all-round-gothic, sans-serif;
+  text-transform: uppercase;
+}
+
 /*******************************/
 /********** BILLETERIE *********/
 /*******************************/
@@ -586,7 +729,7 @@ nav a {
 }
 
 /*******************************/
-/*********** ENREGISTREMENT ***********/
+/******** ENREGISTREMENT *******/
 /*******************************/
 .enregistrement_user {
   width: 100vw;
