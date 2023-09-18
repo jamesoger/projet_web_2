@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Forfait;
 use Illuminate\Http\Request;
 
-class BilleterieController extends Controller
+class BilletterieController extends Controller
 {
     public function index() {
         $forfaits = Forfait::all();
 
 
 
-        return view('billeterie.index', [
+        return view('billetterie.index', [
             "forfaits"=> $forfaits,
             'selectedForfait' => $selectedForfait ?? null,
         ]);

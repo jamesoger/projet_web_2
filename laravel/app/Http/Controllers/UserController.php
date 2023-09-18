@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Forfait;
+use App\Models\Programmation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -14,11 +15,24 @@ class UserController extends Controller
 
 
     public function index()
-    {
-        return view('user.index', [
-            'forfaits' => auth()->user()->forfaits
-        ]);
+{
+    $programmations = Programmation::all();
+    $artistes = [];
+    $spectacles = [];
+
+    // Parcourir chaque programmation pour récupérer les artistes et les spectacles
+    foreach ($programmations as $programmation) {
+        $artistes[] = $programmation->artistes;
+        $spectacles[] = $programmation->spectacles;
     }
+
+    return view('user.index', [
+        'forfaits' => auth()->user()->forfaits,
+        'programmations' => $programmations,
+        'artistes' => $artistes,
+        'spectacles' => $spectacles
+    ]);
+}
 
     public function edit($id)
     {

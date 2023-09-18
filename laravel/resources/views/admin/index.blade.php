@@ -11,14 +11,17 @@
     <h2>Users</h2>
     @foreach ($users as $user)
         <p>{{ $user->prenom }} {{ $user->nom }}</p>
-        <form onclick="return confirm('Are you sure you want to delete?');" action="{{ route('user.destroy') }}"
-            method="POST">
-            @csrf
-            <input type="hidden" name="id" value="{{ $user->id }}">
-            <input type="submit" value="supprimer">
-        </form>
-        <button><a href="{{ route('user.edit', $user->id) }}">Modifier</a></button>
+        @if (auth()->guard('admin')->user()->droits == 1)
+            <form onclick="return confirm('Are you sure you want to delete?');" action="{{ route('user.destroy') }}"
+                method="POST">
+                @csrf
+                <input type="hidden" name="id" value="{{ $user->id }}">
+                <input type="submit" value="supprimer">
+            </form>
+            <button><a href="{{ route('user.edit', $user->id) }}">Modifier</a></button>
+         @endif
     @endforeach
+
     <h2>Forfaits</h2>
     @foreach ($users as $user)
         <p>{{ $user->prenom }} {{ $user->nom }}</p>
@@ -81,14 +84,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @if (auth()->guard('admin')->user()->droits == 1)
                     <a href="{{ route('programmation.edit', ['id' => $programmation->id]) }}">Ajouter un artiste ou un
                         spectacle à la
                         programmation!</a>
+                        @endif
                     @foreach ($programmation->artistes as $artiste)
                         <tr>
                             <td>{{ $artiste->nom_scene }}</td>
                             <td>{{ $artiste->heure_show }}</td>
                             <td>
+                                @if (auth()->guard('admin')->user()->droits == 1)
                                 <form onclick="return confirm('Are you sure you want to delete?');"
                                     action="{{ route('artiste.destroy') }}" method="POST">
                                     @csrf
@@ -96,8 +102,10 @@
                                     <input type="hidden" name="id" value="{{ $artiste->id }}">
                                     <button type="submit">Supprimer</button>
                                 </form>
+
                             </td>
                             <td><a href="{{ route('programmation.artiste.edit', $artiste->id) }}">Modifier</a></td>
+                             @endif
                         </tr>
                     @endforeach
                     @foreach ($programmation->spectacles as $spectacle)
@@ -105,6 +113,7 @@
                             <td>{{ $spectacle->nom }}</td>
                             <td>{{ $spectacle->heure }}</td>
                             <td>
+                                @if (auth()->guard('admin')->user()->droits == 1)
                                 <form onclick="return confirm('Are you sure you want to delete?');"
                                     action="{{ route('spectacle.destroy') }}" method="POST">
                                     @csrf
@@ -113,6 +122,7 @@
                                 </form>
                             </td>
                             <td><a href="{{ route('programmation.spectacle.edit', $spectacle->id) }}">Modifier</a></td>
+                            @endif
                         </tr>
                     @endforeach
                 </tbody>
@@ -120,11 +130,14 @@
         </div>
     @endforeach
     <h1>Vos actualités</h1>
+    @if (auth()->guard('admin')->user()->droits == 1)
     <a href="{{ route('actualites.create') }}">Ajouter une nouvelle actualité</a>
+    @endif
     @foreach ($actualites as $actualite)
         <h2>{{ $actualite->titre }}</h2>
         <h3>{{ $actualite->date}}</h3>
         <p>{{ $actualite->details }}</p>
+        @if (auth()->guard('admin')->user()->droits == 1)
         <a href="{{ route('actualites.edit', $actualite->id) }}">Modifier</a>
         <form onclick="return confirm('Are you sure you want to delete?');" action="{{ route('actualites.destroy') }}"
             method="POST">
@@ -132,6 +145,7 @@
             <input type="hidden" name="id" value="{{ $actualite->id }}">
             <input type="submit" value="supprimer">
         </form>
+        @endif
     @endforeach
 
     <form action="{{ route('deconnexion_admin') }}" method="POST">

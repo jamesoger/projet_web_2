@@ -3,7 +3,7 @@
     <h1 class="titre-hidden">Bienvenue sur l'accueil de FestX.com</h1>
     <nav>
         <a href="{{route('actualites.index')}}">Actualités</a>
-        <a href="{{route('billeterie.index')}}">Billetterie</a>
+        <a href="{{route('billetterie.index')}}">Billetterie</a>
         <a href="{{route('programmation.index')}}">Programmation</a>
         <a href="{{route('info.index')}}">À propos</a>
         <a href="{{route('user_connexion.create')}}">Connexion User</a>
@@ -112,7 +112,7 @@
             </div>
 
             <div class="btn-reservation">
-                <a href="{{route('billeterie.index')}}">Billeterie</a>
+                <a href="{{route('billetterie.index')}}">Billetterie</a>
                 <a href="{{route('programmation.index')}}">Programmation</a>
             </div>
 

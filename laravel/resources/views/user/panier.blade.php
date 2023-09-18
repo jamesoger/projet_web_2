@@ -1,5 +1,5 @@
 <div id="app">
-    <x-layout titre="panier de {{ auth()->user()->prenom }}">
+    <x-layout titre="Panier de {{ auth()->user()->prenom }}">
         <div id="app">
 
             <div class="panier_user">
