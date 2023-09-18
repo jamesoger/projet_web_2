@@ -14,7 +14,8 @@
                             style="background-image: url('{{ asset($forfaitDetails['image']) }}');">
                             <div class="selected_info">
                                 <p>{{ $forfaitDetails['nom'] }}</p>
-                                <p>{{ $forfaitDetails['prix'] }} $</p>
+                                <p id="prix_total">${{ $forfaitDetails['prix']}}</p>
+
                             </div>
                         </div>
                     @endif
@@ -24,7 +25,7 @@
                             <div class="un_forfait" style="background-image: url('{{ asset($forfait->image) }}');">
                                 <div class="info_forfait">
                                     <p>{{ $forfait->nom }}</p>
-                                    <p>{{ $forfait->prix }} $</p>
+                                    <p>${{ $forfait->prix }} </p>
                                 </div>
                                 <form method="POST"
                                     action="{{ route('forfait_user_update', ['forfait_id' => $forfait->id]) }}">
@@ -48,7 +49,7 @@
                         </div>
                         <div class="form-group">
                             <label for="quantite">Quantité :</label>
-                            <input type="number" id="quantite" name="quantite" value="1" min="1">
+                            <input type="number" id="quantite" name="quantite"  v-model="quantite" value="1" min="1">
                         </div>
                         <div class="form-group">
                             <input class="submit_panier" type="submit" value="Acheter">
@@ -93,11 +94,12 @@
                 <input type="submit" value="Commander">
                 </form> --}}
 {{-- @endforeach --}}
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Fonction pour masquer les dates non autorisées en fonction du forfait sélectionné
         function masquerDatesNonAutorisees(forfaitId) {
-            console.log(forfaitId);
             var dateInput = document.getElementById('dates');
             var dateArrivee = new Date(dateInput.value);
             var dateMax = new Date('2024-08-11');
@@ -129,4 +131,39 @@
         // Appeler la fonction au chargement de la page
         masquerDatesNonAutorisees({{ $forfaitDetails['id'] }});
     });
+
+    var forfaitPrix = {{ $forfaitDetails['prix'] }};
+
+
+    new Vue({
+    el: '#app',
+    data: {
+        quantite: 1,
+        forfaitPrix: forfaitPrix,
+    },
+    watch: {
+        quantite: function() {
+            this.updatePrixTotal();
+        }
+    },
+    methods: {
+        updatePrixTotal: function() {
+            var prixTotal = (this.quantite * this.forfaitPrix).toFixed(2);
+            document.getElementById('prix_total').textContent = '$' + prixTotal;
+        }
+    },
+    mounted: function() {
+        // Initialisez le prix total au chargement de la page
+        this.updatePrixTotal();
+    }
+});
 </script>
+
+
+
+
+
+
+
+
+

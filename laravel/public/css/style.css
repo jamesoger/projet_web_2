@@ -638,6 +638,7 @@ footer .foot-copy p {
 .erreur {
   color: rgba(218, 16, 16, 0.902);
   font-style: italic;
+  padding-top: 1em;
 }
 
 /*******************************/
