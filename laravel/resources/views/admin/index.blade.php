@@ -1,4 +1,5 @@
 <x-layout titre="Administration">
+    <x-nav />
     <h1>{{ auth()->guard('admin')->user()->prenom .' ' .auth()->guard('admin')->user()->nom }} </h1>
     @if (session('success'))
         <p style="color: green">{{ session('success') }}</p>
@@ -135,7 +136,7 @@
     @endif
     @foreach ($actualites as $actualite)
         <h2>{{ $actualite->titre }}</h2>
-        <h3>{{ $actualite->date}}</h3>
+        <h3>{{ $actualite->date }}</h3>
         <p>{{ $actualite->details }}</p>
         @if (auth()->guard('admin')->user()->droits == 1)
         <a href="{{ route('actualites.edit', $actualite->id) }}">Modifier</a>

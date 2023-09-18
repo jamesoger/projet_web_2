@@ -1,4 +1,5 @@
 <x-layout titre="{{ auth()->user()->prenom }}">
+    <x-nav />
     @if (session('error'))
         <p style="color: red">{{ session('error') }}</p>
     @endif
@@ -38,6 +39,7 @@
 
 
     <a href="{{ route('billetterie.index') }}">Réservez un autre forfait?</a>
+
     <form action="{{ route('deconnexion_user') }}" method="POST">
         @csrf
         <input type="submit" value="Déconnexion">

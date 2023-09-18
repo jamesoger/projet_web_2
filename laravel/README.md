@@ -7,7 +7,7 @@
 
 # 1. Analyse des besoins 
 ## Demande globale (dans vos mots/pas de copié-collé du devis)
-Le client (festival) souhaite créer une image marque pour son site web et nous fait confiance sur la conception du site.
+Le client (festival) souhaite créer une image de marque pour son site web et nous fait confiance sur la conception du site.
 
 ## Demandes spécifiques des clients (dans vos mots/pas de copié-collé du devis)
 Ils veulent un logo qui représente bien leur festival.
@@ -138,22 +138,42 @@ https://github.com/Geoffpas/projet_web_2
 #### Sous-catégories       
 ## Apport au travail synthèse de chaque membre de l’équipe (qui fait quoi et quand ?)
 ### Semaine 1
-En équipe on a "brainstorm" sur les éléments de la maquette et sur ce qu'on allait avoir besoin pour la BDD.
+En équipe on a "brainstorm" sur les éléments de la maquette et sur la conception de la BDD.
 #### Geoffrey
-Geoffrey avec un gros travail sur la page d'acceuil avec le design du logo.
+Conception de plusieurs pages de la maquette.
+Conception du logo.
+Intégration de la page d'accueil.
 #### James
-James avec les idées données a commencé la construction de la BDD et la terminer dans la fin de semaine.
+Conception de la BDD.
+Programmation du backend en grande partie.
+Construction du ClickUp avec Maxime.
+CSS de quelques pages (connexion, enregistrement, billetterie).
 #### Maxime
-Maxime c'est occupé du readme et dans la fin de semaine a étudier le fonctionnement de Google Analytics.
+Construction du readme.
+Construction du ClickUp avec James.
+Contribution au backend.
+Intégration de Google Analytics.
 ### Semaine 2
-On a commencé nos maquette individuel et par la suite on a débutés le back-end plus l'intégration du scss de la page d'accueil.
+CSS et backend de la page "user".
+Correction des fautes dans le backend.
+CSS de la page admin.
+Retouche du readme.
+Réajustement de quelques détails de la page d'accueil.
+Intégration de la page "actualités".
+Intégration de la page "programmation".
+Création des composents (Nav, Footer).
+Intégration de la page "À propos".
 #### Geoffrey
-Geoffrey a commencé l'intégration du scss de la page d'accueil et la terminé la fin de semaine suivant.
-#### James et Maxime
-James et Maxime on fais le back-end pour les administrateur.
+Retouche du readme.
+Réajustement de quelques détails de la page d'accueil.
+Intégration de la page "actualités".
+Intégration de la page "programmation".
 #### James
-James a fait le back-end pour les utilisateurs plus l'ajout/modification/suppression des artistes et spectacles dans la partie administrateur.
+CSS et backend de la page "user".
+Correction des fautes dans le backend.
+CSS de la page admin.
 #### Maxime
-Maxime a fait le back-end pour ajout/modification actualité.
+Création des composents (Nav, Footer).
+Intégration de la page "À propos".
 ## Rétroaction globale sur le travail d’équipe (motivation, charge de travail, organisation, problèmes, etc.)
 La communication au sein de notre équipe est loin d'être une faiblesse. Chaque membre de l'équipe sait ce qu'il doit faire, personne n'hésite à demander de l'aide et tout le monde reste super compréhensif. Les tapes dans le dos et les encouragements ne sont pas ce qui manque, et on n'hésite pas à dire à un autre membre de prendre une pause, surtout s'il a travaillé toute la fin de semaine sur un problème ; le repos est important.

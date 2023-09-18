@@ -1,4 +1,5 @@
 <x-layout titre="Modification d'artiste">
+    <x-nav />
     @if (session('error'))
         <p style="color: red">{{ session('error') }}</p>
     @endif
@@ -61,5 +62,3 @@
 
     </form>
 </x-layout>
-
-

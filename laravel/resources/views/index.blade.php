@@ -1,14 +1,6 @@
 <x-layout titre="Accueil">
-
+    <x-nav />
     <h1 class="titre-hidden">Bienvenue sur l'accueil de FestX.com</h1>
-    <nav>
-        <a href="{{route('actualites.index')}}">Actualités</a>
-        <a href="{{route('billetterie.index')}}">Billetterie</a>
-        <a href="{{route('programmation.index')}}">Programmation</a>
-        <a href="{{route('info.index')}}">À propos</a>
-        <a href="{{route('user_connexion.create')}}">Connexion User</a>
-        <a href="{{route('admin_connexion.login')}}">admin</a>
-    </nav>
 
     <header class="acc-header">
         <ul class="acc-media">
@@ -28,7 +20,7 @@
                 9.08 au 11.08
             </p>
             <div class="acc-logo">
-                <img src="{{ asset('logos/centre_color_blanc.png')}}" alt="" class="logo">
+                <img src="{{ asset('logos/centre_color_blanc.png') }}" alt="" class="logo">
             </div>
             <div class="acc-fleche">
                 <div class="cercle">
@@ -76,14 +68,14 @@
                 <div class="vignettes">
                     <img src="{{ asset('images/evenement1.jpg') }}" alt="">
                     <div class="cadre">
-                        <p class="titre">laser light</p>
+                        <p class="titre">spectacles</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
                     </div>
                 </div>
                 <div class="vignettes">
                     <img src="{{ asset('images/evenement2.jpg') }}" alt="">
                     <div class="cadre">
-                        <p class="titre">spectacles</p>
+                        <p class="titre">drones</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
                     </div>
                 </div>
@@ -97,7 +89,7 @@
                 <div class="vignettes">
                     <img src="{{ asset('images/evenement4.jpg') }}" alt="">
                     <div class="cadre">
-                        <p class="titre">drones</p>
+                        <p class="titre">laser light</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
                     </div>
                 </div>
@@ -114,6 +106,7 @@
             <div class="btn-reservation">
                 <a href="{{route('billetterie.index')}}">Billetterie</a>
                 <a href="{{route('programmation.index')}}">Programmation</a>
+
             </div>
 
             <div class="events-bg">
@@ -122,7 +115,7 @@
         </section>
         <section class="acc-logo-video">
             <div class="acc-logo">
-                <img src="{{ asset('logos/plat_color_blanc.png')}}" alt="" class="logo">
+                <img src="{{ asset('logos/plat_color_blanc.png') }}" alt="" class="logo">
                 <p>9.08 au 11.08</p>
             </div>
 
@@ -155,12 +148,24 @@
         <div class="foot-nav-adresse">
             <ul class="foot-menu">
                 <li class="menu">menu</li>
-                <li class="liste">accueil</li>
-                <li class="liste">programmation</li>
-                <li class="liste">billetterie</li>
-                <li class="liste">actualités</li>
-                <li class="liste">à propos</li>
-                <li class="liste">mon compte</li>
+                <li class="liste">
+                    <a href="{{ route('accueil') }}">Accueil</a>
+                </li>
+                <li class="liste">
+                    <a href="{{ route('programmation.index') }}">Programmation</a>
+                </li>
+                <li class="liste">
+                    <a href="{{ route('billetterie.index') }}">Billetterie</a>
+                </li>
+                <li class="liste">
+                    <a href="{{ route('actualites.index') }}">Actualités</a>
+                </li>
+                <li class="liste">
+                    <a href="{{ route('info.index') }}">À propos</a>
+                </li>
+                <li class="liste">
+                    <a href="{{ route('user_connexion.create') }}">Mon compte</a>
+                </li>
             </ul>
 
             <div class="foot-map">
@@ -175,7 +180,9 @@
 
             <div class="foot-logo">
                 <img src="{{ asset('logos/centre_color_blanc.png') }}" alt="">
-                <p>admin</p>
+                <p>
+                    <a href="{{ route('admin_connexion.login') }}">admin</a>
+                </p>
             </div>
         </div>
 

@@ -1,8 +1,11 @@
-<x-layout>
-    <div class="bill">
-        <div class="bill_forfaits">
-            @foreach ($forfaits as $key => $forfait)
-                <div class="bill_boite
+
+<div id="app">
+    <x-nav />
+    <x-layout titre="Enregistrement">
+        <div class="bill">
+            <div class="bill_forfaits">
+                @foreach ($forfaits as $key => $forfait)
+                    <div class="bill_boite
                     {{ $forfait->id === 1 ? 'boite_1' : '' }}
                     {{$forfait->id === 2 ? 'boite_gauche' : '' }}
                     {{ $forfait->id === 3 ? 'boite_droite' : '' }}"
@@ -23,4 +26,4 @@
         </div>
     </div>
 </x-layout>
-
+</div>

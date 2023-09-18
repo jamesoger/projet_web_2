@@ -1,4 +1,5 @@
 <x-layout titre="Connexion">
+    <x-nav />
     <div class="connexion_user">
         <h1>connexion</h1>
         @if (request()->route()->hasParameter('forfait_id'))
