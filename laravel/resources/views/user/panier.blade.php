@@ -1,5 +1,6 @@
 <div id="app">
     <x-layout titre="panier de {{ auth()->user()->prenom }}">
+        <x-nav />
         <div id="app">
 
             <div class="panier_user">
@@ -14,7 +15,7 @@
                             style="background-image: url('{{ asset($forfaitDetails['image']) }}');">
                             <div class="selected_info">
                                 <p>{{ $forfaitDetails['nom'] }}</p>
-                                <p id="prix_total">${{ $forfaitDetails['prix']}}</p>
+                                <p id="prix_total">${{ $forfaitDetails['prix'] }}</p>
 
                             </div>
                         </div>
@@ -49,7 +50,8 @@
                         </div>
                         <div class="form-group">
                             <label for="quantite">Quantité :</label>
-                            <input type="number" id="quantite" name="quantite"  v-model="quantite" value="1" min="1">
+                            <input type="number" id="quantite" name="quantite" v-model="quantite" value="1"
+                                min="1">
                         </div>
                         <div class="form-group">
                             <input class="submit_panier" type="submit" value="Acheter">
@@ -136,34 +138,25 @@
 
 
     new Vue({
-    el: '#app',
-    data: {
-        quantite: 1,
-        forfaitPrix: forfaitPrix,
-    },
-    watch: {
-        quantite: function() {
+        el: '#app',
+        data: {
+            quantite: 1,
+            forfaitPrix: forfaitPrix,
+        },
+        watch: {
+            quantite: function() {
+                this.updatePrixTotal();
+            }
+        },
+        methods: {
+            updatePrixTotal: function() {
+                var prixTotal = (this.quantite * this.forfaitPrix).toFixed(2);
+                document.getElementById('prix_total').textContent = '$' + prixTotal;
+            }
+        },
+        mounted: function() {
+            // Initialisez le prix total au chargement de la page
             this.updatePrixTotal();
         }
-    },
-    methods: {
-        updatePrixTotal: function() {
-            var prixTotal = (this.quantite * this.forfaitPrix).toFixed(2);
-            document.getElementById('prix_total').textContent = '$' + prixTotal;
-        }
-    },
-    mounted: function() {
-        // Initialisez le prix total au chargement de la page
-        this.updatePrixTotal();
-    }
-});
+    });
 </script>
-
-
-
-
-
-
-
-
-

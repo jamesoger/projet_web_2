@@ -1,14 +1,6 @@
 <x-layout titre="Accueil">
-
+    <x-nav />
     <h1 class="titre-hidden">Bienvenue sur l'accueil de FestX.com</h1>
-    <nav>
-        <a href="{{route('actualites.index')}}">Actualités</a>
-        <a href="{{route('billeterie.index')}}">Billetterie</a>
-        <a href="{{route('programmation.index')}}">Programmation</a>
-        <a href="{{route('info.index')}}">À propos</a>
-        <a href="{{route('user_connexion.create')}}">Connexion User</a>
-        <a href="{{route('admin_connexion.login')}}">admin</a>
-    </nav>
 
     <header class="acc-header">
         <ul class="acc-media">
@@ -28,7 +20,7 @@
                 9.08 au 11.08
             </p>
             <div class="acc-logo">
-                <img src="{{ asset('logos/centre_color_blanc.png')}}" alt="" class="logo">
+                <img src="{{ asset('logos/centre_color_blanc.png') }}" alt="" class="logo">
             </div>
             <div class="acc-fleche">
                 <div class="cercle">
@@ -112,8 +104,8 @@
             </div>
 
             <div class="btn-reservation">
-                <a href="{{route('billeterie.index')}}">Billeterie</a>
-                <a href="{{route('programmation.index')}}">Programmation</a>
+                <a href="{{ route('billeterie.index') }}">Billeterie</a>
+                <a href="{{ route('programmation.index') }}">Programmation</a>
             </div>
 
             <div class="events-bg">
@@ -122,7 +114,7 @@
         </section>
         <section class="acc-logo-video">
             <div class="acc-logo">
-                <img src="{{ asset('logos/plat_color_blanc.png')}}" alt="" class="logo">
+                <img src="{{ asset('logos/plat_color_blanc.png') }}" alt="" class="logo">
                 <p>9.08 au 11.08</p>
             </div>
 

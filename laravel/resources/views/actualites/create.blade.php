@@ -1,4 +1,5 @@
 <x-layout titre="creation d'actualités">
+    <x-nav />
     <h1>Créer une nouvelle actualité</h1>
 
     @if (session('success'))
@@ -25,16 +26,16 @@
         <div>
             <label for="image">Image :</label>
             @error('image')
-            <p>{{ $message }}</p>
-        @enderror
+                <p>{{ $message }}</p>
+            @enderror
             <input type="file" name="image" id="image">
         </div>
 
         <div>
             <label for="details">Details :</label>
             @error('details')
-            <p>{{ $message }}</p>
-        @enderror
+                <p>{{ $message }}</p>
+            @enderror
             <textarea name="details" id="details" rows="4" required></textarea>
         </div>
 
