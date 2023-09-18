@@ -60,6 +60,14 @@ Neon Design sur fond sombre
             <p>#06162F</p>
             <img src="./images/couleur_06162F.png" alt="" width="50">
         </td>
+        <td>
+            <p>#FFFFFF</p>
+            <img src="./images/couleur_FFFFFF.PNG" alt="" width="50">
+        </td>
+        <td>
+            <p>#000000</p>
+            <img src="./images/couleur_000000.PNG" alt="" width="50">
+        </td>
     </tr>
 </table>
 
@@ -128,8 +136,24 @@ https://github.com/Geoffpas/projet_web_2
 ## Portrait global 
 ### Catégories     
 #### Sous-catégories       
-## Apport au travail synthèse de chaque membre de l’équipe (qui fait quoi et quand ?)                        
+## Apport au travail synthèse de chaque membre de l’équipe (qui fait quoi et quand ?)
+### Semaine 1
+En équipe on a "brainstorm" sur les éléments de la maquette et sur ce qu'on allait avoir besoin pour la BDD.
+#### Geoffrey
+Geoffrey avec un gros travail sur la page d'acceuil avec le design du logo.
+#### James
+James avec les idées données a commencé la construction de la BDD et la terminer dans la fin de semaine.
+#### Maxime
+Maxime c'est occupé du readme et dans la fin de semaine a étudier le fonctionnement de Google Analytics.
+### Semaine 2
+On a commencé nos maquette individuel et par la suite on a débutés le back-end plus l'intégration du scss de la page d'accueil.
+#### Geoffrey
+Geoffrey a commencé l'intégration du scss de la page d'accueil et la terminé la fin de semaine suivant.
+#### James et Maxime
+James et Maxime on fais le back-end pour les administrateur.
+#### James
+James a fait le back-end pour les utilisateurs plus l'ajout/modification/suppression des artistes et spectacles dans la partie administrateur.
+#### Maxime
+Maxime a fait le back-end pour ajout/modification actualité.
 ## Rétroaction globale sur le travail d’équipe (motivation, charge de travail, organisation, problèmes, etc.)
 La communication au sein de notre équipe est loin d'être une faiblesse. Chaque membre de l'équipe sait ce qu'il doit faire, personne n'hésite à demander de l'aide et tout le monde reste super compréhensif. Les tapes dans le dos et les encouragements ne sont pas ce qui manque, et on n'hésite pas à dire à un autre membre de prendre une pause, surtout s'il a travaillé toute la fin de semaine sur un problème ; le repos est important.
-
-
