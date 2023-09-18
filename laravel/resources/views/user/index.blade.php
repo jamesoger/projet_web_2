@@ -24,17 +24,27 @@
 
 
     @foreach (auth()->user()->forfaits as $forfait)
-        @foreach ($programmations as $programmation)
-            @if ($programmation->date >= $forfait->pivot->date_arrivee && $programmation->date <= $forfait->pivot->date_depart)
-                @foreach ($programmation->artistes as $artiste)
-                    <p>{{ $artiste->nom_scene }}</p>
-                @endforeach
-                @foreach ($programmation->spectacles as $spectacle)
-                    <p>{{ $spectacle->nom }}</p>
-                @endforeach
-             @endif
-        @endforeach
+    <?php $datesDejaAffichees = []; ?>
+    @foreach ($programmations as $programmation)
+        @if ($programmation->date >= $forfait->pivot->date_arrivee && $programmation->date <= $forfait->pivot->date_depart)
+            @if (!in_array($programmation->date, $datesDejaAffichees))
+                <h2>Date : {{ $programmation->date }}</h2>
+                <?php $datesDejaAffichees[] = $programmation->date; ?>
+            @endif
+
+            @foreach ($programmation->artistes as $artiste)
+                <p>{{ $artiste->nom_scene }}</p>
+                <p>{{ $artiste->heure_show }}</p>
+            @endforeach
+
+            @foreach ($programmation->spectacles as $spectacle)
+                <p>Nom : {{ $spectacle->nom }}</p>
+                <p>Heure : {{ $spectacle->heure }}</p>
+            @endforeach
+        @endif
     @endforeach
+@endforeach
+
 
 
 

@@ -552,14 +552,7 @@ footer .foot-copy p {
 }
 
 /*******************************/
-<<<<<<< HEAD
 /********** BILLETERIE *********/
-=======
-/*********** ACCUEIL ***********/
-/*******************************/
-/*******************************/
-/*********** BILLETERIE ***********/
->>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
 /*******************************/
 .bill {
   width: 100vw;
@@ -590,7 +583,6 @@ footer .foot-copy p {
   width: 450px;
   height: 500px;
   box-shadow: 0px 0px 5px white;
-<<<<<<< HEAD
   transition: transform 0.3s ease-in-out;
 }
 .bill .bill_forfaits .bill_boite.boite_gauche {
@@ -598,16 +590,6 @@ footer .foot-copy p {
 }
 .bill .bill_forfaits .bill_boite.boite_droite {
   margin-left: 10%;
-=======
-}
-.bill .bill_forfaits .bill_boite.boite_gauche {
-  position: relative;
-  left: calc(35% - 800px);
-}
-.bill .bill_forfaits .bill_boite.boite_droite {
-  position: relative;
-  left: calc(50% - 800px);
->>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
 }
 .bill .bill_forfaits .bill_nom {
   padding: 0.5em;
@@ -618,11 +600,7 @@ footer .foot-copy p {
   color: black;
   font-family: "all-round-gothic";
   font-weight: 600;
-<<<<<<< HEAD
   font-size: 1.75em;
-=======
-  font-size: 1.5em;
->>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
   text-transform: uppercase;
 }
 .bill .bill_forfaits a {
@@ -633,7 +611,6 @@ footer .foot-copy p {
   text-decoration: none;
   position: relative;
   top: 80%;
-<<<<<<< HEAD
   font-family: ethnocentric, sans-serif;
   text-transform: uppercase;
   font-weight: 300;
@@ -974,15 +951,11 @@ footer .foot-copy p {
   align-items: center;
   justify-content: center;
   top: 90%;
-=======
-  margin: 0 auto;
->>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
   font-family: ethnocentric, sans-serif;
   text-transform: uppercase;
   font-weight: 300;
   font-size: 1.5em;
   color: white;
-<<<<<<< HEAD
   margin: 0 auto;
   width: 280px;
   box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
@@ -1031,7 +1004,4 @@ footer .foot-copy p {
   text-shadow: 0px 0px 5px #06162F;
   box-shadow: 0px 0px 10px #1DA5F3;
   border: 3px solid white;
-=======
-  padding: 10px 20px;
->>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
 }/*# sourceMappingURL=style.css.map */
