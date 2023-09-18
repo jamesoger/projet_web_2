@@ -12,20 +12,24 @@
                         <?php $forfaitDetails = session('selected_forfait'); ?>
                         <div class="panier_selection"
                             style="background-image: url('{{ asset($forfaitDetails['image']) }}');">
-                            <p>Nom du forfait : {{ $forfaitDetails['nom'] }}</p>
-                            <p>Prix du forfait : {{ $forfaitDetails['prix'] }}</p>
+                            <div class="selected_info">
+                                <p>{{ $forfaitDetails['nom'] }}</p>
+                                <p>{{ $forfaitDetails['prix'] }} $</p>
+                            </div>
                         </div>
                     @endif
 
                     @foreach ($forfaits as $forfait)
                         @if ($forfait->id !== $forfaitDetails['id'])
                             <div class="un_forfait" style="background-image: url('{{ asset($forfait->image) }}');">
-                                <p>{{ $forfait->nom }}</p>
-                                <p>{{ $forfait->prix }}</p>
+                                <div class="info_forfait">
+                                    <p>{{ $forfait->nom }}</p>
+                                    <p>{{ $forfait->prix }} $</p>
+                                </div>
                                 <form method="POST"
                                     action="{{ route('forfait_user_update', ['forfait_id' => $forfait->id]) }}">
                                     @csrf
-                                    <button type="submit">Sélectionner</button>
+                                    <button class="selection_forfait" type="submit">Choisir ce forfait</button>
                                 </form>
                             </div>
                         @endif
@@ -53,7 +57,7 @@
                 </div>
 
 
-                <form action="{{ route('deconnexion_user') }}" method="POST">
+                <form class="deconnect_user" action="{{ route('deconnexion_user') }}" method="POST">
                     @csrf
                     <input type="submit" value="Déconnexion">
                 </form>

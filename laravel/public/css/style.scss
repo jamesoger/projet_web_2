@@ -988,6 +988,22 @@ footer {
         transform: translate(-50%, -50%);
         z-index: 2;
 
+
+        .selected_info {
+            background-color: rgba(255, 255, 255, 0.578);
+            height: 60px;
+            width: 400px;
+            color: black;
+            font-size: 1.25em;
+            font-family: $font-ethno;
+            padding: 0.35em;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+
+        }
+
     }
 
     .forfaits {
@@ -1001,6 +1017,41 @@ footer {
             text-align: center;
             background-size: cover;
 
+            .info_forfait {
+                background-color: rgba(255, 255, 255, 0.578);
+                height: 60px;
+                color: black;
+                font-size: 1.25em;
+                font-family: $font-ethno;
+                padding: 0.35em;
+
+            }
+
+            .selection_forfait {
+                margin-top: 400px;
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0);
+                border: 2px solid white;
+                height: 30px;
+                text-align: center;
+                font-family: $font-ethno;
+                text-transform: uppercase;
+                font-weight: 200;
+                font-size: 0.85em;
+                font-family: $font-ethno;
+                color: white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                text-shadow: 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                &:hover {
+                    background-color: $blue;
+                    color: $blue-fonce;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
+
+            }
 
 
         }
@@ -1010,7 +1061,7 @@ footer {
         text-align: center;
         position: absolute;
         top: 65%;
-        left: 43%;
+        left: 42%;
         width: 300px;
         height: 100px;
         display: flex;
@@ -1021,25 +1072,38 @@ footer {
         .form-group {
             margin-bottom: 14px;
             text-align: center;
-            .submit_panier{
+
+            input {
+                width: 200px;
+                height: 40px;
+                border-radius: 2em;
+                text-align: center;
+                background-color: rgba(255, 252, 252, 0.63);
+                font-size: 1em;
+                color: rgb(0, 0, 0);
+            }
+
+            .submit_panier {
+                border-radius: 0;
                 cursor: pointer;
                 background-color: rgba(255, 255, 255, 0);
                 display: block;
                 border: 2px solid white;
-                height: 40px; // Ajustez la hauteur selon vos préférences
+                height: 40px;
                 text-align: center;
                 text-decoration: none;
                 position: relative;
-                top: 80%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                top: 90%;
                 font-family: $font-ethno;
                 text-transform: uppercase;
                 font-weight: 300;
                 font-size: 1.5em;
                 color: white;
-                padding: 0.25em;
                 margin: 0 auto;
                 width: 280px;
-                border: 3px solid white;
                 box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
                 text-shadow: 0px 0px 5px white;
                 transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -1056,7 +1120,43 @@ footer {
 
         .form-group label {
             display: block;
-            font-size: 2em;
+            font-size: 1.5em;
+            text-shadow: 0px 0px 6px rgb(7, 7, 7);
         }
+    }
+
+    .deconnect_user {
+        margin-top: 80px;
+
+        input {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0);
+            display: block;
+            border: 2px solid $blue;
+            height: 40px;
+            text-align: center;
+            text-decoration: none;
+            font-family: $font-ethno;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 1.25em;
+            margin: 0 auto;
+            color: white;
+            padding: 0.35em;
+            background-color: $blue;
+            color: $blue-fonce;
+            text-shadow: 0px 0px 5px $blue-fonce;
+            box-shadow: 0px 0px 10px $blue;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: white;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid white;
+            }
+        }
+
     }
 }
