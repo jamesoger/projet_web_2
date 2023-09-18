@@ -104,8 +104,9 @@
             </div>
 
             <div class="btn-reservation">
-                <a href="{{ route('billeterie.index') }}">Billeterie</a>
-                <a href="{{ route('programmation.index') }}">Programmation</a>
+                <a href="{{route('billetterie.index')}}">Billetterie</a>
+                <a href="{{route('programmation.index')}}">Programmation</a>
+
             </div>
 
             <div class="events-bg">

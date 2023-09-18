@@ -17,10 +17,29 @@
                 @enderror
                 <button type="submit">Supprimer</button>
             </form>
-
         </div>
     @endforeach
-    <a href="{{ route('billeterie.index') }}">Réservez un autre forfait?</a>
+    <p>Programmation:</p>
+
+
+
+    @foreach (auth()->user()->forfaits as $forfait)
+        @foreach ($programmations as $programmation)
+            @if ($programmation->date >= $forfait->pivot->date_arrivee && $programmation->date <= $forfait->pivot->date_depart)
+                @foreach ($programmation->artistes as $artiste)
+                    <p>{{ $artiste->nom_scene }}</p>
+                @endforeach
+                @foreach ($programmation->spectacles as $spectacle)
+                    <p>{{ $spectacle->nom }}</p>
+                @endforeach
+             @endif
+        @endforeach
+    @endforeach
+
+
+
+    <a href="{{ route('billetterie.index') }}">Réservez un autre forfait?</a>
+
     <form action="{{ route('deconnexion_user') }}" method="POST">
         @csrf
         <input type="submit" value="Déconnexion">

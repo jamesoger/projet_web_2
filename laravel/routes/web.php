@@ -5,7 +5,7 @@ use App\Http\Controllers\ActualiteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AproposController;
 use App\Http\Controllers\ArtisteController;
-use App\Http\Controllers\BilleterieController;
+use App\Http\Controllers\BilletterieController;
 use App\Http\Controllers\ConnexionAdminController;
 use App\Http\Controllers\ConnexionUserController;
 use App\Http\Controllers\EnregistrementAdminController;
@@ -57,8 +57,8 @@ Route::get('/a-propos', [AproposController::class, 'index'])
 /*****************
  * BILLETERIE
  */
-Route::get('/billeterie', [BilleterieController::class, 'index'])
-    ->name('billeterie.index');
+Route::get('/billetterie', [BilletterieController::class, 'index'])
+    ->name('billetterie.index');
 
 
 /*****************

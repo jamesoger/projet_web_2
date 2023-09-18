@@ -639,6 +639,10 @@ footer {
 /********** BILLETERIE *********/
 /*******************************/
 
+
+/*******************************/
+/*********** BILLETTERIE ***********/
+/*******************************/
 .bill {
     width: 100vw;
     height: 100vh;
@@ -654,6 +658,7 @@ footer {
         justify-content: center;
         position: relative;
 
+
         .boite_1 {
             z-index: 3;
             width: 450px;
@@ -661,7 +666,6 @@ footer {
             background-color: rgba(255, 255, 255, 0.591);
             position: absolute;
             top: 50%;
-            left: 50%;
             transform: translate(-50%, -50%);
         }
 
@@ -673,11 +677,11 @@ footer {
 
 
 
-
             &.boite_gauche {
                 // position: relative;
                 // left: calc(35% - 800px); // Décalage vers la gauche
                 margin-right: 10%;
+
 
 
             }
@@ -686,6 +690,7 @@ footer {
                 // position: relative;
                 // left: calc(50% - 800px); // Décalage vers la droite
                 margin-left: 10%;
+
             }
         }
 
