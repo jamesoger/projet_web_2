@@ -745,7 +745,7 @@ footer {
 }
 
 /*******************************/
-/*********** CONNEXION ***********/
+/*********** CONNEXION USER***********/
 /*******************************/
 .connexion_user {
     width: 100vw;
@@ -844,7 +844,7 @@ footer {
 }
 
 /*******************************/
-/******** ENREGISTREMENT *******/
+/******** ENREGISTREMENT USER*******/
 /*******************************/
 
 .enregistrement_user {
@@ -916,7 +916,8 @@ footer {
             font-family: $font-gothic;
             font-size: 1.5em;
             color: white;
-            #email{
+
+            #email {
                 width: 400px;
             }
         }
@@ -946,6 +947,116 @@ footer {
                 box-shadow: 0px 0px 10px $blue;
                 border: 3px solid $blue;
             }
+        }
+    }
+}
+
+
+/*******************************/
+/******** PANIER USER*******/
+/*******************************/
+.panier_user {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $font-gothic;
+
+
+    h1 {
+        text-align: center;
+        font-size: 5em;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding-top: 1em;
+    }
+
+    .panier_selection {
+        width: 400px;
+        height: 600px;
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        padding: 20px;
+        position: absolute;
+        margin-top: 10rem;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+
+    }
+
+    .forfaits {
+        display: flex;
+
+
+        .un_forfait {
+            width: 300px;
+            height: 500px;
+            margin: 100px 180px 20px 180px;
+            text-align: center;
+            background-size: cover;
+
+
+
+        }
+    }
+
+    .form_panier {
+        text-align: center;
+        position: absolute;
+        top: 65%;
+        left: 43%;
+        width: 300px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+
+        .form-group {
+            margin-bottom: 14px;
+            text-align: center;
+            .submit_panier{
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0);
+                display: block;
+                border: 2px solid white;
+                height: 40px; // Ajustez la hauteur selon vos préférences
+                text-align: center;
+                text-decoration: none;
+                position: relative;
+                top: 80%;
+                font-family: $font-ethno;
+                text-transform: uppercase;
+                font-weight: 300;
+                font-size: 1.5em;
+                color: white;
+                padding: 0.25em;
+                margin: 0 auto;
+                width: 280px;
+                border: 3px solid white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                text-shadow: 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $blue;
+                    color: $blue-fonce;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
+            }
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 2em;
         }
     }
 }

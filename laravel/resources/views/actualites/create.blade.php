@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout titre="creation d'actualités">
     <h1>Créer une nouvelle actualité</h1>
 
     @if (session('success'))

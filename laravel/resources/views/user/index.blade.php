@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout titre="{{auth()->user()->prenom}}">
     @if (session('error'))
     <p style="color: red">{{ session('error') }}</p>
 @endif

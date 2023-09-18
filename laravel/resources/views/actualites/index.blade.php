@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout titre="Actualités">
     <div id="app">
 
         <h1>Actualités!</h1>

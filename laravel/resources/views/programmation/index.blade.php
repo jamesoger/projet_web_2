@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout titre="Programmation">
     <h1>Programmation!</h1>
     @foreach ($programmation as $prog)
     <h1>{{ $prog->date }}</h1>

@@ -25,6 +25,7 @@ class ForfaitController extends Controller
             session(['selected_forfait' => [
                 'nom' => $forfait->nom,
                 'prix' => $forfait->prix,
+                'image' => $forfait->image,
                 'id' => $forfait->id,
             ]]);
         }
@@ -89,6 +90,7 @@ class ForfaitController extends Controller
         session(['selected_forfait' => [
             'nom' => $forfait->nom,
             'prix' => $forfait->prix,
+            'image' => $forfait->image,
             'id' => $forfait->id,
         ]]);
 

@@ -641,7 +641,7 @@ footer .foot-copy p {
 }
 
 /*******************************/
-/*********** CONNEXION ***********/
+/*********** CONNEXION USER***********/
 /*******************************/
 .connexion_user {
   width: 100vw;
@@ -729,7 +729,7 @@ footer .foot-copy p {
 }
 
 /*******************************/
-/******** ENREGISTREMENT *******/
+/******** ENREGISTREMENT USER*******/
 /*******************************/
 .enregistrement_user {
   width: 100vw;
@@ -821,4 +821,99 @@ footer .foot-copy p {
   text-shadow: 0px 0px 5px #06162F;
   box-shadow: 0px 0px 10px #1DA5F3;
   border: 3px solid #1DA5F3;
+}
+
+/*******************************/
+/******** PANIER USER*******/
+/*******************************/
+.panier_user {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: all-round-gothic, sans-serif;
+}
+.panier_user h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-top: 1em;
+}
+.panier_user .panier_selection {
+  width: 400px;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  margin-top: 10rem;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.panier_user .forfaits {
+  display: flex;
+}
+.panier_user .forfaits .un_forfait {
+  width: 300px;
+  height: 500px;
+  margin: 100px 180px 20px 180px;
+  text-align: center;
+  background-size: cover;
+}
+.panier_user .form_panier {
+  text-align: center;
+  position: absolute;
+  top: 65%;
+  left: 43%;
+  width: 300px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.panier_user .form_panier .form-group {
+  margin-bottom: 14px;
+  text-align: center;
+}
+.panier_user .form_panier .form-group .submit_panier {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  display: block;
+  border: 2px solid white;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  top: 80%;
+  font-family: ethnocentric, sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.5em;
+  color: white;
+  padding: 0.25em;
+  margin: 0 auto;
+  width: 280px;
+  border: 3px solid white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  text-shadow: 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.panier_user .form_panier .form-group .submit_panier:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
+}
+.panier_user .form_panier .form-group label {
+  display: block;
+  font-size: 2em;
 }/*# sourceMappingURL=style.css.map */

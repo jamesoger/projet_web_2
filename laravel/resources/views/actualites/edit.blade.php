@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout titre="Modification d'une acualité">
     @if (session('error'))
     <p style="color: red">{{ session('error') }}</p>
 @endif

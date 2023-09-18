@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout titre="Administration">
     <h1>{{ auth()->guard('admin')->user()->prenom .' ' .auth()->guard('admin')->user()->nom }} </h1>
     @if (session('success'))
         <p style="color: green">{{ session('success') }}</p>

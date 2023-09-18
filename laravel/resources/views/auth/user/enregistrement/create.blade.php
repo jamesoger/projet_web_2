@@ -1,6 +1,4 @@
-<x-layout>
-
-    <x-layout titre="Enregistrement">
+  <x-layout titre="Enregistrement">
         <div class="enregistrement_user">
              <h1>Enregistrement</h1>
              <div class="enregistrement_user_form">
@@ -43,4 +41,4 @@
 
         </div>
     </x-layout>
-</x-layout>
+

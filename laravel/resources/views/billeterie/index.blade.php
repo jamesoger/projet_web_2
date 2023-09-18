@@ -1,5 +1,5 @@
   <div id="app">
-      <x-layout>
+      <x-layout titre="Enregistrement">
           <div class="bill">
               <div class="bill_forfaits">
                   @foreach ($forfaits as $key => $forfait)
@@ -25,4 +25,4 @@
           </div>
       </x-layout>
   </div>
-  <script src="{{ asset('js/app.js') }}"></script>
+

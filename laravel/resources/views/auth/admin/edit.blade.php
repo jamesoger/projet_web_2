@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout titre="Modification de: {{auth()->guard('admin')->user()->prenom .' ' .auth()->guard('admin')->user()->nom }}">
     <h1>Édition de l'administrateur</h1>
     <form action="{{ route('enregistrement_admin.update', ['id' => $admin->id]) }}" method="POST">
         @csrf

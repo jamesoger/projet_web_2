@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout titre="Accueil">
 
     <h1 class="titre-hidden">Bienvenue sur l'accueil de FestX.com</h1>
     <nav>
