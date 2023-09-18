@@ -23,14 +23,17 @@
 
 
     @foreach (auth()->user()->forfaits as $forfait)
-    @if ($forfait->pivot->date_arrivee === "2024-08-09")
         @foreach ($programmations as $programmation)
-            @foreach ($programmation->artistes as $artiste )
-              <p>{{ $artiste->nom_scene}}</p>
-            @endforeach
+            @if ($programmation->date >= $forfait->pivot->date_arrivee && $programmation->date <= $forfait->pivot->date_depart)
+                @foreach ($programmation->artistes as $artiste)
+                    <p>{{ $artiste->nom_scene }}</p>
+                @endforeach
+                @foreach ($programmation->spectacles as $spectacle)
+                    <p>{{ $spectacle->nom }}</p>
+                @endforeach
+             @endif
         @endforeach
-    @endif
-@endforeach
+    @endforeach
 
 
 

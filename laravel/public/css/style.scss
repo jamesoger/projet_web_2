@@ -639,6 +639,16 @@ footer {
 /********** BILLETERIE *********/
 /*******************************/
 
+<<<<<<< HEAD
+=======
+
+
+
+
+/*******************************/
+/*********** BILLETERIE ***********/
+/*******************************/
+>>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
 .bill {
     width: 100vw;
     height: 100vh;
@@ -652,23 +662,36 @@ footer {
         width: 100%;
         display: flex;
         justify-content: center;
+<<<<<<< HEAD
         position: relative;
+=======
+        position: relative; // Position relative pour positionner les boîtes par rapport à ce conteneur
+>>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
 
         .boite_1 {
             z-index: 3;
             width: 450px;
+<<<<<<< HEAD
             height: 600px !important;
+=======
+            height: 600px!important;
+>>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
             background-color: rgba(255, 255, 255, 0.591);
             position: absolute;
             top: 50%;
             left: 50%;
+<<<<<<< HEAD
             transform: translate(-50%, -50%);
+=======
+            transform: translate(-50%, -50%); // Centrer la boîte 1 verticalement et horizontalement
+>>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
         }
 
         .bill_boite {
             width: 450px;
             height: 500px;
             box-shadow: 0px 0px 5px white;
+<<<<<<< HEAD
             transition: transform 0.3s ease-in-out;
 
 
@@ -679,13 +702,26 @@ footer {
                 // left: calc(35% - 800px); // Décalage vers la gauche
                 margin-right: 10%;
 
+=======
+
+
+            &.boite_gauche {
+                position: relative;
+                left: calc(35% - 800px); // Décalage vers la gauche
+>>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
 
             }
 
             &.boite_droite {
+<<<<<<< HEAD
                 // position: relative;
                 // left: calc(50% - 800px); // Décalage vers la droite
                 margin-left: 10%;
+=======
+                position: relative;
+                left: calc(50% - 800px); // Décalage vers la droite
+
+>>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
             }
         }
 
@@ -705,11 +741,16 @@ footer {
         a {
             display: block;
             border: 2px solid white;
+<<<<<<< HEAD
             height: 40px; // Ajustez la hauteur selon vos préférences
+=======
+            height: 40px;
+>>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
             text-align: center;
             text-decoration: none;
             position: relative;
             top: 80%;
+<<<<<<< HEAD
             font-family: $font-ethno;
             text-transform: uppercase;
             font-weight: 300;
@@ -718,23 +759,47 @@ footer {
             padding: 0.25em;
             margin: 0 auto;
             width: 280px;
+=======
+            margin: 0 auto;
+            font-family: $font-ethno;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 1.5em;
+            color: white;
+            padding: 1em;
+>>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
             border: 3px solid white;
             box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
             text-shadow: 0px 0px 5px white;
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
             &:hover {
+<<<<<<< HEAD
                 background-color: $blue;
                 color: $blue-fonce;
                 text-shadow: 0px 0px 5px $blue-fonce;
                 box-shadow: 0px 0px 10px $blue;
                 border: 3px solid $blue;
+=======
+
+                background-color: $blue;
+
+                color: $blue-fonce;
+
+                text-shadow: 0px 0px 5px $blue-fonce;
+
+                box-shadow: 0px 0px 10px $blue;
+
+                border: 3px solid $blue;
+
+>>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
             }
         }
     }
 }
 
 
+<<<<<<< HEAD
 /*******************************/
 /*********** MESSAGES ***********/
 /*******************************/
@@ -1161,3 +1226,5 @@ footer {
 
     }
 }
+=======
+>>>>>>> 458646dd01853cc2d85540de6a15585c1e10a983
