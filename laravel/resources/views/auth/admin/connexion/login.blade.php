@@ -1,6 +1,6 @@
 <x-layout titre="Connexion admin">
     <x-nav />
-    <div>
+    <div class="login_admin">
         <form action="{{ route('admin_connexion.authentifier') }}" method="POST">
             @csrf
 

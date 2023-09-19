@@ -1070,4 +1070,11 @@ footer .foot-copy p {
 }
 .user_index #app_user h1 .user_reservations .forfaits_users .programmation_user {
   display: none;
+}
+
+/*******************************/
+/******** ADMIN CONNEXION*******/
+/*******************************/
+.login_admin form {
+  padding-top: 10em;
 }/*# sourceMappingURL=style.css.map */
