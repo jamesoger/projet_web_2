@@ -1,5 +1,5 @@
 
-# Projet synthèse
+# Projet Web 2
 ## Les Darons
 ### James Oger
 ### Geoffrey Pastor
