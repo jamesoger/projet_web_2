@@ -1,6 +1,6 @@
 <x-layout titre="Actualités">
-    <x-nav />
     <div id="app">
+        <x-nav />
 
         <h1>Actualités!</h1>
         @foreach ($actualites as $actualite)

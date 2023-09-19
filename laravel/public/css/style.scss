@@ -162,27 +162,36 @@ $blue-fonce: #06162F;
 /*********** ACCUEIL ***********/
 /*******************************/
 
-.nav-menu {
-    // A SUPPRIMER
-    position: absolute; // A SUPPRIMER
-    top: 280px; // A SUPPRIMER
-    left: 549px; // A SUPPRIMER
-    z-index: 1000; // A SUPPRIMER
 
-    a {
-        // A SUPPRIMER
-        text-decoration: none; // A SUPPRIMER
-        color: white; // A SUPPRIMER
-    }
-
-    // A SUPPRIMER
-}
 
 .titre-hidden {
     display: none;
 }
 
 /*********** HEADER ***********/
+
+.nav-menu {
+    position: absolute;
+    background-color: #0000008a;
+    width: 100%;
+    height: 10%;
+
+    img {
+        display: flex;
+        top: 25%;
+        height: 70%;
+        margin-top: 10px;
+    }
+
+    a {
+        display: flex;
+        position: relative;
+        justify-content: flex-end;
+        top: 0px;
+        text-decoration: none;
+        color: white;
+    }
+}
 
 .acc-header {
     display: flex;
@@ -464,6 +473,35 @@ $blue-fonce: #06162F;
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+}
+
+.a-propos {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 8em;
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    font-family: all-round-gothic, sans-serif;
+
+    h1 {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .texte-apropos {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: justify;
+        margin-left: 25%;
+        padding-top: 3rem;
+        width: 50vw;
+        border: 5px #06162F;
+
+        p {
+            padding-top: 1.5rem;
         }
     }
 }
