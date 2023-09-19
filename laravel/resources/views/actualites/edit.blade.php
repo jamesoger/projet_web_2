@@ -1,6 +1,6 @@
 <x-layout titre="Modification d'une acualité">
     <x-nav />
-    <div>
+    <div class="actu-edit">
         @if (session('error'))
             <p style="color: red">{{ session('error') }}</p>
         @endif
