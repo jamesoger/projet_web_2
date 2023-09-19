@@ -1200,3 +1200,51 @@ footer {
 
     }
 }
+
+/*******************************/
+/******** USER INDEX*******/
+/*******************************/
+.user_index {
+
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/images/lignes.jpg);
+    background-size: cover;
+    #app_user {
+        h1 {
+
+            text-align: center;
+            font-size: 5em;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding-top: 1em;
+            .user_reservations {
+
+                    display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                .forfaits_users {
+                     width: 40%;
+                        background-color: #1da5f389;
+                        margin: 10rem auto;
+
+                    .programmation_user {
+                        display: none;
+                    }
+
+
+
+
+                }
+            }
+        }
+
+
+    }
+
+
+
+
+
+
+}

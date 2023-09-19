@@ -68,14 +68,14 @@
                 <div class="vignettes">
                     <img src="{{ asset('images/evenement1.jpg') }}" alt="">
                     <div class="cadre">
-                        <p class="titre">laser light</p>
+                        <p class="titre">spectacles</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
                     </div>
                 </div>
                 <div class="vignettes">
                     <img src="{{ asset('images/evenement2.jpg') }}" alt="">
                     <div class="cadre">
-                        <p class="titre">spectacles</p>
+                        <p class="titre">drones</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                 <div class="vignettes">
                     <img src="{{ asset('images/evenement4.jpg') }}" alt="">
                     <div class="cadre">
-                        <p class="titre">drones</p>
+                        <p class="titre">laser light</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
                     </div>
                 </div>
@@ -104,8 +104,9 @@
             </div>
 
             <div class="btn-reservation">
-                <a href="{{ route('billeterie.index') }}">Billeterie</a>
-                <a href="{{ route('programmation.index') }}">Programmation</a>
+                <a href="{{route('billetterie.index')}}">Billetterie</a>
+                <a href="{{route('programmation.index')}}">Programmation</a>
+
             </div>
 
             <div class="events-bg">
@@ -147,12 +148,24 @@
         <div class="foot-nav-adresse">
             <ul class="foot-menu">
                 <li class="menu">menu</li>
-                <li class="liste">accueil</li>
-                <li class="liste">programmation</li>
-                <li class="liste">billetterie</li>
-                <li class="liste">actualités</li>
-                <li class="liste">à propos</li>
-                <li class="liste">mon compte</li>
+                <li class="liste">
+                    <a href="{{ route('accueil') }}">Accueil</a>
+                </li>
+                <li class="liste">
+                    <a href="{{ route('programmation.index') }}">Programmation</a>
+                </li>
+                <li class="liste">
+                    <a href="{{ route('billetterie.index') }}">Billetterie</a>
+                </li>
+                <li class="liste">
+                    <a href="{{ route('actualites.index') }}">Actualités</a>
+                </li>
+                <li class="liste">
+                    <a href="{{ route('info.index') }}">À propos</a>
+                </li>
+                <li class="liste">
+                    <a href="{{ route('user_connexion.create') }}">Mon compte</a>
+                </li>
             </ul>
 
             <div class="foot-map">
@@ -167,7 +180,9 @@
 
             <div class="foot-logo">
                 <img src="{{ asset('logos/centre_color_blanc.png') }}" alt="">
-                <p>admin</p>
+                <p>
+                    <a href="{{ route('admin_connexion.login') }}">admin</a>
+                </p>
             </div>
         </div>
 

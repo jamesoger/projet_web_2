@@ -1,4 +1,4 @@
-<div id="app">
+<div id="app_panier">
     <x-layout titre="panier de {{ auth()->user()->prenom }}">
         <x-nav />
         <div id="app">
