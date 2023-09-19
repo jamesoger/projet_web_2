@@ -1,5 +1,4 @@
 <x-layout titre="Accueil">
-    <x-nav />
     <h1 class="titre-hidden">Bienvenue sur l'accueil de FestX.com</h1>
 
     <header class="acc-header">

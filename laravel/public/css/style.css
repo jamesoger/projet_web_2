@@ -1,3 +1,19 @@
+@charset "UTF-8";
+/**************** SOMMAIRE ****************/
+/*** Variables ************ Ligne : 155
+/*** Components *********** Ligne : 175
+/*** Accueil ************** Ligne : 206
+/*** Billetterie ********** Ligne : 696
+/*** Messages ************* Ligne : 796
+/*** Connexion user ******* Ligne : 806
+/*** Enregistrement user ** Ligne : 906
+/*** Panier user ********** Ligne : 1015
+/*** Admin connexion ****** Ligne : 1256
+/*** Admin **************** Ligne :
+/*** Actualités *********** Ligne :
+/*** Programmation ******** Ligne :
+
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -150,13 +166,9 @@ body {
 /********** VARIABLES **********/
 /*******************************/
 /*******************************/
-/*********** ACCUEIL ***********/
+/********** COMPONENTS *********/
 /*******************************/
-.titre-hidden {
-  display: none;
-}
-
-/*********** HEADER ***********/
+/********** NAV *********/
 .nav-menu {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5411764706);
@@ -178,6 +190,15 @@ body {
   color: white;
 }
 
+/********** FOOTER *********/
+/*******************************/
+/*********** ACCUEIL ***********/
+/*******************************/
+.titre-hidden {
+  display: none;
+}
+
+/*********** HEADER ***********/
 .acc-header {
   display: flex;
   position: relative;
@@ -239,7 +260,7 @@ body {
   position: absolute;
   z-index: -1;
   width: 100%;
-  min-width: 1390px;
+  min-width: 1550px;
   overflow: hidden;
 }
 .acc-header .video-bg-header video {
@@ -588,7 +609,7 @@ footer .foot-copy p {
 }
 
 /*******************************/
-/********** BILLETERIE *********/
+/********** BILLETTERIE ********/
 /*******************************/
 .bill {
   width: 100vw;
@@ -669,7 +690,7 @@ footer .foot-copy p {
 }
 
 /*******************************/
-/*********** MESSAGES ***********/
+/*********** MESSAGES **********/
 /*******************************/
 .erreur {
   color: rgba(218, 16, 16, 0.902);
@@ -678,7 +699,7 @@ footer .foot-copy p {
 }
 
 /*******************************/
-/*********** CONNEXION USER***********/
+/******** CONNEXION USER *******/
 /*******************************/
 .connexion_user {
   width: 100vw;
@@ -766,7 +787,7 @@ footer .foot-copy p {
 }
 
 /*******************************/
-/******** ENREGISTREMENT USER*******/
+/***** ENREGISTREMENT USER *****/
 /*******************************/
 .enregistrement_user {
   width: 100vw;
@@ -861,7 +882,7 @@ footer .foot-copy p {
 }
 
 /*******************************/
-/******** PANIER USER*******/
+/********* PANIER USER *********/
 /*******************************/
 .panier_user {
   width: 100vw;
@@ -1043,7 +1064,7 @@ footer .foot-copy p {
 }
 
 /*******************************/
-/******** USER INDEX*******/
+/********** USER INDEX *********/
 /*******************************/
 .user_index {
   width: 100vw;
@@ -1073,8 +1094,18 @@ footer .foot-copy p {
 }
 
 /*******************************/
-/******** ADMIN CONNEXION*******/
+/******* ADMIN CONNEXION *******/
 /*******************************/
 .login_admin form {
   padding-top: 10em;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*******************************/
+/************ ADMIN ************/
+/*******************************/
+/*******************************/
+/********** ACTUALITÉS *********/
+/*******************************/
+/*******************************/
+/******* ACTUALITÉS EDIT *******/
+/*******************************//*# sourceMappingURL=style.css.map */
