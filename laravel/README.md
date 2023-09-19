@@ -134,8 +134,21 @@ https://app.clickup.com/9014031901/v/s/90140067744
 ### Lien vers le logiciel de gestion de projet choisi                 
 https://github.com/Geoffpas/projet_web_2   
 ## Portrait global 
+
 ### Catégories     
+Phase de planification
+Maquette
+Développement du site
 #### Sous-catégories       
+Choix du thème et du logo
+Readme et ClickUp
+Planification de la maquette
+Conception de la maquette
+Front-end
+Back-end
+Correction, révision, refactoring
+Mise en ligne
+
 ## Apport au travail synthèse de chaque membre de l’équipe (qui fait quoi et quand ?)
 ### Semaine 1
 En équipe on a "brainstorm" sur les éléments de la maquette et sur la conception de la BDD.
