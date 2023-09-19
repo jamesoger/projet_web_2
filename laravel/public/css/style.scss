@@ -674,7 +674,7 @@ footer {
 
 
 /*******************************/
-/********** BILLETERIE *********/
+/********** BILLETTERIE *********/
 /*******************************/
 
 .bill {
@@ -774,7 +774,7 @@ footer {
 
 
 /*******************************/
-/*********** MESSAGES ***********/
+/*********** MESSAGES **********/
 /*******************************/
 
 .erreur {
@@ -784,8 +784,9 @@ footer {
 }
 
 /*******************************/
-/*********** CONNEXION USER***********/
+/******** CONNEXION USER *******/
 /*******************************/
+
 .connexion_user {
     width: 100vw;
     height: 100vh;
@@ -883,7 +884,7 @@ footer {
 }
 
 /*******************************/
-/******** ENREGISTREMENT USER*******/
+/***** ENREGISTREMENT USER *****/
 /*******************************/
 
 .enregistrement_user {
@@ -992,8 +993,9 @@ footer {
 
 
 /*******************************/
-/******** PANIER USER*******/
+/********* PANIER USER *********/
 /*******************************/
+
 .panier_user {
     width: 100vw;
     height: 100vh;
@@ -1039,10 +1041,7 @@ footer {
             position: absolute;
             top: 0;
             right: 0;
-
-
         }
-
     }
 
     .forfaits {
@@ -1090,10 +1089,7 @@ footer {
                     box-shadow: 0px 0px 10px $blue;
                     border: 3px solid $blue;
                 }
-
             }
-
-
         }
     }
 
@@ -1197,61 +1193,50 @@ footer {
                 border: 3px solid white;
             }
         }
-
     }
 }
 
 /*******************************/
-/******** USER INDEX*******/
+/********** USER INDEX *********/
 /*******************************/
-.user_index {
 
+.user_index {
     width: 100vw;
     height: 100vh;
     background-image: url(/images/lignes.jpg);
     background-size: cover;
+
     #app_user {
         h1 {
-
             text-align: center;
             font-size: 5em;
             font-weight: 500;
             text-transform: uppercase;
             padding-top: 1em;
-            .user_reservations {
 
-                    display: flex;
+            .user_reservations {
+                display: flex;
                 justify-content: center;
                 align-items: flex-start;
+
                 .forfaits_users {
-                     width: 40%;
-                        background-color: #1da5f389;
-                        margin: 10rem auto;
+                    width: 40%;
+                    background-color: #1da5f389;
+                    margin: 10rem auto;
 
                     .programmation_user {
                         display: none;
                     }
-
-
-
-
                 }
             }
         }
-
-
     }
-
-
-
-
-
-
 }
 
 /*******************************/
-/******** ADMIN CONNEXION*******/
+/******* ADMIN CONNEXION *******/
 /*******************************/
+
 .login_admin{
     form{
         padding-top: 10em;
