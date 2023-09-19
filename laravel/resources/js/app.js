@@ -6,7 +6,8 @@ import { createApp } from 'vue'
 const app = createApp([])
 
 // app.component('Forfait', Forfait)
-app.mount('#app')
+app.mount('#app_panier')
+app.mount('#app_user')
 
 
 
