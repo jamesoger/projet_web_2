@@ -157,18 +157,11 @@ $font-gothic: all-round-gothic, sans-serif;
 $blue: #1DA5F3;
 $blue-fonce: #06162F;
 
-
 /*******************************/
-/*********** ACCUEIL ***********/
+/********** COMPONENTS *********/
 /*******************************/
 
-
-
-.titre-hidden {
-    display: none;
-}
-
-/*********** HEADER ***********/
+/********** NAV *********/
 
 .nav-menu {
     position: absolute;
@@ -192,6 +185,18 @@ $blue-fonce: #06162F;
         color: white;
     }
 }
+
+/********** FOOTER *********/
+
+/*******************************/
+/*********** ACCUEIL ***********/
+/*******************************/
+
+.titre-hidden {
+    display: none;
+}
+
+/*********** HEADER ***********/
 
 .acc-header {
     display: flex;
@@ -271,7 +276,7 @@ $blue-fonce: #06162F;
         position: absolute;
         z-index: -1;
         width: 100%;
-        min-width: 1390px;
+        min-width: 1550px;
         overflow: hidden;
 
         video {
