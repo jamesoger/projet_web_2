@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Forfait;
 use App\Models\Programmation;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -16,6 +17,8 @@ class UserController extends Controller
 
     public function index()
 {
+
+
     $programmations = Programmation::all();
     $artistes = [];
     $spectacles = [];

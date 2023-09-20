@@ -159,11 +159,11 @@ class ForfaitController extends Controller
                 }
 
                 DB::table('user_forfait')->where('id', $id)->delete();
-                return redirect()->route('user.index')->with('success', "L'entrée de la table user_forfait a été supprimée!");
+                return redirect()->route('user.index')->with('success', "Le forfait a été supprimée!");
             }
         }
 
-        return redirect()->route('user.index')->with('error', "La suppression de l'entrée de la table user_forfait a échoué!");
+        return redirect()->route('user.index')->with('error', "La suppression du forfait a échouée!");
     }
 
 
