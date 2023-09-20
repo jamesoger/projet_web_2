@@ -39,11 +39,18 @@
                 magie opère et les étoiles s'allument, tant dans le ciel que dans votre cœur.
             </p>
         </div>
-        <div class="img-admin">
-            <img src="{{ asset('images/geoffrey.jpg') }}" alt="">
+
+        @foreach ($admins as $admin)
+            <div class="img-admin">
+                <h1>{{ $admin->prenom }}</h1>
+                <h1>{{ $admin->nom }}</h1>
+                <img src="{{$admin->image}}" alt="" width="50px" height="50px">
+            </div>
+        @endforeach
+        {{-- <img src="{{ asset('images/geoffrey.jpg') }}" alt="">
             <img src="{{ asset('images/james.jpg') }}" alt="">
-            <img src="{{ asset('images/maxime.jpg') }}" alt="">
-        </div>
+            <img src="{{ asset('images/maxime.jpg') }}" alt=""> --}}
+
         <div class="nous-joindre">
             <div class="info">
                 <h3>FestX</h3>

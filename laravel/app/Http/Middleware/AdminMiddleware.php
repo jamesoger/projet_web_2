@@ -22,13 +22,7 @@ class AdminMiddleware
             return $next($request);
         }
 
-        // if ($request->ajax() || $request->wantsJson()) {
-        //     return response()->json(['message' => 'Unauthorized.'], 401);
-        // }
 
-        // Si ce n'est pas une requête AJAX ou JSON et que l'utilisateur n'est pas authentifié,
-        // vous pouvez choisir de renvoyer une réponse HTML personnalisée ou une autre action.
-        // Exemple : renvoyer une réponse HTML avec un message d'erreur
         return redirect()->route('admin_connexion.login');
     }
 }
