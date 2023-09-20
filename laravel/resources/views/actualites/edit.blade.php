@@ -5,7 +5,7 @@
         @if (session('error'))
             <p style="color: red">{{ session('error') }}</p>
         @endif
-        <h1>Édition de : {{ $actualites->titre }}</h1>
+        <h1>Modifier l'actualité</h1>
 
         <div class="actu-edit-form">
             <form action="{{ route('actualites.update') }}" method="POST" enctype="multipart/form-data">
@@ -37,7 +37,7 @@
                     <textarea name="details" id="details">{{ $actualites->details }}</textarea>
                 </div>
 
-                <div>
+                <div class="actu-image">
                     <label for="image">Image</label>
                     @error('image')
                         <p>{{ $message }}</p>
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit">Enregistrer les modifications</button>
+                    <button type="submit">Modifier</button>
                 </div>
             </form>
         </div>

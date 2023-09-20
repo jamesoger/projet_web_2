@@ -25,7 +25,7 @@ class ActualiteController extends Controller
         $valides = $request->validate([
             'date' =>'required',
             'titre' => 'required|min:6|max:150',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
             'details' => 'required|min:30|max:750',
         ], [
             "date.required" => "lda date est requise",
@@ -67,7 +67,7 @@ class ActualiteController extends Controller
             'id' => 'required',
             'date' =>'required',
             'titre' => 'required|min:6|max:150',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
             'details' => 'required|min:30|max:750',
         ], [
             'id.required' =>'id est requis',

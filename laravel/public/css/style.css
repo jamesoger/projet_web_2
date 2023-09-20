@@ -1,19 +1,4 @@
 @charset "UTF-8";
-/**************** SOMMAIRE ****************/
-/*** Variables ************ Ligne : 155
-/*** Components *********** Ligne : 175
-/*** Accueil ************** Ligne : 206
-/*** Billetterie ********** Ligne : 696
-/*** Messages ************* Ligne : 796
-/*** Connexion user ******* Ligne : 806
-/*** Enregistrement user ** Ligne : 906
-/*** Panier user ********** Ligne : 1015
-/*** Admin connexion ****** Ligne : 1256
-/*** Admin **************** Ligne :
-/*** Actualités *********** Ligne :
-/*** Programmation ******** Ligne :
-
-
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -192,7 +177,145 @@ body {
   color: white;
 }
 
-/********** FOOTER *********/
+/*********** FOOTER ***********/
+footer {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer-media {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  margin-top: 100px;
+}
+footer .footer-media .ligne-gauche {
+  display: flex;
+  margin-right: 30px;
+  height: 1px;
+  width: 500px;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+footer .footer-media .foot-media {
+  display: flex;
+  align-items: center;
+}
+footer .footer-media .foot-media li {
+  margin: 0px 30px;
+}
+footer .footer-media .foot-media li img {
+  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+}
+footer .footer-media .ligne-droite {
+  display: flex;
+  margin-left: 30px;
+  height: 1px;
+  width: 500px;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+footer .foot-nav-adresse {
+  display: flex;
+  justify-content: space-around;
+  margin: 80px 0px;
+}
+footer .foot-nav-adresse .foot-menu {
+  display: flex;
+  flex-direction: column;
+}
+footer .foot-nav-adresse .foot-menu .menu {
+  font-family: all-round-gothic, sans-serif;
+  font-size: 2em;
+  font-weight: 500;
+}
+footer .foot-nav-adresse .foot-menu li {
+  font-family: ethnocentric, sans-serif;
+  font-weight: 300;
+  margin: 10px 0px;
+}
+footer .foot-nav-adresse .foot-map {
+  align-self: center;
+  text-align: center;
+  margin-left: 75px;
+}
+footer .foot-nav-adresse .foot-map img {
+  height: 60px;
+}
+footer .foot-nav-adresse .foot-map p {
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.3em;
+}
+footer .foot-nav-adresse .foot-logo {
+  align-self: center;
+}
+footer .foot-nav-adresse .foot-logo img {
+  height: 200px;
+}
+footer .foot-nav-adresse .foot-logo p {
+  text-align: center;
+  font-family: ethnocentric, sans-serif;
+  font-weight: 300;
+}
+footer .foot-app {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+footer .foot-app .ligne-gauche {
+  display: flex;
+  margin-right: 80px;
+  height: 1px;
+  width: 500px;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+footer .foot-app p {
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-shadow: 0px 0px 20px white;
+}
+footer .foot-app .ligne-droite {
+  display: flex;
+  margin-left: 80px;
+  height: 1px;
+  width: 500px;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  background: linear-gradient(to right, #ffffff, transparent);
+}
+footer .foot-store {
+  display: flex;
+  align-self: center;
+  justify-content: space-evenly;
+  width: 400px;
+  margin-top: 30px;
+}
+footer .foot-store .apple {
+  display: flex;
+  height: 60px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+footer .foot-store .google {
+  display: flex;
+  height: 60px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+footer .foot-copy {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0px;
+}
+footer .foot-copy img {
+  width: 16px;
+}
+footer .foot-copy p {
+  font-family: all-round-gothic, sans-serif;
+  text-transform: uppercase;
+}
+
 /*******************************/
 /*********** ACCUEIL ***********/
 /*******************************/
@@ -525,146 +648,6 @@ body {
 }
 .a-propos .nous-joindre .info-total .info .phrase-info {
   padding-top: 0.5rem;
-}
-
-/*********** FOOTER ***********/
-footer {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-}
-footer .footer-media {
-  display: flex;
-  align-items: center;
-  align-self: center;
-  margin-top: 100px;
-}
-footer .footer-media .ligne-gauche {
-  display: flex;
-  margin-right: 30px;
-  height: 1px;
-  width: 500px;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  background: linear-gradient(to left, #ffffff, transparent);
-}
-footer .footer-media .foot-media {
-  display: flex;
-  align-items: center;
-}
-footer .footer-media .foot-media li {
-  margin: 0px 30px;
-}
-footer .footer-media .foot-media li img {
-  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
-}
-footer .footer-media .ligne-droite {
-  display: flex;
-  margin-left: 30px;
-  height: 1px;
-  width: 500px;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  background: linear-gradient(to right, #ffffff, transparent);
-}
-footer .foot-nav-adresse {
-  display: flex;
-  justify-content: space-around;
-  margin: 80px 0px;
-}
-footer .foot-nav-adresse .foot-menu {
-  display: flex;
-  flex-direction: column;
-}
-footer .foot-nav-adresse .foot-menu .menu {
-  font-family: all-round-gothic, sans-serif;
-  font-size: 2em;
-  font-weight: 500;
-}
-footer .foot-nav-adresse .foot-menu li {
-  font-family: ethnocentric, sans-serif;
-  font-weight: 300;
-  margin: 10px 0px;
-}
-footer .foot-nav-adresse .foot-map {
-  align-self: center;
-  text-align: center;
-  margin-left: 75px;
-}
-footer .foot-nav-adresse .foot-map img {
-  height: 60px;
-}
-footer .foot-nav-adresse .foot-map p {
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.3em;
-}
-footer .foot-nav-adresse .foot-logo {
-  align-self: center;
-}
-footer .foot-nav-adresse .foot-logo img {
-  height: 200px;
-}
-footer .foot-nav-adresse .foot-logo p {
-  text-align: center;
-  font-family: ethnocentric, sans-serif;
-  font-weight: 300;
-}
-footer .foot-app {
-  display: flex;
-  align-items: center;
-  align-self: center;
-}
-footer .foot-app .ligne-gauche {
-  display: flex;
-  margin-right: 80px;
-  height: 1px;
-  width: 500px;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  background: linear-gradient(to left, #ffffff, transparent);
-}
-footer .foot-app p {
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.3em;
-  text-transform: uppercase;
-  font-weight: 500;
-  text-shadow: 0px 0px 20px white;
-}
-footer .foot-app .ligne-droite {
-  display: flex;
-  margin-left: 80px;
-  height: 1px;
-  width: 500px;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  background: linear-gradient(to right, #ffffff, transparent);
-}
-footer .foot-store {
-  display: flex;
-  align-self: center;
-  justify-content: space-evenly;
-  width: 400px;
-  margin-top: 30px;
-}
-footer .foot-store .apple {
-  display: flex;
-  height: 60px;
-  border: 1px solid grey;
-  border-radius: 5px;
-}
-footer .foot-store .google {
-  display: flex;
-  height: 60px;
-  border: 1px solid grey;
-  border-radius: 5px;
-}
-footer .foot-copy {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0px;
-}
-footer .foot-copy img {
-  width: 16px;
-}
-footer .foot-copy p {
-  font-family: all-round-gothic, sans-serif;
-  text-transform: uppercase;
 }
 
 /*******************************/
@@ -2161,21 +2144,27 @@ footer .foot-copy p {
 .actu-edit {
   background-image: url(../images/background-sand.jpg);
   background-size: cover;
+  background-attachment: fixed;
+  height: 100vw;
   padding-top: 8em;
   font-family: all-round-gothic, sans-serif;
 }
 .actu-edit h1 {
   text-align: center;
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 500;
   text-transform: uppercase;
+}
+.actu-edit p {
+  text-align: center;
+  font-size: 1.5em;
 }
 .actu-edit .actu-edit-form {
   background-color: rgba(0, 0, 0, 0.648);
   border-radius: 0.5em;
-  box-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
   width: 750px;
-  height: 700px;
+  height: 680px;
   margin: 5rem auto;
   display: flex;
   flex-direction: column;
@@ -2189,16 +2178,19 @@ footer .foot-copy p {
 }
 .actu-edit .actu-edit-form form label {
   font-size: 1.5em;
+  text-transform: uppercase;
 }
-.actu-edit .actu-edit-form form #titre,
+.actu-edit .actu-edit-form form #date,
 .actu-edit .actu-edit-form form #details,
-.actu-edit .actu-edit-form form #date {
+.actu-edit .actu-edit-form form #titre {
   background-color: rgba(255, 255, 255, 0.155);
   border-radius: 2em;
   width: 630px;
   height: 50px;
-  margin: 2rem;
-  box-shadow: 0px 0px 5px white;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
   text-align: center;
   font-family: all-round-gothic, sans-serif;
   font-size: 1.5em;
@@ -2214,9 +2206,38 @@ footer .foot-copy p {
   padding: 15px;
   width: 200px;
   height: 30px;
+  color: white;
 }
 .actu-edit .actu-edit-form form #details {
   height: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: justify;
+}
+.actu-edit .actu-edit-form form #details::-webkit-scrollbar {
+  display: none;
+}
+.actu-edit .actu-edit-form form .actu-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.actu-edit .actu-edit-form form .actu-image > label {
+  margin-right: 30px;
+}
+.actu-edit .actu-edit-form form input[type=file]::-webkit-file-upload-button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  border: 2px solid white;
+  padding: 10px;
+}
+.actu-edit .actu-edit-form form input[type=file]::-webkit-file-upload-button:hover {
+  background-color: white;
+  color: black;
 }
 .actu-edit .actu-edit-form form button {
   cursor: pointer;
@@ -2228,7 +2249,8 @@ footer .foot-copy p {
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  padding: 10px 10px;
+  padding: 10px;
+  margin-top: 40px;
   width: 350px;
   border: 3px solid white;
   text-shadow: 0px 0px 5px white;

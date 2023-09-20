@@ -1,774 +1,8 @@
-/**************** SOMMAIRE ****************/
 
-/*** Variables ************ Ligne : 155
-/*** Components *********** Ligne : 175
-/*** Accueil ************** Ligne : 206
-/*** Billetterie ********** Ligne : 696
-/*** Messages ************* Ligne : 796
-/*** Connexion user ******* Ligne : 806
-/*** Enregistrement user ** Ligne : 906
-/*** Panier user ********** Ligne : 1015
-/*** Admin connexion ****** Ligne : 1256
-/*** Admin **************** Ligne :
-/*** Actualités *********** Ligne :
-/*** Programmation ******** Ligne :
-
-
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
-
-body {
-    line-height: 1;
-}
-
-ol,
-ul {
-    list-style: none;
-}
-
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-body {
-    font-size: 16px;
-    box-sizing: border-box;
-    background-color: black;
-    color: white;
-}
-
-*,
-*::after,
-*::before {
-    box-sizing: border-box;
-}
-
-
-/*******************************/
-/********** VARIABLES **********/
-/*******************************/
-
-$font-ethno: ethnocentric, sans-serif;
-$font-gothic: all-round-gothic, sans-serif;
-$blue: #1DA5F3;
-$blue-fonce: #06162F;
-
-/*******************************/
-/********** COMPONENTS *********/
-/*******************************/
-
-/********** NAV *********/
-
-.nav-menu {
-    position: absolute;
-    background-color: #0000008a;
-    width: 100%;
-    height: 10%;
-    z-index: 100;
-
-    img {
-        display: flex;
-        top: 25%;
-        height: 70%;
-        margin-top: 10px;
-        margin-left: 4em;
-    }
-
-    a {
-        display: flex;
-        position: relative;
-        justify-content: flex-end;
-        top: 0px;
-        text-decoration: none;
-        color: white;
-    }
-}
-
-/********** FOOTER *********/
-
-/*******************************/
-/*********** ACCUEIL ***********/
-/*******************************/
-
-.titre-hidden {
-    display: none;
-}
-
-/*********** HEADER ***********/
-
-.acc-header {
-    display: flex;
-    position: relative;
-    justify-content: space-evenly;
-    height: 100vh;
-
-    .acc-media {
-        margin-top: 50px;
-
-        li {
-            margin-bottom: 10px;
-
-            img {
-                filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
-            }
-        }
-    }
-
-    .acc-centre {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 50px;
-
-        .acc-date {
-            font-family: $font-gothic;
-            font-size: 3em;
-            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
-        }
-
-        .acc-logo {
-            img {
-                width: 800px;
-                padding-top: 50px;
-            }
-        }
-
-        .acc-fleche {
-            .cercle {
-                background-color: white;
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                border: 2px solid #1DA5F3;
-                box-shadow: 0px 0px 20px white;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-    }
-
-    .acc-btn-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 50px;
-
-        .acc-btn {
-            img {
-                filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
-                width: 40px;
-            }
-        }
-
-        p {
-            font-size: 1.3em;
-        }
-
-        .acc-menu {
-            font-family: $font-gothic;
-        }
-    }
-
-    .video-bg-header {
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        min-width: 1550px;
-        overflow: hidden;
-
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.5;
-        }
-    }
-
-}
-
-/*********** MAIN ***********/
-
-.acc-text-events {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-
-    .phrases {
-        position: absolute;
-        font-family: $font-gothic;
-        font-weight: 600;
-        font-size: 10em;
-        text-transform: uppercase;
-        text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
-        white-space: nowrap;
-
-        p {
-            margin: 100px 0px;
-            word-spacing: 100px;
-        }
-    }
-
-    .video-background {
-        position: relative;
-        width: 100%;
-        z-index: -1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        video {
-            width: 100%;
-            min-width: fit-content;
-        }
-    }
-}
-
-.acc-events {
-    display: grid;
-    position: relative;
-    overflow: hidden;
-
-    h2 {
-        position: absolute;
-        justify-self: center;
-        margin: 50px 0px;
-        font-family: $font-gothic;
-        font-size: 5em;
-        font-weight: 500;
-        text-transform: uppercase;
-        color: $blue;
-        text-shadow: 0px 0px 10px #1DA5F3;
-
-        .ligne-h2 {
-            margin: 50px 0px;
-            height: 1px;
-            width: 100%;
-            box-shadow: 0px 0px 10px #1DA5F3;
-            background: linear-gradient(to left, transparent, #1DA5F3, transparent),
-                linear-gradient(to right, transparent, #1DA5F3, transparent);
-        }
-    }
-
-    .events {
-        position: absolute;
-        display: flex;
-        place-self: center;
-        align-items: center;
-
-        .vignettes {
-            position: relative;
-            display: flex;
-            margin: 50px;
-            box-shadow: 0px 0px 20px #1DA5F3;
-            width: 390px;
-            height: 425px;
-            align-items: end;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-            .cadre {
-                position: absolute;
-                background-color: $blue-fonce;
-                padding: 10px;
-
-                .titre {
-                    font-family: $font-gothic;
-                    font-size: 1.5em;
-                    font-weight: 500;
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
-                }
-
-                p:nth-child(2) {
-                    font-family: 'all-round-gothic';
-                    color: #1DA5F3;
-                }
-            }
-        }
-    }
-
-    .events-bg {
-        position: relative;
-        width: 100%;
-        z-index: -1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        img {
-            max-width: 100%;
-            min-width: 1390px;
-            opacity: 0.5;
-        }
-    }
-
-    .btn-reservation {
-        position: absolute;
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        padding: 130px;
-
-        a {
-            color: white;
-            font-family: $font-ethno;
-            font-size: 1.5em;
-            font-weight: 300;
-            text-decoration: none;
-            text-align: center;
-            text-transform: uppercase;
-            padding: 30px 20px;
-            width: 350px;
-            margin: 0 10px;
-            border: 3px solid white;
-            text-shadow: 0px 0px 5px white;
-            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-            &:hover {
-                background-color: $blue;
-                color: $blue-fonce;
-                text-shadow: 0px 0px 5px $blue-fonce;
-                box-shadow: 0px 0px 10px $blue;
-                border: 3px solid $blue;
-            }
-        }
-    }
-}
-
-.acc-logo-video {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-
-    .acc-logo {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        img {
-            width: 60%;
-        }
-
-        p {
-            font-family: $font-gothic;
-            font-size: 3em;
-            text-shadow: 0px 0px 10px white;
-        }
-    }
-
-    .video-bg-logo {
-        height: 600px;
-        width: 100%;
-        min-width: 1390px;
-        overflow: hidden;
-
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-}
-
-.a-propos {
-    padding-top: 10em;
-    background-image: url(../images/bg_apropos2.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    font-family: all-round-gothic, sans-serif;
-
-
-    .texte-apropos {
-        background-color: rgba(0, 0, 0, 0.648);
-        border-radius: 0.5em;
-        box-shadow: 0px 0px 50px rgb(24, 24, 24);
-        width: 50vw;
-        margin: 5rem auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: justify;
-        position: relative;
-        padding: 3rem;
-
-        .titre-apropos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            h1 {
-                font-size: 3em;
-
-            }
-
-            img {
-                width: 20%
-            }
-        }
-
-
-        p {
-            font-size: 1.5em;
-            padding-top: 1.5rem;
-        }
-    }
-
-    .img-admin {
-        display: flex;
-        justify-content: center;
-        padding-top: 3rem;
-
-        img {
-            width: 25vw;
-            object-fit: cover;
-            border-radius: 50%;
-            height: 50vh;
-            padding-left: 1em;
-
-        }
-    }
-
-    .nous-joindre {
-        // background-image: url(../images/bg_apropos2.jpg);
-        // background-size: cover;
-        display: flex;
-        // background-attachment: fixed;
-        padding-top: 3rem;
-
-        .info-total {
-            background-color: rgba(0, 0, 0, 0.648);
-            border-radius: 0.5em;
-            box-shadow: 0px 0px 50px rgb(24, 24, 24);
-            display: flex;
-            padding: 5rem 9rem;
-            margin: 5rem auto;
-
-            .info {
-                width: 20vw;
-                position: relative;
-                align-items: center;
-                text-align: center;
-                font-size: 2em;
-                padding-right: 3rem;
-
-                img {
-                    width: 50%;
-                }
-
-                .phrases {
-                    padding-top: 2rem;
-                }
-
-                .titre-info {
-                    font-weight: 500;
-                }
-
-                .phrase-info {
-                    padding-top: 0.5rem;
-                }
-
-            }
-        }
-    }
-}
-
-/*********** FOOTER ***********/
-
-footer {
-    display: flex;
-    flex-direction: column;
-    background-color: black;
-
-    .footer-media {
-        display: flex;
-        align-items: center;
-        align-self: center;
-        margin-top: 100px;
-
-        .ligne-gauche {
-            display: flex;
-            margin-right: 30px;
-            height: 1px;
-            width: 500px;
-            box-shadow: 0px 0px 10px #1DA5F3;
-            background: linear-gradient(to left, #ffffff, transparent);
-        }
-
-        .foot-media {
-            display: flex;
-            align-items: center;
-
-            li {
-                margin: 0px 30px;
-
-                img {
-                    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
-                }
-            }
-        }
-
-        .ligne-droite {
-            display: flex;
-            margin-left: 30px;
-            height: 1px;
-            width: 500px;
-            box-shadow: 0px 0px 10px #1DA5F3;
-            background: linear-gradient(to right, #ffffff, transparent);
-        }
-    }
-
-    .foot-nav-adresse {
-        display: flex;
-        justify-content: space-around;
-        margin: 80px 0px;
-
-        .foot-menu {
-            display: flex;
-            flex-direction: column;
-
-            .menu {
-                font-family: $font-gothic;
-                font-size: 2em;
-                font-weight: 500;
-            }
-
-            li {
-                font-family: $font-ethno;
-                font-weight: 300;
-                margin: 10px 0px;
-            }
-        }
-
-        .foot-map {
-            align-self: center;
-            text-align: center;
-            margin-left: 75px;
-
-            img {
-                height: 60px;
-            }
-
-            p {
-                font-family: $font-gothic;
-                font-size: 1.3em;
-            }
-        }
-
-        .foot-logo {
-            align-self: center;
-
-            img {
-                height: 200px;
-            }
-
-            p {
-                text-align: center;
-                font-family: $font-ethno;
-                font-weight: 300;
-            }
-        }
-    }
-
-    .foot-app {
-        display: flex;
-        align-items: center;
-        align-self: center;
-
-        .ligne-gauche {
-            display: flex;
-            margin-right: 80px;
-            height: 1px;
-            width: 500px;
-            box-shadow: 0px 0px 10px #1DA5F3;
-            background: linear-gradient(to left, #ffffff, transparent);
-        }
-
-        p {
-            font-family: $font-gothic;
-            font-size: 1.3em;
-            text-transform: uppercase;
-            font-weight: 500;
-            text-shadow: 0px 0px 20px white;
-        }
-
-        .ligne-droite {
-            display: flex;
-            margin-left: 80px;
-            height: 1px;
-            width: 500px;
-            box-shadow: 0px 0px 10px #1DA5F3;
-            background: linear-gradient(to right, #ffffff, transparent);
-        }
-    }
-
-    .foot-store {
-        display: flex;
-        align-self: center;
-        justify-content: space-evenly;
-        width: 400px;
-        margin-top: 30px;
-
-        .apple {
-            display: flex;
-            height: 60px;
-            border: 1px solid grey;
-            border-radius: 5px;
-        }
-
-        .google {
-            display: flex;
-            height: 60px;
-            border: 1px solid grey;
-            border-radius: 5px;
-        }
-    }
-
-    .foot-copy {
-        display: flex;
-        justify-content: center;
-        margin: 20px 0px;
-
-        img {
-            width: 16px;
-        }
-
-        p {
-            font-family: $font-gothic;
-            text-transform: uppercase;
-        }
-    }
-}
+@import "_reset";
+@import "_variables";
+@import "_components";
+@import "_accueil";
 
 
 /*******************************/
@@ -2465,22 +1699,29 @@ footer {
 .actu-edit {
     background-image: url(../images/background-sand.jpg);
     background-size: cover;
+    background-attachment: fixed;
+    height: 100vw;
     padding-top: 8em;
     font-family: $font-gothic;
 
     h1 {
         text-align: center;
-        font-size: 2em;
+        font-size: 3em;
         font-weight: 500;
         text-transform: uppercase;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.5em;
     }
 
     .actu-edit-form {
         background-color: rgba(0, 0, 0, 0.648);
         border-radius: 0.5em;
-        box-shadow: 0px 0px 5px white;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
         width: 750px;
-        height: 700px;
+        height: 680px;
         margin: 5rem auto;
         display: flex;
         flex-direction: column;
@@ -2494,22 +1735,24 @@ footer {
 
             label {
                 font-size: 1.5em;
+                text-transform: uppercase;
             }
 
-            #titre,
+            #date,
             #details,
-            #date {
+            #titre {
                 background-color: rgba(255, 255, 255, 0.155);
                 border-radius: 2em;
                 width: 630px;
                 height: 50px;
-                margin: 2rem;
-                box-shadow: 0px 0px 5px white;
+                margin-top: 10px;
+                margin-bottom: 40px;
+                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+                border: none;
                 text-align: center;
-                font-family: $font-gothic;
+                font-family: all-round-gothic, sans-serif;
                 font-size: 1.5em;
                 color: white;
-
             }
 
             .actu-input {
@@ -2523,10 +1766,44 @@ footer {
                 padding: 15px;
                 width: 200px;
                 height: 30px;
+                color: white;
             }
 
             #details {
                 height: 200px;
+                border-radius: 10px;
+                padding: 10px;
+                text-align: justify;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                  }
+            }
+
+            .actu-image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .actu-image > label {
+                margin-right: 30px;
+            }
+
+            input[type="file"]::-webkit-file-upload-button {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1em;
+                font-weight: 300;
+                border: 2px solid white;
+                padding: 10px;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
             }
 
             button {
@@ -2539,7 +1816,8 @@ footer {
                 text-decoration: none;
                 text-align: center;
                 text-transform: uppercase;
-                padding: 10px 10px;
+                padding: 10px;
+                margin-top: 40px;
                 width: 350px;
                 border: 3px solid white;
                 text-shadow: 0px 0px 5px white;
