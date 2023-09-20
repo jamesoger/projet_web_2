@@ -26,6 +26,12 @@
                         autocomplete="email">
                     <x-forms.erreur champ="email" />
                 </div>
+                <div class="enregistrement_admin_form_group_file">
+                    <label for="image">Image</label>
+                    <input id="email" name="email" type="email" value="{{ old('email') }}"
+                        autocomplete="email">
+                    <x-forms.erreur champ="email" />
+                </div>
                 <div class="enregistrement_admin_form_group_droits">
                     <label for="droits">Statut</label>
                     <select name="droits" id="droits">
