@@ -96,7 +96,7 @@ Route::post('/user/panier', [ForfaitController::class, 'store'])
     ->name('forfait_user.store')
     ->middleware('auth');
 
-Route::post('/user/panier/update//{forfait_id}', [ForfaitController::class, 'update'])
+Route::post('/user/panier/update/{forfait_id}', [ForfaitController::class, 'update'])
     ->name('forfait_user_update');
 
 Route::post('/user/destroy/{id}', [ForfaitController::class, 'destroy'])
@@ -131,10 +131,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get("/admin/create", [EnregistrementAdminController::class, 'create'])
         ->name('enregistrement_admin.create');
 
-    Route::get("/admin/edit/{id}", [EnregistrementAdminController::class, 'edit'])
+    Route::get("/admin/edit/{id}", [AdminController::class, 'edit'])
         ->name('enregistrement_admin.edit');
 
-    Route::post("/admin/update/{id}", [EnregistrementAdminController::class, 'update'])
+    Route::post("/admin/update", [AdminController::class, 'update'])
         ->name('enregistrement_admin.update');
 
     Route::post("/admin/create", [EnregistrementAdminController::class, 'store'])

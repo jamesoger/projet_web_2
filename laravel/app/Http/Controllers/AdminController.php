@@ -36,6 +36,47 @@ class AdminController extends Controller
             "actualites" => $actualites,
         ]);
     }
+    public function edit($id)
+    {
+        $admin = Admin::findOrFail($id);
+        return view('auth.admin.edit', [
+            "admin" => $admin,
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+
+        $valides = $request->validate([
+            "id" => "required",
+            "prenom" => "required|min:4|max:70",
+            "nom" => "required|min:4|max:70",
+            "email" => "required",
+            "droits"=>"required",
+        ], [
+            "id.required" => "L'id de la note est obligatoire",
+            "prenom.required"=> "Le champ prenom est requis",
+            "prenom.max" => "Le prenom doit avoir un maximum de :max caractères",
+            "prenom.min" => "Le prenom doit avoir un minimum de :min caractères",
+            "nom.required" => "La champ nom est requis",
+            "droits.required"=>"le statut est requis",
+            "nom.max" => "Le nom doit avoir un maximum de :max caractères",
+            "nom.min" => "Le nom doit avoir un minimum de :min caractères",
+
+        ]);
+
+         $admin = Admin::findOrFail($valides["id"]);
+         $admin->prenom = $valides["prenom"];
+         $admin->nom = $valides["nom"];
+         $admin->email = $valides["email"];
+         $admin->droits = $valides["droits"];
+         $admin->save();
+
+        $admin->save();
+
+        return redirect()->route('admin.index')->with('success', 'Les informations de l\'administrateur ont été mises à jour avec succès.');
+    }
+
 
     public function destroy(Request $request)
     {

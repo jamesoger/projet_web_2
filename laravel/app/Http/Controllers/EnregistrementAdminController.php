@@ -40,7 +40,7 @@ class EnregistrementAdminController extends Controller
         $admin->prenom = $valides["prenom"];
         $admin->nom = $valides["nom"];
         $admin->email = $valides["email"];
-        $admin->droits = 0;
+        $admin->droits = $request->input('droits');
         $admin->password = Hash::make($valides["password"]);
 
         $admin->save();
@@ -54,28 +54,6 @@ class EnregistrementAdminController extends Controller
             ->with('succes', 'Votre compte admin a été créé');
     }
 
-    public function edit($id)
-    {
-        $admin = Admin::findOrFail($id);
-        return view('auth.admin.edit', [
-            "admin" => $admin,
-        ]);
-    }
 
-    public function update(Request $request, $id)
-    {
-        $admin = Admin::findOrFail($id);
 
-        $request->validate([
-            'prenom' => 'required',
-            'nom' => 'required',
-        ]);
-
-        $admin->prenom = $request->input('prenom');
-        $admin->nom = $request->input('nom');
-
-        $admin->save();
-
-        return redirect()->route('admin.index')->with('success', 'Les informations de l\'administrateur ont été mises à jour avec succès.');
-    }
 }

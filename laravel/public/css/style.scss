@@ -1276,7 +1276,7 @@ footer {
                     padding: 1em;
                     background-color: rgba(0, 0, 0, 0.454);
 
-                    box-shadow:inset 0px 0px 5px rgb(31, 31, 31);
+                    box-shadow: inset 0px 0px 5px rgb(31, 31, 31);
                     color: white;
 
                 }
@@ -1379,9 +1379,13 @@ footer {
 
                     .fermer-programmation {
                         position: relative;
+                        padding: 0.25em;
                         left: 50%;
                         font-size: 2em;
+                        font-weight: 300;
                         margin-right: 1rem;
+                        cursor: pointer;
+                        box-shadow: inset 0px 0px 5px black;
                     }
 
                     h2 {
@@ -1413,65 +1417,392 @@ footer {
                         margin: 1rem auto;
                     }
 
-                    img {
-                        width: 70px;
-                        height: 70px;
-                        object-fit: cover;
+                    .image_user {
+                        width: 90px;
+                        height: 90px;
                         margin: 10px auto;
-                        border-radius: 50%;
+
+                        img {
+
+                            height: 90px;
+                            object-fit: cover;
+
+                            border-radius: 50%;
+
+                        }
                     }
+
                 }
 
             }
         }
+
         .autre_forfait {
             cursor: pointer;
-                    display: block;
-                    border: 2px solid white;
-                    height: 40px;
-                    text-align: center;
-                    text-decoration: none;
-                    position: relative;
-                    top: 80%;
-                    font-family: $font-ethno;
-                    text-transform: uppercase;
-                    font-weight: 300;
-                    font-size: 0.75em;
-                    color: black;
-                    padding: 0.25em;
-                    margin: 1.25rem auto;
-                    width: 130px;
-                    border: 3px solid white;
-                    box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-                    text-shadow: 0px 0px 5px white;
-                    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            display: block;
+            border: 2px solid white;
+            background-color: $blue;
+            height: 60px;
+            text-align: center;
+            text-decoration: none;
+            font-family: $font-ethno;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 0.75em;
+            color: white;
+            padding: 1.5em;
+            margin: 1.25rem auto;
+            width: 200px;
+            border: 3px solid white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            text-shadow: 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
 
-                    &:hover {
-                        background-color: $blue;
-                        color: $blue-fonce;
-                        text-shadow: 0px 0px 5px $blue-fonce;
-                        box-shadow: 0px 0px 10px $blue;
-                        border: 3px solid $blue;
-                    }
+        }
+
+        .submit_forfait {
+            cursor: pointer;
+            display: block;
+            border: 2px solid white;
+            height: 60px;
+            text-align: center;
+            text-decoration: none;
+            font-family: $font-ethno;
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 0.75em;
+            color: black;
+            padding: 1.5em;
+            margin: 1.25rem auto;
+            width: 200px;
+            border: 3px solid white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            text-shadow: 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: white;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
         }
     }
 }
 
-
 /*******************************/
-/******* ADMIN CONNEXION *******/
+/************ ADMIN CONNEXION ************/
 /*******************************/
 
 .login_admin {
-    form {
-        padding-top: 10em;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    padding-top: 8em;
+    font-family: $font-gothic;
+
+    h1 {
+        text-align: center;
+        font-size: 5em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .login_admin_form {
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 5px white;
+        width: 600px;
+        height: 400px;
+        margin: 5rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        label {
+            font-size: 1.25em;
+
+        }
+
+        input {
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 400px;
+            height: 50px;
+            margin: 2rem;
+            box-shadow: 0px 0px 5px white;
+            text-align: center;
+            font-family: $font-gothic;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px 10px;
+            width: 350px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        font-size: 2em;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: white;
+
+        &:hover {
+            color: $blue;
+
+        }
     }
 }
 
 /*******************************/
-/************ ADMIN ************/
+/******* ADMIN CREATE  *******/
+/*******************************/
+.admin_create {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    padding-top: 8em;
+    font-family: $font-gothic;
+
+    h1 {
+        text-align: center;
+        font-size: 5em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .admin_form_create {
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 5px white;
+        width: 800px;
+        height: 600px;
+        margin: 4rem auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .enregistrement_admin_form_group_email input {
+            width: 720px;
+            display: grid;
+            grid-template-rows: auto auto;
+            align-items: center;
+            margin: 1rem auto;
+        }
+
+        .enregistrement_admin_form_group.user-names {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .enregistrement_admin_form_group.passwords {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1rem;
+            align-items: center;
+            padding-top: 1.5em;
+        }
+        .enregistrement_admin_form_group_droits­{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 1rem;
+            align-items: center;
+            padding-top: 1.5em;
+        }
+
+        select{
+            border-radius: 1em;
+            width: 170px;
+            font-family: $font-gothic;
+            font-size: 1em;
+            text-align: center;
+            padding: 0.5em;
+        }
+
+        label {
+            font-size: 1.25em;
+
+        }
+
+        input {
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 300px;
+            height: 50px;
+            margin: 2rem;
+            box-shadow: 0px 0px 5px white;
+            text-align: center;
+            font-family: $font-gothic;
+            font-size: 1.5em;
+            color: white;
+
+            #email {
+                width: 400px;
+            }
+        }
+
+        button {
+            margin-top: 1rem;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px 10px;
+            width: 350px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+    }
+}
+/*******************************/
+/******* ADMIN EDIT  *******/
 /*******************************/
 
+.edit_admin {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    padding-top: 8em;
+    font-family: $font-gothic;
+
+    h1 {
+        text-align: center;
+        font-size: 5em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .edit_admin_form {
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 5px white;
+        width: 600px;
+        height: 400px;
+        margin: 5rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        label {
+            font-size: 1.25em;
+
+        }
+
+        input {
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 400px;
+            height: 50px;
+            margin: 2rem;
+            box-shadow: 0px 0px 5px white;
+            text-align: center;
+            font-family: $font-gothic;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px 10px;
+            width: 350px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+    }
+}
 /*******************************/
 /********** ACTUALITÉS *********/
 /*******************************/

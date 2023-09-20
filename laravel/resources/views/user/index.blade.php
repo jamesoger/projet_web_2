@@ -7,22 +7,6 @@
                 <p style="color: red">{{ session('error') }}</p>
             @endif
             <h1>{{ auth()->user()->prenom }} voici tes forfaits!</h1>
-            {{-- <h1>Mes forfaits!</h1>
-    @foreach (auth()->user()->forfaits as $forfait)
-        <div>
-            <p>{{ $forfait->nom }} {{ $forfait->prix }} </p>
-            <p>Date d'arrivée : {{ $forfait->pivot->date_arrivee }}</p>
-            <p>Date de départ : {{ $forfait->pivot->date_depart }}</p>
-            <form onclick="return confirm('Are you sure you want to delete?');"
-                action="{{ route('forfait.destroy', $forfait->pivot->id) }}" method="POST">
-                @csrf
-                @error('submit')
-                    <p>{{ $message }}</p>
-                @enderror
-                <button type="submit">Supprimer</button>
-            </form>
-        </div>
-    @endforeach --}}
 
             <div class="user_reservations">
                 <?php
@@ -53,7 +37,6 @@
                 }
                 ?>
 
-
                 @foreach ($forfaitsGroupes as $index => $forfaitGroupe)
                     <div class="forfaits_users">
                         <div id="forfait-{{ $forfaitGroupe['id'] }}">
@@ -76,9 +59,10 @@
                                 <button type="submit">Supprimer</button>
                             </form>
 
+                            <!-- Utilisez des événements de clic distincts pour chaque bouton "Voir plus" -->
                             <button class="toggle-programmation" data-index="{{ $index }}">Voir plus</button>
                         </div>
-                        <div class="programmation_user expanded" id="programmation-{{ $index }}">
+                        <div class="programmation_user" id="programmation-{{ $index }}">
                             <span class="fermer-programmation" data-index="{{ $index }}">X</span>
                             <?php $datesDejaAffichees = []; ?>
                             <h2>Programmation</h2>
@@ -89,12 +73,14 @@
                                         <?php $datesDejaAffichees[] = $programmation->date; ?>
                                     @endif
 
-
                                     @foreach ($programmation->artistes as $artiste)
                                         <div class="show_info">
                                             <p class="heure">{{ $artiste->heure_show }}</p>
                                             <p class="nom"> {{ $artiste->nom_scene }}</p>
-                                            <img src="{{ $artiste->image }}" alt="" width="40px">
+                                            <div class="image_user">
+                                                <img src="{{ $artiste->image }}" alt="" width="90px" >
+                                            </div>
+
                                         </div>
                                     @endforeach
 
@@ -102,27 +88,27 @@
                                         <div class="show_info">
                                             <p class="heure">{{ $spectacle->heure }}</p>
                                             <p class="nom">{{ $spectacle->nom }}</p>
-                                            <img src="{{ $spectacle->image }}" alt="" width="40px">
+                                            <div class="image_user">
+                                                <img src="{{ $spectacle->image }}" alt="" width="90px">
+                                            </div>
+
                                         </div>
                                     @endforeach
                                 @endif
                             @endforeach
                         </div>
-
                     </div>
                 @endforeach
             </div>
-            <button class="autre _forfait">
-                <a href="{{ route('billetterie.index') }}">Réservez un autre forfait?</a>
-            </button>
-
+                <a class="autre_forfait" href="{{ route('billetterie.index') }}">Réservez un autre forfait?</a>
             <form action="{{ route('deconnexion_user') }}" method="POST">
                 @csrf
-                <input type="submit" value="Déconnexion">
+                <input class="submit_forfait" type="submit" value="Déconnexion">
             </form>
         </div>
     </div>
 </x-layout>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const toggleButtons = document.querySelectorAll('.toggle-programmation');
@@ -130,20 +116,19 @@
             button.addEventListener('click', function() {
                 const index = this.getAttribute('data-index');
                 const programmationSection = document.getElementById(`programmation-${index}`);
-                const croixFermeture = document.querySelector(
-                    `.fermer-programmation[data-index="${index}"]`);
 
                 if (programmationSection) {
                     if (programmationSection.classList.contains('expanded')) {
                         programmationSection.classList.remove('expanded');
-                        this.textContent =
-                            'Voir plus'; // Change le texte du bouton en "Voir plus"
-                        croixFermeture.style.display = 'none'; // Masque la croix de fermeture
                     } else {
+                        // Masquer toutes les sections de programmation sauf celle que vous voulez afficher
+                        const allProgrammationSections = document.querySelectorAll('.programmation_user');
+                        allProgrammationSections.forEach(section => {
+                            section.classList.remove('expanded');
+                        });
+
+                        // Afficher la section de programmation correspondante
                         programmationSection.classList.add('expanded');
-                        this.textContent =
-                            'Voir moins'; // Change le texte du bouton en "Voir moins"
-                        croixFermeture.style.display = 'block'; // Affiche la croix de fermeture
                     }
                 }
             });
@@ -154,15 +139,9 @@
             fermer.addEventListener('click', function() {
                 const index = this.getAttribute('data-index');
                 const programmationSection = document.getElementById(`programmation-${index}`);
-                const boutonToggle = document.querySelector(
-                    `.toggle-programmation[data-index="${index}"]`);
 
                 if (programmationSection) {
                     programmationSection.classList.remove('expanded');
-                    boutonToggle.textContent =
-                        'Voir plus'; // Change le texte du bouton en "Voir plus"
-                    boutonToggle.style.display =
-                        'block'; // Affiche à nouveau le bouton "Voir plus"
                 }
             });
         });
