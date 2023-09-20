@@ -1931,6 +1931,475 @@ footer {
 }
 
 /*******************************/
+/********** ADMIN PAGE *********/
+/*******************************/
+.page_admin {
+
+    background-image: url(../images/bg_apropos6.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 8em;
+    font-family: $font-gothic;
+    .deconnect_admin{
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1em;
+                font-weight: 300;
+                margin: 0 auto;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 10px 10px;
+                width: 200px;
+                border: 3px solid white;
+                text-shadow: 0px 0px 5px white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: black;
+                    color: white;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 5em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2em;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-shadow: 0px 0px 5px $blue-fonce;
+        ;
+    }
+
+    .vue_admin_users {
+        display: flex;
+        color: white;
+
+        p {
+            font-size: 1.5em;
+            margin: 1rem;
+            font-weight: 500;
+            color: white;
+        }
+
+        .users_admin {
+            text-align: center;
+            color: white;
+            font-family: $font-gothic;
+            display: flex;
+            flex-direction: column;
+            margin: 4rem;
+            background-color: rgba(24, 23, 23, 0.568);
+            padding: 20px;
+            width: 40%;
+            box-shadow: 0px 0px 5px white;
+
+            .submit_suppression_user {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1em;
+                font-weight: 300;
+                margin: 1rem auto;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 10px 10px;
+                width: 200px;
+                border: 3px solid white;
+                text-shadow: 0px 0px 5px white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: black;
+                    color: white;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
+            }
+
+            a {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1.5em;
+                font-weight: 300;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+                text-align: center;
+                margin: 1rem auto;
+                padding: 10px 10px;
+                width: 350px;
+                border: 3px solid white;
+                text-shadow: 0px 0px 5px white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $blue;
+                    color: $blue-fonce;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
+            }
+
+        }
+
+        .forfait_user {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+
+            color: white;
+            font-family: $font-gothic;
+            background-color: rgba(24, 23, 23, 0.568);
+            padding: 20px;
+            width: 40%;
+            margin: 4rem;
+            box-shadow: 0px 0px 5px white;
+
+            .pas-forfait {
+                font-size: 1em;
+            }
+
+            .forfait_associe {
+                border: 1px solid black;
+                padding: 1em;
+                margin: 1rem;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.493);
+
+                li {
+                    font-size: 1em;
+                    font-weight: 400;
+                }
+
+                input {
+                    cursor: pointer;
+                    background-color: rgba(255, 255, 255, 0.005);
+                    color: white;
+                    font-family: $font-ethno;
+                    font-size: 1.5em;
+                    font-weight: 300;
+                    text-decoration: none;
+                    text-align: center;
+                    text-transform: uppercase;
+                    text-align: center;
+                    margin: 1rem auto;
+                    padding: 10px 10px;
+                    width: 300px;
+                    border: 3px solid white;
+                    text-shadow: 0px 0px 5px white;
+                    box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                    &:hover {
+                        background-color: $blue;
+                        color: $blue-fonce;
+                        text-shadow: 0px 0px 5px $blue-fonce;
+                        box-shadow: 0px 0px 10px $blue;
+                        border: 3px solid $blue;
+                    }
+                }
+            }
+        }
+    }
+
+    .admin_modif {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-family: $font-gothic;
+        background-color: rgba(31, 29, 29, 0.568);
+        padding: 20px;
+        width: 40%;
+        margin: 4rem auto;
+        box-shadow: 0px 0px 5px white;
+
+        p {
+            font-size: 1.5em;
+
+        }
+
+        .creation_admin {
+            cursor: pointer;
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 1rem auto;
+            padding: 10px 10px;
+            width: 300px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+
+        a {
+            cursor: pointer;
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 1rem auto;
+            padding: 10px 10px;
+            width: 200px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+    }
+
+    .programmation-list {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-family: $font-gothic;
+        background-color: rgba(31, 29, 29, 0.568);
+        padding: 20px;
+        width: 40%;
+        margin: 4rem auto;
+        box-shadow: 0px 0px 5px white;
+        caption{
+            font-size: 1.75em;
+        }
+        a.modifier_prog{
+            cursor: pointer;
+            color:white;
+            font-family: $font-ethno;
+            font-size: 0.75em;
+            font-weight: 200;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 10px ;
+            width: 150px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+       button{
+            cursor: pointer;
+            color:black;
+            font-family: $font-ethno;
+            font-size: 0.75em;
+            font-weight: 200;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 10px ;
+            width: 150px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+        table{
+            margin: 1rem;
+            border: 1px solid white;
+        }
+        thead{
+            border: 1px solid white;
+
+        }
+        th{
+            padding: 1em;
+        }
+        td{
+            border: 1px solid white;
+            padding: 0.5em;
+        }
+        a.ajout_prog {
+            display: block;
+            cursor: pointer;
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 1rem auto;
+            padding: 10px 10px;
+            width: 300px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+    }
+    .actu{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-family: $font-gothic;
+        background-color: rgba(31, 29, 29, 0.568);
+        padding: 20px;
+        width: 60%;
+        margin: 4rem auto;
+        box-shadow: 0px 0px 5px white;
+        .supp_actu{
+            cursor: pointer;
+            color: black;
+            font-family: $font-ethno;
+            font-size: 1em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 1rem auto;
+            padding: 10px 10px;
+            width: 300px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+        a.modif_actu{
+            cursor: pointer;
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 1rem auto;
+            padding: 10px 10px;
+            width: 300px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+        .ajout_act{
+        display: block;
+            cursor: pointer;
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 1rem auto;
+            padding: 10px 10px;
+            width: 300px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+
+    }
+    }
+
+}
+
+
+
+/*******************************/
 /********** ACTUALITÉS *********/
 /*******************************/
 

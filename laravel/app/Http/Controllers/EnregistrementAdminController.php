@@ -6,6 +6,7 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class EnregistrementAdminController extends Controller
 {
@@ -21,6 +22,7 @@ class EnregistrementAdminController extends Controller
             "prenom" => "required",
             "nom" => "required",
             "email" => "required|email|unique:users,email",
+            "image"=>"nullable|mimes:png,jpg,jpeg, gif",
             "password" => "required|min:8",
             "confirmation_password" => "required|same:password"
         ], [
@@ -29,6 +31,7 @@ class EnregistrementAdminController extends Controller
             "email.required" => "Le courriel est requis",
             "email.email" => "Le courriel doit avoir un format valide",
             "email.unique" => "Ce courriel ne peut pas être utilisé",
+            "image.mimes" => "L'image n'est pas du bon format",
             "password.required" => "Le mot de passe est requis",
             "password.min" => "Le mot de passe doit avoir une longueur de :min caractères",
             "confirmation_password.required" => "La confirmation du mot de passe est requise",
@@ -43,12 +46,15 @@ class EnregistrementAdminController extends Controller
         $admin->droits = $request->input('droits');
         $admin->password = Hash::make($valides["password"]);
 
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+            Storage::putFile("public/uploads", $request->image);
+            $admin->image = "/storage/uploads/" . $request->image->hashName();
+        }
+
         $admin->save();
 
-        // Connecter l'admin tout de suite
         Auth::login($admin);
 
-        // Rediriger
         return redirect()
             ->route('admin.index')
             ->with('succes', 'Votre compte admin a été créé');

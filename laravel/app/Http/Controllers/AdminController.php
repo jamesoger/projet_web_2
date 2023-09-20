@@ -9,6 +9,7 @@ use App\Models\Programmation;
 use App\Models\Spectacle;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -51,6 +52,7 @@ class AdminController extends Controller
             "id" => "required",
             "prenom" => "required|min:4|max:70",
             "nom" => "required|min:4|max:70",
+            "image"=>"nullable|mimes:png,jpg,jpeg,gif",
             "email" => "required",
             "droits"=>"required",
         ], [
@@ -59,6 +61,7 @@ class AdminController extends Controller
             "prenom.max" => "Le prenom doit avoir un maximum de :max caractères",
             "prenom.min" => "Le prenom doit avoir un minimum de :min caractères",
             "nom.required" => "La champ nom est requis",
+            "image.mimes" => "L'image n'est pas du bon format",
             "droits.required"=>"le statut est requis",
             "nom.max" => "Le nom doit avoir un maximum de :max caractères",
             "nom.min" => "Le nom doit avoir un minimum de :min caractères",
@@ -70,9 +73,14 @@ class AdminController extends Controller
          $admin->nom = $valides["nom"];
          $admin->email = $valides["email"];
          $admin->droits = $valides["droits"];
+
+         if($request->hasFile('image') && $request->file('image')->isValid()){
+            Storage::putFile("public/uploads", $request->image);
+            $admin->image = "/storage/uploads/" . $request->image->hashName();
+        }
          $admin->save();
 
-        $admin->save();
+
 
         return redirect()->route('admin.index')->with('success', 'Les informations de l\'administrateur ont été mises à jour avec succès.');
     }
