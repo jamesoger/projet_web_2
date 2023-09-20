@@ -141,7 +141,6 @@
                     </thead>
                     <tbody>
                         @if (auth()->guard('admin')->user()->droits == 1)
-
                             <a class="ajout_prog"
                                 href="{{ route('programmation.edit', ['id' => $programmation->id]) }}">Ajouter</a>
                         @endif
@@ -211,14 +210,14 @@
         @endforeach
 
     </div>
-     <form action="{{ route('deconnexion_admin') }}" method="POST">
-            @csrf
-            <input class="deconnect_admin" type="submit" value="Déconnexion">
-        </form>
+    <form action="{{ route('deconnexion_admin') }}" method="POST">
+        @csrf
+        <input class="deconnect_admin" type="submit" value="Déconnexion">
+    </form>
 
     </div>
-  </div>
-</div>
+    </div>
+    </div>
 
-
+    <x-footer />
 </x-layout>
