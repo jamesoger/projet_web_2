@@ -2,7 +2,10 @@
     <x-nav />
     <div class="a-propos">
         <div class="texte-apropos">
-            <h1>A proposde FestX</h1>
+            <div class="titre-apropos">
+                <h1>À propos de </h1>
+                <img src="{{ asset('logos/plat_gold_blanc.png') }}" alt="">
+            </div>
             <p>Bienvenue dans l'univers époustouflant de FestX, le festival où la musique électronique fusionne avec la
                 technologie pour créer une expérience sensorielle unique en son genre. Au cœur de notre festival, vous
                 découvrirez une convergence inédite entre les rythmes envoûtants de la musique techno et électro et
@@ -40,6 +43,7 @@
             </p>
         </div>
 
+
         @foreach ($admins as $admin)
             <div class="img-admin">
                 <h1>{{ $admin->prenom }}</h1>
@@ -52,24 +56,32 @@
             <img src="{{ asset('images/maxime.jpg') }}" alt=""> --}}
 
         <div class="nous-joindre">
-            <div class="info">
-                <h3>FestX</h3>
-                <p>Adresse:
-                    189 rue des darons
-                    Saint-Fulgeance
-                    JJT222
-                </p>
-                <p>
-                    Courriel: festx@electro.ca
-                </p>
-                <p>Tel:
-                    418-222-1899</p>
-            </div>
-            <div class="carte">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d88367.88518882812!2d-1.40792885!3d46.20057905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4803f806cafa7aab%3A0xca60eddaded7a874!2zw45sZSBkZSBSw6k!5e0!3m2!1sfr!2sca!4v1695221533200!5m2!1sfr!2sca"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="info-total">
+                <div class="info">
+                    <img src="{{ asset('logos/plat_gold_blanc.png') }}" alt="">
+                    <div class="phrases">
+                        <p class="titre-info">Adresse :
+                        </p>
+                        <p class="phrase-info">
+                            189 rue des darons
+                            Saint-Fulgeance
+                            JJT222
+                        </p>
+                        <p class="titre-info">
+                            Courriel :
+                        </p>
+                        <p class="phrase-info">festx@electro.ca</p>
+                        <p class="titre-info">Tel :
+                        </p>
+                        <p class="phrase-info">418-222-1899</p>
+                    </div>
+                </div>
+                <div class="carte">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d88367.88518882812!2d-1.40792885!3d46.20057905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4803f806cafa7aab%3A0xca60eddaded7a874!2zw45sZSBkZSBSw6k!5e0!3m2!1sfr!2sca!4v1695221533200!5m2!1sfr!2sca"
+                        width="600" height="450" style="border-radius:15px;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
         <x-footer />

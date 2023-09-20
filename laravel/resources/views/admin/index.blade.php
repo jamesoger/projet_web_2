@@ -8,6 +8,49 @@
         @if (session('error'))
             <p style="color: red">{{ session('error') }}</p>
         @endif
+
+        <h1>Admin</h1>
+        <h2>Users</h2>
+        @foreach ($users as $user)
+            <p>{{ $user->prenom }} {{ $user->nom }}</p>
+            @if (auth()->guard('admin')->user()->droits == 1)
+                <form onclick="return confirm('Are you sure you want to delete?');" action="{{ route('user.destroy') }}"
+                    method="POST">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $user->id }}">
+                    <input type="submit" value="supprimer">
+                </form>
+                <button><a href="{{ route('user.edit', $user->id) }}">Modifier</a></button>
+            @endif
+        @endforeach
+        <h2>Forfaits</h2>
+        @foreach ($users as $user)
+            <p>{{ $user->prenom }} {{ $user->nom }}</p>
+            @if ($user->forfaits)
+                @if ($user->forfaits->count() > 0)
+                    <p>Forfaits associés :</p>
+                    <ul>
+                        @foreach ($user->forfaits as $forfait)
+                            <li>Nom : {{ $forfait->nom }}</li>
+                            <li>Prix : {{ $forfait->prix }}</li>
+                            <li>date d'arrivée : {{ $forfait->pivot->date_arrivee }}</li>
+                            <li>date de départ : {{ $forfait->pivot->date_depart }}</li>
+                            @if (auth()->guard('admin')->user()->droits == 1)
+                                <form onclick="return confirm('Are you sure you want to delete?');"
+                                    action="{{ route('forfait_admin.destroy', $forfait->pivot->id) }}" method="POST">
+                                    @csrf
+                                    <input type="submit" value="supprimer">
+                                </form>
+                            @endif
+                        @endforeach
+                    </ul>
+                @else
+                    <p>Cet utilisateur n'a pas de forfaits associés.</p>
+                @endif
+            @endif
+        @endforeach
+
+
         @if (auth()->guard('admin')->user()->droits == 1)
             <h1>Admin</h1>
         @else
@@ -98,6 +141,7 @@
                     </thead>
                     <tbody>
                         @if (auth()->guard('admin')->user()->droits == 1)
+
                             <a class="ajout_prog"
                                 href="{{ route('programmation.edit', ['id' => $programmation->id]) }}">Ajouter</a>
                         @endif
@@ -115,6 +159,7 @@
                                             <button type="submit">Supprimer</button>
                                         </form>
                                 </td>
+
                                 <td><a class="modifier_prog"
                                         href="{{ route('programmation.artiste.edit', $artiste->id) }}">Modifier</a>
                                 </td>
@@ -134,6 +179,7 @@
                             <button type="submit">Supprimer</button>
                         </form>
                 </td>
+
                 <td><a class="modifier_prog"
                         href="{{ route('programmation.spectacle.edit', $spectacle->id) }}">Modifier</a></td>
         @endif

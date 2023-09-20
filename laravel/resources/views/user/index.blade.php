@@ -12,7 +12,7 @@
                 <?php
                 $forfaits = auth()->user()->forfaits;
                 $forfaitsGroupes = [];
-
+                
                 foreach ($forfaits as $forfait) {
                     $found = false;
                     foreach ($forfaitsGroupes as &$groupe) {
@@ -22,7 +22,7 @@
                             break;
                         }
                     }
-
+                
                     if (!$found) {
                         $forfaitsGroupes[] = [
                             'id' => $forfait->id,
@@ -78,7 +78,7 @@
                                             <p class="heure">{{ $artiste->heure_show }}</p>
                                             <p class="nom"> {{ $artiste->nom_scene }}</p>
                                             <div class="image_user">
-                                                <img src="{{ $artiste->image }}" alt="" width="90px" >
+                                                <img src="{{ $artiste->image }}" alt="" width="90px">
                                             </div>
 
                                         </div>
@@ -100,13 +100,14 @@
                     </div>
                 @endforeach
             </div>
-                <a class="autre_forfait" href="{{ route('billetterie.index') }}">Réservez un autre forfait?</a>
+            <a class="autre_forfait" href="{{ route('billetterie.index') }}">Réservez un autre forfait?</a>
             <form action="{{ route('deconnexion_user') }}" method="POST">
                 @csrf
                 <input class="submit_forfait" type="submit" value="Déconnexion">
             </form>
         </div>
     </div>
+
 </x-layout>
 
 <script>
@@ -122,7 +123,8 @@
                         programmationSection.classList.remove('expanded');
                     } else {
                         // Masquer toutes les sections de programmation sauf celle que vous voulez afficher
-                        const allProgrammationSections = document.querySelectorAll('.programmation_user');
+                        const allProgrammationSections = document.querySelectorAll(
+                            '.programmation_user');
                         allProgrammationSections.forEach(section => {
                             section.classList.remove('expanded');
                         });
