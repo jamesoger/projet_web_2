@@ -447,7 +447,7 @@ body {
   width: 100vw;
   height: 100vh;
   padding-top: 8em;
-  background-image: url(../images/background-sand.jpg);
+  background-image: url(../images/bg_apropos2.jpg);
   background-size: cover;
   font-family: all-round-gothic, sans-serif;
 }
@@ -456,17 +456,35 @@ body {
   font-size: 2em;
 }
 .a-propos .texte-apropos {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 5px white;
+  width: 600px;
+  height: 400px;
+  margin: 5rem auto;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: justify;
-  margin-left: 25%;
-  padding-top: 3rem;
-  width: 50vw;
-  border: 5px #06162F;
 }
 .a-propos .texte-apropos p {
   padding-top: 1.5rem;
+}
+.a-propos .img-admin {
+  display: flex;
+  padding-top: 3rem;
+}
+.a-propos .img-admin img {
+  width: 50vw;
+  height: 50vh;
+}
+.a-propos .nous-joindre {
+  display: flex;
+  padding-top: 3rem;
+}
+.a-propos .nous-joindre .info {
+  font-size: 2em;
 }
 
 /*********** FOOTER ***********/
@@ -1613,7 +1631,9 @@ footer .foot-copy p {
 .actu-edit .actu-edit-form form label {
   font-size: 1.5em;
 }
-.actu-edit .actu-edit-form form #titre, .actu-edit .actu-edit-form form #details, .actu-edit .actu-edit-form form #date {
+.actu-edit .actu-edit-form form #titre,
+.actu-edit .actu-edit-form form #details,
+.actu-edit .actu-edit-form form #date {
   background-color: rgba(255, 255, 255, 0.155);
   border-radius: 2em;
   width: 630px;
