@@ -4,7 +4,7 @@
     <div class="edit_admin">
         <h1>Modification de {{ auth()->guard('admin')->user()->prenom .' ' .auth()->guard('admin')->user()->nom }}</h1>
         <div class="edit_admin_form">
-            <form action="{{ route('enregistrement_admin.update', ['id' => $admin->id]) }}" method="POST">
+            <form action="{{ route('enregistrement_admin.update', ['id' => $admin->id]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
@@ -20,6 +20,11 @@
                 <div class="form-group">
                     <label for="email">Adresse e-mail:</label>
                     <input type="email" name="email" id="email" value="{{ $admin->email }}">
+                </div>
+                <div class="enregistrement_admin_form_group_file">
+                    <label for="image">Image</label>
+                    <input  name="image" type="file">
+                    <x-forms.erreur champ="image" />
                 </div>
                 <div class="form-group">
                     <label for="droits">Statut</label>
