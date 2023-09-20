@@ -501,7 +501,7 @@ $blue-fonce: #06162F;
 .a-propos {
     width: 100vw;
     height: 100vh;
-    padding-top: 8em;
+    padding-top: 3em;
     background-image: url(../images/bg_apropos2.jpg);
     background-size: cover;
     font-family: all-round-gothic, sans-serif;
@@ -512,25 +512,18 @@ $blue-fonce: #06162F;
     }
 
     .texte-apropos {
-        // display: flex;
-        // align-items: center;
-        // flex-direction: column;
-        // text-align: justify;
-        // margin-left: 25%;
-        // padding-top: 3rem;
-        // width: 50vw;
-        // border: 5px #06162F;
         background-color: rgba(0, 0, 0, 0.648);
         border-radius: 0.5em;
-        box-shadow: 0px 0px 5px white;
-        width: 600px;
-        height: 400px;
+        box-shadow: 0px 0px 50px rgb(24, 24, 24);
+        width: 50vw;
         margin: 5rem auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: justify;
+        position: relative;
+        padding: 3rem;
 
         p {
             padding-top: 1.5rem;
@@ -539,7 +532,6 @@ $blue-fonce: #06162F;
 
     .img-admin {
         display: flex;
-        padding-top: 3rem;
 
         img {
             width: 50vw;
@@ -1528,6 +1520,7 @@ footer {
         }
     }
 }
+
 /*******************************/
 /************ USER EDIT **/
 /*******************************/
