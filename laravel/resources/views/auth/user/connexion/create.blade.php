@@ -23,7 +23,8 @@
                     <x-forms.erreur champ="email" />
 
                     <div>
-                        <input id="email" name="email" type="email" autocomplete="email" value="{{ old('email') }}">
+                        <input id="email" name="email" type="email" autocomplete="email"
+                            value="{{ old('email') }}">
                     </div>
                 </div>
 
@@ -45,4 +46,5 @@
             Pas de compte?
         </a>
     </div>
+    <x-footer />
 </x-layout>

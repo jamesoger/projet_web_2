@@ -184,12 +184,14 @@ $blue-fonce: #06162F;
     background-color: #0000008a;
     width: 100%;
     height: 10%;
+    z-index: 100;
 
     img {
         display: flex;
         top: 25%;
         height: 70%;
         margin-top: 10px;
+        margin-left: 4em;
     }
 
     a {
@@ -499,17 +501,12 @@ $blue-fonce: #06162F;
 }
 
 .a-propos {
-    width: 100vw;
-    height: 100vh;
-    padding-top: 3em;
+    padding-top: 10em;
     background-image: url(../images/bg_apropos2.jpg);
     background-size: cover;
+    background-attachment: fixed;
     font-family: all-round-gothic, sans-serif;
 
-    h1 {
-        text-align: center;
-        font-size: 2em;
-    }
 
     .texte-apropos {
         background-color: rgba(0, 0, 0, 0.648);
@@ -525,27 +522,83 @@ $blue-fonce: #06162F;
         position: relative;
         padding: 3rem;
 
+        .titre-apropos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+                font-size: 3em;
+
+            }
+
+            img {
+                width: 20%
+            }
+        }
+
+
         p {
+            font-size: 1.5em;
             padding-top: 1.5rem;
         }
     }
 
     .img-admin {
         display: flex;
+        justify-content: center;
+        padding-top: 3rem;
 
         img {
-            width: 50vw;
+            width: 25vw;
+            object-fit: cover;
+            border-radius: 50%;
             height: 50vh;
+            padding-left: 1em;
 
         }
     }
 
     .nous-joindre {
+        // background-image: url(../images/bg_apropos2.jpg);
+        // background-size: cover;
         display: flex;
+        // background-attachment: fixed;
         padding-top: 3rem;
 
-        .info {
-            font-size: 2em;
+        .info-total {
+            background-color: rgba(0, 0, 0, 0.648);
+            border-radius: 0.5em;
+            box-shadow: 0px 0px 50px rgb(24, 24, 24);
+            display: flex;
+            padding: 5rem 9rem;
+            margin: 5rem auto;
+
+            .info {
+                width: 20vw;
+                position: relative;
+                align-items: center;
+                text-align: center;
+                font-size: 2em;
+                padding-right: 3rem;
+
+                img {
+                    width: 50%;
+                }
+
+                .phrases {
+                    padding-top: 2rem;
+                }
+
+                .titre-info {
+                    font-weight: 500;
+                }
+
+                .phrase-info {
+                    padding-top: 0.5rem;
+                }
+
+            }
         }
     }
 }
@@ -555,6 +608,7 @@ $blue-fonce: #06162F;
 footer {
     display: flex;
     flex-direction: column;
+    background-color: black;
 
     .footer-media {
         display: flex;

@@ -20,7 +20,7 @@
                     <input type="submit" value="supprimer">
                 </form>
                 <button><a href="{{ route('user.edit', $user->id) }}">Modifier</a></button>
-             @endif
+            @endif
         @endforeach
         <h2>Forfaits</h2>
         @foreach ($users as $user)
@@ -80,70 +80,72 @@
                     </thead>
                     <tbody>
                         @if (auth()->guard('admin')->user()->droits == 1)
-                        <a href="{{ route('programmation.edit', ['id' => $programmation->id]) }}">Ajouter un artiste ou un
-                            spectacle à la
-                            programmation!</a>
-                            @endif
+                            <a href="{{ route('programmation.edit', ['id' => $programmation->id]) }}">Ajouter un
+                                artiste ou un
+                                spectacle à la
+                                programmation!</a>
+                        @endif
                         @foreach ($programmation->artistes as $artiste)
                             <tr>
                                 <td>{{ $artiste->nom_scene }}</td>
                                 <td>{{ $artiste->heure_show }}</td>
                                 <td>
                                     @if (auth()->guard('admin')->user()->droits == 1)
-                                    <form onclick="return confirm('Are you sure you want to delete?');"
-                                        action="{{ route('artiste.destroy') }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="id" value="{{ $artiste->id }}">
-                                        <input type="hidden" name="id" value="{{ $artiste->id }}">
-                                        <button type="submit">Supprimer</button>
-                                    </form>
+                                        <form onclick="return confirm('Are you sure you want to delete?');"
+                                            action="{{ route('artiste.destroy') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $artiste->id }}">
+                                            <input type="hidden" name="id" value="{{ $artiste->id }}">
+                                            <button type="submit">Supprimer</button>
+                                        </form>
                                 </td>
                                 <td><a href="{{ route('programmation.artiste.edit', $artiste->id) }}">Modifier</a></td>
-                                 @endif
-                            </tr>
-                        @endforeach
-                        @foreach ($programmation->spectacles as $spectacle)
-                            <tr>
-                                <td>{{ $spectacle->nom }}</td>
-                                <td>{{ $spectacle->heure }}</td>
-                                <td>
-                                    @if (auth()->guard('admin')->user()->droits == 1)
-                                    <form onclick="return confirm('Are you sure you want to delete?');"
-                                        action="{{ route('spectacle.destroy') }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="id" value="{{ $spectacle->id }}">
-                                        <button type="submit">Supprimer</button>
-                                    </form>
-                                </td>
-                                <td><a href="{{ route('programmation.spectacle.edit', $spectacle->id) }}">Modifier</a></td>
-                                @endif
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+                        @endif
+                        </tr>
         @endforeach
-        <h1>Vos actualités</h1>
-        @if (auth()->guard('admin')->user()->droits == 1)
-        <a href="{{ route('actualites.create') }}">Ajouter une nouvelle actualité</a>
+        @foreach ($programmation->spectacles as $spectacle)
+            <tr>
+                <td>{{ $spectacle->nom }}</td>
+                <td>{{ $spectacle->heure }}</td>
+                <td>
+                    @if (auth()->guard('admin')->user()->droits == 1)
+                        <form onclick="return confirm('Are you sure you want to delete?');"
+                            action="{{ route('spectacle.destroy') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $spectacle->id }}">
+                            <button type="submit">Supprimer</button>
+                        </form>
+                </td>
+                <td><a href="{{ route('programmation.spectacle.edit', $spectacle->id) }}">Modifier</a></td>
         @endif
-        @foreach ($actualites as $actualite)
-            <h2>{{ $actualite->titre }}</h2>
-            <h3>{{ $actualite->date }}</h3>
-            <p>{{ $actualite->details }}</p>
-            @if (auth()->guard('admin')->user()->droits == 1)
+        </tr>
+        @endforeach
+        </tbody>
+        </table>
+    </div>
+    @endforeach
+    <h1>Vos actualités</h1>
+    @if (auth()->guard('admin')->user()->droits == 1)
+        <a href="{{ route('actualites.create') }}">Ajouter une nouvelle actualité</a>
+    @endif
+    @foreach ($actualites as $actualite)
+        <h2>{{ $actualite->titre }}</h2>
+        <h3>{{ $actualite->date }}</h3>
+        <p>{{ $actualite->details }}</p>
+        @if (auth()->guard('admin')->user()->droits == 1)
             <a href="{{ route('actualites.edit', $actualite->id) }}">Modifier</a>
-            <form onclick="return confirm('Are you sure you want to delete?');" action="{{ route('actualites.destroy') }}"
-                method="POST">
+            <form onclick="return confirm('Are you sure you want to delete?');"
+                action="{{ route('actualites.destroy') }}" method="POST">
                 @csrf
                 <input type="hidden" name="id" value="{{ $actualite->id }}">
                 <input type="submit" value="supprimer">
             </form>
-            @endif
-        @endforeach
-        <form action="{{ route('deconnexion_admin') }}" method="POST">
-            @csrf
-            <input type="submit" value="Déconnexion">
-        </form>
+        @endif
+    @endforeach
+    <form action="{{ route('deconnexion_admin') }}" method="POST">
+        @csrf
+        <input type="submit" value="Déconnexion">
+    </form>
     </div>
+    <x-footer />
 </x-layout>
