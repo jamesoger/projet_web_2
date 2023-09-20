@@ -18,5 +18,5 @@
         </p>
     @endforeach
 
-
+    <x-footer />
 </x-layout>

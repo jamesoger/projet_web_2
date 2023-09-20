@@ -28,8 +28,7 @@
                 </div>
                 <div class="enregistrement_admin_form_group_file">
                     <label for="image">Image</label>
-                    <input id="email" name="email" type="email" value="{{ old('email') }}"
-                        autocomplete="email">
+                    <input id="image" name="image" type="file">
                     <x-forms.erreur champ="email" />
                 </div>
                 <div class="enregistrement_admin_form_group_droits">
@@ -59,4 +58,5 @@
             </form>
         </div>
     </div>
+    <x-footer />
 </x-layout>

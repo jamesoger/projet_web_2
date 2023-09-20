@@ -1,5 +1,6 @@
   <div id="app">
       <x-layout titre="Enregistrement">
+          <x-nav />
           <div class="bill">
               <div class="bill_forfaits">
                   @foreach ($forfaits as $key => $forfait)
@@ -23,6 +24,6 @@
                   @endforeach
               </div>
           </div>
+          <x-footer />
       </x-layout>
   </div>
-
