@@ -22,7 +22,7 @@ class EnregistrementAdminController extends Controller
             "prenom" => "required",
             "nom" => "required",
             "email" => "required|email|unique:users,email",
-            "image"=>"nullable|mimes:png,jpg,jpeg, gif",
+            "image"=>"nullable|mimes:png,jpg,jpeg,gif",
             "password" => "required|min:8",
             "confirmation_password" => "required|same:password"
         ], [

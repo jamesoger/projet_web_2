@@ -9,7 +9,7 @@
             <p style="color: red">{{ session('error') }}</p>
         @endif
 
-        <h1>Admin</h1>
+        {{-- <h1>Admin</h1>
         <h2>Users</h2>
         @foreach ($users as $user)
             <p>{{ $user->prenom }} {{ $user->nom }}</p>
@@ -48,7 +48,7 @@
                     <p>Cet utilisateur n'a pas de forfaits associés.</p>
                 @endif
             @endif
-        @endforeach
+        @endforeach --}}
 
 
         @if (auth()->guard('admin')->user()->droits == 1)
@@ -63,7 +63,9 @@
                 <h2>Utilisateurs</h2>
                 @foreach ($users as $user)
                     <p>{{ $user->prenom }} {{ $user->nom }}</p>
+                    @if (auth()->guard('admin')->user()->droits == 1)
                     <a href="{{ route('user.edit', $user->id) }}">Modifier</a>
+                    @endif
                     @if (auth()->guard('admin')->user()->droits == 1)
                         <form onclick="return confirm('Are you sure you want to delete?');"
                             action="{{ route('user.destroy') }}" method="POST">
@@ -121,7 +123,7 @@
                         action="{{ route('admin.destroy') }}" method="POST">
                         @csrf
                         <input type="hidden" name="id" value="{{ $admin->id }}">
-                        <input type="submit" value="supprimer">
+                        <input class="submit_suppression_user" type="submit" value="supprimer">
                     </form>
                 @endforeach
             </div>

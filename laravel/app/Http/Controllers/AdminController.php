@@ -52,7 +52,7 @@ class AdminController extends Controller
             "id" => "required",
             "prenom" => "required|min:4|max:70",
             "nom" => "required|min:4|max:70",
-            "image"=>"nullable|mimes:png,jpg,jpeg,gif",
+            "image"=>"nullable|image|mimes:png,jpg,jpeg,gif",
             "email" => "required",
             "droits"=>"required",
         ], [
