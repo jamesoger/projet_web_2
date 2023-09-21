@@ -38,7 +38,6 @@ class ProgrammationController extends Controller
 
     $programmation = Programmation::findOrFail($id);
 
-    // Définissez des règles de validation pour les artistes et les spectacles
     $validationRules = [
         'nom_scene' =>'nullable',
         'heure_show' => 'nullable',
@@ -48,7 +47,7 @@ class ProgrammationController extends Controller
         'image_spectacle' => 'nullable|image',
     ];
 
-    // Validez les données principales (scène, heure de représentation)
+
     $valides = $request->validate($validationRules, [
 
         'image.image' => 'Le fichier doit être une image valide.',
@@ -56,45 +55,40 @@ class ProgrammationController extends Controller
     ]);
 
 
-    // Vérifiez s'il y a des données d'artiste
+
     if ($request->filled('nom_scene') && $request->filled('heure_show')) {
         $artiste = new Artiste;
         $artiste->nom_scene = $valides['nom_scene'];
         $artiste->heure_show = $valides['heure_show'];
 
-        // if ($request->hasFile('image') && $request->file('image')->isValid()) {
-        //     $imagePath = $request->file('image')->store('images', 'public');
-        //     $artiste->image = $imagePath;
-        // }
+
         if($request->hasFile('image') && $request->file('image')->isValid()){
-            // Déplacer
             Storage::putFile("public/uploads", $request->image);
-            // Sauvegarder le "bon" chemin qui sera inséré dans la BDD et utilisé par le navigateur
             $artiste->image = "/storage/uploads/" . $request->image->hashName();
+        }else{
+            $artiste->image = "/images/default.png";
         }
 
         $artiste->save();
 
-        // Attachez l'artiste à la programmation existante
         $programmation->artistes()->attach($artiste->id);
 
     }
 
-    // Vérifiez s'il y a des données de spectacle
+
     if ($request->filled('nom_spectacle') && $request->filled('heure_spectacle')) {
 
         $spectacle = new Spectacle;
         $spectacle->nom = $valides['nom_spectacle'];
         $spectacle->heure = $valides['heure_spectacle'];
 
-        // if ($request->hasFile('image_spectacle') && $request->file('image_spectacle')->isValid()) {
-        //     $imagePathSpectacle = $request->file('image_spectacle')->store('images', 'public');
-        //     $spectacle->image = $imagePathSpectacle;
-        // }
+
         if($request->hasFile('image_spectacle') && $request->file('image_spectacle')->isValid()){
 
             Storage::putFile("public/uploads", $request->file('image_spectacle'));
             $spectacle->image = "/storage/uploads/" . $request->file('image_spectacle')->hashName();
+        }else{
+            $spectacle->image = "/images/evenement3.jpg";
         }
 
 
