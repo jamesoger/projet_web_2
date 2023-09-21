@@ -49,6 +49,8 @@ class EnregistrementAdminController extends Controller
         if($request->hasFile('image') && $request->file('image')->isValid()){
             Storage::putFile("public/uploads", $request->image);
             $admin->image = "/storage/uploads/" . $request->image->hashName();
+        }else{
+            $admin->image ="/images/default.png";
         }
 
         $admin->save();

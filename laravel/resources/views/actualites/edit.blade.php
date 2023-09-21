@@ -43,6 +43,7 @@
                         <p>{{ $message }}</p>
                     @enderror
                     <input type="file" name="image" id="image">
+                    <input type="hidden"name="image_courante" value={{$actualites->image}}>
                 </div>
 
                 <div class="form-group">

@@ -48,7 +48,7 @@ class ActualiteController extends Controller
         // Sauvegarder le "bon" chemin qui sera inséré dans la BDD et utilisé par le navigateur
         $actualite->image = "/storage/uploads/" . $request->image->hashName();
     }else{
-        $actualite->image ="/images/default.jpg";
+        $actualite->image ="/logos/centre_color_blanc.png";
     }
        $actualite->save();
 
@@ -93,6 +93,8 @@ class ActualiteController extends Controller
             Storage::putFile("public/uploads", $request->image);
             // Sauvegarder le "bon" chemin qui sera inséré dans la BDD et utilisé par le navigateur
             $actualite->image = "/storage/uploads/" . $request->image->hashName();
+        }else{
+            $actualite->image =$request->input('image_courante');
         }
 
         $actualite->save();

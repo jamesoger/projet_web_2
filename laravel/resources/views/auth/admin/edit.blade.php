@@ -24,6 +24,7 @@
                 <div class="enregistrement_admin_form_group_file">
                     <label for="image">Image</label>
                     <input  name="image" type="file">
+                    <input type="hidden" name="image_courante" value="{{$admin->image}}">
                     <x-forms.erreur champ="image" />
                 </div>
                 <div class="form-group">

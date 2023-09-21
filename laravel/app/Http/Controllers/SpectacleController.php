@@ -47,15 +47,11 @@ class SpectacleController extends Controller
         $spectacle->nom = $valides["nom"];
         $spectacle->heure = $valides["heure"];
 
-        // if ($request->hasFile('image') && $request->file('image')->isValid()) {
-        //     $imagePath = $request->file('image')->store('images', 'public');
-        //     $spectacle->image = $imagePath;
-        // }
         if($request->hasFile('image') && $request->file('image')->isValid()){
-            // Déplacer
             Storage::putFile("public/uploads", $request->image);
-            // Sauvegarder le "bon" chemin qui sera inséré dans la BDD et utilisé par le navigateur
             $spectacle->image = "/storage/uploads/" . $request->image->hashName();
+        } else{
+            $spectacle->image = $request->input('image_spectacle');
         }
 
         $spectacle->programmations()->sync([$request->date]);
@@ -72,7 +68,7 @@ class SpectacleController extends Controller
     {
         Spectacle::destroy($request->id);
 
-        return redirect()->route('admin.index')->with('success', 'Actualité supprimée avec succès.');
+        return redirect()->route('admin.index')->with('success', 'Spectacle supprimé avec succès.');
     }
 
 
