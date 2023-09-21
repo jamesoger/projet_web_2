@@ -2275,4 +2275,18 @@ footer .foot-copy p {
 /*******************************/
 .prog_edit {
   padding-top: 10rem;
+}
+
+/*******************************/
+/******* ARTISTE EDIT *******/
+/*******************************/
+.artiste_edit {
+  padding-top: 10em;
+}
+
+/*******************************/
+/******* SPECTACLE EDIT *******/
+/*******************************/
+.spectacle_edit {
+  padding-top: 10em;
 }/*# sourceMappingURL=style.css.map */
