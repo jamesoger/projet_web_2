@@ -28,6 +28,7 @@
                     <p>{{ $message }}</p>
                 @enderror
                 <input type="file" name="image" accept="image/*">
+                <input type="hidden" name="image_spectacle"value="{{$spectacle->image}}">
             </div>
             <div>
                 <label for="date">Date de la représentation</label>

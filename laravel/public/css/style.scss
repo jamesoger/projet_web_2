@@ -4,8 +4,8 @@
 @import "_components";
 @import "_accueil";
 @import"_a-propos";
-@import"_admin.scss";
-@import"_ajout-prog.scss";
+@import"_admin";
+@import"_ajout-prog";
 
 
 /*******************************/
@@ -1387,3 +1387,10 @@
         }
     }
 }
+/*******************************/
+/******* PROGRAMMATION EDIT *******/
+/*******************************/
+.prog_edit{
+    padding-top: 10rem;
+}
+
