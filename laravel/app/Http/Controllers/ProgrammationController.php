@@ -5,15 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\Artiste;
 use App\Models\Programmation;
 use App\Models\Spectacle;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ProgrammationController extends Controller
+
 {
     public function index()
-    {
+{
+
+
+    $programmation = Programmation::with(['artistes', 'spectacles'])->get();
+
+
         return view('programmation.index', [
-            "programmation" => Programmation::all()
+            "programmation" => $programmation,
+
         ]);
     }
 

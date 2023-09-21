@@ -1,22 +1,27 @@
 <x-layout titre="Programmation">
     <x-nav />
-    <h1>Programmation!</h1>
-    @foreach ($programmation as $prog)
-        <h1>{{ $prog->date }}</h1>
-        <p>
-            @foreach ($prog->artistes as $artiste)
-                {{ $artiste->nom_scene }}
-                {{ $artiste->heure_show }}
-                <img src="{{ $artiste->image }}" alt="" width="100px">
-            @endforeach
-            <br>
-            @foreach ($prog->spectacles as $spectacle)
-                {{ $spectacle->nom }}
-                {{ $spectacle->heure }}
-                <img src="{{ $spectacle->image }}" alt="" width="100px">
-            @endforeach
-        </p>
-    @endforeach
-
+    <div class="prog">
+        @foreach ($programmation as $prog)
+            <h1>{{ Carbon\Carbon::parse($prog->date)->translatedFormat('d F Y') }}</h1>
+            <div class="prog_bubbles">
+                @foreach ($prog->artistes as $artiste)
+                    <div class="flex_bubble">
+                        {{ $artiste->nom_scene }}
+                        {{ $artiste->heure_show }}
+                        <img src="{{ $artiste->image }}" alt="">
+                    </div>
+                @endforeach
+                <br>
+                @foreach ($prog->spectacles as $spectacle)
+                    <div class="flex_bubble">
+                        {{ $spectacle->nom }}
+                        {{ $spectacle->heure }}
+                        <img src="{{ $spectacle->image }}" alt="">
+                    </div>
+                @endforeach
+            </div>
+        @endforeach
+    </div>
     <x-footer />
 </x-layout>
+
