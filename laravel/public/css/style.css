@@ -1083,6 +1083,35 @@ footer .foot-copy p {
   border: 3px solid #1DA5F3;
 }
 
+.prog {
+  background-image: url(../images/lignes.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+.prog .prog_bubbles {
+  display: flex;
+}
+.prog .prog_bubbles .flex_bubble {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.prog .prog_bubbles .flex_bubble img {
+  width: 250px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
+}
+.prog h1 {
+  padding: 2em 0 0 2em;
+  text-shadow: 0px 0px 5px white;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 2rem;
+}
+
 /*******************************/
 /********** BILLETTERIE ********/
 /*******************************/
