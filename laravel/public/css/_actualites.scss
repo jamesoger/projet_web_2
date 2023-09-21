@@ -1,0 +1,66 @@
+/*******************************/
+/********** ACTUALITÉS *********/
+/*******************************/
+
+.actu {
+    display: flex;
+    background-image: url(../images/bg_apropos5.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 15em;
+    flex-direction: column;
+
+    .actu-h1 {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 70px;
+
+        h1 {
+            display: flex;
+            justify-content: center;
+            font-family: $font-gothic;
+            font-size: 5em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+    }
+
+
+    .actu-conteneur {
+        display: flex;
+        background-color: rgb(0 0 0 / 60%);
+        padding: 40px;
+        width: 1400px;
+        height: 500px;
+        margin: 0px auto;
+
+        .actu-info {
+            display: flex;
+            flex-direction: column;
+
+            .actu-titre {
+                display: flex;
+
+            }
+
+            .actu-date {
+                display: flex;
+
+            }
+
+            .actu-texte {
+                display: flex;
+                text-align: justify;
+                margin-right: 40px;
+
+            }
+        }
+
+        .actu-img {
+            display: flex;
+            img {
+
+            }
+        }
+    }
+}

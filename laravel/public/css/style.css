@@ -1113,6 +1113,56 @@ footer .foot-copy p {
 }
 
 /*******************************/
+/********** ACTUALITÉS *********/
+/*******************************/
+.actu {
+  display: flex;
+  background-image: url(../images/bg_apropos5.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  padding-top: 15em;
+  flex-direction: column;
+}
+.actu .actu-h1 {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 70px;
+}
+.actu .actu-h1 h1 {
+  display: flex;
+  justify-content: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 5em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.actu .actu-conteneur {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  width: 1400px;
+  height: 500px;
+  margin: 0px auto;
+}
+.actu .actu-conteneur .actu-info {
+  display: flex;
+  flex-direction: column;
+}
+.actu .actu-conteneur .actu-info .actu-titre {
+  display: flex;
+}
+.actu .actu-conteneur .actu-info .actu-date {
+  display: flex;
+}
+.actu .actu-conteneur .actu-info .actu-texte {
+  display: flex;
+  text-align: justify;
+  margin-right: 40px;
+}
+.actu .actu-conteneur .actu-img {
+  display: flex;
+}
+/*******************************/
 /********** BILLETTERIE ********/
 /*******************************/
 .bill {
