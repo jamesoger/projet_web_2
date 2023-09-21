@@ -12,7 +12,7 @@
                 <?php
                 $forfaits = auth()->user()->forfaits;
                 $forfaitsGroupes = [];
-                
+
                 foreach ($forfaits as $forfait) {
                     $found = false;
                     foreach ($forfaitsGroupes as &$groupe) {
@@ -22,7 +22,7 @@
                             break;
                         }
                     }
-                
+
                     if (!$found) {
                         $forfaitsGroupes[] = [
                             'id' => $forfait->id,
@@ -44,9 +44,11 @@
                             <p class="prix">{{ $forfaitGroupe['prix'] * $forfaitGroupe['quantite'] }}$</p>
                             <div class="dates">
                                 <p>Date d'arrivée :
-                                    {{ \Carbon\Carbon::parse($forfaitGroupe['date_arrivee'])->format('d F Y') }}</p>
+                                    {{ \Carbon\Carbon::parse($forfaitGroupe['date_arrivee'])->translatedFormat('d F Y') }}
+                                </p>
                                 <p>Date de départ :
-                                    {{ \Carbon\Carbon::parse($forfaitGroupe['date_depart'])->format('d F Y') }}</p>
+                                    {{ \Carbon\Carbon::parse($forfaitGroupe['date_depart'])->translatedFormat('d F Y') }}
+                                </p>
                             </div>
 
                             <p>Quantité : {{ $forfaitGroupe['quantite'] }}</p>
@@ -69,7 +71,7 @@
                             @foreach ($programmations as $programmation)
                                 @if ($programmation->date >= $forfaitGroupe['date_arrivee'] && $programmation->date <= $forfaitGroupe['date_depart'])
                                     @if (!in_array($programmation->date, $datesDejaAffichees))
-                                        <h3>Date : {{ $programmation->date }}</h3>
+                                        <h3> {{ Carbon\Carbon::parse($programmation->date)->translatedFormat('d F Y') }}</h3>
                                         <?php $datesDejaAffichees[] = $programmation->date; ?>
                                     @endif
 
@@ -77,9 +79,8 @@
                                         <div class="show_info">
                                             <p class="heure">{{ $artiste->heure_show }}</p>
                                             <p class="nom"> {{ $artiste->nom_scene }}</p>
-                                            <div class="image_user">
-                                                <img src="{{ $artiste->image }}" alt="" width="90px">
-                                            </div>
+                                            <img class="img_user" src="{{ $artiste->image }}" alt="">
+
 
                                         </div>
                                     @endforeach
@@ -88,9 +89,7 @@
                                         <div class="show_info">
                                             <p class="heure">{{ $spectacle->heure }}</p>
                                             <p class="nom">{{ $spectacle->nom }}</p>
-                                            <div class="image_user">
-                                                <img src="{{ $spectacle->image }}" alt="" width="90px">
-                                            </div>
+                                            <img class="img_user" src="{{ $spectacle->image }}" alt="">
 
                                         </div>
                                     @endforeach

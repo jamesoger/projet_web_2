@@ -4,20 +4,33 @@
         @foreach ($programmation as $prog)
             <h1>{{ Carbon\Carbon::parse($prog->date)->translatedFormat('d F Y') }}</h1>
             <div class="prog_bubbles">
+                @php
+                    $artistImageClasses = ['image-haut', 'image-milieu', 'image-bas'];
+                    $spectacleImageClasses = ['image-haut', 'image-milieu', 'image-bas'];
+                    $artistClassIndex = 0;
+                    $spectacleClassIndex = 0;
+                @endphp
+
                 @foreach ($prog->artistes as $artiste)
-                    <div class="flex_bubble">
-                        {{ $artiste->nom_scene }}
-                        {{ $artiste->heure_show }}
-                        <img src="{{ $artiste->image }}" alt="">
+                    {{-- <span> {{ $artiste->nom_scene }}</span> --}}
+                    {{-- <span> {{ $artiste->heure_show }}</span> --}}
+                    <div class="image_bubbles">
+                        <img class="{{ $artistImageClasses[$artistClassIndex] }}" src="{{ $artiste->image }}" alt="">
                     </div>
+                    @php
+                        $artistClassIndex = ($artistClassIndex + 1) % count($artistImageClasses);
+                    @endphp
                 @endforeach
-                <br>
+
                 @foreach ($prog->spectacles as $spectacle)
-                    <div class="flex_bubble">
-                        {{ $spectacle->nom }}
-                        {{ $spectacle->heure }}
-                        <img src="{{ $spectacle->image }}" alt="">
+                    {{-- <span>{{ $spectacle->nom }}</span> --}}
+                    {{-- <span> {{ $spectacle->heure }}</span> --}}
+                    <div class="image_bubbles">
+                        <img class="{{ $spectacleImageClasses[$spectacleClassIndex] }}" src="{{ $spectacle->image }}" alt="">
                     </div>
+                    @php
+                        $spectacleClassIndex = ($spectacleClassIndex + 1) % count($spectacleImageClasses);
+                    @endphp
                 @endforeach
             </div>
         @endforeach
