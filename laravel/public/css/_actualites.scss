@@ -9,6 +9,7 @@
     background-size: cover;
     padding-top: 15em;
     flex-direction: column;
+    padding-bottom: 150px;
 
     .actu-h1 {
         display: flex;
@@ -28,38 +29,63 @@
 
     .actu-conteneur {
         display: flex;
-        background-color: rgb(0 0 0 / 60%);
-        padding: 40px;
-        width: 1400px;
-        height: 500px;
-        margin: 0px auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 0px 60px;
+        width: 1500px;
+        height: 600px;
+        margin: 20px auto;
+        align-items: center;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 50%);
 
         .actu-info {
             display: flex;
+            flex: 50%;
             flex-direction: column;
+            font-family: $font-gothic;
 
             .actu-titre {
                 display: flex;
-
+                font-size: 2em;
+                text-transform: uppercase;
+                margin-bottom: 5px;
             }
 
             .actu-date {
                 display: flex;
+                color: $blue;
 
             }
 
             .actu-texte {
                 display: flex;
                 text-align: justify;
-                margin-right: 40px;
-
+                margin-top: 20px;
+                font-size: 1.5em;
+                font-weight: 200;
+                line-height: 1.3;
+                overflow: auto;
             }
+        }
+
+        .actu-ligne {
+            width: 1px;
+            height: 60%;
+            margin: 0px 70px;
+            background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.5), transparent),
+                        linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5), transparent);
         }
 
         .actu-img {
             display: flex;
-            img {
+            background-color: black;
+            overflow: hidden;
+            flex: 50%;
+            box-shadow: 20px 20px white;
+            justify-content: center;
+            align-items: center;
 
+            img {
+                height: 480px;
             }
         }
     }

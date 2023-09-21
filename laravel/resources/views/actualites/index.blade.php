@@ -3,11 +3,11 @@
 
     <main class="actu">
         <div class="actu-h1">
-            <h1>Les actus du féstival</h1>
+            <h1>Les actus du festival</h1>
         </div>
 
-        <div class="actu-conteneur">
-            @foreach ($actualites as $actualite)
+        @foreach ($actualites as $actualite)
+            <div class="actu-conteneur">
                 <div class="actu-info">
                     <div class="actu-titre">
                         <h2>{{ $actualite->titre }}</h2>
@@ -22,11 +22,14 @@
                     </div>
                 </div>
 
+                <div class="actu-ligne"></div>
+
                 <div class="actu-img">
                     <img src="{{ $actualite->image }}" width="800px" alt="">
                 </div>
+            </div>
             @endforeach
-        </div>
 
     </main>
+    <x-footer />
 </x-layout>
