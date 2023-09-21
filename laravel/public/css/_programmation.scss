@@ -1,0 +1,35 @@
+.prog {
+    background-image: url(../images/lignes.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+
+    .prog_bubbles {
+        display: flex;
+        .flex_bubble {
+            display: flex;
+            flex-wrap: nowrap;
+
+            img {
+                width: 250px;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 50px;
+            }
+        }
+
+
+
+    }
+
+
+    h1 {
+        padding: 2em 0 0 2em;
+        text-shadow: 0px 0px 5px white;
+        font-size: 5em;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: white;
+        margin-bottom: 2rem;
+    }
+
+}
