@@ -234,6 +234,13 @@ footer .foot-nav-adresse .foot-menu li {
   font-weight: 300;
   margin: 10px 0px;
 }
+footer .foot-nav-adresse .foot-menu li a {
+  text-decoration: none;
+  color: white;
+}
+footer .foot-nav-adresse .foot-menu li a:hover {
+  color: #1DA5F3;
+}
 footer .foot-nav-adresse .foot-map {
   align-self: center;
   text-align: center;
@@ -256,6 +263,13 @@ footer .foot-nav-adresse .foot-logo p {
   text-align: center;
   font-family: ethnocentric, sans-serif;
   font-weight: 300;
+}
+footer .foot-nav-adresse .foot-logo p a {
+  text-decoration: none;
+  color: white;
+}
+footer .foot-nav-adresse .foot-logo p a:hover {
+  color: #1DA5F3;
 }
 footer .foot-app {
   display: flex;
