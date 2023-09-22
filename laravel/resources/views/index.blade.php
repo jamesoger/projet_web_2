@@ -143,4 +143,16 @@
         accEventsSection.scrollIntoView(options);
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+        const phrasesContainer = document.querySelector(".phrases");
+
+        window.addEventListener("scroll", function() {
+            // Obtenez la position de défilement verticale de la page
+            const scrollY = window.scrollY;
+
+            // Mettez à jour la position horizontale du conteneur des phrases
+            phrasesContainer.style.transform = `translateX(-${scrollY}px)`;
+        });
+    });
 </script>
