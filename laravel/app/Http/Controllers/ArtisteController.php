@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Storage;
 
 class ArtisteController extends Controller
 {
+    /**
+     * Formulaire de modification d'un artiste
+     *
+     * @param int $id
+     * @return View
+     */
     public function edit($id)
 
     {
@@ -24,7 +30,12 @@ class ArtisteController extends Controller
         ]);
     }
 
-
+    /**
+     * Tratiement de la modification d'un artiste
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function update(Request $request)
     {
         $valides = $request->validate([
@@ -62,10 +73,15 @@ class ArtisteController extends Controller
         // Rediriger
         return redirect()
             ->route('admin.index')
-            ->with('succes', "cet artiste a été modifié avec succès!");
+            ->with('success', "cet artiste a été modifié avec succès!");
     }
 
-
+    /**
+     * Suppression d'un artiste
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function destroy(Request $request)
     {
         Artiste::destroy($request->id);

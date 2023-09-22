@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class SpectacleController extends Controller
 {
+    /**
+     * Formulaire de modification d'un spectacle
+     *
+     * @param int $id
+     * @return View
+     */
     public function edit($id)
 
     {
@@ -23,7 +29,12 @@ class SpectacleController extends Controller
         ]);
     }
 
-
+    /**
+     * Traitement de la modification
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function update(Request $request)
     {
         $valides = $request->validate([
@@ -60,9 +71,14 @@ class SpectacleController extends Controller
         // Rediriger
         return redirect()
             ->route('admin.index')
-            ->with('succes', "ce spectacle été modifié avec succès!");
+            ->with('success', "ce spectacle été modifié avec succès!");
     }
-
+    /**
+     * Suppression d'un spectacle
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function destroy(Request $request)
     {
         Spectacle::destroy($request->id);

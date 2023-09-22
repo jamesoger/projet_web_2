@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
 
-
+    /**
+     * Affichage de la vue utilisateur
+     *
+     * @return View
+     */
     public function index()
 {
-
 
     $programmations = Programmation::all();
     $artistes = [];
@@ -36,7 +39,12 @@ class UserController extends Controller
         'spectacles' => $spectacles
     ]);
 }
-
+    /**
+     * Formulaire de modification d'un utilisateur
+     *
+     * @param int $id
+     * @return View
+     */
     public function edit($id)
     {
         $user = User::find($id);
@@ -46,7 +54,12 @@ class UserController extends Controller
         ]);
     }
 
-
+    /**
+     * Traitement de la modification d'un utilisateur
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function update(Request $request ){
         $valides = $request->validate([
             "id" => "required",
@@ -74,16 +87,21 @@ class UserController extends Controller
         // Rediriger
         return redirect()
                 ->route('admin.index')
-                ->with('succes', "Cet utilisateur a été modifiée avec succès!");
+                ->with('success', "Cet utilisateur a été modifié avec succès!");
     }
 
 
-
+    /**
+     * Suppression d'un utilisateur
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function destroy(Request $request)
     {
         User::destroy($request->id);
 
         return redirect()->route('admin.index')
-            ->with('succes', "Cet utilisateur a été supprimé!");
+            ->with('success', "Cet utilisateur a été supprimé!");
     }
 }

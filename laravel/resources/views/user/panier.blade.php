@@ -4,9 +4,6 @@
         <div id="app">
 
             <div class="panier_user">
-                @if (session('error'))
-                    <p style="color: red">{{ session('error') }}</p>
-                @endif
                 <h1>{{ auth()->user()->prenom }} {{ auth()->user()->nom }}</h1>
                 <div class="forfaits">
                     @if (session()->has('selected_forfait'))

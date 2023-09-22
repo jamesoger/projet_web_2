@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\DB;
 
 class ForfaitController extends Controller
 {
+    /**
+     * Page d'achat du forfait
+     *
+     * @param int $forfaitId
+     * @return View
+     */
     public function buy($forfaitId = null)
     {
         if (auth()->check()) {
@@ -35,6 +41,13 @@ class ForfaitController extends Controller
             'forfaits' => $forfaits
         ]);
     }
+
+    /**
+     * Enregsitrement de l'achat
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function store(Request $request)
     {
         $forfaitId = $request->input('forfait_id');
@@ -76,11 +89,19 @@ class ForfaitController extends Controller
                 ]);
             }
 
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')
+            ->with('success', 'Merci pour votre achat! On se voit bientot!');
     }
 
     }
 
+     /**
+      * Modifier le forfait de la session
+      *
+      * @param Request $request
+      * @param int $forfaitId
+      * @return Redirect/Response
+      */
     public function update(Request $request, $forfaitId)
 {
 
@@ -94,55 +115,17 @@ class ForfaitController extends Controller
             'id' => $forfait->id,
         ]]);
 
-        return redirect()->route('user.panier')->with('success', 'Forfait sélectionné avec succès.');
+        return redirect()->route('user.panier');
     }
 
     return redirect()->route('user.panier')->with('error', 'Forfait introuvable.');
 }
-
-
-
-    // public function store(Request $request)
-    // {
-    //     // Récupérez l'ID du forfait à partir de la requête
-    //     $forfaitId = $request->input('forfait_id');
-    //     $dateArrivee = $request->input('date_arrivee');
-    //     $dateDepart = $request->input('date_depart');
-
-    //     if (!$dateArrivee || !$dateDepart) {
-    //         return redirect()->back()->with('error', 'Veuillez spécifier des dates valides.');
-    //     }
-    //     // Récupérez l'ID de l'utilisateur actuellement authentifié
-    //     $userId = auth()->id();
-
-    //     if ($userId && $forfaitId) {
-    //         // Attachez le forfait à l'utilisateur
-    //         $user = User::find($userId);
-    //         $user->forfaits()->attach($forfaitId, [
-    //             'date_arrivee' => $dateArrivee,
-    //             'date_depart' => $dateDepart,
-    //         ]);
-    //     }
-
-    //     return redirect()->route('user.index');
-    // }
-
-
-    // public function destroy($id)
-    // {
-    //     $userId = auth()->id();
-
-    //     if ($userId) {
-    //         DB::table('user_forfait')->where('id', $id)->delete();
-    //         return redirect()->route('user.index')->with('success', "L'entrée de la table user_forfait a été supprimée!");
-    //     }
-
-    //     return redirect()->route('user.index')->with('error', "La suppression de l'entrée de la table user_forfait a échoué!");
-    // }
-
-
-
-    // a verifier
+    /**
+     * Supprimer un forfait
+     *
+     * @param int $id
+     * @return Redirect/Response
+     */
     public function destroy($id)
     {
         $userId = auth()->id();
@@ -159,7 +142,7 @@ class ForfaitController extends Controller
                 }
 
                 DB::table('user_forfait')->where('id', $id)->delete();
-                return redirect()->route('user.index')->with('success', "Le forfait a été supprimée!");
+                return redirect()->route('user.index')->with('success', "Le forfait a été supprimé!");
             }
         }
 
@@ -168,13 +151,18 @@ class ForfaitController extends Controller
 
 
 
-
+    /**
+     * Suppression du forfait depuis la vue admin
+     *
+     * @param int $id
+     * @return Redirect/Response
+     */
     public function destroyForfaitAdmin($id)
     {
 
         DB::table('user_forfait')->where('id', $id)->delete();
 
         return redirect()->route('admin.index')
-            ->with('succes', 'Le forfait a bien été supprimé');
+            ->with('success', 'Le forfait a bien été supprimé');
     }
 }
