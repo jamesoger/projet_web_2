@@ -1087,6 +1087,9 @@ footer .foot-copy p {
   background-image: url(../images/lignes.jpg);
   background-size: cover;
   background-attachment: fixed;
+  height: 100%;
+  margin: 0;
+  padding-top: 10em;
 }
 .prog .prog_bubbles {
   display: flex;
@@ -1101,38 +1104,29 @@ footer .foot-copy p {
 .prog .prog_bubbles .image_bubbles {
   min-height: 100%;
   display: flex;
+  position: relative;
 }
 .prog .prog_bubbles .image_bubbles img {
-  margin-bottom: 10px;
-}
-.prog .prog_bubbles .image_bubbles .image-haut {
   width: 260px;
   height: 260px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
   box-shadow: 0px 0px 8px white;
-  margin: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+.prog .prog_bubbles .image_bubbles img:hover {
+  transform: rotate3d(1, 1, 1, 45deg);
+}
+.prog .prog_bubbles .image-haut {
   align-self: flex-start;
 }
-.prog .prog_bubbles .image_bubbles .image-milieu {
-  width: 260px;
-  height: 260px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0px 0px 8px white;
-  margin: 10px;
+.prog .prog_bubbles .image-milieu {
   align-self: center;
 }
-.prog .prog_bubbles .image_bubbles .image-bas {
-  width: 260px;
-  height: 260px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0px 0px 8px white;
-  margin: 10px;
+.prog .prog_bubbles .image-bas {
   align-self: flex-end;
 }
 .prog h1 {
@@ -1517,7 +1511,7 @@ footer .foot-copy p {
   font-size: 5em;
   font-weight: 500;
   text-transform: uppercase;
-  padding-top: 1em;
+  padding-top: 2em;
 }
 .panier_user .panier_selection {
   width: 400px;
@@ -1591,7 +1585,7 @@ footer .foot-copy p {
   text-align: center;
   position: absolute;
   top: 65%;
-  left: 42%;
+  left: 43%;
   width: 300px;
   height: 100px;
   display: flex;
@@ -1650,7 +1644,7 @@ footer .foot-copy p {
   text-shadow: 0px 0px 6px rgb(7, 7, 7);
 }
 .panier_user .deconnect_user {
-  margin-top: 80px;
+  margin-top: 6rem;
 }
 .panier_user .deconnect_user input {
   cursor: pointer;

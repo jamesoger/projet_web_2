@@ -2,6 +2,9 @@
     background-image: url(../images/lignes.jpg);
     background-size: cover;
     background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+    padding-top: 10em;
 
     .prog_bubbles {
         display: flex;
@@ -16,52 +19,50 @@
         .image_bubbles {
             min-height: 100%;
             display: flex;
-            img{
+            position: relative;
+
+            img {
+                width: 260px;
+                height: 260px;
+                object-fit: cover;
+                border-radius: 50%;
+                box-shadow: 0px 0px 8px white;
                 margin-bottom: 10px;
-            }
-            .image-haut {
-                width: 260px;
-                height: 260px;
-                object-fit: cover;
-                border-radius: 50%;
-                box-shadow: 0px 0px 8px white;
-                margin: 10px;
+                transition: transform 0.3s ease;
+                position: relative;
 
-                align-self: flex-start; // Aligner l'image en haut
+                &:hover {
+                    transform: rotate3d(1, 1, 1, 45deg);
+                }
             }
 
-            .image-milieu {
-                width: 260px;
-                height: 260px;
-                object-fit: cover;
-                border-radius: 50%;
-                box-shadow: 0px 0px 8px white;
-                margin: 10px;
-                align-self: center; // Aligner l'image au milieu
-            }
+            // span {
+            //     top: 0;
+            //     position: absolute;
+            //     padding: 10px;
+            //     text-align: center;
+            //     font-weight: bold;
+            //     backface-visibility: hidden;
+            //     bottom: -30px; /* Ajustez la valeur pour aligner correctement les spans par rapport aux images */
+            //     left: 0;
+            //     width: 100%;
 
-            .image-bas {
-                width: 260px;
-                height: 260px;
-                object-fit: cover;
-                border-radius: 50%;
-                box-shadow: 0px 0px 8px white;
-                margin: 10px;
-                align-self: flex-end; // Aligner l'image en bas
-            }
+            // }
+
         }
 
-        // span {
-        //     display: none;
-        //     position: absolute;
-        //     padding: 10px;
-        //     border-radius: 5px;
-        //     text-align: center;
-        //     width: 100%;
-        //     background: rgba(255, 255, 255, 0.8);
-        //     font-weight: bold;
-        //     bottom: 0;
-        // }
+        .image-haut  {
+            align-self: flex-start; // Aligner l'image en haut
+        }
+
+        .image-milieu {
+            align-self: center; // Aligner l'image au milieu
+        }
+
+        .image-bas {
+            align-self: flex-end; // Aligner l'image en bas
+        }
+
     }
 
     h1 {
@@ -75,6 +76,8 @@
         margin-bottom: 2rem;
     }
 }
+
+
 
 
 

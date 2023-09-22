@@ -12,10 +12,10 @@
                 @endphp
 
                 @foreach ($prog->artistes as $artiste)
-                    {{-- <span> {{ $artiste->nom_scene }}</span> --}}
-                    {{-- <span> {{ $artiste->heure_show }}</span> --}}
                     <div class="image_bubbles">
                         <img class="{{ $artistImageClasses[$artistClassIndex] }}" src="{{ $artiste->image }}" alt="">
+                        {{-- <span> {{ $artiste->nom_scene }}</span>
+                        <span> {{ $artiste->heure_show }}</span> --}}
                     </div>
                     @php
                         $artistClassIndex = ($artistClassIndex + 1) % count($artistImageClasses);
@@ -23,10 +23,10 @@
                 @endforeach
 
                 @foreach ($prog->spectacles as $spectacle)
-                    {{-- <span>{{ $spectacle->nom }}</span> --}}
-                    {{-- <span> {{ $spectacle->heure }}</span> --}}
                     <div class="image_bubbles">
                         <img class="{{ $spectacleImageClasses[$spectacleClassIndex] }}" src="{{ $spectacle->image }}" alt="">
+                        {{-- <span>{{ $spectacle->nom }}</span>
+                        <span> {{ $spectacle->heure }}</span> --}}
                     </div>
                     @php
                         $spectacleClassIndex = ($spectacleClassIndex + 1) % count($spectacleImageClasses);
