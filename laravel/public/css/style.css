@@ -1171,6 +1171,18 @@ footer .foot-copy p {
   margin: 0;
   padding-top: 10em;
 }
+.prog .date-gauche {
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
+.prog .date-centre {
+  margin-left: 50%;
+  margin-bottom: 1rem;
+}
+.prog .date-droite {
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
 .prog .prog_bubbles {
   display: flex;
   flex-direction: column;
@@ -1187,6 +1199,7 @@ footer .foot-copy p {
   min-height: 100%;
   display: flex;
   position: relative;
+  transition: transform 0.5s ease;
 }
 .prog .prog_bubbles .image_bubbles img {
   width: 260px;
@@ -1196,20 +1209,55 @@ footer .foot-copy p {
   border-radius: 50%;
   box-shadow: 0px 0px 8px white;
   margin-bottom: 10px;
-  transition: transform 0.3s ease;
+  transition: transform 0.7s ease-in-out;
   position: relative;
+  cursor: pointer;
 }
 .prog .prog_bubbles .image_bubbles img:hover {
-  transform: rotate3d(1, 1, 1, 45deg);
+  transform: rotate3d(2, 1, 1, 360deg);
+}
+.prog .prog_bubbles .image_bubbles span {
+  position: absolute;
+  left: 0;
+  color: white;
+  font-size: 1.5rem;
+  font-family: ethnocentric, sans-serif;
+  text-transform: uppercase;
+  height: 260px;
+  width: 260px;
+  border-radius: 50%;
+  text-shadow: 0px 2px 6px rgb(35, 35, 35);
+  line-height: 260px;
+  text-align: center;
+  font-weight: bold;
+  z-index: -1;
+  transition: z-index 0.3s ease opacity 0.3s ease;
+}
+.prog .prog_bubbles .image_bubbles #nom {
+  padding-top: 1em;
+}
+.prog .prog_bubbles .image_bubbles:hover span {
+  z-index: 1;
+  transition-delay: 0.4s;
+  opacity: 1;
 }
 .prog .prog_bubbles .image-haut {
   align-self: flex-start;
 }
+.prog .prog_bubbles .image-haut #nom {
+  margin-top: 1.5rem;
+}
 .prog .prog_bubbles .image-milieu {
   align-self: center;
 }
+.prog .prog_bubbles .image-milieu #nom {
+  margin-top: 1.5rem;
+}
 .prog .prog_bubbles .image-bas {
   align-self: flex-end;
+}
+.prog .prog_bubbles .image-bas #nom {
+  margin-top: 2rem;
 }
 .prog h1 {
   margin-top: 2rem;
