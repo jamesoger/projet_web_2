@@ -164,7 +164,7 @@
         });
     });
 
-    /********** PARALAX PHRASES **********/
+    /********** PARALLAX PHRASES **********/
     document.addEventListener("DOMContentLoaded", function() {
         const phrasesContainer = document.querySelector(".phrases");
         const phrases = phrasesContainer.querySelectorAll("p");
@@ -183,7 +183,7 @@
         });
     });
 
-    /********** PARALAX VIGNETTES **********/
+    /********** PARALLAX VIGNETTES **********/
     document.addEventListener("DOMContentLoaded", function() {
         const events = document.querySelector(".events");
         const windowWidth = window.innerWidth; // Largeur de la fenêtre
@@ -201,6 +201,8 @@
     document.addEventListener("DOMContentLoaded", function () {
         const flecheLink = document.querySelector(".fleche-haut");
         const accHeader = document.getElementById("acc-header");
+
+        flecheLink.style.display = "none";
 
         // Affiche la flèche lorsque l'utilisateur fait défiler la page
         window.addEventListener("scroll", function () {
