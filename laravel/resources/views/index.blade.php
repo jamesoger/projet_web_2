@@ -183,6 +183,20 @@
         });
     });
 
+    /********** PARALAX VIGNETTES **********/
+    document.addEventListener("DOMContentLoaded", function() {
+        const events = document.querySelector(".events");
+        const windowWidth = window.innerWidth; // Largeur de la fenêtre
+
+        window.addEventListener("scroll", function() {
+            const scrollY = window.scrollY;
+            const direction = (scrollY / 2) % (events.clientHeight * 3);
+
+            // Ajoutez la moitié de la largeur de la fenêtre pour centrer l'élément
+            events.style.transform = `translateX(${direction - windowWidth / 2}px)`;
+        });
+    });
+
     /********** FLECHE-HAUT **********/
     document.addEventListener("DOMContentLoaded", function () {
         const flecheLink = document.querySelector(".fleche-haut");
