@@ -3,9 +3,16 @@
         <x-nav />
 
         <div class="user_index">
-            @if (session('error'))
-                <p style="color: red">{{ session('error') }}</p>
+            @if (session('success'))
+                <p style="color: green; font-size: 30px;background-color:white ;text-align:center;">
+                    {{ session('success') }}
+                </p>
             @endif
+            @if (session('error'))
+                <p style="color: red; font-size: 30px;background-color:white ;text-align:center;">{{ session('error') }}
+                </p>
+            @endif
+
             <h1>{{ auth()->user()->prenom }} voici tes forfaits!</h1>
 
             <div class="user_reservations">
@@ -17,7 +24,11 @@
                     $found = false;
                     foreach ($forfaitsGroupes as &$groupe) {
                         if ($groupe['id'] == $forfait->id) {
-                            $groupe['quantite']++;
+                            $groupe['billets'][] = [
+                                'pivot_id' => $forfait->pivot->id,
+                                'date_arrivee' => $forfait->pivot->date_arrivee,
+                                'date_depart' => $forfait->pivot->date_depart,
+                            ];
                             $found = true;
                             break;
                         }
@@ -26,12 +37,15 @@
                     if (!$found) {
                         $forfaitsGroupes[] = [
                             'id' => $forfait->id,
-                            'pivot_id' => $forfait->pivot->id,
                             'nom' => $forfait->nom,
                             'prix' => $forfait->prix,
-                            'date_arrivee' => $forfait->pivot->date_arrivee,
-                            'date_depart' => $forfait->pivot->date_depart,
-                            'quantite' => 1,
+                            'billets' => [
+                                [
+                                    'pivot_id' => $forfait->pivot->id,
+                                    'date_arrivee' => $forfait->pivot->date_arrivee,
+                                    'date_depart' => $forfait->pivot->date_depart,
+                                ],
+                            ],
                         ];
                     }
                 }
@@ -41,64 +55,79 @@
                     <div class="forfaits_users">
                         <div id="forfait-{{ $forfaitGroupe['id'] }}">
                             <h2>{{ $forfaitGroupe['nom'] }}</h2>
-                            <p class="prix">{{ $forfaitGroupe['prix'] * $forfaitGroupe['quantite'] }}$</p>
-                            <div class="dates">
-                                <p>Date d'arrivée :
-                                    {{ \Carbon\Carbon::parse($forfaitGroupe['date_arrivee'])->translatedFormat('d F Y') }}
-                                </p>
-                                <p>Date de départ :
-                                    {{ \Carbon\Carbon::parse($forfaitGroupe['date_depart'])->translatedFormat('d F Y') }}
-                                </p>
+                            <p class="prix">{{ $forfaitGroupe['prix'] * count($forfaitGroupe['billets']) }}$</p>
+                            <div class="billets">
+                                @foreach ($forfaitGroupe['billets'] as $billet)
+                                    <div class="billet">
+                                        <div class="dates">
+                                            <p>Date d'arrivée :
+                                                {{ \Carbon\Carbon::parse($billet['date_arrivee'])->translatedFormat('d F Y') }}
+                                            </p>
+                                            <p>Date de départ :
+                                                {{ \Carbon\Carbon::parse($billet['date_depart'])->translatedFormat('d F Y') }}
+                                            </p>
+                                        </div>
+                                        <form onclick="return confirm('Are you sure you want to delete?');"
+                                            action="{{ route('forfait.destroy', $billet['pivot_id']) }}" method="POST">
+                                            @csrf
+                                            @error('submit')
+                                                <p>{{ $message }}</p>
+                                            @enderror
+                                            <button type="submit">Supprimer</button>
+                                        </form>
+                                    </div>
+                                @endforeach
                             </div>
-
-                            <p>Quantité : {{ $forfaitGroupe['quantite'] }}</p>
-                            <form onclick="return confirm('Are you sure you want to delete?');"
-                                action="{{ route('forfait.destroy', $forfaitGroupe['pivot_id']) }}" method="POST">
-                                @csrf
-                                @error('submit')
-                                    <p>{{ $message }}</p>
-                                @enderror
-                                <button type="submit">Supprimer</button>
-                            </form>
-
-                            <!-- Utilisez des événements de clic distincts pour chaque bouton "Voir plus" -->
                             <button class="toggle-programmation" data-index="{{ $index }}">Voir plus</button>
                         </div>
                         <div class="programmation_user" id="programmation-{{ $index }}">
                             <span class="fermer-programmation" data-index="{{ $index }}">X</span>
-                            <?php $datesDejaAffichees = []; ?>
                             <h2>Programmation</h2>
+                            <?php $datesDejaAffichees = []; ?>
+                            <?php $datesArtistes = []; ?>
+
                             @foreach ($programmations as $programmation)
-                                @if ($programmation->date >= $forfaitGroupe['date_arrivee'] && $programmation->date <= $forfaitGroupe['date_depart'])
-                                    @if (!in_array($programmation->date, $datesDejaAffichees))
-                                        <h3> {{ Carbon\Carbon::parse($programmation->date)->translatedFormat('d F Y') }}</h3>
-                                        <?php $datesDejaAffichees[] = $programmation->date; ?>
+                                @foreach ($forfaitGroupe['billets'] as $billet)
+                                    @if ($programmation->date >= $billet['date_arrivee'] && $programmation->date <= $billet['date_depart'])
+                                        <?php
+                                        $dateKey = $programmation->date;
+                                        if (!isset($datesArtistes[$dateKey])) {
+                                            $datesArtistes[$dateKey] = [
+                                                'date' => $programmation->date,
+                                                'artistes' => [],
+                                            ];
+                                        }
+
+                                        foreach ($programmation->artistes as $artiste) {
+                                            $artisteKey = $artiste->id;
+                                            if (!isset($datesArtistes[$dateKey]['artistes'][$artisteKey])) {
+                                                $datesArtistes[$dateKey]['artistes'][$artisteKey] = $artiste;
+                                            }
+                                        }
+                                        ?>
+                                        @if (!in_array($programmation->date, $datesDejaAffichees))
+                                            <h3>{{ $programmation->date }}
+                                            </h3>
+
+                                            <?php $datesDejaAffichees[] = $programmation->date; ?>
+
+                                            @foreach ($datesArtistes[$dateKey]['artistes'] as $artiste)
+                                                <div class="show_info">
+                                                    <p class="heure">{{ $artiste->heure_show }}</p>
+                                                    <p class="nom">{{ $artiste->nom_scene }}</p>
+                                                    <img class="img_user" src="{{ $artiste->image }}" alt="">
+                                                </div>
+                                            @endforeach
+                                        @endif
                                     @endif
-
-                                    @foreach ($programmation->artistes as $artiste)
-                                        <div class="show_info">
-                                            <p class="heure">{{ $artiste->heure_show }}</p>
-                                            <p class="nom"> {{ $artiste->nom_scene }}</p>
-                                            <img class="img_user" src="{{ $artiste->image }}" alt="">
-
-
-                                        </div>
-                                    @endforeach
-
-                                    @foreach ($programmation->spectacles as $spectacle)
-                                        <div class="show_info">
-                                            <p class="heure">{{ $spectacle->heure }}</p>
-                                            <p class="nom">{{ $spectacle->nom }}</p>
-                                            <img class="img_user" src="{{ $spectacle->image }}" alt="">
-
-                                        </div>
-                                    @endforeach
-                                @endif
+                                @endforeach
                             @endforeach
                         </div>
+
                     </div>
                 @endforeach
             </div>
+
             <a class="autre_forfait" href="{{ route('billetterie.index') }}">Réservez un autre forfait?</a>
             <form action="{{ route('deconnexion_user') }}" method="POST">
                 @csrf

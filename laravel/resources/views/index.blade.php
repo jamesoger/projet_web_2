@@ -1,4 +1,11 @@
 <x-layout titre="Accueil">
+    @if (session('success'))
+        <p style="color: green; font-size: 30px;background-color:white ;text-align:center;">{{ session('success') }}
+        </p>
+    @endif
+    @if (session('error'))
+        <p style="color: red; font-size: 30px;background-color:white ;text-align:center;">{{ session('error') }}</p>
+    @endif
     <h1 class="titre-hidden">Bienvenue sur l'accueil de FestX.com</h1>
 
     <div id="app_accueil">
@@ -160,11 +167,18 @@
                 easing: "ease-in-out",
             };
 
+
+            // Utilisez la méthode scrollIntoView avec les options
+
+
             accEventsSection.scrollIntoView(options);
         });
     });
 
+
+
     /********** PARALAX PHRASES **********/
+
     document.addEventListener("DOMContentLoaded", function() {
         const phrasesContainer = document.querySelector(".phrases");
         const phrases = phrasesContainer.querySelectorAll("p");
