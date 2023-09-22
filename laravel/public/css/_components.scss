@@ -11,6 +11,7 @@
     background-color: #0000008a;
     width: 100%;
     height: 10%;
+    z-index: 3;
 
     img {
         display: flex;
@@ -37,6 +38,7 @@ footer {
     display: flex;
     flex-direction: column;
     background-color: black;
+    z-index: 3;
 
     .footer-media {
         display: flex;

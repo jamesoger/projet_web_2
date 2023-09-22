@@ -1,5 +1,8 @@
 <x-layout titre="Programmation">
     <x-nav />
+    <div id="app_prog">
+        <canvas id="atelier" class="canvas_lines"></canvas>
+    </div>
     <div class="prog">
         @foreach ($programmation as $key => $prog)
         <div class="date {{ $key % 3 == 0 ? 'date-gauche' : ($key % 3 == 1 ? 'date-centre' : 'date-droite') }}">
@@ -41,4 +44,22 @@
     </div>
     <x-footer />
 </x-layout>
+
+
+<script type="module">
+    import { BouncingBalls } from "{{ asset('js/lines.js') }}";
+
+    const canvas = document.querySelector("#atelier");
+
+    canvas.style.position = "fixed";
+canvas.style.top = "0";
+canvas.style.left = "0";
+canvas.style.width = "100%";
+canvas.style.height = "100%";
+
+
+
+    const bouncingBalls = new BouncingBalls(canvas);
+</script>
+
 
