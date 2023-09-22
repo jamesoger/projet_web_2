@@ -8,18 +8,21 @@ use Illuminate\Support\Facades\Auth;
 
 class ConnexionUserController extends Controller
 {
+    /**
+     * Connexion de l'utilisateur
+     *
+     * @param int $forfaitId
+     * @return View
+     */
     public function create($forfaitId = null)
 {
     if (auth()->check()) {
-        // Si l'utilisateur est déjà connecté, récupérez le forfait sélectionné (s'il existe)
         $selectedForfait = session('selected_forfait');
 
-        // Si un forfait est sélectionné, stockez-le à nouveau dans la session de l'utilisateur actuel
         if ($selectedForfait) {
             session(['selected_forfait' => $selectedForfait]);
         }
-    } // Fermez la première condition `if` ici
-
+    }
     if ($forfaitId) {
         $forfait = Forfait::find($forfaitId);
 
@@ -30,17 +33,21 @@ class ConnexionUserController extends Controller
             'id' => $forfait->id,
         ]]);
     } else {
-        // Si aucun forfait n'est sélectionné, retirez-le de la session (au cas où il y en aurait un précédemment)
         session()->forget('selected_forfait');
     }
 
     return view('auth.user.connexion.create');
 }
 
+    /**
+     * Authentification de l'utilisateur
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function authentifier(Request $request)
 
     {
-        // Valider
          $valides = $request->validate([
              "email" => "required|email",
               "password" => "required"
@@ -54,21 +61,17 @@ class ConnexionUserController extends Controller
 
         if (Auth::guard('web')->attempt($valides)) {
 
-            // Si l'utilisateur est en train de réserver un forfait
-
             if (session("selected_forfait")) {
                 return redirect()
                       ->intended(route('user.panier'))
-                     ->with('succes', 'Vous êtes connectés!');
-
-                // Si l'utilisateur se connecte normalement
+                     ->with('success', 'Vous êtes connecté!');
 
             } else {
 
-                return redirect()->route('user.index');
+                return redirect()->route('user.index')
+                    ->with('success', 'Vous êtes connecté!');
             }
         }
-
                  return back()
                        ->withErrors([
 
@@ -78,6 +81,12 @@ class ConnexionUserController extends Controller
 
             ->onlyInput('email');
     }
+    /**
+     * Deconnexion de l'utilisateur
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function deconnecter(Request $request)
     {
         Auth::logout();
@@ -87,6 +96,6 @@ class ConnexionUserController extends Controller
 
         return redirect()
             ->route('accueil')
-            ->with('succes', "Vous êtes déconnectés!");
+            ->with('success', "Vous êtes déconnectés!");
     }
 }

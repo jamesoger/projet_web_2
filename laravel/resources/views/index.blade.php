@@ -1,4 +1,11 @@
 <x-layout titre="Accueil">
+    @if (session('success'))
+        <p style="color: green; font-size: 30px;background-color:white ;text-align:center;">{{ session('success') }}
+        </p>
+    @endif
+    @if (session('error'))
+        <p style="color: red; font-size: 30px;background-color:white ;text-align:center;">{{ session('error') }}</p>
+    @endif
     <h1 class="titre-hidden">Bienvenue sur l'accueil de FestX.com</h1>
 
     <div id="app_accueil">
@@ -127,24 +134,24 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-    const flecheLink = document.querySelector('a[href="#acc-events"]');
-    const accEventsSection = document.getElementById('acc-events');
+        const flecheLink = document.querySelector('a[href="#acc-events"]');
+        const accEventsSection = document.getElementById('acc-events');
 
-    flecheLink.addEventListener("click", function(event) {
-        event.preventDefault();
+        flecheLink.addEventListener("click", function(event) {
+            event.preventDefault();
 
-        // Options de défilement
-        const options = {
-            behavior: "smooth",
-            easing: "ease-in-out",
-        };
+            // Options de défilement
+            const options = {
+                behavior: "smooth",
+                easing: "ease-in-out",
+            };
 
-        // Utilisez la méthode scrollIntoView avec les options
-        accEventsSection.scrollIntoView(options);
+            // Utilisez la méthode scrollIntoView avec les options
+            accEventsSection.scrollIntoView(options);
+        });
     });
-});
 
-document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
         const phrasesContainer = document.querySelector(".phrases");
 
         window.addEventListener("scroll", function() {

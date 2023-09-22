@@ -8,19 +8,29 @@ use App\Models\Admin;
 
 class ConnexionAdminController extends Controller
 {
+    /**
+     * Formulaire de connexion admin
+     *
+     * @return View
+     */
     public function login()
     {
         return view('auth.admin.connexion.login');
     }
 
+    /**
+     * Authentification de l'admin
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function authentifier(Request $request)
     {
         if (auth()->guard('admin')->check()) {
-            // Si l'utilisateur est déjà authentifié en tant qu'administrateur, redirigez-le vers la page d'accueil de l'administration.
-            return redirect()->route('admin.index')->with('success', 'You are already logged in.');
+
+            return redirect()->route('admin.index')->with('success', 'Vous êtes connectés!');
         }
 
-        // Valider
         $valides = $request->validate([
             "email" => "required|email",
             "password" => "required"
@@ -33,7 +43,6 @@ class ConnexionAdminController extends Controller
 
         if (auth()->guard('admin')->attempt($valides)) {
 
-            // Vérifiez le rôle de l'utilisateur directement à partir de la session
 
             if (auth()->guard('admin')->user()->role === 'admin') {
 
@@ -41,7 +50,7 @@ class ConnexionAdminController extends Controller
                     "droits" => auth()->guard('admin')->user()->droits,
 
                 ]]);
-                return redirect()->route('admin.index')->with('success', 'You are logged in successfully.');
+                return redirect()->route('admin.index')->with('success', 'Vous êtes connecté!');
             }
         } else {
             return back()
@@ -53,10 +62,12 @@ class ConnexionAdminController extends Controller
         }
     }
 
-
-
-
-
+    /**
+     * deconnexion de l'admin
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function deconnecter(Request $request)
     {
         Auth::logout();

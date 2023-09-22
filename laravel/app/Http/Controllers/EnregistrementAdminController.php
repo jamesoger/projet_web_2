@@ -10,14 +10,24 @@ use Illuminate\Support\Facades\Storage;
 
 class EnregistrementAdminController extends Controller
 {
+        /**
+         * Formulaire de création nouvel administrateur
+         *
+         * @return View
+         */
     public function create()
     {
         return view('auth.admin.create');
     }
-
+    /**
+     * Enregsitrement du nouvel administrateur
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function store(Request $request)
     {
-        // Valider
+
         $valides = $request->validate([
             "prenom" => "required",
             "nom" => "required",
@@ -38,7 +48,7 @@ class EnregistrementAdminController extends Controller
             "confirmation_password.same" => "Le mot de passe n'a pu être confirmé"
         ]);
 
-        // Sauvegarder
+
         $admin = new Admin();
         $admin->prenom = $valides["prenom"];
         $admin->nom = $valides["nom"];
@@ -59,7 +69,7 @@ class EnregistrementAdminController extends Controller
 
         return redirect()
             ->route('admin.index')
-            ->with('succes', 'Votre compte admin a été créé');
+            ->with('success', 'Votre compte admin a été créé');
     }
 
 

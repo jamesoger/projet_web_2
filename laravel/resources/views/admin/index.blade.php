@@ -3,53 +3,12 @@
     <div class="page_admin">
         <h1>{{ auth()->guard('admin')->user()->prenom .' ' .auth()->guard('admin')->user()->nom }} </h1>
         @if (session('success'))
-            <p style="color: green">{{ session('success') }}</p>
+            <p style="color: green; font-size: 30px;background-color:white ;text-align:center;">{{ session('success') }}
+            </p>
         @endif
         @if (session('error'))
-            <p style="color: red">{{ session('error') }}</p>
+            <p style="color: red; font-size: 30px;background-color:white ;text-align:center;">{{ session('error') }}</p>
         @endif
-
-        {{-- <h1>Admin</h1>
-        <h2>Users</h2>
-        @foreach ($users as $user)
-            <p>{{ $user->prenom }} {{ $user->nom }}</p>
-            @if (auth()->guard('admin')->user()->droits == 1)
-                <form onclick="return confirm('Are you sure you want to delete?');" action="{{ route('user.destroy') }}"
-                    method="POST">
-                    @csrf
-                    <input type="hidden" name="id" value="{{ $user->id }}">
-                    <input type="submit" value="supprimer">
-                </form>
-                <button><a href="{{ route('user.edit', $user->id) }}">Modifier</a></button>
-            @endif
-        @endforeach
-        <h2>Forfaits</h2>
-        @foreach ($users as $user)
-            <p>{{ $user->prenom }} {{ $user->nom }}</p>
-            @if ($user->forfaits)
-                @if ($user->forfaits->count() > 0)
-                    <p>Forfaits associés :</p>
-                    <ul>
-                        @foreach ($user->forfaits as $forfait)
-                            <li>Nom : {{ $forfait->nom }}</li>
-                            <li>Prix : {{ $forfait->prix }}</li>
-                            <li>date d'arrivée : {{ $forfait->pivot->date_arrivee }}</li>
-                            <li>date de départ : {{ $forfait->pivot->date_depart }}</li>
-                            @if (auth()->guard('admin')->user()->droits == 1)
-                                <form onclick="return confirm('Are you sure you want to delete?');"
-                                    action="{{ route('forfait_admin.destroy', $forfait->pivot->id) }}" method="POST">
-                                    @csrf
-                                    <input type="submit" value="supprimer">
-                                </form>
-                            @endif
-                        @endforeach
-                    </ul>
-                @else
-                    <p>Cet utilisateur n'a pas de forfaits associés.</p>
-                @endif
-            @endif
-        @endforeach --}}
-
 
         @if (auth()->guard('admin')->user()->droits == 1)
             <h1>Admin</h1>
@@ -64,7 +23,7 @@
                 @foreach ($users as $user)
                     <p>{{ $user->prenom }} {{ $user->nom }}</p>
                     @if (auth()->guard('admin')->user()->droits == 1)
-                    <a href="{{ route('user.edit', $user->id) }}">Modifier</a>
+                        <a href="{{ route('user.edit', $user->id) }}">Modifier</a>
                     @endif
                     @if (auth()->guard('admin')->user()->droits == 1)
                         <form onclick="return confirm('Are you sure you want to delete?');"

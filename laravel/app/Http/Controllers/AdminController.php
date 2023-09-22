@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
+        /**
+         * Affichage de la page admin
+         *
+         * @return View
+         */
     public function index()
     {
 
@@ -37,6 +42,13 @@ class AdminController extends Controller
             "actualites" => $actualites,
         ]);
     }
+
+    /**
+     * Formulaire de modification d'un administrateur
+     *
+     * @param int $id
+     * @return View
+     */
     public function edit($id)
     {
         $admin = Admin::findOrFail($id);
@@ -45,6 +57,12 @@ class AdminController extends Controller
         ]);
     }
 
+    /**
+     * Enregsitrement de la modification d'un administrateur
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function update(Request $request)
     {
 
@@ -82,17 +100,20 @@ class AdminController extends Controller
         }
          $admin->save();
 
-
-
         return redirect()->route('admin.index')->with('success', 'Les informations de l\'administrateur ont été mises à jour avec succès.');
     }
 
-
+    /**
+     * Suppression d'un administrateur
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function destroy(Request $request)
     {
         Admin::destroy($request->id);
 
         return redirect()->route('admin.index')
-            ->with('succes', " Cet admin a bien été supprimé");
+            ->with('success', " Cet admin a bien été supprimé");
     }
 }

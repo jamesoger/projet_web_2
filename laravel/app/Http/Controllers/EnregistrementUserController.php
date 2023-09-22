@@ -9,11 +9,23 @@ use Illuminate\Support\Facades\Hash;
 
 class EnregistrementUserController extends Controller
 {
+        /**
+         * Formulaire de creation d'un nouvel utilisateur
+         *
+         * @return View
+         */
     public function create(){
         return view('auth.user.enregistrement.create');
     }
+
+    /**
+     * Enregistrement du nouvel utilisateur
+     *
+     * @param Request $request
+     * @return Redirect/Response
+     */
     public function store(Request $request) {
-        // Valider
+
         $valides = $request->validate([
             "prenom" => "required",
             "nom" => "required",
@@ -32,25 +44,21 @@ class EnregistrementUserController extends Controller
             "confirmation_password.same" => "Le mot de passe n'a pu être confirmé"
         ]);
 
-        // Sauvegarder
+
         $user = new User();
         $user->prenom = $valides["prenom"];
         $user->nom = $valides["nom"];
         $user->email = $valides["email"];
         $user->password = Hash::make($valides["password"]);
 
-
-
-
         $user->save();
 
-        // Connecter l'utilisateur tout de suite
         Auth::login($user);
 
-        // Rediriger
+
         return redirect()
-                ->route('user.index')
-                ->with('succes', 'Votre compte a été créé');
+                ->route('billetterie.index')
+                ->with('success', 'Votre compte a été créé, vous pouvez maintenant réserver un forfait!');
 
     }
 }

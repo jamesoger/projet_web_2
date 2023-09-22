@@ -11,13 +11,14 @@ use Illuminate\Support\Facades\Storage;
 
 class ProgrammationController extends Controller
 
-{
+{   /**
+ * Affichage de la page programmation
+ *
+ * @return View
+ */
     public function index()
 {
-
-
     $programmation = Programmation::with(['artistes', 'spectacles'])->get();
-
 
         return view('programmation.index', [
             "programmation" => $programmation,
@@ -25,7 +26,12 @@ class ProgrammationController extends Controller
         ]);
     }
 
-
+    /**
+     * formulaire de modification d'une programmation(ajout spectacles et artistes)
+     *
+     * @param int $id
+     * @return View
+     */
     public function edit($id){
         $programmation = Programmation::find($id);
 
@@ -40,7 +46,13 @@ class ProgrammationController extends Controller
         ]);
 
     }
-
+    /**
+     * Traitement de la modification
+     *
+     * @param Request $request
+     * @param int $id
+     * @return Redirect/Response
+     */
     public function update(Request $request, $id)
 {
 
@@ -63,7 +75,6 @@ class ProgrammationController extends Controller
     ]);
 
 
-
     if ($request->filled('nom_scene') && $request->filled('heure_show')) {
         $artiste = new Artiste;
         $artiste->nom_scene = $valides['nom_scene'];
@@ -83,7 +94,6 @@ class ProgrammationController extends Controller
 
     }
 
-
     if ($request->filled('nom_spectacle') && $request->filled('heure_spectacle')) {
 
         $spectacle = new Spectacle;
@@ -98,9 +108,6 @@ class ProgrammationController extends Controller
         }else{
             $spectacle->image = "/images/evenement3.jpg";
         }
-
-
-
 
       $spectacle->save();
 
@@ -117,30 +124,27 @@ class ProgrammationController extends Controller
 
 return redirect()
     ->route('admin.index')
-    ->with('success', 'Les artistes et spectacles ont été ajoutés à la programmation');
+    ->with('success', 'Les artistes et/ou spectacles ont été ajoutés à la programmation');
 }
 
+// a enelver a la fin pas sur que ce soit necessaire
+// public function destroy($id, $type, $artisteOuSpectacleId)
+// {
 
-public function destroy($id, $type, $artisteOuSpectacleId)
-{
-    // Recherchez la programmation par son ID
-    $programmation = Programmation::findOrFail($id);
+//     $programmation = Programmation::findOrFail($id);
 
-    // Vérifiez le type (artiste ou spectacle)
-    if ($type === 'artiste') {
-        // Détachez l'artiste de la programmation en utilisant detach()
-        $programmation->artistes()->detach($artisteOuSpectacleId);
-        return redirect()->back()->with('success', 'L\'artiste a été retiré de la programmation avec succès.');
-    } elseif ($type === 'spectacle') {
-        // Détachez le spectacle de la programmation en utilisant detach()
-        $programmation->spectacles()->detach($artisteOuSpectacleId);
-        return redirect()->back()->with('success', 'Le spectacle a été retiré de la programmation avec succès.');
-    } else {
-        return redirect()->back()->with('error', 'Type invalide.');
-    }
-}
+//     if ($type === 'artiste') {
 
+//         $programmation->artistes()->detach($artisteOuSpectacleId);
+//         return redirect()->back()->with('success', 'L\'artiste a été retiré de la programmation avec succès.');
+//     } elseif ($type === 'spectacle') {
 
+//         $programmation->spectacles()->detach($artisteOuSpectacleId);
+//         return redirect()->back()->with('success', 'Le spectacle a été retiré de la programmation avec succès.');
+//     } else {
+//         return redirect()->back()->with('error', 'Type invalide.');
+//     }
+// }
 
 
 
