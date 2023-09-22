@@ -1,14 +1,24 @@
 .a-propos {
+    margin: 0 auto;
     width: 100vw;
-    height: 100vh;
+    // height: 100vh;
     padding-top: 3em;
     background-image: url(../images/bg_apropos2.jpg);
     background-size: cover;
     font-family: all-round-gothic, sans-serif;
+    background-attachment: fixed;
 
-    h1 {
-        text-align: center;
-        font-size: 2em;
+    .titre-apropos {
+        display: flex;
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        img {
+            width: 150px;
+        }
     }
 
     .texte-apropos {
@@ -32,20 +42,54 @@
 
     .img-admin {
         display: flex;
+        justify-content: center;
+
+
+        h1 {
+            font-size: 2em;
+        }
 
         img {
-            width: 50vw;
-            height: 50vh;
+            border: 2px solid black;
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
 
         }
     }
 
     .nous-joindre {
+        max-width: 100%;
         display: flex;
+        justify-content: center;
         padding-top: 3rem;
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 50px rgb(24, 24, 24);
 
-        .info {
-            font-size: 2em;
+
+        .info-total {
+            display: flex;
+
+            img {
+                width: 300px;
+            }
+
+            .info {
+                font-size: 2em;
+
+                .phrases {
+                    padding: 1.5em;
+
+                    .titre-infos {
+                        font-weight: 400;
+                    }
+
+                    .phrases-info {
+                        font-size: 1em;
+                    }
+                }
+            }
         }
     }
 }
