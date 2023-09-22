@@ -30,7 +30,7 @@ class SpectacleController extends Controller
             "id" => "required",
             "nom" => "required|min:4|max:60",
             "heure" => "required",
-            "image" => "required|image|mimes:png,jpg,jpeg, gif",
+            "image" => "nullable|image|mimes:png,jpg,jpeg, gif",
             "date" => "required",
 
         ], [
@@ -38,7 +38,6 @@ class SpectacleController extends Controller
             "nom.max" => "Le nom doit avoir un maximum de :max caractères",
             "nom.min" => "Le nom doit avoir un minimum de :min caractères",
             "heure.required" => "L'heure du show est requise",
-            "image.required" => "L,image est obligatoire",
             "image.mimes" => "L,image n'est pas du bon format",
             "date.required" => " la date de représentation est requise"
         ]);

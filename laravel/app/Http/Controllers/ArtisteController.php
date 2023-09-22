@@ -31,7 +31,7 @@ class ArtisteController extends Controller
             "id" => "required",
             "nom_scene" => "required|min:4|max:60",
             "heure_show" => "required",
-            "image" => "required|image|mimes:png,jpg,jpeg, gif",
+            "image" => "nullable|image|mimes:png,jpg,jpeg, gif",
             "date" => "required",
 
         ], [
@@ -39,7 +39,6 @@ class ArtisteController extends Controller
             "nom_scene.max" => "Le nom doit avoir un maximum de :max caractères",
             "nom_scene.min" => "Le nom doit avoir un minimum de :min caractères",
             "heure_show.required" => "L'heure du show est requise",
-            "image.required" => "L,image est obligatoire",
             "image.mimes" => "L,image n'est pas du bon format",
             "date.required" => " la date de représentation est requise"
         ]);

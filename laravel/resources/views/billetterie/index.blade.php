@@ -1,4 +1,4 @@
-  <div id="app">
+  <div id="app_billeterie">
       <x-layout titre="Enregistrement">
           <x-nav />
           <div class="bill">
