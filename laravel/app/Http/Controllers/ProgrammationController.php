@@ -11,18 +11,19 @@ use Illuminate\Support\Facades\Storage;
 
 class ProgrammationController extends Controller
 
-{   /**
- * Affichage de la page programmation
- *
- * @return View
- */
-    public function index()
 {
-    $programmation = Programmation::with(['artistes', 'spectacles'])->get();
+    /**
+     * Affichage de la page programmation
+     *
+     * @return View
+     */
+    public function index()
+    {
+        $programmation = Programmation::with(['artistes', 'spectacles'])
+            ->get();
 
         return view('programmation.index', [
             "programmation" => $programmation,
-
         ]);
     }
 
@@ -32,19 +33,19 @@ class ProgrammationController extends Controller
      * @param int $id
      * @return View
      */
-    public function edit($id){
+    public function edit($id)
+    {
         $programmation = Programmation::find($id);
 
-        $artistes= $programmation->artistes;
+        $artistes = $programmation->artistes;
         $spectacles = $programmation->spectacles;
 
         return view('programmation.edit', [
-            'programmation'=>$programmation,
-            'artistes'=>$artistes,
-            'spectacles'=>$spectacles,
+            'programmation' => $programmation,
+            'artistes' => $artistes,
+            'spectacles' => $spectacles,
 
         ]);
-
     }
     /**
      * Traitement de la modification
@@ -54,97 +55,97 @@ class ProgrammationController extends Controller
      * @return Redirect/Response
      */
     public function update(Request $request, $id)
-{
+    {
 
-    $programmation = Programmation::findOrFail($id);
+        $programmation = Programmation::findOrFail($id);
 
-    $validationRules = [
-        'nom_scene' =>'nullable',
-        'heure_show' => 'nullable',
-        'image' => 'nullable|image',
-        'nom_spectacle' => 'nullable',
-        'heure_spectacle' => 'nullable',
-        'image_spectacle' => 'nullable|image',
-    ];
-
-
-    $valides = $request->validate($validationRules, [
-
-        'image.image' => 'Le fichier doit être une image valide.',
-        'image_spectacle.image' => 'Le fichier doit être une image valide.',
-    ]);
+        $validationRules = [
+            'nom_scene' => 'nullable',
+            'heure_show' => 'nullable',
+            'image' => 'nullable|image',
+            'nom_spectacle' => 'nullable',
+            'heure_spectacle' => 'nullable',
+            'image_spectacle' => 'nullable|image',
+        ];
 
 
-    if ($request->filled('nom_scene') && $request->filled('heure_show')) {
-        $artiste = new Artiste;
-        $artiste->nom_scene = $valides['nom_scene'];
-        $artiste->heure_show = $valides['heure_show'];
+        $valides = $request->validate($validationRules, [
+
+            'image.image' => 'Le fichier doit être une image valide.',
+            'image_spectacle.image' => 'Le fichier doit être une image valide.',
+        ]);
 
 
-        if($request->hasFile('image') && $request->file('image')->isValid()){
-            Storage::putFile("public/uploads", $request->image);
-            $artiste->image = "/storage/uploads/" . $request->image->hashName();
-        }else{
-            $artiste->image = "/images/default.png";
+        if ($request->filled('nom_scene') && $request->filled('heure_show')) {
+            $artiste = new Artiste;
+            $artiste->nom_scene = $valides['nom_scene'];
+            $artiste->heure_show = $valides['heure_show'];
+
+
+            if ($request->hasFile('image') && $request->file('image')->isValid()) {
+                Storage::putFile("public/uploads", $request->image);
+                $artiste->image = "/storage/uploads/" . $request->image->hashName();
+            } else {
+                $artiste->image = "/images/default.png";
+            }
+
+            $artiste->save();
+
+            $programmation->artistes()->attach($artiste->id);
         }
 
-        $artiste->save();
+        if ($request->filled('nom_spectacle') && $request->filled('heure_spectacle')) {
 
-        $programmation->artistes()->attach($artiste->id);
-
-    }
-
-    if ($request->filled('nom_spectacle') && $request->filled('heure_spectacle')) {
-
-        $spectacle = new Spectacle;
-        $spectacle->nom = $valides['nom_spectacle'];
-        $spectacle->heure = $valides['heure_spectacle'];
+            $spectacle = new Spectacle;
+            $spectacle->nom = $valides['nom_spectacle'];
+            $spectacle->heure = $valides['heure_spectacle'];
 
 
-        if($request->hasFile('image_spectacle') && $request->file('image_spectacle')->isValid()){
+            if ($request->hasFile('image_spectacle') && $request->file('image_spectacle')->isValid()) {
 
-            Storage::putFile("public/uploads", $request->file('image_spectacle'));
-            $spectacle->image = "/storage/uploads/" . $request->file('image_spectacle')->hashName();
-        }else{
-            $spectacle->image = "/images/evenement3.jpg";
+                Storage::putFile("public/uploads", $request->file('image_spectacle'));
+                $spectacle->image = "/storage/uploads/" . $request->file('image_spectacle')->hashName();
+            } else {
+                $spectacle->image = "/images/evenement3.jpg";
+            }
+
+            $spectacle->save();
+
+            $programmation->spectacles()->attach($spectacle->id);
         }
 
-      $spectacle->save();
+        if ((!$request->filled('nom_scene') && !$request->filled('heure_show')) &&
+            (!$request->filled('nom_spectacle') && !$request->filled('heure_spectacle'))
+        ) {
+            return redirect()
+                ->back()
+                ->with('error', 'Le formulaire est vide. Veuillez remplir au moins une partie (artistes ou spectacles).');
+        }
 
-      $programmation->spectacles()->attach($spectacle->id);
+
+        return redirect()
+            ->route('admin.index')
+            ->with('success', 'Les artistes et/ou spectacles ont été ajoutés à la programmation');
     }
 
-    if ((!$request->filled('nom_scene') && !$request->filled('heure_show') ) &&
-    (!$request->filled('nom_spectacle') && !$request->filled('heure_spectacle'))) {
-    return redirect()
-        ->back()
-        ->with('error', 'Le formulaire est vide. Veuillez remplir au moins une partie (artistes ou spectacles).');
-}
+    // a enelver a la fin pas sur que ce soit necessaire
+    // public function destroy($id, $type, $artisteOuSpectacleId)
+    // {
 
+    //     $programmation = Programmation::findOrFail($id);
 
-return redirect()
-    ->route('admin.index')
-    ->with('success', 'Les artistes et/ou spectacles ont été ajoutés à la programmation');
-}
+    //     if ($type === 'artiste') {
 
-// a enelver a la fin pas sur que ce soit necessaire
-// public function destroy($id, $type, $artisteOuSpectacleId)
-// {
+    //         $programmation->artistes()->detach($artisteOuSpectacleId);
+    //         return redirect()->back()->with('success', 'L\'artiste a été retiré de la programmation avec succès.');
+    //     } elseif ($type === 'spectacle') {
 
-//     $programmation = Programmation::findOrFail($id);
-
-//     if ($type === 'artiste') {
-
-//         $programmation->artistes()->detach($artisteOuSpectacleId);
-//         return redirect()->back()->with('success', 'L\'artiste a été retiré de la programmation avec succès.');
-//     } elseif ($type === 'spectacle') {
-
-//         $programmation->spectacles()->detach($artisteOuSpectacleId);
-//         return redirect()->back()->with('success', 'Le spectacle a été retiré de la programmation avec succès.');
-//     } else {
-//         return redirect()->back()->with('error', 'Type invalide.');
-//     }
-// }
+    //         $programmation->spectacles()->detach($artisteOuSpectacleId);
+    //         return redirect()->back()->with('success', 'Le spectacle a été retiré de la programmation avec succès.');
+    //     } else {
+    //         return redirect()->back()->with('error', 'Type invalide.');
+    //     }
+    // }
 
 
 

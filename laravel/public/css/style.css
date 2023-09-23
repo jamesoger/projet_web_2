@@ -1189,12 +1189,15 @@ footer .foot-copy p {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 10px;
+  gap: 10px;
   position: relative;
   height: 700px;
   max-width: 100vw;
   flex-wrap: wrap;
   overflow: hidden;
+}
+.prog .prog_bubbles .hide-empty {
+  display: none;
 }
 .prog .prog_bubbles .image_bubbles {
   min-height: 100%;
