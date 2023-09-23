@@ -757,6 +757,10 @@ footer .foot-copy p {
   text-transform: uppercase;
   text-shadow: 0px 0px 5px #06162F;
 }
+.page_admin h3 {
+  font-size: 2.5em;
+  margin-top: 1em;
+}
 .page_admin .vue_admin_users {
   display: flex;
   color: white;
@@ -1168,9 +1172,23 @@ footer .foot-copy p {
 .prog {
   height: 100%;
   margin: 0;
-  padding-top: 10em;
+  padding-top: 7em;
   position: relative;
   z-index: 2;
+}
+.prog #playPauseButton {
+  display: block;
+  margin: 1rem auto;
+  text-align: center;
+  margin-top: 2rem;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+}
+.prog #playPauseButton #playIcon, .prog #playPauseButton #pauseIcon {
+  font-size: 8rem;
 }
 .prog .date-gauche {
   margin-left: 3rem;
@@ -1265,8 +1283,8 @@ footer .foot-copy p {
   margin-top: 2rem;
 }
 .prog h1 {
-  margin-top: 2rem;
-  padding: 2em 0 0 2em;
+  margin-top: 1rem;
+  padding: 0.25em 0 0 2em;
   text-shadow: 0px 0px 5px white;
   font-size: 5em;
   font-weight: 500;

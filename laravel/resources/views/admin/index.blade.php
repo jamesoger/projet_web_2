@@ -16,8 +16,6 @@
             <h1>Employé</h1>
         @endif
         <div class="vue_admin_users">
-
-
             <div class="users_admin">
                 <h2>Utilisateurs</h2>
                 @foreach ($users as $user)
@@ -34,6 +32,9 @@
                         </form>
                     @endif
                 @endforeach
+            </div>
+            <div class="analytics">
+                <h2>Statistiques site FestX</h2>
             </div>
             <div class="forfait_user">
                 <h2>Forfaits</h2>
@@ -69,26 +70,34 @@
             </div>
         </div>
 
-        @if (auth()->guard('admin')->user()->droits == 1)
 
-            <h2>Liste des administrateurs</h2>
-            <div class="admin_modif">
+        <h2>Liste des administrateurs</h2>
+        <div class="admin_modif">
+            @if (auth()->guard('admin')->user()->droits == 1)
                 <a class="creation_admin" href="{{ route('enregistrement_admin.create') }}">Ajouter un nouvel
                     administrateur</a>
-                @foreach ($admins as $admin)
-                    <p>{{ $admin->prenom }} {{ $admin->nom }}</p>
+            @endif
+            @foreach ($admins as $admin)
+                    @if($admin->droits == 0)
+                    <h3>Employé</h3>
+                    @else
+                    <h3>Administrateur</h3>
+                     @endif
+                <p>{{ $admin->prenom }} {{ $admin->nom }}</p>
+                @if (auth()->guard('admin')->user()->droits == 1)
                     <a href="{{ route('enregistrement_admin.edit', ['id' => $admin->id]) }}">Modifier</a>
+                @endif
+                @if (auth()->guard('admin')->user()->droits == 1)
                     <form onclick="return confirm('Are you sure you want to delete?');"
                         action="{{ route('admin.destroy') }}" method="POST">
                         @csrf
                         <input type="hidden" name="id" value="{{ $admin->id }}">
                         <input class="submit_suppression_user" type="submit" value="supprimer">
                     </form>
-                @endforeach
-            </div>
+                @endif
+            @endforeach
+        </div>
 
-
-        @endif
         <h2>Programmations</h2>
         @foreach ($programmations as $programmation)
             <div class="programmation-list">
