@@ -167,10 +167,7 @@
                 easing: "ease-in-out",
             };
 
-
             // Utilisez la méthode scrollIntoView avec les options
-
-
             accEventsSection.scrollIntoView(options);
         });
     });
