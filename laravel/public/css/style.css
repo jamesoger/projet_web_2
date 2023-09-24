@@ -656,7 +656,7 @@ footer .foot-copy p {
   justify-content: center;
 }
 .acc-events .events-bg img {
-  max-width: 100%;
+  width: 100%;
   min-width: 1390px;
   opacity: 0.5;
 }
@@ -1312,6 +1312,10 @@ footer .foot-copy p {
   border: 3px solid #1DA5F3;
 }
 
+.canvas_lines {
+  min-width: 1800px;
+}
+
 .prog {
   height: 100%;
   margin: 0;
@@ -1327,6 +1331,7 @@ footer .foot-copy p {
   transform: translateY(-50%);
   width: 200px;
   height: 60px;
+  min-width: 1800px;
   background-color: rgba(255, 255, 255, 0);
   border: none;
   cursor: pointer;
