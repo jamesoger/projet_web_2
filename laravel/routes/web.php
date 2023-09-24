@@ -26,6 +26,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*****************
+ * NAV
+ */
+Route::get('/nav', function () {
+    return view('components.nav.nav_hidden');
+})->name('nav');
+
+
 
 /*****************
  * ACCUEIL
