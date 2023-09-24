@@ -756,6 +756,8 @@ footer .foot-copy p {
 }
 
 .a-propos {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   width: 100vw;
   padding-top: 3em;
@@ -766,13 +768,14 @@ footer .foot-copy p {
 }
 .a-propos .titre-apropos {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .a-propos .titre-apropos h1 {
-  text-align: center;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 .a-propos .titre-apropos img {
-  width: 150px;
+  width: 200px;
 }
 .a-propos .texte-apropos {
   background-color: rgba(0, 0, 0, 0.648);
@@ -789,47 +792,64 @@ footer .foot-copy p {
   padding: 3rem;
 }
 .a-propos .texte-apropos p {
+  font-size: 1.5em;
   padding-top: 1.5rem;
 }
-.a-propos .img-admin {
+.a-propos .admin {
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-bottom: 3em;
 }
-.a-propos .img-admin h1 {
+.a-propos .admin .admin-nom {
+  display: flex;
+  flex-direction: column;
+}
+.a-propos .admin .admin-nom h1 {
+  flex: auto;
   font-size: 2em;
+  padding-left: 1.5rem;
 }
-.a-propos .img-admin img {
-  border: 2px solid black;
+.a-propos .admin .img-admin {
+  display: flex;
+}
+.a-propos .admin .img-admin img {
+  border: 1px solid black;
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100px;
+  height: 100px;
 }
 .a-propos .nous-joindre {
   max-width: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 3rem;
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 50px rgb(24, 24, 24);
+  margin-bottom: 2em;
 }
 .a-propos .nous-joindre .info-total {
   display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 50px rgb(24, 24, 24);
+  padding: 2rem 3rem;
 }
-.a-propos .nous-joindre .info-total img {
+.a-propos .nous-joindre .info-total .phrases {
+  padding: 3rem;
+  font-size: 2em;
+  text-align: center;
+}
+.a-propos .nous-joindre .info-total .phrases img {
   width: 300px;
 }
-.a-propos .nous-joindre .info-total .info {
-  font-size: 2em;
-}
-.a-propos .nous-joindre .info-total .info .phrases {
-  padding: 1.5em;
-}
-.a-propos .nous-joindre .info-total .info .phrases .titre-infos {
-  font-weight: 400;
-}
-.a-propos .nous-joindre .info-total .info .phrases .phrases-info {
+.a-propos .nous-joindre .info-total .phrases .titre-info {
   font-size: 1em;
+  font-weight: 500;
+}
+.a-propos .nous-joindre .info-total .phrases .phrase-info {
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
 }
 
 /*******************************/
