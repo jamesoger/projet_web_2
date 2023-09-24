@@ -49,4 +49,8 @@ class User extends Authenticatable
         return $this->belongsToMany(Forfait::class, 'user_forfait')
         ->withPivot('date_arrivee', 'date_depart', 'id');
     }
+
+    public function getNomCompletAttribute(){
+        return $this->prenom . " " . $this->nom;
+    }
 }

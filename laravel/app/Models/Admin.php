@@ -17,4 +17,8 @@ class Admin extends Model implements AuthenticatableContract
         return $this->role === 'admin';
     }
 
+    public function getNomCompletAttribute(){
+        return $this->prenom . " " . $this->nom;
+    }
+
 }

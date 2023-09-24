@@ -1,7 +1,7 @@
 <x-layout titre="Administration">
     <x-nav />
     <div class="page_admin">
-        <h1>{{ auth()->guard('admin')->user()->prenom .' ' .auth()->guard('admin')->user()->nom }} </h1>
+        <h1>{{ auth()->guard('admin')->user()->nom_complet }} </h1>
         @if (session('success'))
             <p style="color: green; font-size: 30px;background-color:white ;text-align:center;">{{ session('success') }}
             </p>
@@ -19,7 +19,7 @@
             <div class="users_admin">
                 <h2>Utilisateurs</h2>
                 @foreach ($users as $user)
-                    <p>{{ $user->prenom }} {{ $user->nom }}</p>
+                    <p>{{ $user->nom_complet}}</p>
                     @if (auth()->guard('admin')->user()->droits == 1)
                         <a href="{{ route('user.edit', $user->id) }}">Modifier</a>
                     @endif
@@ -39,7 +39,7 @@
             <div class="forfait_user">
                 <h2>Forfaits</h2>
                 @foreach ($users as $user)
-                    <p>{{ $user->prenom }} {{ $user->nom }}</p>
+                    <p>{{ $user->nom_complet}}</p>
 
                     @if ($user->forfaits)
                         @if ($user->forfaits->count() > 0)
@@ -83,7 +83,7 @@
                     @else
                     <h3>Administrateur</h3>
                      @endif
-                <p>{{ $admin->prenom }} {{ $admin->nom }}</p>
+                <p>{{ $admin->nom_complet }} </p>
                 @if (auth()->guard('admin')->user()->droits == 1)
                     <a href="{{ route('enregistrement_admin.edit', ['id' => $admin->id]) }}">Modifier</a>
                 @endif

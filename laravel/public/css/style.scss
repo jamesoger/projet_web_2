@@ -43,10 +43,10 @@
             width: 450px;
             height: 500px;
             box-shadow: 0px 0px 5px white;
-            transition: transform 0.3s ease-in-out;
 
-
-
+            // &:hover:not(a) {
+            //     filter: hue-rotate(90deg);
+            // }
 
             &.boite_gauche {
 
@@ -72,7 +72,9 @@
             font-weight: 600;
             font-size: 1.75em;
             text-transform: uppercase;
+
         }
+
 
         a {
             display: block;
@@ -96,15 +98,18 @@
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
             &:hover {
+
                 background-color: $blue;
                 color: $blue-fonce;
                 text-shadow: 0px 0px 5px $blue-fonce;
                 box-shadow: 0px 0px 10px $blue;
                 border: 3px solid $blue;
             }
+
         }
     }
 }
+
 
 
 /*******************************/
@@ -640,7 +645,7 @@
 
                 .toggle-programmation {
                     position: absolute;
-                  top: 0;
+                    top: 0;
                     left: 50%;
                     transform: translateX(-50%);
                     cursor: pointer;
@@ -747,7 +752,7 @@
                     .nom {
                         flex: 1;
                         text-align: center;
-                        margin: 1rem ;
+                        margin: 1rem;
                     }
 
                     .img_user {
@@ -832,17 +837,20 @@
 /*******************************/
 
 
+
+
+
 .user_edit {
-    width: 100vw;
-    height: 100vh;
     background-image: url(../images/background-sand.jpg);
     background-size: cover;
-    padding-top: 8em;
+    background-attachment: fixed;
+    height: 100vw;
+    padding-top: 10em;
     font-family: $font-gothic;
 
     h1 {
         text-align: center;
-        font-size: 5em;
+        font-size: 3em;
         font-weight: 500;
         text-transform: uppercase;
     }
@@ -854,12 +862,17 @@
         text-transform: uppercase;
     }
 
+    p {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
     .user_modif_form {
         background-color: rgba(0, 0, 0, 0.648);
         border-radius: 0.5em;
-        box-shadow: 0px 0px 5px white;
-        width: 600px;
-        height: 500px;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
+        width: 750px;
+        height: 680px;
         margin: 5rem auto;
         display: flex;
         flex-direction: column;
@@ -867,63 +880,86 @@
         align-items: center;
         text-align: center;
 
-        label {
-            font-size: 1.25em;
+        form {
+            display: flex;
+            flex-direction: column;
 
-        }
+            label {
+                font-size: 1.5em;
+                text-transform: uppercase;
+            }
 
-        input {
-            background-color: rgba(255, 255, 255, 0.155);
-            border-radius: 2em;
-            width: 400px;
-            height: 50px;
-            margin: 2rem;
-            box-shadow: 0px 0px 5px white;
-            text-align: center;
-            font-family: $font-gothic;
-            font-size: 1.5em;
-            color: white;
-        }
+            #prenom,
+            #nom,
+            #email {
+                background-color: rgba(255, 255, 255, 0.155);
+                border-radius: 2em;
+                width: 630px;
+                height: 50px;
+                margin-top: 10px;
+                margin-bottom: 40px;
+                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+                border: none;
+                text-align: center;
+                font-family: all-round-gothic, sans-serif;
+                font-size: 1.5em;
+                color: white;
+            }
 
-        button {
-            cursor: pointer;
-            background-color: rgba(255, 255, 255, 0.005);
-            color: white;
-            font-family: $font-ethno;
-            font-size: 1.5em;
-            font-weight: 300;
-            text-decoration: none;
-            text-align: center;
-            text-transform: uppercase;
-            padding: 10px 10px;
-            width: 350px;
-            border: 3px solid white;
-            text-shadow: 0px 0px 5px white;
-            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            input {
+                background-color: rgba(255, 255, 255, 0.155);
+                border-radius: 2em;
+                width: 400px;
+                height: 50px;
+                margin: 2rem;
+                box-shadow: 0px 0px 5px white;
+                text-align: center;
+                font-family: $font-gothic;
+                font-size: 1.5em;
+                color: white;
+            }
 
-            &:hover {
-                background-color: $blue;
-                color: $blue-fonce;
-                text-shadow: 0px 0px 5px $blue-fonce;
-                box-shadow: 0px 0px 10px $blue;
-                border: 3px solid $blue;
+
+            button {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1.5em;
+                font-weight: 300;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 10px 10px;
+                width: 350px;
+                border: 3px solid white;
+                text-shadow: 0px 0px 5px white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $blue;
+                    color: $blue-fonce;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
             }
         }
-    }
 
-    a {
-        display: block;
-        text-decoration: none;
-        text-align: center;
-        font-size: 2em;
-        font-weight: 500;
-        text-transform: uppercase;
-        color: white;
+        a {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            font-size: 2em;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: white;
 
-        &:hover {
-            color: $blue;
+            &:hover {
+                color: $blue;
 
+            }
         }
     }
 }

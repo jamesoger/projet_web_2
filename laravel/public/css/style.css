@@ -1186,9 +1186,17 @@ footer .foot-copy p {
   height: 60px;
   background-color: rgba(255, 255, 255, 0);
   border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 50%;
+  position: relative;
 }
 .prog #playPauseButton #playIcon, .prog #playPauseButton #pauseIcon {
   font-size: 8rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.prog #playPauseButton #playIcon:hover, .prog #playPauseButton #pauseIcon:hover {
+  box-shadow: inset 4px 4px 5px 1px rgba(50, 50, 50, 0.75);
 }
 .prog .date-gauche {
   margin-left: 3rem;
@@ -1404,7 +1412,6 @@ footer .foot-copy p {
   width: 450px;
   height: 500px;
   box-shadow: 0px 0px 5px white;
-  transition: transform 0.3s ease-in-out;
 }
 .bill .bill_forfaits .bill_boite.boite_gauche {
   margin-right: 10%;
@@ -2088,16 +2095,16 @@ footer .foot-copy p {
 /********** USER EDIT **********/
 /*******************************/
 .user_edit {
-  width: 100vw;
-  height: 100vh;
   background-image: url(../images/background-sand.jpg);
   background-size: cover;
-  padding-top: 8em;
+  background-attachment: fixed;
+  height: 100vw;
+  padding-top: 10em;
   font-family: all-round-gothic, sans-serif;
 }
 .user_edit h1 {
   text-align: center;
-  font-size: 5em;
+  font-size: 3em;
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -2107,12 +2114,16 @@ footer .foot-copy p {
   font-weight: 500;
   text-transform: uppercase;
 }
+.user_edit p {
+  text-align: center;
+  font-size: 1.5em;
+}
 .user_edit .user_modif_form {
   background-color: rgba(0, 0, 0, 0.648);
   border-radius: 0.5em;
-  box-shadow: 0px 0px 5px white;
-  width: 600px;
-  height: 500px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
+  width: 750px;
+  height: 680px;
   margin: 5rem auto;
   display: flex;
   flex-direction: column;
@@ -2120,10 +2131,31 @@ footer .foot-copy p {
   align-items: center;
   text-align: center;
 }
-.user_edit .user_modif_form label {
-  font-size: 1.25em;
+.user_edit .user_modif_form form {
+  display: flex;
+  flex-direction: column;
 }
-.user_edit .user_modif_form input {
+.user_edit .user_modif_form form label {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.user_edit .user_modif_form form #prenom,
+.user_edit .user_modif_form form #nom,
+.user_edit .user_modif_form form #email {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 630px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.user_edit .user_modif_form form input {
   background-color: rgba(255, 255, 255, 0.155);
   border-radius: 2em;
   width: 400px;
@@ -2135,7 +2167,7 @@ footer .foot-copy p {
   font-size: 1.5em;
   color: white;
 }
-.user_edit .user_modif_form button {
+.user_edit .user_modif_form form button {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.005);
   color: white;
@@ -2152,14 +2184,14 @@ footer .foot-copy p {
   box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.user_edit .user_modif_form button:hover {
+.user_edit .user_modif_form form button:hover {
   background-color: #1DA5F3;
   color: #06162F;
   text-shadow: 0px 0px 5px #06162F;
   box-shadow: 0px 0px 10px #1DA5F3;
   border: 3px solid #1DA5F3;
 }
-.user_edit a {
+.user_edit .user_modif_form a {
   display: block;
   text-decoration: none;
   text-align: center;
@@ -2168,7 +2200,7 @@ footer .foot-copy p {
   text-transform: uppercase;
   color: white;
 }
-.user_edit a:hover {
+.user_edit .user_modif_form a:hover {
   color: #1DA5F3;
 }
 

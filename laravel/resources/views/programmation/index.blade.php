@@ -10,8 +10,8 @@
                 Votre navigateur ne supporte pas l'élément audio.
             </audio>
             <button id="playPauseButton" onclick="toggleAudio()">
-                <i id="playIcon" class="material-icons">play_circle_filled</i>
-                <i id="pauseIcon" class="material-icons" style="display:none;">pause_circle_filled</i>
+                <i id="playIcon" class="material-icons" style="border-radius:50%">play_circle_filled</i>
+                <i id="pauseIcon" class="material-icons" style="display:none; border-radius:50%">pause_circle_filled</i>
             </button>
 
             @php
