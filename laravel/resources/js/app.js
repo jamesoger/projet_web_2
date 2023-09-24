@@ -1,12 +1,23 @@
 require('./bootstrap')
 
 import { createApp } from 'vue';
+import Menu from './components/Menu';
 
 
-const app = createApp([])
+const appNav = createApp(Menu);
 
-app.mount('#app_prog')
-app.mount('#app_panier')
-app.mount('#app_user')
-app.mount('#app_accueil')
-app.mount('app_billeterie')
+// Montez le composant de navigation
+appNav.mount('#app_nav');
+
+
+const app = createApp();
+
+
+app.mount('#app_prog');
+app.mount('#app_panier');
+app.mount('#app_user');
+app.mount('#app_accueil');
+app.mount('#app_billeterie');
+
+
+

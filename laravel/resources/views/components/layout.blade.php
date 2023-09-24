@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/qus4wij.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20/dist/vue.global.prod.js"></script>
 
     <!-- Google tag (gtag.js) -->
     {{-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y16B4EYYF1"></script> --}}
