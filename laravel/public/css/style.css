@@ -201,6 +201,7 @@ footer {
   flex-direction: column;
   background-color: black;
   z-index: 3;
+  margin-top: 100px;
 }
 footer .footer-media {
   display: flex;
@@ -1271,6 +1272,7 @@ footer .foot-copy p {
   display: flex;
   position: relative;
   transition: transform 0.5s ease;
+  margin-top: 20px;
 }
 .prog .prog_bubbles .image_bubbles img {
   width: 260px;
@@ -1421,9 +1423,6 @@ footer .foot-copy p {
   height: 480px;
 }
 
-/*******************************/
-/********** BILLETTERIE ********/
-/*******************************/
 .bill {
   width: 100vw;
   height: 100vh;
@@ -1453,6 +1452,10 @@ footer .foot-copy p {
   width: 450px;
   height: 500px;
   box-shadow: 0px 0px 5px white;
+  transition: transform 0.3s ease-in-out;
+}
+.bill .bill_forfaits .bill_boite:hover {
+  animation: shake 0.5s ease infinite;
 }
 .bill .bill_forfaits .bill_boite.boite_gauche {
   margin-right: 10%;
@@ -1500,198 +1503,22 @@ footer .foot-copy p {
   box-shadow: 0px 0px 10px #1DA5F3;
   border: 3px solid #1DA5F3;
 }
-
-/*******************************/
-/*********** MESSAGES **********/
-/*******************************/
-.erreur {
-  color: rgba(218, 16, 16, 0.902);
-  font-style: italic;
-  padding-top: 1em;
-  margin: 0 auto;
-}
-
-/*******************************/
-/******** CONNEXION USER *******/
-/*******************************/
-.connexion_user {
-  width: 100vw;
-  height: 100vh;
-  background-image: url(../images/background-sand.jpg);
-  background-size: cover;
-  padding-top: 8em;
-  font-family: all-round-gothic, sans-serif;
-}
-.connexion_user h1 {
-  text-align: center;
-  font-size: 5em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.connexion_user h2 {
-  text-align: center;
-  font-size: 2em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.connexion_user .connexion_user_form {
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 5px white;
-  width: 600px;
-  height: 400px;
-  margin: 5rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.connexion_user .connexion_user_form label {
-  font-size: 1.25em;
-}
-.connexion_user .connexion_user_form input {
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 2em;
-  width: 400px;
-  height: 50px;
-  margin: 2rem;
-  box-shadow: 0px 0px 5px white;
-  text-align: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-.connexion_user .connexion_user_form button {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1.5em;
-  font-weight: 300;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 10px 10px;
-  width: 350px;
-  border: 3px solid white;
-  text-shadow: 0px 0px 5px white;
-  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.connexion_user .connexion_user_form button:hover {
-  background-color: #1DA5F3;
-  color: #06162F;
-  text-shadow: 0px 0px 5px #06162F;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  border: 3px solid #1DA5F3;
-}
-.connexion_user a {
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  font-size: 2em;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: white;
-}
-.connexion_user a:hover {
-  color: #1DA5F3;
-}
-
-/*******************************/
-/***** ENREGISTREMENT USER *****/
-/*******************************/
-.enregistrement_user {
-  width: 100vw;
-  height: 100vh;
-  background-image: url(../images/background-sand.jpg);
-  background-size: cover;
-  padding-top: 8em;
-  font-family: all-round-gothic, sans-serif;
-}
-.enregistrement_user h1 {
-  text-align: center;
-  font-size: 5em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.enregistrement_user .enregistrement_user_form {
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 5px white;
-  width: 800px;
-  height: 600px;
-  margin: 4rem auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.enregistrement_user .enregistrement_user_form .enregistrement_user_form_group_email input {
-  width: 720px;
-  display: grid;
-  grid-template-rows: auto auto;
-  align-items: center;
-  margin: 1rem auto;
-}
-.enregistrement_user .enregistrement_user_form .enregistrement_user_form_group.user-names {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-.enregistrement_user .enregistrement_user_form .enregistrement_user_form_group.passwords {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  align-items: center;
-  padding-top: 1.5em;
-}
-.enregistrement_user .enregistrement_user_form label {
-  font-size: 1.25em;
-}
-.enregistrement_user .enregistrement_user_form input {
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 2em;
-  width: 300px;
-  height: 50px;
-  margin: 2rem;
-  box-shadow: 0px 0px 5px white;
-  text-align: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-.enregistrement_user .enregistrement_user_form input #email {
-  width: 400px;
-}
-.enregistrement_user .enregistrement_user_form button {
-  margin-top: 1rem;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1.5em;
-  font-weight: 300;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 10px 10px;
-  width: 350px;
-  border: 3px solid white;
-  text-shadow: 0px 0px 5px white;
-  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.enregistrement_user .enregistrement_user_form button:hover {
-  background-color: #1DA5F3;
-  color: #06162F;
-  text-shadow: 0px 0px 5px #06162F;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  border: 3px solid #1DA5F3;
+@keyframes shake {
+  0% {
+    box-shadow: 0px 0px 5px white;
+  }
+  25% {
+    box-shadow: 0px 0px 15px white; /* Augmentez l'intensité de l'ombre ici */
+  }
+  50% {
+    box-shadow: 0px 0px 5px white;
+  }
+  75% {
+    box-shadow: 0px 0px 15px white; /* Augmentez l'intensité de l'ombre ici */
+  }
+  100% {
+    box-shadow: 0px 0px 5px white;
+  }
 }
 
 /*******************************/
@@ -2133,6 +1960,202 @@ footer .foot-copy p {
 }
 
 /*******************************/
+/*********** MESSAGES **********/
+/*******************************/
+.erreur {
+  color: rgba(218, 16, 16, 0.902);
+  font-style: italic;
+  padding-top: 1em;
+  margin: 0 auto;
+}
+
+/*******************************/
+/******** FORMULAIRES *******/
+/*******************************/
+/*******************************/
+/******** CONNEXION USER *******/
+/*******************************/
+.connexion_user {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  padding-top: 8em;
+  font-family: all-round-gothic, sans-serif;
+}
+.connexion_user h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.connexion_user h2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.connexion_user .connexion_user_form {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 5px white;
+  width: 600px;
+  height: 400px;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.connexion_user .connexion_user_form label {
+  font-size: 1.25em;
+}
+.connexion_user .connexion_user_form input {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 400px;
+  height: 50px;
+  margin: 2rem;
+  box-shadow: 0px 0px 5px white;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.connexion_user .connexion_user_form button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 10px;
+  width: 350px;
+  border: 3px solid white;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.connexion_user .connexion_user_form button:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
+}
+.connexion_user a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+}
+.connexion_user a:hover {
+  color: #1DA5F3;
+}
+
+/*******************************/
+/***** ENREGISTREMENT USER *****/
+/*******************************/
+.enregistrement_user {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  padding-top: 8em;
+  font-family: all-round-gothic, sans-serif;
+}
+.enregistrement_user h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.enregistrement_user .enregistrement_user_form {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 5px white;
+  width: 800px;
+  height: 600px;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.enregistrement_user .enregistrement_user_form .enregistrement_user_form_group_email input {
+  width: 720px;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: center;
+  margin: 1rem auto;
+}
+.enregistrement_user .enregistrement_user_form .enregistrement_user_form_group.user-names {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.enregistrement_user .enregistrement_user_form .enregistrement_user_form_group.passwords {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  padding-top: 1.5em;
+}
+.enregistrement_user .enregistrement_user_form label {
+  font-size: 1.25em;
+}
+.enregistrement_user .enregistrement_user_form input {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 300px;
+  height: 50px;
+  margin: 2rem;
+  box-shadow: 0px 0px 5px white;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.enregistrement_user .enregistrement_user_form input #email {
+  width: 400px;
+}
+.enregistrement_user .enregistrement_user_form button {
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 10px;
+  width: 350px;
+  border: 3px solid white;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.enregistrement_user .enregistrement_user_form button:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
+}
+
+/*******************************/
 /********** USER EDIT **********/
 /*******************************/
 .user_edit {
@@ -2517,13 +2540,6 @@ footer .foot-copy p {
   text-shadow: 0px 0px 5px #06162F;
   box-shadow: 0px 0px 10px #1DA5F3;
   border: 3px solid #1DA5F3;
-}
-
-/*******************************/
-/********** ACTUALITÉS *********/
-/*******************************/
-.actu_create {
-  padding-top: 10rem;
 }
 
 /*******************************/

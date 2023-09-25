@@ -46,16 +46,15 @@
 
         <div class="admin">
             @foreach ($admins as $admin)
-                <div class="admin-nom">
-                    <h1>{{ $admin->prenom }}</h1>
-                    <h1>{{ $admin->nom }}</h1>
+            @if ($admin->droits == 1)
+                 <div class="admin-nom">
+                    <h1>{{$admin->nom_complet}}</h1>
                 </div>
                 <div class="img-admin">
                     <img src="{{ $admin->image }}" alt="">
                 </div>
-                {{-- <img src="{{ asset('images/geoffrey.jpg') }}" alt="">
-                <img src="{{ asset('images/james.jpg') }}" alt="">
-                <img src="{{ asset('images/maxime.jpg') }}" alt=""> --}}
+            @endif
+
             @endforeach
         </div>
 
