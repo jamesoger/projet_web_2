@@ -1217,21 +1217,21 @@ footer .foot-copy p {
   position: relative;
   z-index: 2;
 }
-.prog #playPauseButton {
-  display: block;
-  margin: 1rem auto;
+.prog .prog-h1 {
+  font-family: all-round-gothic, sans-serif;
+  font-size: 6em;
   text-align: center;
-  margin-top: 2rem;
-  transform: translateY(-50%);
-  width: 200px;
-  height: 60px;
-  min-width: 1800px;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-shadow: 0px 0px 5px white;
+  margin: 50px 0;
+}
+.prog #playPauseButton {
   background-color: rgba(255, 255, 255, 0);
   border: none;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border-radius: 50%;
-  position: relative;
+  display: flex;
+  margin: auto;
 }
 .prog #playPauseButton #playIcon, .prog #playPauseButton #pauseIcon {
   font-size: 8rem;
@@ -1241,16 +1241,41 @@ footer .foot-copy p {
   box-shadow: inset 4px 4px 5px 1px rgba(50, 50, 50, 0.75);
 }
 .prog .date-gauche {
-  margin-left: 3rem;
-  margin-bottom: 1rem;
+  display: flex;
+  background: linear-gradient(90deg, black, transparent);
+  padding: 20px 50px;
+  margin: 50px 0;
+}
+.prog .date-gauche h1 {
+  text-shadow: 0px 0px 5px white;
+  font-size: 5em;
+  text-transform: uppercase;
+  font-family: all-round-gothic, sans-serif;
 }
 .prog .date-centre {
-  margin-left: 50%;
-  margin-bottom: 1rem;
+  display: flex;
+  background: linear-gradient(270deg, black, transparent);
+  padding: 20px 50px;
+  margin: 50px 0;
+  justify-content: flex-end;
+}
+.prog .date-centre h1 {
+  text-shadow: 0px 0px 5px white;
+  font-size: 5em;
+  text-transform: uppercase;
+  font-family: all-round-gothic, sans-serif;
 }
 .prog .date-droite {
-  margin-left: 3rem;
-  margin-bottom: 1rem;
+  display: flex;
+  background: linear-gradient(90deg, black, transparent);
+  padding: 20px 50px;
+  margin: 50px 0;
+}
+.prog .date-droite h1 {
+  text-shadow: 0px 0px 5px white;
+  font-size: 5em;
+  text-transform: uppercase;
+  font-family: all-round-gothic, sans-serif;
 }
 .prog .prog_bubbles {
   display: flex;
@@ -1332,16 +1357,6 @@ footer .foot-copy p {
 }
 .prog .prog_bubbles .image-bas #nom {
   margin-top: 2rem;
-}
-.prog h1 {
-  margin-top: 1rem;
-  padding: 0.25em 0 0 2em;
-  text-shadow: 0px 0px 5px white;
-  font-size: 5em;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: white;
-  margin-bottom: 2rem;
 }
 
 /*******************************/

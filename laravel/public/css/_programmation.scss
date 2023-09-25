@@ -3,29 +3,28 @@
 }
 
 .prog {
-    // background-image: url(../images/lignes.jpg);
-    // background-size: cover;
-    // background-attachment: fixed;
     height: 100%;
     margin: 0;
     padding-top: 7em;
     position: relative;
     z-index: 2;
-    #playPauseButton {
-        display: block;
-        margin: 1rem auto;
+
+    .prog-h1 {
+        font-family: $font-gothic;
+        font-size: 6em;
         text-align: center;
-        margin-top: 2rem;
-        transform: translateY(-50%);
-        width: 200px;
-        height: 60px;
-        min-width: 1800px;
-        background-color:rgba(255, 255, 255, 0);
+        text-transform: uppercase;
+        font-weight: 500;
+        text-shadow: 0px 0px 5px white;
+        margin: 50px 0;
+    }
+
+    #playPauseButton {
+        background-color: rgba(255, 255, 255, 0);
         border: none;
         cursor: pointer;
-        transition: transform 0.2s, box-shadow 0.2s;
-        border-radius: 50%;
-        position: relative;
+        display: flex;
+        margin: auto;
 
         #playIcon, #pauseIcon {
             font-size: 8rem;
@@ -40,17 +39,46 @@
 
 
     .date-gauche{
-        margin-left: 3rem;
-        margin-bottom: 1rem;
-    }
-    .date-centre{
-        margin-left: 50%;
-        margin-bottom: 1rem;
+        display: flex;
+        background: linear-gradient(90deg, black, transparent);
+        padding: 20px 50px;
+        margin: 50px 0;
 
+        h1 {
+            text-shadow: 0px 0px 5px white;
+            font-size: 5em;
+            text-transform: uppercase;
+            font-family: $font-gothic;
+        }
     }
+
+    .date-centre{
+        display: flex;
+        background: linear-gradient(270deg, black, transparent);
+        padding: 20px 50px;
+        margin: 50px 0;
+        justify-content: flex-end;
+
+        h1 {
+            text-shadow: 0px 0px 5px white;
+            font-size: 5em;
+            text-transform: uppercase;
+            font-family: $font-gothic;
+        }
+    }
+
     .date-droite{
-        margin-left: 3rem;
-        margin-bottom: 1rem;
+        display: flex;
+        background: linear-gradient(90deg, black, transparent);
+        padding: 20px 50px;
+        margin: 50px 0;
+
+        h1 {
+            text-shadow: 0px 0px 5px white;
+            font-size: 5em;
+            text-transform: uppercase;
+            font-family: $font-gothic;
+        }
     }
 
     .prog_bubbles {
@@ -153,16 +181,5 @@
         .image-bas #nom {
             margin-top: 2rem;
         }
-    }
-
-    h1 {
-        margin-top: 1rem;
-        padding: 0.25em 0 0 2em;
-        text-shadow: 0px 0px 5px white;
-        font-size: 5em;
-        font-weight: 500;
-        text-transform: uppercase;
-        color: white;
-        margin-bottom: 2rem;
     }
 }
