@@ -689,6 +689,33 @@ footer .foot-copy p {
   font-size: 1.5em;
   padding-top: 1.5rem;
 }
+.a-propos .titre-admin {
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 15px black;
+}
+.a-propos .ligne-haut {
+  margin-bottom: 15px;
+  height: 2px;
+  width: 50%;
+  box-shadow: 0px 0px 10px white;
+  background: linear-gradient(to left, transparent, white, transparent), linear-gradient(to right, transparent, white, transparent);
+  display: flex;
+  align-self: center;
+}
+.a-propos .ligne-h2 {
+  margin-bottom: 50px;
+  height: 2px;
+  width: 50%;
+  box-shadow: 0px 0px 10px white;
+  background: linear-gradient(to left, transparent, white, transparent), linear-gradient(to right, transparent, white, transparent);
+  display: flex;
+  align-self: center;
+}
 .a-propos .admin {
   display: flex;
   justify-content: center;
@@ -717,18 +744,20 @@ footer .foot-copy p {
   display: flex;
 }
 .a-propos .admin .admin-total .img-admin img {
-  border: 1px solid black;
+  margin-top: 1.5em;
+  border: 1px solid white;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
 }
 .a-propos .nous-joindre {
   max-width: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 2em;
+  margin-top: 3em;
 }
 .a-propos .nous-joindre .info-total {
   display: flex;

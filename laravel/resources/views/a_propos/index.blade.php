@@ -44,6 +44,11 @@
         </div>
 
 
+        <div class="ligne-haut"></div>
+        <div class="titre-admin">
+            <h1>Fondateurs de FestX</h1>
+        </div>
+        <div class="ligne-h2"></div>
         <div class="admin">
             @foreach ($admins as $admin)
                 @if ($admin->droits == 1)
