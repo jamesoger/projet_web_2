@@ -9,16 +9,19 @@
 
                 <div class="form-group">
                     <label for="prenom">Prénom</label>
+                    <x-forms.erreur champ="prenom" />
                     <input type="text" name="prenom" id="prenom" value="{{ $admin->prenom }}">
                 </div>
 
                 <div class="form-group">
                     <label for="nom">Nom</label>
+                    <x-forms.erreur champ="nom" />
                     <input type="text" name="nom" id="nom" value="{{ $admin->nom }}">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Adresse e-mail</label>
+                    <x-forms.erreur champ="email" />
                     <input type="email" name="email" id="email" value="{{ $admin->email }}">
                 </div>
                 <div class="enregistrement_admin_form_group_file">

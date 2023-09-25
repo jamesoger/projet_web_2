@@ -17,7 +17,6 @@
         <a class="nav-hidden-a" href="{{ route('actualites.index') }}">Actualités</a>
         <a class="nav-hidden-a" href="{{ route('info.index') }}">À propos</a>
 
-
         <div class="bas-nav">
             <div class="contact-info">
                 <p class="mail-nav">Email</p>
