@@ -201,7 +201,6 @@ footer {
   flex-direction: column;
   background-color: black;
   z-index: 3;
-  margin-top: 100px;
 }
 footer .footer-media {
   display: flex;
@@ -2029,10 +2028,9 @@ footer .foot-copy p {
 /******** CONNEXION USER *******/
 /*******************************/
 .connexion_user {
-  width: 100vw;
-  height: 100vh;
   background-image: url(../images/background-sand.jpg);
   background-size: cover;
+  background-attachment: fixed;
   padding-top: 8em;
   font-family: all-round-gothic, sans-serif;
 }
@@ -2042,16 +2040,14 @@ footer .foot-copy p {
   font-weight: 500;
   text-transform: uppercase;
 }
-.connexion_user h2 {
+.connexion_user p {
   text-align: center;
-  font-size: 2em;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-size: 1.5em;
 }
 .connexion_user .connexion_user_form {
   background-color: rgba(0, 0, 0, 0.648);
   border-radius: 0.5em;
-  box-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
   width: 600px;
   height: 400px;
   margin: 5rem auto;
@@ -2062,15 +2058,18 @@ footer .foot-copy p {
   text-align: center;
 }
 .connexion_user .connexion_user_form label {
-  font-size: 1.25em;
+  font-size: 1.5em;
+  text-transform: uppercase;
 }
 .connexion_user .connexion_user_form input {
   background-color: rgba(255, 255, 255, 0.155);
   border-radius: 2em;
   width: 400px;
   height: 50px;
-  margin: 2rem;
-  box-shadow: 0px 0px 5px white;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
   text-align: center;
   font-family: all-round-gothic, sans-serif;
   font-size: 1.5em;
@@ -2108,6 +2107,7 @@ footer .foot-copy p {
   font-weight: 500;
   text-transform: uppercase;
   color: white;
+  padding-bottom: 50px;
 }
 .connexion_user a:hover {
   color: #1DA5F3;
@@ -2116,73 +2116,90 @@ footer .foot-copy p {
 /*******************************/
 /***** ENREGISTREMENT USER *****/
 /*******************************/
-.enregistrement_user {
-  width: 100vw;
-  height: 100vh;
+.enregistrement-user {
   background-image: url(../images/background-sand.jpg);
   background-size: cover;
-  padding-top: 8em;
+  background-attachment: fixed;
+  padding: 8em 0;
   font-family: all-round-gothic, sans-serif;
 }
-.enregistrement_user h1 {
+.enregistrement-user h1 {
   text-align: center;
   font-size: 5em;
   font-weight: 500;
   text-transform: uppercase;
 }
-.enregistrement_user .enregistrement_user_form {
+.enregistrement-user p {
+  text-align: center;
+  font-size: 1.5em;
+}
+.enregistrement-user .enregistrement-form {
   background-color: rgba(0, 0, 0, 0.648);
   border-radius: 0.5em;
-  box-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
   width: 800px;
   height: 600px;
-  margin: 4rem auto;
+  margin: 5rem auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.enregistrement_user .enregistrement_user_form .enregistrement_user_form_group_email input {
-  width: 720px;
-  display: grid;
-  grid-template-rows: auto auto;
-  align-items: center;
-  margin: 1rem auto;
+.enregistrement-user .enregistrement-form form {
+  display: flex;
+  flex-direction: column;
 }
-.enregistrement_user .enregistrement_user_form .enregistrement_user_form_group.user-names {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  align-items: center;
-  margin-bottom: 1rem;
+.enregistrement-user .enregistrement-form form label {
+  font-size: 1.5em;
+  text-transform: uppercase;
 }
-.enregistrement_user .enregistrement_user_form .enregistrement_user_form_group.passwords {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  align-items: center;
-  padding-top: 1.5em;
-}
-.enregistrement_user .enregistrement_user_form label {
-  font-size: 1.25em;
-}
-.enregistrement_user .enregistrement_user_form input {
+.enregistrement-user .enregistrement-form form input {
   background-color: rgba(255, 255, 255, 0.155);
   border-radius: 2em;
-  width: 300px;
   height: 50px;
-  margin: 2rem;
-  box-shadow: 0px 0px 5px white;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
   text-align: center;
   font-family: all-round-gothic, sans-serif;
   font-size: 1.5em;
   color: white;
 }
-.enregistrement_user .enregistrement_user_form input #email {
-  width: 400px;
+.enregistrement-user .enregistrement-form form .ligne-1 {
+  display: flex;
 }
-.enregistrement_user .enregistrement_user_form button {
+.enregistrement-user .enregistrement-form form .ligne-1 .prenom {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.enregistrement-user .enregistrement-form form .ligne-1 .nom {
+  display: flex;
+  flex-direction: column;
+}
+.enregistrement-user .enregistrement-form form .ligne-2 {
+  display: flex;
+}
+.enregistrement-user .enregistrement-form form .ligne-2 .email {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.enregistrement-user .enregistrement-form form .ligne-3 {
+  display: flex;
+}
+.enregistrement-user .enregistrement-form form .ligne-3 .password {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.enregistrement-user .enregistrement-form form .ligne-3 .confirmation {
+  display: flex;
+  flex-direction: column;
+}
+.enregistrement-user .enregistrement-form form button {
   margin-top: 1rem;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.005);
@@ -2200,7 +2217,7 @@ footer .foot-copy p {
   box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.enregistrement_user .enregistrement_user_form button:hover {
+.enregistrement-user .enregistrement-form form button:hover {
   background-color: #1DA5F3;
   color: #06162F;
   text-shadow: 0px 0px 5px #06162F;
@@ -2520,7 +2537,7 @@ footer .foot-copy p {
 }
 
 /*******************************/
-/******* ADMIN EDIT  *******/
+/********* ADMIN EDIT **********/
 /*******************************/
 .edit_admin {
   background-image: url(../images/background-sand.jpg);
@@ -2535,6 +2552,10 @@ footer .foot-copy p {
   font-size: 5em;
   font-weight: 500;
   text-transform: uppercase;
+}
+.edit_admin p {
+  text-align: center;
+  font-size: 1.5em;
 }
 .edit_admin .edit_admin_form {
   background-color: rgba(0, 0, 0, 0.648);
