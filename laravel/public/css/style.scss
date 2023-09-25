@@ -518,70 +518,175 @@
         text-transform: uppercase;
     }
 
+    p {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
     .admin-form-create {
         background-color: rgba(0, 0, 0, 0.648);
         border-radius: 0.5em;
-        box-shadow: 0px 0px 5px white;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
         width: 800px;
-        height: 700px;
-        margin: 4rem auto;
+        height: 750px;
+        margin: 5rem auto;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         text-align: center;
 
-        select {
-            border-radius: 1em;
-            width: 170px;
-            font-family: $font-gothic;
-            font-size: 1em;
-            text-align: center;
-            padding: 0.5em;
-        }
+        form {
+            display: flex;
+            flex-direction: column;
 
-        label {
-            font-size: 1.25em;
+            label {
+                font-size: 1.5em;
+                text-transform: uppercase;
+            }
 
-        }
+            #prenom,
+            #nom,
+            #email,
+            #password,
+            #confirm-password {
+                background-color: rgba(255, 255, 255, 0.155);
+                border-radius: 2em;
+                height: 50px;
+                margin-top: 10px;
+                margin-bottom: 40px;
+                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+                border: none;
+                text-align: center;
+                font-family: all-round-gothic, sans-serif;
+                font-size: 1.5em;
+                color: white;
+            }
 
-        input {
-            background-color: rgba(255, 255, 255, 0.155);
-            border-radius: 2em;
-            width: 300px;
-            height: 50px;
-            margin: 2rem;
-            box-shadow: 0px 0px 5px white;
-            text-align: center;
-            font-family: $font-gothic;
-            font-size: 1.5em;
-            color: white;
-        }
+            .ligne-1 {
+                display: flex;
 
-        button {
-            margin-top: 1rem;
-            cursor: pointer;
-            background-color: rgba(255, 255, 255, 0.005);
-            color: white;
-            font-family: $font-ethno;
-            font-size: 1.5em;
-            font-weight: 300;
-            text-decoration: none;
-            text-align: center;
-            text-transform: uppercase;
-            padding: 10px 10px;
-            width: 350px;
-            border: 3px solid white;
-            text-shadow: 0px 0px 5px white;
-            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                .prenom {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 20px;
+                }
 
-            &:hover {
-                background-color: $blue;
-                color: $blue-fonce;
-                text-shadow: 0px 0px 5px $blue-fonce;
-                box-shadow: 0px 0px 10px $blue;
-                border: 3px solid $blue;
+                .nom {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            .ligne-2 {
+                display: flex;
+
+                .email {
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+                }
+            }
+
+            .ligne-3 {
+                display: flex;
+                flex-direction: column;
+
+                .image {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+
+                    label {
+                        margin-right: 30px;
+                    }
+
+                    input[type="file"]::-webkit-file-upload-button {
+                        cursor: pointer;
+                        background-color: rgba(255, 255, 255, 0.005);
+                        color: white;
+                        font-family: $font-ethno;
+                        font-size: 1em;
+                        font-weight: 300;
+                        border: 2px solid white;
+                        padding: 10px;
+
+                        &:hover {
+                            background-color: white;
+                            color: black;
+                        }
+                    }
+                }
+
+
+                .statut {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    margin: 40px 0;
+
+                    label {
+                        margin-right: 22px;
+                    }
+
+                    select {
+                        cursor: pointer;
+                        background-color: rgba(255, 255, 255, 0.005);
+                        color: white;
+                        font-family: $font-ethno;
+                        font-size: 1em;
+                        font-weight: 300;
+                        border: 2px solid white;
+                        padding: 10px;
+
+                        option {
+                            color: black;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+
+            .ligne-4 {
+                display: flex;
+
+                .password {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 20px;
+                }
+
+                .confirmation {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            button {
+                margin-top: 1rem;
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1.5em;
+                font-weight: 300;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 10px 10px;
+                width: 350px;
+                border: 3px solid white;
+                text-shadow: 0px 0px 5px white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $blue;
+                    color: $blue-fonce;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
             }
         }
     }
@@ -996,31 +1101,32 @@
                 color: black;
             }
         }
+
         .submit-prog{
             cursor: pointer;
-                background-color: rgba(255, 255, 255, 0.005);
-                color: white;
-                font-family: $font-ethno;
-                font-size: 1.5em;
-                font-weight: 300;
-                text-decoration: none;
-                text-align: center;
-                text-transform: uppercase;
-                padding: 10px;
-                margin-top: 40px;
-                width: 350px;
-                border: 3px solid white;
-                text-shadow: 0px 0px 5px white;
-                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px;
+            margin-top: 40px;
+            width: 350px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
-                &:hover {
-                    background-color: $blue;
-                    color: $blue-fonce;
-                    text-shadow: 0px 0px 5px $blue-fonce;
-                    box-shadow: 0px 0px 10px $blue;
-                    border: 3px solid $blue;
-                }
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
         }
     }
 }

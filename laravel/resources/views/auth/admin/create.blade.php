@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="confirmation">
-                        <label for="confirm-password">Confirmation du mot de passe</label>
+                        <label for="confirm-password">Confirmation</label>
                         <input id="confirm-password" name="confirmation_password" type="password">
                         <x-forms.erreur champ="confirmation_password" />
                     </div>
