@@ -64,6 +64,7 @@
             </div>
 
         </div>
+        <x-footer />
     </x-layout>
 </div>
 {{-- <h2>Liste des forfaits :</h2>
