@@ -164,10 +164,10 @@ body {
 .nav-menu {
   display: flex;
   justify-content: space-evenly;
-  background-color: rgba(0, 0, 0, 0.5411764706);
+  background-color: rgba(0, 0, 0, 0.4784313725);
   width: 100%;
-  height: 80px;
-  z-index: 3;
+  height: 100px;
+  z-index: 5;
 }
 .nav-menu img {
   display: flex;
@@ -363,7 +363,7 @@ footer .foot-copy p {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.705);
+  background-color: rgba(255, 255, 255, 0.89);
   width: 100%;
   height: 100%;
   z-index: 100;
@@ -1704,7 +1704,7 @@ footer .foot-copy p {
   font-size: 5em;
   font-weight: 500;
   text-transform: uppercase;
-  padding-top: 2em;
+  padding-top: 0.5em;
 }
 .panier_user .panier_selection {
   width: 400px;
@@ -1715,7 +1715,7 @@ footer .foot-copy p {
   padding: 20px;
   position: absolute;
   margin-top: 10rem;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -1883,7 +1883,8 @@ footer .foot-copy p {
   font-size: 5em;
   font-weight: 500;
   text-transform: uppercase;
-  padding-top: 2em;
+  padding-top: 1em;
+  font-family: all-round-gothic, sans-serif;
 }
 #app_user .user_index .user_reservations {
   display: flex;
@@ -1901,13 +1902,18 @@ footer .foot-copy p {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 100px 20px;
+  margin: 50px 20px;
   background-color: rgba(24, 24, 24, 0.568);
   padding: 20px;
   width: 500px;
   box-shadow: 0px 0px 5px white;
   margin-bottom: 30px;
   position: relative;
+  height: 500px;
+  overflow-y: auto;
+}
+#app_user .user_index .user_reservations .forfaits_users::-webkit-scrollbar {
+  display: none;
 }
 #app_user .user_index .user_reservations .forfaits_users h2 {
   font-size: 2em;
@@ -2152,6 +2158,9 @@ footer .foot-copy p {
   font-size: 5em;
   font-weight: 500;
   text-transform: uppercase;
+}
+.connexion_user h2 {
+  text-align: center;
 }
 .connexion_user p {
   text-align: center;
