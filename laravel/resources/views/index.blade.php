@@ -39,12 +39,17 @@
             </div>
 
             <div class="acc-btn-menu">
-                <div class="acc-btn">
-                    <img src="{{ asset('icones/menu_9_points.png') }}" alt="">
+                <div id="app_menu">
+                    <div class="acc-btn">
+                        <img src="{{ asset('icones/menu_9_points.png') }}" alt="">
+                    </div>
+                    <p class="acc-menu">
+                        menu
+                    </p>
                 </div>
-                <p class="acc-menu">
-                    menu
-                </p>
+            </div>
+            <div class="menu-cache">
+                <x-menu />
             </div>
 
             <div class="video-bg-header">
@@ -207,23 +212,23 @@
     });
 
     /********** FLECHE-HAUT **********/
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         const flecheLink = document.querySelector(".fleche-haut");
         const accHeader = document.getElementById("acc-header");
 
         flecheLink.style.display = "none";
 
         // Affiche la flèche lorsque l'utilisateur fait défiler la page
-        window.addEventListener("scroll", function () {
+        window.addEventListener("scroll", function() {
             if (window.scrollY > 100) {
-            flecheLink.style.display = "flex";
+                flecheLink.style.display = "flex";
             } else {
-            flecheLink.style.display = "none";
+                flecheLink.style.display = "none";
             }
         });
 
         // Fait défiler vers le haut de la page lors du clic sur la flèche
-        flecheLink.addEventListener("click", function (event) {
+        flecheLink.addEventListener("click", function(event) {
             event.preventDefault();
 
             // Options de défilement
@@ -234,5 +239,28 @@
 
             accHeader.scrollIntoView(options);
         });
+    });
+
+
+    const menuNav = document.querySelector('.nav-btn')
+    const appNav = document.querySelector('#app_menu');
+    let menu = document.querySelector('.menu-cache')
+
+   menuNav.addEventListener('click', function(){
+        if(menu.style.display === 'none' || menu.style.display === ""){
+            menu.style.display = 'block';
+        } else{
+            menu.style.display = 'none'
+        }
+   })
+
+
+
+   appNav.addEventListener('click', function() {
+        if (menu.style.display === 'none' || menu.style.display === '') {
+            menu.style.display = 'block';
+        } else {
+            menu.style.display = 'none';
+        }
     });
 </script>
