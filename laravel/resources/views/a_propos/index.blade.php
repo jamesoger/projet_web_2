@@ -46,15 +46,16 @@
 
         <div class="admin">
             @foreach ($admins as $admin)
-            @if ($admin->droits == 1)
-                 <div class="admin-nom">
-                    <h1>{{$admin->nom_complet}}</h1>
-                </div>
-                <div class="img-admin">
-                    <img src="{{ $admin->image }}" alt="">
-                </div>
-            @endif
-
+                @if ($admin->droits == 1)
+                    <div class="admin-total">
+                        <div class="admin-nom">
+                            <h1>{{ $admin->nom_complet }}</h1>
+                        </div>
+                        <div class="img-admin">
+                            <img src="{{ $admin->image }}" alt="">
+                        </div>
+                    </div>
+                @endif
             @endforeach
         </div>
 

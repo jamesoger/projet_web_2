@@ -33,5 +33,6 @@
             </form>
         </div>
 
-        <x-footer />
+    </div>
+    <x-footer />
 </x-layout>

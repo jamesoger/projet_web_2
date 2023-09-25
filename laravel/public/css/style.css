@@ -694,20 +694,29 @@ footer .foot-copy p {
   justify-content: center;
   align-items: center;
   margin-bottom: 3em;
+  gap: 5%;
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 50px rgb(24, 24, 24);
+  padding: 2rem 0rem;
 }
-.a-propos .admin .admin-nom {
+.a-propos .admin .admin-total {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-.a-propos .admin .admin-nom h1 {
+.a-propos .admin .admin-total .admin-nom {
+  display: flex;
+}
+.a-propos .admin .admin-total .admin-nom h1 {
   flex: auto;
   font-size: 2em;
   padding-left: 1.5rem;
 }
-.a-propos .admin .img-admin {
+.a-propos .admin .admin-total .img-admin {
   display: flex;
 }
-.a-propos .admin .img-admin img {
+.a-propos .admin .admin-total .img-admin img {
   border: 1px solid black;
   border-radius: 50%;
   -o-object-fit: cover;
