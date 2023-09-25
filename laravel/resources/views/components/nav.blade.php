@@ -36,6 +36,8 @@
         }
    })
 
+
+
    appNav.addEventListener('click', function() {
         if (menu.style.display === 'none' || menu.style.display === '') {
             menu.style.display = 'block';
