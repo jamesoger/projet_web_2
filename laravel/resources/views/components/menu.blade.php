@@ -30,16 +30,8 @@
 </nav>
 
 <script>
-    const menuNav = document.querySelector('.nav-btn');
-    const menu = document.querySelector('.hidden');
 
-    menuNav.addEventListener('click', function() {
-        if (menu.style.display === 'none' || menu.style.display === '') {
-            menu.style.display = 'block';
-        } else {
-            menu.style.display = 'none';
-        }
-    });
+
 </script>
 
 

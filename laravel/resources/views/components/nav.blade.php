@@ -24,14 +24,23 @@
 </nav>
 
 <script>
-    let appNav = document.querySelector('#app_menu')
-    let divCache = document.querySelector('.menu-cache')
+    const menuNav = document.querySelector('.nav-btn')
+    const appNav = document.querySelector('#app_menu');
+    let menu = document.querySelector('.menu-cache')
 
-   appNav.addEventListener('click', function(){
-        if(divCache.style.display === 'none' || divCache.style.display === ""){
-            divCache.style.display = 'block';
+   menuNav.addEventListener('click', function(){
+        if(menu.style.display === 'none' || menu.style.display === ""){
+            menu.style.display = 'block';
         } else{
-            divCache.style.display = 'none'
+            menu.style.display = 'none'
         }
    })
+
+   appNav.addEventListener('click', function() {
+        if (menu.style.display === 'none' || menu.style.display === '') {
+            menu.style.display = 'block';
+        } else {
+            menu.style.display = 'none';
+        }
+    });
 </script>
