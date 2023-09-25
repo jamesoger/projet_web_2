@@ -44,17 +44,23 @@
         </div>
 
 
+        <div class="ligne-haut"></div>
+        <div class="titre-admin">
+            <h1>Fondateurs de FestX</h1>
+        </div>
+        <div class="ligne-h2"></div>
         <div class="admin">
             @foreach ($admins as $admin)
-            @if ($admin->droits == 1)
-                 <div class="admin-nom">
-                    <h1>{{$admin->nom_complet}}</h1>
-                </div>
-                <div class="img-admin">
-                    <img src="{{ $admin->image }}" alt="">
-                </div>
-            @endif
-
+                @if ($admin->droits == 1)
+                    <div class="admin-total">
+                        <div class="admin-nom">
+                            <h1>{{ $admin->nom_complet }}</h1>
+                        </div>
+                        <div class="img-admin">
+                            <img src="{{ $admin->image }}" alt="">
+                        </div>
+                    </div>
+                @endif
             @endforeach
         </div>
 

@@ -19,7 +19,7 @@
                 <?php
                 $forfaits = auth()->user()->forfaits;
                 $forfaitsGroupes = [];
-
+                
                 foreach ($forfaits as $forfait) {
                     $found = false;
                     foreach ($forfaitsGroupes as &$groupe) {
@@ -33,7 +33,7 @@
                             break;
                         }
                     }
-
+                
                     if (!$found) {
                         $forfaitsGroupes[] = [
                             'id' => $forfait->id,
@@ -97,7 +97,7 @@
                                                 'artistes' => [],
                                             ];
                                         }
-
+                                        
                                         foreach ($programmation->artistes as $artiste) {
                                             $artisteKey = $artiste->id;
                                             if (!isset($datesArtistes[$dateKey]['artistes'][$artisteKey])) {
@@ -135,7 +135,7 @@
             </form>
         </div>
     </div>
-
+    <x-footer />
 </x-layout>
 
 <script>

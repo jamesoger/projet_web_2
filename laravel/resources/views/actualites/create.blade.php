@@ -43,5 +43,5 @@
             <button type="submit">Ajouter</button>
         </form>
     </div>
-
+    <x-footer />
 </x-layout>

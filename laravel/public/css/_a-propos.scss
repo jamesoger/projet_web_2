@@ -44,36 +44,76 @@
         }
     }
 
+    .titre-admin {
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-shadow: 0px 0px 15px black;
+    }
+
+    .ligne-haut {
+        margin-bottom: 15px;
+        height: 2px;
+        width: 50%;
+        box-shadow: 0px 0px 10px white;
+        background: linear-gradient(to left, transparent, white, transparent), linear-gradient(to right, transparent, white, transparent);
+        display: flex;
+        align-self: center;
+    }
+
+    .ligne-h2 {
+        margin-bottom: 50px;
+        height: 2px;
+        width: 50%;
+        box-shadow: 0px 0px 10px white;
+        background: linear-gradient(to left, transparent, white, transparent), linear-gradient(to right, transparent, white, transparent);
+        display: flex;
+        align-self: center;
+    }
+
     .admin {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: 3em;
+        gap: 5%;
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 50px rgb(24, 24, 24);
+        padding: 2rem 0rem;
 
-        .admin-nom {
+        .admin-total {
             display: flex;
             flex-direction: column;
+            align-items: center;
+
+            .admin-nom {
+                display: flex;
 
 
-            h1 {
-                flex: auto;
-                font-size: 2em;
-                padding-left: 1.5rem;
+                h1 {
+                    flex: auto;
+                    font-size: 2em;
+                    padding-left: 1.5rem;
+                }
+
             }
 
-        }
+            .img-admin {
+                display: flex;
 
-        .img-admin {
-            display: flex;
+                img {
+                    margin-top: 1.5em;
+                    border: 1px solid white;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    width: 200px;
+                    height: 200px;
 
-            img {
-
-                border: 1px solid black;
-                border-radius: 50%;
-                object-fit: cover;
-                width: 100px;
-                height: 100px;
-
+                }
             }
         }
 
@@ -84,6 +124,7 @@
         display: flex;
         justify-content: center;
         margin-bottom: 2em;
+        margin-top: 3em;
 
         .info-total {
             display: flex;
