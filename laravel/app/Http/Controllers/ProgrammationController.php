@@ -75,7 +75,6 @@ class ProgrammationController extends Controller
             'image_spectacle.image' => 'Le fichier doit être une image valide.',
         ]);
 
-
         if ($request->filled('nom_scene') && $request->filled('heure_show')) {
             $artiste = new Artiste;
             $artiste->nom_scene = $valides['nom_scene'];
@@ -114,14 +113,28 @@ class ProgrammationController extends Controller
             $programmation->spectacles()->attach($spectacle->id);
         }
 
-        if ((!$request->filled('nom_scene') && !$request->filled('heure_show')) &&
-            (!$request->filled('nom_spectacle') && !$request->filled('heure_spectacle'))
+        $artistesFilled = $request->filled('nom_scene') || $request->filled('heure_show');
+        $spectaclesFilled = $request->filled('nom_spectacle') || $request->filled('heure_spectacle');
+
+        if ((!$artistesFilled && !$spectaclesFilled) ||
+            (!$request->filled('nom_scene') && !$request->filled('heure_show') && !$request->filled('nom_spectacle') && !$request->filled('heure_spectacle'))
         ) {
+            // Aucun des deux formulaires n'est rempli ou les deux formulaires sont vides
             return redirect()
                 ->back()
                 ->with('error', 'Le formulaire est vide. Veuillez remplir au moins une partie (artistes ou spectacles).');
         }
 
+        if ((!$request->filled('nom_scene') || !$request->filled('heure_show')) &&
+            (!$request->filled('nom_spectacle') || !$request->filled('heure_spectacle'))
+        ) {
+            // L'un des deux formulaires (artiste ou spectacle) n'est pas rempli avec au moins un artiste et une heure
+            return redirect()
+                ->back()
+                ->with('error', 'Veuillez remplir le formulaire des artistes et/ou le formulaire des spectacles avec au moins un artiste et une heure.');
+        }
+
+        // Traitez le reste du code pour ajouter les artistes et les spectacles à la programmation
 
         return redirect()
             ->route('admin.index')

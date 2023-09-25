@@ -23,6 +23,7 @@
     padding-top: 1em;
     margin: 0 auto;
 }
+
 /*******************************/
 /******** FORMULAIRES *******/
 /*******************************/
@@ -596,11 +597,11 @@
 /*******************************/
 
 .edit_admin {
-    width: 100vw;
-    height: 100vh;
     background-image: url(../images/background-sand.jpg);
     background-size: cover;
-    padding-top: 8em;
+    background-attachment: fixed;
+    height: 100vw;
+    padding-top: 10em;
     font-family: $font-gothic;
 
     h1 {
@@ -610,42 +611,97 @@
         text-transform: uppercase;
     }
 
-    h2 {
-        text-align: center;
-        font-size: 2em;
-        font-weight: 500;
-        text-transform: uppercase;
-    }
-
     .edit_admin_form {
         background-color: rgba(0, 0, 0, 0.648);
         border-radius: 0.5em;
-        box-shadow: 0px 0px 5px white;
-        width: 600px;
-        height: 500px;
-        margin: 5rem auto;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
+        width: 750px;
+        height: 680px;
+        margin: 4rem auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
 
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
         label {
-            font-size: 1.25em;
+            font-size: 1.5em;
+            text-transform: uppercase;
+
+        }
+        input{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #prenom,
+        #nom,
+        #email,
+        #image {
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 630px;
+            height: 50px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+            border: none;
+            text-align: center;
+            font-family: all-round-gothic, sans-serif;
+            font-size: 1.5em;
+            color: white;
+        }
+        #droits{
+            width: 400px;
+            height: 50px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(196, 194, 194, 0.6), inset 0px 0px 20px rgb(0 0 0);
+            border: none;
+            font-family: all-round-gothic, sans-serif;
+            font-size: 1.5em;
+
 
         }
 
-        input {
-            background-color: rgba(255, 255, 255, 0.155);
-            border-radius: 2em;
-            width: 400px;
-            height: 50px;
-            margin: 2rem;
-            box-shadow: 0px 0px 5px white;
-            text-align: center;
-            font-family: $font-gothic;
-            font-size: 1.5em;
+        .form-group-droits{
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .enregistrement_admin_form_group_file>label {
+            margin-right: 30px;
+        }
+        .enregistrement_admin_form_group_file{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
             color: white;
+            font-family: $font-ethno;
+            font-size: 1em;
+            font-weight: 300;
+            border: 2px solid white;
+            padding: 10px;
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
         }
 
         button {
@@ -691,7 +747,7 @@
 
     h1 {
         text-align: center;
-        font-size: 3em;
+        font-size: 5em;
         font-weight: 500;
         text-transform: uppercase;
     }
@@ -840,7 +896,134 @@
 /******* PROGRAMMATION EDIT *******/
 /*******************************/
 .prog_edit {
-    padding-top: 10rem;
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vw;
+    padding-top: 8em;
+    font-family: $font-gothic;
+
+    h1 {
+        text-align: center;
+        font-size: 4em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+
+    .form-prog{
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
+        width: 950px;
+        height: 780px;
+        padding: 3em;
+        margin: 3rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: 1.5em;
+            text-transform: uppercase;
+            margin: 1rem;
+        }
+
+        #nom
+         {
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 530px;
+            height: 40px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+            border: none;
+            text-align: center;
+            font-family: all-round-gothic, sans-serif;
+            font-size: 1.5em;
+            color: white;
+        }
+        #heure{
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 200px;
+            height: 60px;
+            margin: 10px auto;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+            border: none;
+            text-align: center;
+            font-family: all-round-gothic, sans-serif;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        .image{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem;
+        }
+
+        #image>label {
+            margin-right: 30px;
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1em;
+            font-weight: 300;
+            border: 2px solid white;
+            padding: 10px;
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+        .submit-prog{
+            cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1.5em;
+                font-weight: 300;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 10px;
+                margin-top: 40px;
+                width: 350px;
+                border: 3px solid white;
+                text-shadow: 0px 0px 5px white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $blue;
+                    color: $blue-fonce;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
+        }
+    }
 }
 
 /*******************************/

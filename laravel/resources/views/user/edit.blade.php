@@ -1,7 +1,7 @@
 <x-layout titre="Modification de : {{ $user->prenom }}">
     <x-nav />
     <div class="user_edit">
-        <h1>Modification de : {{ $user->nom }}</h1>
+        <h1>Modification de  {{ $user->nom_complet }}</h1>
         <div class="user_modif_form">
             <form action="{{ route('user.update', ['id' => $user->id]) }}" method="POST">
                 @csrf

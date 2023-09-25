@@ -19,7 +19,7 @@
                 $spectacleImageClasses = ['image-haut', 'image-milieu', 'image-bas'];
                 $artistClassIndex = 0;
                 $spectacleClassIndex = 0;
-                $maxImagesPerContainer = 7; // Maximum d'images par conteneur
+                $maxImagesPerContainer = 7;
             @endphp
 
             @foreach ($programmation as $key => $prog)
@@ -121,13 +121,12 @@
 
 
         if (audioPlaying) {
-            audio.pause(); // Mettre en pause la lecture
-            audioPlaying = false;
+            audio.pause();
             playIcon.style.display = "inline";
             pauseIcon.style.display = "none";
         } else {
-            audio.muted = false; // Activer le son
-            audio.play(); // Démarrer la lecture
+            audio.muted = false;
+            audio.play();
             audioPlaying = true;
             playIcon.style.display = "none";
             pauseIcon.style.display = "inline";

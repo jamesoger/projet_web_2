@@ -8,26 +8,26 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="prenom">Prénom:</label>
+                    <label for="prenom">Prénom</label>
                     <input type="text" name="prenom" id="prenom" value="{{ $admin->prenom }}">
                 </div>
 
                 <div class="form-group">
-                    <label for="nom">Nom:</label>
+                    <label for="nom">Nom</label>
                     <input type="text" name="nom" id="nom" value="{{ $admin->nom }}">
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Adresse e-mail:</label>
+                    <label for="email">Adresse e-mail</label>
                     <input type="email" name="email" id="email" value="{{ $admin->email }}">
                 </div>
                 <div class="enregistrement_admin_form_group_file">
-                    <label for="image">Image</label>
+                    <label for="image" >Image</label>
                     <input  name="image" type="file">
-                    <input type="hidden" name="image_courante" value="{{$admin->image}}">
+                    <input id="image" type="hidden" name="image_courante" value="{{$admin->image}}">
                     <x-forms.erreur champ="image" />
                 </div>
-                <div class="form-group">
+                <div class="form-group-droits">
                     <label for="droits">Statut</label>
                     <select name="droits" id="droits">
                         <option value="1" @if (old('droits') == '1') selected @endif>Administrateur</option>
