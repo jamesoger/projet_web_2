@@ -1,4 +1,4 @@
-  <div id="app_billeterie">
+
       <x-layout titre="Enregistrement">
           <x-nav />
           <div class="bill">
@@ -23,7 +23,7 @@
           </div>
           <x-footer />
       </x-layout>
-  </div>
+
 
 
 
