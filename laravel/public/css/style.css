@@ -2463,30 +2463,27 @@ footer .foot-copy p {
 /*******************************/
 /******* ADMIN CONNEXION *******/
 /*******************************/
-.login_admin {
-  width: 100vw;
-  height: 100vh;
+.admin-login {
   background-image: url(../images/background-sand.jpg);
   background-size: cover;
-  padding-top: 8em;
+  background-attachment: fixed;
+  padding: 8em 0;
   font-family: all-round-gothic, sans-serif;
 }
-.login_admin h1 {
+.admin-login h1 {
   text-align: center;
   font-size: 5em;
   font-weight: 500;
   text-transform: uppercase;
 }
-.login_admin h2 {
+.admin-login p {
   text-align: center;
-  font-size: 2em;
-  font-weight: 500;
-  text-transform: uppercase;
+  font-size: 1.5em;
 }
-.login_admin .login_admin_form {
+.admin-login .admin-form {
   background-color: rgba(0, 0, 0, 0.648);
   border-radius: 0.5em;
-  box-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
   width: 600px;
   height: 400px;
   margin: 5rem auto;
@@ -2496,22 +2493,34 @@ footer .foot-copy p {
   align-items: center;
   text-align: center;
 }
-.login_admin .login_admin_form label {
-  font-size: 1.25em;
+.admin-login .admin-form form {
+  display: flex;
+  flex-direction: column;
 }
-.login_admin .login_admin_form input {
+.admin-login .admin-form form label {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.admin-login .admin-form form input {
   background-color: rgba(255, 255, 255, 0.155);
   border-radius: 2em;
   width: 400px;
   height: 50px;
-  margin: 2rem;
-  box-shadow: 0px 0px 5px white;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
   text-align: center;
   font-family: all-round-gothic, sans-serif;
   font-size: 1.5em;
   color: white;
 }
-.login_admin .login_admin_form button {
+.admin-login .admin-form form .admin-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin-login .admin-form form button {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.005);
   color: white;
@@ -2528,14 +2537,14 @@ footer .foot-copy p {
   box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.login_admin .login_admin_form button:hover {
+.admin-login .admin-form form button:hover {
   background-color: #1DA5F3;
   color: #06162F;
   text-shadow: 0px 0px 5px #06162F;
   box-shadow: 0px 0px 10px #1DA5F3;
   border: 3px solid #1DA5F3;
 }
-.login_admin a {
+.admin-login a {
   display: block;
   text-decoration: none;
   text-align: center;
@@ -2544,28 +2553,27 @@ footer .foot-copy p {
   text-transform: uppercase;
   color: white;
 }
-.login_admin a:hover {
+.admin-login a:hover {
   color: #1DA5F3;
 }
 
 /*******************************/
 /******* ADMIN CREATE  *******/
 /*******************************/
-.admin_create {
-  width: 100vw;
-  height: 100vh;
+.admin-create {
   background-image: url(../images/background-sand.jpg);
   background-size: cover;
-  padding-top: 8em;
+  background-attachment: fixed;
+  padding: 8em 0;
   font-family: all-round-gothic, sans-serif;
 }
-.admin_create h1 {
+.admin-create h1 {
   text-align: center;
   font-size: 5em;
   font-weight: 500;
   text-transform: uppercase;
 }
-.admin_create .admin_form_create {
+.admin-create .admin-form-create {
   background-color: rgba(0, 0, 0, 0.648);
   border-radius: 0.5em;
   box-shadow: 0px 0px 5px white;
@@ -2578,35 +2586,7 @@ footer .foot-copy p {
   align-items: center;
   text-align: center;
 }
-.admin_create .admin_form_create .enregistrement_admin_form_group_email input {
-  width: 720px;
-  display: grid;
-  grid-template-rows: auto auto;
-  align-items: center;
-  margin: 1rem auto;
-}
-.admin_create .admin_form_create .enregistrement_admin_form_group.user-names {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-.admin_create .admin_form_create .enregistrement_admin_form_group.passwords {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  align-items: center;
-  padding-top: 1.5em;
-}
-.admin_create .admin_form_create .enregistrement_admin_form_group_droits­ {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-  align-items: center;
-  padding-top: 1.5em;
-}
-.admin_create .admin_form_create select {
+.admin-create .admin-form-create select {
   border-radius: 1em;
   width: 170px;
   font-family: all-round-gothic, sans-serif;
@@ -2614,10 +2594,10 @@ footer .foot-copy p {
   text-align: center;
   padding: 0.5em;
 }
-.admin_create .admin_form_create label {
+.admin-create .admin-form-create label {
   font-size: 1.25em;
 }
-.admin_create .admin_form_create input {
+.admin-create .admin-form-create input {
   background-color: rgba(255, 255, 255, 0.155);
   border-radius: 2em;
   width: 300px;
@@ -2629,10 +2609,7 @@ footer .foot-copy p {
   font-size: 1.5em;
   color: white;
 }
-.admin_create .admin_form_create input #email {
-  width: 400px;
-}
-.admin_create .admin_form_create button {
+.admin-create .admin-form-create button {
   margin-top: 1rem;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.005);
@@ -2650,7 +2627,7 @@ footer .foot-copy p {
   box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.admin_create .admin_form_create button:hover {
+.admin-create .admin-form-create button:hover {
   background-color: #1DA5F3;
   color: #06162F;
   text-shadow: 0px 0px 5px #06162F;
@@ -2793,8 +2770,7 @@ footer .foot-copy p {
   background-image: url(../images/background-sand.jpg);
   background-size: cover;
   background-attachment: fixed;
-  height: 100vw;
-  padding-top: 8em;
+  padding: 8em 0;
   font-family: all-round-gothic, sans-serif;
 }
 .actu-edit h1 {
