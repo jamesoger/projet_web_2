@@ -3,6 +3,7 @@
     <canvas id="atelier" class="canvas_lines"></canvas>
     </div>
     <div class="prog">
+        <h1 class="prog-h1">programmation</h1>
         <div id="app_prog">
             <audio id="son_prog" autoplay muted >
                 <source src="{{ asset('audio/377540__frankum__axon-01-techno-track-loop.mp3') }}" type="audio/mp3">
@@ -121,12 +122,14 @@
 
 
         if (audioPlaying) {
-            audio.pause();
+            audio.pause(); // Mettre en pause la lecture
+            audioPlaying = false;
             playIcon.style.display = "inline";
             pauseIcon.style.display = "none";
-        } else {
-            audio.muted = false;
-            audio.play();
+
+            } else {
+            audio.muted = false; // Activer le son
+            audio.play(); // Démarrer la lecture
             audioPlaying = true;
             playIcon.style.display = "none";
             pauseIcon.style.display = "inline";
