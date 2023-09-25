@@ -36,10 +36,9 @@
 /*******************************/
 
 .connexion_user {
-    width: 100vw;
-    height: 100vh;
     background-image: url(../images/background-sand.jpg);
     background-size: cover;
+    background-attachment: fixed;
     padding-top: 8em;
     font-family: $font-gothic;
 
@@ -50,17 +49,15 @@
         text-transform: uppercase;
     }
 
-    h2 {
+    p {
         text-align: center;
-        font-size: 2em;
-        font-weight: 500;
-        text-transform: uppercase;
+        font-size: 1.5em;
     }
 
     .connexion_user_form {
         background-color: rgba(0, 0, 0, 0.648);
         border-radius: 0.5em;
-        box-shadow: 0px 0px 5px white;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
         width: 600px;
         height: 400px;
         margin: 5rem auto;
@@ -71,7 +68,8 @@
         text-align: center;
 
         label {
-            font-size: 1.25em;
+            font-size: 1.5em;
+            text-transform: uppercase;
         }
 
         input {
@@ -79,13 +77,15 @@
             border-radius: 2em;
             width: 400px;
             height: 50px;
-            margin: 2rem;
-            box-shadow: 0px 0px 5px white;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+            border: none;
             text-align: center;
-            font-family: $font-gothic;
+            font-family: all-round-gothic, sans-serif;
             font-size: 1.5em;
             color: white;
-        }
+    }
 
         button {
             cursor: pointer;
@@ -122,6 +122,7 @@
         font-weight: 500;
         text-transform: uppercase;
         color: white;
+        padding-bottom: 50px;
 
         &:hover {
             color: $blue;
@@ -134,12 +135,11 @@
 /***** ENREGISTREMENT USER *****/
 /*******************************/
 
-.enregistrement_user {
-    width: 100vw;
-    height: 100vh;
+.enregistrement-user {
     background-image: url(../images/background-sand.jpg);
     background-size: cover;
-    padding-top: 8em;
+    background-attachment: fixed;
+    padding: 8em 0;
     font-family: $font-gothic;
 
     h1 {
@@ -149,90 +149,112 @@
         text-transform: uppercase;
     }
 
-    .enregistrement_user_form {
+    p {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .enregistrement-form {
         background-color: rgba(0, 0, 0, 0.648);
         border-radius: 0.5em;
-        box-shadow: 0px 0px 5px white;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
         width: 800px;
         height: 600px;
-        margin: 4rem auto;
+        margin: 5rem auto;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         text-align: center;
 
-        .enregistrement_user_form_group_email input {
-            width: 720px;
-            display: grid;
-            grid-template-rows: auto auto;
-            align-items: center;
-            margin: 1rem auto;
-        }
+        form {
+            display: flex;
+            flex-direction: column;
 
-        .enregistrement_user_form_group.user-names {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 1rem;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .enregistrement_user_form_group.passwords {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 1rem;
-            align-items: center;
-            padding-top: 1.5em;
-        }
-
-
-        label {
-            font-size: 1.25em;
-
-        }
-
-        input {
-            background-color: rgba(255, 255, 255, 0.155);
-            border-radius: 2em;
-            width: 300px;
-            height: 50px;
-            margin: 2rem;
-            box-shadow: 0px 0px 5px white;
-            text-align: center;
-            font-family: $font-gothic;
-            font-size: 1.5em;
-            color: white;
-
-            #email {
-                width: 400px;
+            label {
+                font-size: 1.5em;
+                text-transform: uppercase;
             }
-        }
 
-        button {
-            margin-top: 1rem;
-            cursor: pointer;
-            background-color: rgba(255, 255, 255, 0.005);
-            color: white;
-            font-family: $font-ethno;
-            font-size: 1.5em;
-            font-weight: 300;
-            text-decoration: none;
-            text-align: center;
-            text-transform: uppercase;
-            padding: 10px 10px;
-            width: 350px;
-            border: 3px solid white;
-            text-shadow: 0px 0px 5px white;
-            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            input {
+                background-color: rgba(255, 255, 255, 0.155);
+                border-radius: 2em;
+                height: 50px;
+                margin-top: 10px;
+                margin-bottom: 40px;
+                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+                border: none;
+                text-align: center;
+                font-family: all-round-gothic, sans-serif;
+                font-size: 1.5em;
+                color: white;
+            }
 
-            &:hover {
-                background-color: $blue;
-                color: $blue-fonce;
-                text-shadow: 0px 0px 5px $blue-fonce;
-                box-shadow: 0px 0px 10px $blue;
-                border: 3px solid $blue;
+            .ligne-1 {
+                display: flex;
+
+                .prenom {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 20px;
+                }
+
+                .nom {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            .ligne-2 {
+                display: flex;
+
+                .email {
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+                }
+            }
+
+            .ligne-3 {
+                display: flex;
+
+                .password {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 20px;
+                }
+
+                .confirmation {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            button {
+                margin-top: 1rem;
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1.5em;
+                font-weight: 300;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 10px 10px;
+                width: 350px;
+                border: 3px solid white;
+                text-shadow: 0px 0px 5px white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $blue;
+                    color: $blue-fonce;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
             }
         }
     }
@@ -593,7 +615,7 @@
 }
 
 /*******************************/
-/******* ADMIN EDIT  *******/
+/********* ADMIN EDIT **********/
 /*******************************/
 
 .edit_admin {
@@ -609,6 +631,11 @@
         font-size: 5em;
         font-weight: 500;
         text-transform: uppercase;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.5em;
     }
 
     .edit_admin_form {
