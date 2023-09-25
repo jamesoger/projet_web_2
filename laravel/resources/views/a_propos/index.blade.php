@@ -70,21 +70,19 @@
                 <div class="phrases">
                     <img src="{{ asset('logos/plat_gold_blanc.png') }}" alt="">
                     <p class="titre-info">
-                        Adresse :
+                        Adresse
                     </p>
                     <p class="phrase-info">
-                        189 rue des darons
-                        Saint-Fulgeance
-                        JJT222
+                        digue du cul d'âne, 17111 Loix, France
                     </p>
                     <p class="titre-info">
-                        Courriel :
+                        Courriel
                     </p>
                     <p class="phrase-info">
                         festx@electro.ca
                     </p>
                     <p class="titre-info">
-                        Tel :
+                        Tel
                     </p>
                     <p class="phrase-info">
                         418-222-1899
@@ -93,7 +91,7 @@
 
                 <div class="carte">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d88367.88518882812!2d-1.40792885!3d46.20057905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4803f806cafa7aab%3A0xca60eddaded7a874!2zw45sZSBkZSBSw6k!5e0!3m2!1sfr!2sca!4v1695221533200!5m2!1sfr!2sca"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d820.7474560757213!2d-1.4375963062155557!3d46.217330135757834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4804096657aacd7d%3A0xce70a05e82ac0f7c!2sMarais%20du%20cul%20d&#39;%C3%A2ne!5e0!3m2!1sfr!2sca!4v1695673078242!5m2!1sfr!2sca"
                         width="600" height="450" style="border-radius:15px;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>

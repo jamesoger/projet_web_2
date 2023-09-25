@@ -28,17 +28,17 @@
     const appNav = document.querySelector('#app_menu');
     let menu = document.querySelector('.menu-cache')
 
-   menuNav.addEventListener('click', function(){
-        if(menu.style.display === 'none' || menu.style.display === ""){
+    menuNav.addEventListener('click', function() {
+        if (menu.style.display === 'none' || menu.style.display === "") {
             menu.style.display = 'block';
-        } else{
+        } else {
             menu.style.display = 'none'
         }
-   })
+    })
 
 
 
-   appNav.addEventListener('click', function() {
+    appNav.addEventListener('click', function() {
         if (menu.style.display === 'none' || menu.style.display === '') {
             menu.style.display = 'block';
         } else {

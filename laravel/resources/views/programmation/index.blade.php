@@ -5,7 +5,7 @@
     <div class="prog">
         <h1 class="prog-h1">programmation</h1>
         <div id="app_prog">
-            <audio id="son_prog" autoplay muted >
+            <audio id="son_prog" autoplay muted>
                 <source src="{{ asset('audio/377540__frankum__axon-01-techno-track-loop.mp3') }}" type="audio/mp3">
 
                 Votre navigateur ne supporte pas l'élément audio.
@@ -127,7 +127,7 @@
             playIcon.style.display = "inline";
             pauseIcon.style.display = "none";
 
-            } else {
+        } else {
             audio.muted = false; // Activer le son
             audio.play(); // Démarrer la lecture
             audioPlaying = true;
