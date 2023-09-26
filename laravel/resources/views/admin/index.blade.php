@@ -47,7 +47,7 @@
 
                     @if ($user->forfaits)
                         @if ($user->forfaits->count() > 0)
-                            <p>Forfaits associés :</p>
+                            <p>Forfaits associés</p>
                             @foreach ($user->forfaits as $forfait)
                                 <div class="forfait_associe">
                                     <ul>
