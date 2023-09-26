@@ -26,7 +26,7 @@
                     @error('titre')
                         <p>{{ $message }}</p>
                     @enderror
-                    <input type="text" name="titre" id="titre" value="{{ $actualites->titre }}">
+                    <input type="text" name="titre" placeholder="Titre..." id="titre" value="{{ $actualites->titre }}">
                 </div>
 
                 <div class="actu-input">
@@ -34,7 +34,7 @@
                     @error('details')
                         <p>{{ $message }}</p>
                     @enderror
-                    <textarea name="details" id="details">{{ $actualites->details }}</textarea>
+                    <textarea name="details" placeholder="Détails de l'actu..." id="details">{{ $actualites->details }}</textarea>
                 </div>
 
                 <div class="actu-image">

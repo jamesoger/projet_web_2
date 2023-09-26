@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="btn-submit">
-                    <button type="submit"> Créez votre compte !</button>
+                    <button type="submit"> Créer !</button>
                 </div>
             </form>
         </div>
