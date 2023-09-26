@@ -1,10 +1,12 @@
 <x-layout titre="Modification d'un spectacle">
     <x-nav />
+
     <div class="spectacle_edit">
         @if (session('error'))
             <p style="color: red">{{ session('error') }}</p>
         @endif
         <h1>{{ $spectacle->nom }} </h1>
+
         <form action="{{ route('programmation.spectacle.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="id" value="{{ $spectacle->id }}">

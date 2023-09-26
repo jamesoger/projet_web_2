@@ -23,7 +23,7 @@
                     <input type="email" name="email" id="email" value="{{ $user->email }}">
                 </div>
                 <div class="user-edit-input">
-                    <button type="submit">Enregistrer les modifications</button>
+                    <button type="submit">Modifier</button>
                 </div>
         </div>
 

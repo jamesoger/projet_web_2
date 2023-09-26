@@ -335,3 +335,752 @@
         }
     }
 }
+
+/*******************************/
+/******* ADMIN CONNEXION *******/
+/*******************************/
+
+.admin-login {
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 8em 0;
+    font-family: $font-gothic;
+
+    h1 {
+        text-align: center;
+        font-size: 5em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .admin-form {
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
+        width: 600px;
+        height: 400px;
+        margin: 5rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-size: 1.5em;
+                text-transform: uppercase;
+            }
+
+            input {
+                background-color: rgba(255, 255, 255, 0.155);
+                border-radius: 2em;
+                width: 400px;
+                height: 50px;
+                margin-top: 10px;
+                margin-bottom: 40px;
+                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+                border: none;
+                text-align: center;
+                font-family: all-round-gothic, sans-serif;
+                font-size: 1.5em;
+                color: white;
+            }
+
+            .admin-input {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            button {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1.5em;
+                font-weight: 300;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 10px 10px;
+                width: 350px;
+                border: 3px solid white;
+                text-shadow: 0px 0px 5px white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $blue;
+                    color: $blue-fonce;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
+            }
+        }
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        font-size: 2em;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: white;
+
+        &:hover {
+            color: $blue;
+
+        }
+    }
+}
+
+/*******************************/
+/******** ADMIN CREATE  ********/
+/*******************************/
+
+.admin-create {
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 8em 0;
+    font-family: $font-gothic;
+
+    h1 {
+        text-align: center;
+        font-size: 5em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .admin-form-create {
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
+        width: 800px;
+        height: 750px;
+        margin: 5rem auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-size: 1.5em;
+                text-transform: uppercase;
+            }
+
+            #prenom,
+            #nom,
+            #email,
+            #password,
+            #confirm-password {
+                background-color: rgba(255, 255, 255, 0.155);
+                border-radius: 2em;
+                height: 50px;
+                margin-top: 10px;
+                margin-bottom: 40px;
+                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+                border: none;
+                text-align: center;
+                font-family: all-round-gothic, sans-serif;
+                font-size: 1.5em;
+                color: white;
+            }
+
+            .ligne-1 {
+                display: flex;
+
+                .prenom {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 20px;
+                }
+
+                .nom {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            .ligne-2 {
+                display: flex;
+
+                .email {
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+                }
+            }
+
+            .ligne-3 {
+                display: flex;
+                flex-direction: column;
+
+                .image {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+
+                    label {
+                        margin-right: 30px;
+                    }
+
+                    input[type="file"]::-webkit-file-upload-button {
+                        cursor: pointer;
+                        background-color: rgba(255, 255, 255, 0.005);
+                        color: white;
+                        font-family: $font-ethno;
+                        font-size: 1em;
+                        font-weight: 300;
+                        border: 2px solid white;
+                        padding: 10px;
+
+                        &:hover {
+                            background-color: white;
+                            color: black;
+                        }
+                    }
+                }
+
+
+                .statut {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    margin: 40px 0;
+
+                    label {
+                        margin-right: 22px;
+                    }
+
+                    select {
+                        cursor: pointer;
+                        background-color: rgba(255, 255, 255, 0.005);
+                        color: white;
+                        font-family: $font-ethno;
+                        font-size: 1em;
+                        font-weight: 300;
+                        border: 2px solid white;
+                        padding: 10px;
+
+                        option {
+                            color: black;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+
+            .ligne-4 {
+                display: flex;
+
+                .password {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 20px;
+                }
+
+                .confirmation {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            button {
+                margin-top: 1rem;
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1.5em;
+                font-weight: 300;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 10px 10px;
+                width: 350px;
+                border: 3px solid white;
+                text-shadow: 0px 0px 5px white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $blue;
+                    color: $blue-fonce;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
+            }
+        }
+    }
+}
+
+/*******************************/
+/********* ADMIN EDIT **********/
+/*******************************/
+
+.edit-admin {
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 8em 0;
+    font-family: $font-gothic;
+
+    h1 {
+        text-align: center;
+        font-size: 5em;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        span {
+            color: $blue;
+            font-size: 50px;
+        }
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .edit-admin-form {
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
+        width: 750px;
+        height: 680px;
+        margin: 4rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 1.5em;
+            text-transform: uppercase;
+
+        }
+
+        input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #prenom,
+        #nom,
+        #email,
+        #image {
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 630px;
+            height: 50px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+            border: none;
+            text-align: center;
+            font-family: all-round-gothic, sans-serif;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        #droits {
+            width: 400px;
+            height: 50px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(196, 194, 194, 0.6), inset 0px 0px 20px rgb(0 0 0);
+            border: none;
+            font-family: all-round-gothic, sans-serif;
+            font-size: 1.5em;
+        }
+
+        .form-group-droits {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .edit-admin-img>label {
+            margin-right: 30px;
+        }
+        .edit-admin-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1em;
+            font-weight: 300;
+            border: 2px solid white;
+            padding: 10px;
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+
+        button {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px 10px;
+            width: 350px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+    }
+}
+
+/*******************************/
+/******* ACTUALITÉS EDIT *******/
+/*******************************/
+
+.actu-edit {
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 8em 0;
+    font-family: $font-gothic;
+
+    h1 {
+        text-align: center;
+        font-size: 5em;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    p {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .actu-edit-form {
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
+        width: 750px;
+        height: 680px;
+        margin: 5rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                font-size: 1.5em;
+                text-transform: uppercase;
+            }
+
+            #date,
+            #details,
+            #titre {
+                background-color: rgba(255, 255, 255, 0.155);
+                border-radius: 2em;
+                width: 630px;
+                height: 50px;
+                margin-top: 10px;
+                margin-bottom: 40px;
+                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+                border: none;
+                text-align: center;
+                font-family: all-round-gothic, sans-serif;
+                font-size: 1.5em;
+                color: white;
+            }
+
+            .actu-input {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #date {
+                font-size: 1.2em;
+                padding: 15px;
+                width: 200px;
+                height: 30px;
+                color: white;
+            }
+
+            #details {
+                height: 200px;
+                border-radius: 10px;
+                padding: 10px;
+                text-align: justify;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            .actu-image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .actu-image>label {
+                margin-right: 30px;
+            }
+
+            input[type="file"]::-webkit-file-upload-button {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1em;
+                font-weight: 300;
+                border: 2px solid white;
+                padding: 10px;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
+
+            button {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1.5em;
+                font-weight: 300;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 10px;
+                margin-top: 40px;
+                width: 350px;
+                border: 3px solid white;
+                text-shadow: 0px 0px 5px white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $blue;
+                    color: $blue-fonce;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
+            }
+        }
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        font-size: 2em;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: white;
+
+        &:hover {
+            color: $blue;
+
+        }
+    }
+}
+
+/*******************************/
+/***** PROGRAMMATION AJOUT *****/
+/*******************************/
+
+.prog-edit {
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 8em 0;
+    font-family: $font-gothic;
+
+    h1 {
+        text-align: center;
+        font-size: 4em;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        span {
+            color: $blue;
+            font-size: 50px;
+        }
+    }
+
+
+    .form-prog{
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
+        width: 950px;
+        height: 900px;
+        padding: 3em;
+        margin: 3rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: 1.5em;
+            text-transform: uppercase;
+            margin: 1rem;
+        }
+
+        #nom
+         {
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 530px;
+            height: 40px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+            border: none;
+            text-align: center;
+            font-family: all-round-gothic, sans-serif;
+            font-size: 1.5em;
+            color: white;
+        }
+        #heure{
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 200px;
+            height: 60px;
+            margin: 10px auto;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+            border: none;
+            text-align: center;
+            font-family: all-round-gothic, sans-serif;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        .image{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem;
+        }
+
+        #image>label {
+            margin-right: 30px;
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1em;
+            font-weight: 300;
+            border: 2px solid white;
+            padding: 10px;
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+
+        .submit-prog{
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px;
+            margin-top: 40px;
+            width: 350px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+    }
+}

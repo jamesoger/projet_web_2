@@ -760,6 +760,661 @@ footer .foot-copy p {
   border: 3px solid #1DA5F3;
 }
 
+/*******************************/
+/******* ADMIN CONNEXION *******/
+/*******************************/
+.admin-login {
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 8em 0;
+  font-family: all-round-gothic, sans-serif;
+}
+.admin-login h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.admin-login p {
+  text-align: center;
+  font-size: 1.5em;
+}
+.admin-login .admin-form {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
+  width: 600px;
+  height: 400px;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.admin-login .admin-form form {
+  display: flex;
+  flex-direction: column;
+}
+.admin-login .admin-form form label {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.admin-login .admin-form form input {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 400px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.admin-login .admin-form form .admin-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.admin-login .admin-form form button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 10px;
+  width: 350px;
+  border: 3px solid white;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.admin-login .admin-form form button:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
+}
+.admin-login a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+}
+.admin-login a:hover {
+  color: #1DA5F3;
+}
+
+/*******************************/
+/******** ADMIN CREATE  ********/
+/*******************************/
+.admin-create {
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 8em 0;
+  font-family: all-round-gothic, sans-serif;
+}
+.admin-create h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.admin-create p {
+  text-align: center;
+  font-size: 1.5em;
+}
+.admin-create .admin-form-create {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
+  width: 800px;
+  height: 750px;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.admin-create .admin-form-create form {
+  display: flex;
+  flex-direction: column;
+}
+.admin-create .admin-form-create form label {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.admin-create .admin-form-create form #prenom,
+.admin-create .admin-form-create form #nom,
+.admin-create .admin-form-create form #email,
+.admin-create .admin-form-create form #password,
+.admin-create .admin-form-create form #confirm-password {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.admin-create .admin-form-create form .ligne-1 {
+  display: flex;
+}
+.admin-create .admin-form-create form .ligne-1 .prenom {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.admin-create .admin-form-create form .ligne-1 .nom {
+  display: flex;
+  flex-direction: column;
+}
+.admin-create .admin-form-create form .ligne-2 {
+  display: flex;
+}
+.admin-create .admin-form-create form .ligne-2 .email {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.admin-create .admin-form-create form .ligne-3 {
+  display: flex;
+  flex-direction: column;
+}
+.admin-create .admin-form-create form .ligne-3 .image {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.admin-create .admin-form-create form .ligne-3 .image label {
+  margin-right: 30px;
+}
+.admin-create .admin-form-create form .ligne-3 .image input[type=file]::-webkit-file-upload-button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  border: 2px solid white;
+  padding: 10px;
+}
+.admin-create .admin-form-create form .ligne-3 .image input[type=file]::-webkit-file-upload-button:hover {
+  background-color: white;
+  color: black;
+}
+.admin-create .admin-form-create form .ligne-3 .statut {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 40px 0;
+}
+.admin-create .admin-form-create form .ligne-3 .statut label {
+  margin-right: 22px;
+}
+.admin-create .admin-form-create form .ligne-3 .statut select {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  border: 2px solid white;
+  padding: 10px;
+}
+.admin-create .admin-form-create form .ligne-3 .statut select option {
+  color: black;
+  font-weight: 300;
+}
+.admin-create .admin-form-create form .ligne-4 {
+  display: flex;
+}
+.admin-create .admin-form-create form .ligne-4 .password {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.admin-create .admin-form-create form .ligne-4 .confirmation {
+  display: flex;
+  flex-direction: column;
+}
+.admin-create .admin-form-create form button {
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 10px;
+  width: 350px;
+  border: 3px solid white;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.admin-create .admin-form-create form button:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
+}
+
+/*******************************/
+/********* ADMIN EDIT **********/
+/*******************************/
+.edit-admin {
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 8em 0;
+  font-family: all-round-gothic, sans-serif;
+}
+.edit-admin h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.edit-admin h1 span {
+  color: #1DA5F3;
+  font-size: 50px;
+}
+.edit-admin p {
+  text-align: center;
+  font-size: 1.5em;
+}
+.edit-admin .edit-admin-form {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
+  width: 750px;
+  height: 680px;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.edit-admin .edit-admin-form form {
+  display: flex;
+  flex-direction: column;
+}
+.edit-admin .edit-admin-form label {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.edit-admin .edit-admin-form input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.edit-admin .edit-admin-form #prenom,
+.edit-admin .edit-admin-form #nom,
+.edit-admin .edit-admin-form #email,
+.edit-admin .edit-admin-form #image {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 630px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.edit-admin .edit-admin-form #droits {
+  width: 400px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(196, 194, 194, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+}
+.edit-admin .edit-admin-form .form-group-droits {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.edit-admin .edit-admin-form .edit-admin-img > label {
+  margin-right: 30px;
+}
+.edit-admin .edit-admin-form .edit-admin-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.edit-admin .edit-admin-form input[type=file]::-webkit-file-upload-button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  border: 2px solid white;
+  padding: 10px;
+}
+.edit-admin .edit-admin-form input[type=file]::-webkit-file-upload-button:hover {
+  background-color: white;
+  color: black;
+}
+.edit-admin .edit-admin-form button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 10px;
+  width: 350px;
+  border: 3px solid white;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.edit-admin .edit-admin-form button:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
+}
+
+/*******************************/
+/******* ACTUALITÉS EDIT *******/
+/*******************************/
+.actu-edit {
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 8em 0;
+  font-family: all-round-gothic, sans-serif;
+}
+.actu-edit h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.actu-edit p {
+  text-align: center;
+  font-size: 1.5em;
+}
+.actu-edit .actu-edit-form {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
+  width: 750px;
+  height: 680px;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.actu-edit .actu-edit-form form {
+  display: flex;
+  flex-direction: column;
+}
+.actu-edit .actu-edit-form form label {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.actu-edit .actu-edit-form form #date,
+.actu-edit .actu-edit-form form #details,
+.actu-edit .actu-edit-form form #titre {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 630px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.actu-edit .actu-edit-form form .actu-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.actu-edit .actu-edit-form form #date {
+  font-size: 1.2em;
+  padding: 15px;
+  width: 200px;
+  height: 30px;
+  color: white;
+}
+.actu-edit .actu-edit-form form #details {
+  height: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: justify;
+}
+.actu-edit .actu-edit-form form #details::-webkit-scrollbar {
+  display: none;
+}
+.actu-edit .actu-edit-form form .actu-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.actu-edit .actu-edit-form form .actu-image > label {
+  margin-right: 30px;
+}
+.actu-edit .actu-edit-form form input[type=file]::-webkit-file-upload-button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  border: 2px solid white;
+  padding: 10px;
+}
+.actu-edit .actu-edit-form form input[type=file]::-webkit-file-upload-button:hover {
+  background-color: white;
+  color: black;
+}
+.actu-edit .actu-edit-form form button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px;
+  margin-top: 40px;
+  width: 350px;
+  border: 3px solid white;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.actu-edit .actu-edit-form form button:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
+}
+.actu-edit a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+}
+.actu-edit a:hover {
+  color: #1DA5F3;
+}
+
+/*******************************/
+/***** PROGRAMMATION AJOUT *****/
+/*******************************/
+.prog-edit {
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 8em 0;
+  font-family: all-round-gothic, sans-serif;
+}
+.prog-edit h1 {
+  text-align: center;
+  font-size: 4em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.prog-edit h1 span {
+  color: #1DA5F3;
+  font-size: 50px;
+}
+.prog-edit .form-prog {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
+  width: 950px;
+  height: 900px;
+  padding: 3em;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.prog-edit form {
+  display: flex;
+  flex-direction: column;
+}
+.prog-edit form label {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin: 1rem;
+}
+.prog-edit form #nom {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 530px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.prog-edit form #heure {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 200px;
+  height: 60px;
+  margin: 10px auto;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.prog-edit form .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prog-edit form input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+.prog-edit form #image > label {
+  margin-right: 30px;
+}
+.prog-edit form input[type=file]::-webkit-file-upload-button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  border: 2px solid white;
+  padding: 10px;
+}
+.prog-edit form input[type=file]::-webkit-file-upload-button:hover {
+  background-color: white;
+  color: black;
+}
+.prog-edit form .submit-prog {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px;
+  margin-top: 40px;
+  width: 350px;
+  border: 3px solid white;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.prog-edit form .submit-prog:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
+}
+
 .a-propos {
   display: flex;
   flex-direction: column;
@@ -2440,654 +3095,8 @@ footer .foot-copy p {
 }
 
 /*******************************/
-/******* ADMIN CONNEXION *******/
+/******* ACTU AJOUT *******/
 /*******************************/
-.admin-login {
-  background-image: url(../images/background-sand.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 8em 0;
-  font-family: all-round-gothic, sans-serif;
-}
-.admin-login h1 {
-  text-align: center;
-  font-size: 5em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.admin-login p {
-  text-align: center;
-  font-size: 1.5em;
-}
-.admin-login .admin-form {
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
-  width: 600px;
-  height: 400px;
-  margin: 5rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.admin-login .admin-form form {
-  display: flex;
-  flex-direction: column;
-}
-.admin-login .admin-form form label {
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-.admin-login .admin-form form input {
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 2em;
-  width: 400px;
-  height: 50px;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
-  border: none;
-  text-align: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-.admin-login .admin-form form .admin-input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.admin-login .admin-form form button {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1.5em;
-  font-weight: 300;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 10px 10px;
-  width: 350px;
-  border: 3px solid white;
-  text-shadow: 0px 0px 5px white;
-  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.admin-login .admin-form form button:hover {
-  background-color: #1DA5F3;
-  color: #06162F;
-  text-shadow: 0px 0px 5px #06162F;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  border: 3px solid #1DA5F3;
-}
-.admin-login a {
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  font-size: 2em;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: white;
-}
-.admin-login a:hover {
-  color: #1DA5F3;
-}
-
-/*******************************/
-/******* ADMIN CREATE  *******/
-/*******************************/
-.admin-create {
-  background-image: url(../images/background-sand.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 8em 0;
-  font-family: all-round-gothic, sans-serif;
-}
-.admin-create h1 {
-  text-align: center;
-  font-size: 5em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.admin-create p {
-  text-align: center;
-  font-size: 1.5em;
-}
-.admin-create .admin-form-create {
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
-  width: 800px;
-  height: 750px;
-  margin: 5rem auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.admin-create .admin-form-create form {
-  display: flex;
-  flex-direction: column;
-}
-.admin-create .admin-form-create form label {
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-.admin-create .admin-form-create form #prenom,
-.admin-create .admin-form-create form #nom,
-.admin-create .admin-form-create form #email,
-.admin-create .admin-form-create form #password,
-.admin-create .admin-form-create form #confirm-password {
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 2em;
-  height: 50px;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
-  border: none;
-  text-align: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-.admin-create .admin-form-create form .ligne-1 {
-  display: flex;
-}
-.admin-create .admin-form-create form .ligne-1 .prenom {
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-}
-.admin-create .admin-form-create form .ligne-1 .nom {
-  display: flex;
-  flex-direction: column;
-}
-.admin-create .admin-form-create form .ligne-2 {
-  display: flex;
-}
-.admin-create .admin-form-create form .ligne-2 .email {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-.admin-create .admin-form-create form .ligne-3 {
-  display: flex;
-  flex-direction: column;
-}
-.admin-create .admin-form-create form .ligne-3 .image {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
-.admin-create .admin-form-create form .ligne-3 .image label {
-  margin-right: 30px;
-}
-.admin-create .admin-form-create form .ligne-3 .image input[type=file]::-webkit-file-upload-button {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1em;
-  font-weight: 300;
-  border: 2px solid white;
-  padding: 10px;
-}
-.admin-create .admin-form-create form .ligne-3 .image input[type=file]::-webkit-file-upload-button:hover {
-  background-color: white;
-  color: black;
-}
-.admin-create .admin-form-create form .ligne-3 .statut {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  margin: 40px 0;
-}
-.admin-create .admin-form-create form .ligne-3 .statut label {
-  margin-right: 22px;
-}
-.admin-create .admin-form-create form .ligne-3 .statut select {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1em;
-  font-weight: 300;
-  border: 2px solid white;
-  padding: 10px;
-}
-.admin-create .admin-form-create form .ligne-3 .statut select option {
-  color: black;
-  font-weight: 300;
-}
-.admin-create .admin-form-create form .ligne-4 {
-  display: flex;
-}
-.admin-create .admin-form-create form .ligne-4 .password {
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-}
-.admin-create .admin-form-create form .ligne-4 .confirmation {
-  display: flex;
-  flex-direction: column;
-}
-.admin-create .admin-form-create form button {
-  margin-top: 1rem;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1.5em;
-  font-weight: 300;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 10px 10px;
-  width: 350px;
-  border: 3px solid white;
-  text-shadow: 0px 0px 5px white;
-  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.admin-create .admin-form-create form button:hover {
-  background-color: #1DA5F3;
-  color: #06162F;
-  text-shadow: 0px 0px 5px #06162F;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  border: 3px solid #1DA5F3;
-}
-
-/*******************************/
-/********* ADMIN EDIT **********/
-/*******************************/
-.edit_admin {
-  background-image: url(../images/background-sand.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vw;
-  padding-top: 10em;
-  font-family: all-round-gothic, sans-serif;
-}
-.edit_admin h1 {
-  text-align: center;
-  font-size: 5em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.edit_admin p {
-  text-align: center;
-  font-size: 1.5em;
-}
-.edit_admin .edit_admin_form {
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
-  width: 750px;
-  height: 680px;
-  margin: 4rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.edit_admin .edit_admin_form form {
-  display: flex;
-  flex-direction: column;
-}
-.edit_admin .edit_admin_form label {
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-.edit_admin .edit_admin_form input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.edit_admin .edit_admin_form #prenom,
-.edit_admin .edit_admin_form #nom,
-.edit_admin .edit_admin_form #email,
-.edit_admin .edit_admin_form #image {
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 2em;
-  width: 630px;
-  height: 50px;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
-  border: none;
-  text-align: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-.edit_admin .edit_admin_form #droits {
-  width: 400px;
-  height: 50px;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  text-align: center;
-  box-shadow: 0px 0px 10px rgba(196, 194, 194, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
-  border: none;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-}
-.edit_admin .edit_admin_form .form-group-droits {
-  margin-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.edit_admin .edit_admin_form .enregistrement_admin_form_group_file > label {
-  margin-right: 30px;
-}
-.edit_admin .edit_admin_form .enregistrement_admin_form_group_file {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.edit_admin .edit_admin_form input[type=file]::-webkit-file-upload-button {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1em;
-  font-weight: 300;
-  border: 2px solid white;
-  padding: 10px;
-}
-.edit_admin .edit_admin_form input[type=file]::-webkit-file-upload-button:hover {
-  background-color: white;
-  color: black;
-}
-.edit_admin .edit_admin_form button {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1.5em;
-  font-weight: 300;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 10px 10px;
-  width: 350px;
-  border: 3px solid white;
-  text-shadow: 0px 0px 5px white;
-  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.edit_admin .edit_admin_form button:hover {
-  background-color: #1DA5F3;
-  color: #06162F;
-  text-shadow: 0px 0px 5px #06162F;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  border: 3px solid #1DA5F3;
-}
-
-/*******************************/
-/******* ACTUALITÉS EDIT *******/
-/*******************************/
-.actu-edit {
-  background-image: url(../images/background-sand.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 8em 0;
-  font-family: all-round-gothic, sans-serif;
-}
-.actu-edit h1 {
-  text-align: center;
-  font-size: 5em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.actu-edit p {
-  text-align: center;
-  font-size: 1.5em;
-}
-.actu-edit .actu-edit-form {
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
-  width: 750px;
-  height: 680px;
-  margin: 5rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.actu-edit .actu-edit-form form {
-  display: flex;
-  flex-direction: column;
-}
-.actu-edit .actu-edit-form form label {
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-.actu-edit .actu-edit-form form #date,
-.actu-edit .actu-edit-form form #details,
-.actu-edit .actu-edit-form form #titre {
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 2em;
-  width: 630px;
-  height: 50px;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
-  border: none;
-  text-align: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-.actu-edit .actu-edit-form form .actu-input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.actu-edit .actu-edit-form form #date {
-  font-size: 1.2em;
-  padding: 15px;
-  width: 200px;
-  height: 30px;
-  color: white;
-}
-.actu-edit .actu-edit-form form #details {
-  height: 200px;
-  border-radius: 10px;
-  padding: 10px;
-  text-align: justify;
-}
-.actu-edit .actu-edit-form form #details::-webkit-scrollbar {
-  display: none;
-}
-.actu-edit .actu-edit-form form .actu-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.actu-edit .actu-edit-form form .actu-image > label {
-  margin-right: 30px;
-}
-.actu-edit .actu-edit-form form input[type=file]::-webkit-file-upload-button {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1em;
-  font-weight: 300;
-  border: 2px solid white;
-  padding: 10px;
-}
-.actu-edit .actu-edit-form form input[type=file]::-webkit-file-upload-button:hover {
-  background-color: white;
-  color: black;
-}
-.actu-edit .actu-edit-form form button {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1.5em;
-  font-weight: 300;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 10px;
-  margin-top: 40px;
-  width: 350px;
-  border: 3px solid white;
-  text-shadow: 0px 0px 5px white;
-  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.actu-edit .actu-edit-form form button:hover {
-  background-color: #1DA5F3;
-  color: #06162F;
-  text-shadow: 0px 0px 5px #06162F;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  border: 3px solid #1DA5F3;
-}
-.actu-edit a {
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  font-size: 2em;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: white;
-}
-.actu-edit a:hover {
-  color: #1DA5F3;
-}
-
-/*******************************/
-/******* PROGRAMMATION AJOUT *******/
-/*******************************/
-.prog_edit {
-  background-image: url(../images/background-sand.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vw;
-  padding-top: 8em;
-  font-family: all-round-gothic, sans-serif;
-}
-.prog_edit h1 {
-  text-align: center;
-  font-size: 4em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.prog_edit .form-prog {
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
-  width: 950px;
-  height: 780px;
-  padding: 3em;
-  margin: 3rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.prog_edit form {
-  display: flex;
-  flex-direction: column;
-}
-.prog_edit form label {
-  font-size: 1.5em;
-  text-transform: uppercase;
-  margin: 1rem;
-}
-.prog_edit form #nom {
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 2em;
-  width: 530px;
-  height: 40px;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
-  border: none;
-  text-align: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-.prog_edit form #heure {
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 2em;
-  width: 200px;
-  height: 60px;
-  margin: 10px auto;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
-  border: none;
-  text-align: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-.prog_edit form .image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.prog_edit form input {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2rem;
-}
-.prog_edit form #image > label {
-  margin-right: 30px;
-}
-.prog_edit form input[type=file]::-webkit-file-upload-button {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1em;
-  font-weight: 300;
-  border: 2px solid white;
-  padding: 10px;
-}
-.prog_edit form input[type=file]::-webkit-file-upload-button:hover {
-  background-color: white;
-  color: black;
-}
-.prog_edit form .submit-prog {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1.5em;
-  font-weight: 300;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 10px;
-  margin-top: 40px;
-  width: 350px;
-  border: 3px solid white;
-  text-shadow: 0px 0px 5px white;
-  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.prog_edit form .submit-prog:hover {
-  background-color: #1DA5F3;
-  color: #06162F;
-  text-shadow: 0px 0px 5px #06162F;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  border: 3px solid #1DA5F3;
-}
-
 /*******************************/
 /******* ARTISTE EDIT *******/
 /*******************************/
