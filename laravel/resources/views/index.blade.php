@@ -67,14 +67,14 @@
         </header>
 
         <main>
-            <section class="acc-text-events">
+            <section class="acc-text-events"onclick="toggleAudio()">
                 <div class="phrases">
                     <p>dj spectacles événements laserlight dj spectacles</p>
                     <p>spectacles événements drones dj laserlight</p>
                     <p>événements laserlight spectacles dj drones événements laserlight</p>
                 </div>
-                <div class="video-background">
-                    <video autoplay loop muted poster="{{ asset('images/cadre_header.jpg') }}">
+                <div class="video-background" >
+                    <video id="video" autoplay loop muted poster="{{ asset('images/cadre_header.jpg') }}">
                         <source src="{{ asset('videos/montage.mp4') }}" type="video/mp4">
                         Votre navigateur ne prend pas en charge la lecture de vidéos.
                     </video>
@@ -146,7 +146,7 @@
                 </div>
 
                 <div class="video-bg-logo">
-                    <video autoplay loop muted poster="{{ asset('images/poster_lignes.jpg') }}">
+                    <video id="video" autoplay loop muted poster="{{ asset('images/poster_lignes.jpg') }}">
                         <source src="{{ asset('videos/neon_accueil.mp4') }}" type="video/mp4">
                         Votre navigateur ne prend pas en charge la lecture de vidéos.
                     </video>
@@ -269,4 +269,16 @@
             menu.style.display = 'none';
         }
     });
+
+
+    function toggleAudio() {
+    const video = document.getElementById("video");
+
+    if (video.muted) {
+        video.muted = false;
+    } else {
+        video.muted = true;
+    }
+}
+
 </script>
