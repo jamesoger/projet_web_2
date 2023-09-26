@@ -4,7 +4,7 @@
         <div id="app">
 
             <div class="panier_user">
-                <h1>{{ auth()->user()->prenom }} {{ auth()->user()->nom }}</h1>
+                <h1>{{ auth()->user()->nom_complet}} </h1>
                 <div class="forfaits">
                     @if (session()->has('selected_forfait'))
                         <?php $forfaitDetails = session('selected_forfait'); ?>
@@ -67,59 +67,33 @@
         <x-footer />
     </x-layout>
 </div>
-{{-- <h2>Liste des forfaits :</h2>
-                @foreach ($forfaits as $forfait)
-                <p>{{ $forfait->nom }}</p>
-                <p>{{ $forfait->prix }}</p>
-                <form action="{{ route('forfait_user.store') }}" method="POST">
-                @csrf
-                <input type="hidden" name="forfait_id" value="{{ $forfaitDetails['id'] }}">
-                <label for="dates">Selectionnez votre date d'arrivée :</label>
-                @error('dates')
-                    <p>{{ $message }}</p>
-                @enderror
-                <input type="date" id="dates" name="dates" min="2024-08-09" max="2024-08-11">
-                <input type="submit" value="Envoyer">
-                </form> --}}
-{{-- <form action="{{ route('forfait_user.store') }}" method="POST">
-                @csrf
-                <input type="hidden" name="forfait_id" value="{{ $forfaitDetails['id'] }}">
 
-                <label for="date_arrivee">Date d'arrivée :</label>
-                <input type="date" id="date_arrivee" name="date_arrivee" required>
-
-                <label for="date_depart">Date de départ :</label>
-                <input type="date" id="date_depart" name="date_depart" required>
-
-                <input type="submit" value="Commander">
-                </form> --}}
-{{-- @endforeach --}}
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Fonction pour masquer les dates non autorisées en fonction du forfait sélectionné
+
         function masquerDatesNonAutorisees(forfaitId) {
             var dateInput = document.getElementById('dates');
             var dateArrivee = new Date(dateInput.value);
             var dateMax = new Date('2024-08-11');
 
-            // Réinitialiser la date minimale et maximale
+
             dateInput.min = '2024-08-09';
             dateInput.max = '2024-08-11';
 
             if (forfaitId == 1) {
-                // Pour le forfait 1, autoriser les dates 9, 10 et 11
+
             } else if (forfaitId == 2) {
-                // Pour le forfait 2, autoriser les dates 9 et 10
+
                 dateInput.max = '2024-08-10';
             } else if (forfaitId == 3) {
-                // Pour le forfait 3, autoriser uniquement la date 9
+
                 dateInput.max = '2024-08-09';
             }
         }
 
-        // Écouter les clics sur les boutons "Sélectionner"
+
         var boutonsSelectionner = document.querySelectorAll('button[data-forfait]');
         boutonsSelectionner.forEach(function(bouton) {
             bouton.addEventListener('click', function(event) {
@@ -128,7 +102,7 @@
             });
         });
 
-        // Appeler la fonction au chargement de la page
+
         masquerDatesNonAutorisees({{ $forfaitDetails['id'] }});
     });
 
@@ -153,7 +127,7 @@
             }
         },
         mounted: function() {
-            // Initialisez le prix total au chargement de la page
+
             this.updatePrixTotal();
         }
     });

@@ -1,10 +1,7 @@
-<x-layout titre="Modification d'un spectacle">
+<x-layout titre="Modification du spectacle {{$spectacle->nom}}">
     <x-nav />
 
     <div class="spectacle_edit">
-        @if (session('error'))
-            <p style="color: red">{{ session('error') }}</p>
-        @endif
         <h1>{{ $spectacle->nom }} </h1>
 
         <form action="{{ route('programmation.spectacle.update') }}" method="POST" enctype="multipart/form-data">
@@ -13,31 +10,23 @@
             <div>
                 <div>
                     <label for="nom">Nom</label>
-                    @error('nom')
-                        <p>{{ $message }}</p>
-                    @enderror
+                    <x-forms.erreur champ="nom" />
                     <input type="text" name="nom" value="{{ $spectacle->nom }}">
                 </div>
                 <div>
                     <label for="heure">Heure de la représentation</label>
-                    @error('heure')
-                        <p>{{ $message }}</p>
-                    @enderror
+                    <x-forms.erreur champ="heure" />
                     <input type="time" name="heure" value="{{ $spectacle->heure }}">
                 </div>
                 <div>
                     <label for="image">Image</label>
-                    @error('image')
-                        <p>{{ $message }}</p>
-                    @enderror
+                    <x-forms.erreur champ="image" />
                     <input type="file" name="image" accept="image/*">
                     <input type="hidden" name="image_spectacle"value="{{ $spectacle->image }}">
                 </div>
                 <div>
                     <label for="date">Date de la représentation</label>
-                    @error('date')
-                        <p>{{ $message }}</p>
-                    @enderror
+                    <x-forms.erreur champ="date" />
                     <select name="date">
                         @foreach ($programmations as $programmation)
                             <option value="{{ $programmation->id }}"

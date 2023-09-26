@@ -46,6 +46,7 @@ class SpectacleController extends Controller
 
         ], [
             "id.required" => "L'id de la note est obligatoire",
+            "nom.required"=>"Le nom est requis",
             "nom.max" => "Le nom doit avoir un maximum de :max caractères",
             "nom.min" => "Le nom doit avoir un minimum de :min caractères",
             "heure.required" => "L'heure du show est requise",

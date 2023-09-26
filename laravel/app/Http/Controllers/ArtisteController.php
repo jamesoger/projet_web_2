@@ -47,6 +47,7 @@ class ArtisteController extends Controller
 
         ], [
             "id.required" => "L'id de la note est obligatoire",
+            "nom_scene.required"=>"Le nom est requis",
             "nom_scene.max" => "Le nom doit avoir un maximum de :max caractères",
             "nom_scene.min" => "Le nom doit avoir un minimum de :min caractères",
             "heure_show.required" => "L'heure du show est requise",

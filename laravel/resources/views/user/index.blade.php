@@ -3,6 +3,9 @@
         <x-nav />
 
         <div class="user_index">
+
+
+            <h1>{{ auth()->user()->prenom }} voici tes forfaits!</h1>
             @if (session('success'))
                 <p style="color: green; font-size: 30px;background-color:white ;text-align:center;">
                     {{ session('success') }}
@@ -12,14 +15,11 @@
                 <p style="color: red; font-size: 30px;background-color:white ;text-align:center;">{{ session('error') }}
                 </p>
             @endif
-
-            <h1>{{ auth()->user()->prenom }} voici tes forfaits!</h1>
-
             <div class="user_reservations">
                 <?php
                 $forfaits = auth()->user()->forfaits;
                 $forfaitsGroupes = [];
-                
+
                 foreach ($forfaits as $forfait) {
                     $found = false;
                     foreach ($forfaitsGroupes as &$groupe) {
@@ -33,7 +33,7 @@
                             break;
                         }
                     }
-                
+
                     if (!$found) {
                         $forfaitsGroupes[] = [
                             'id' => $forfait->id,
@@ -67,7 +67,8 @@
                                                 {{ \Carbon\Carbon::parse($billet['date_depart'])->translatedFormat('d F Y') }}
                                             </p>
                                         </div>
-                                        <form onclick="return confirm('Are you sure you want to delete?');"
+                                        <form
+                                            onclick="return confirm('Êtes-vous certain de vouloir supprimer cet élément?');"
                                             action="{{ route('forfait.destroy', $billet['pivot_id']) }}" method="POST">
                                             @csrf
                                             @error('submit')
@@ -97,7 +98,7 @@
                                                 'artistes' => [],
                                             ];
                                         }
-                                        
+
                                         foreach ($programmation->artistes as $artiste) {
                                             $artisteKey = $artiste->id;
                                             if (!isset($datesArtistes[$dateKey]['artistes'][$artisteKey])) {
@@ -106,7 +107,7 @@
                                         }
                                         ?>
                                         @if (!in_array($programmation->date, $datesDejaAffichees))
-                                            <h3>{{ $programmation->date }}
+                                            <h3>{{ Carbon\Carbon::parse($programmation->date)->translatedFormat('d F Y') }}
                                             </h3>
 
                                             <?php $datesDejaAffichees[] = $programmation->date; ?>
@@ -151,14 +152,14 @@
                     if (programmationSection.classList.contains('expanded')) {
                         programmationSection.classList.remove('expanded');
                     } else {
-                        // Masquer toutes les sections de programmation sauf celle que vous voulez afficher
+
                         const allProgrammationSections = document.querySelectorAll(
                             '.programmation_user');
                         allProgrammationSections.forEach(section => {
                             section.classList.remove('expanded');
                         });
 
-                        // Afficher la section de programmation correspondante
+
                         programmationSection.classList.add('expanded');
                     }
                 }
