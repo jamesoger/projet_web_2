@@ -1415,6 +1415,151 @@ footer .foot-copy p {
   border: 3px solid #1DA5F3;
 }
 
+/*******************************/
+/********* ACTU AJOUT **********/
+/*******************************/
+.actu-ajout {
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 8em 0;
+  font-family: all-round-gothic, sans-serif;
+}
+.actu-ajout h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.actu-ajout p {
+  text-align: center;
+  font-size: 1.5em;
+}
+.actu-ajout .actu-ajout-form {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
+  width: 750px;
+  height: 680px;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.actu-ajout .actu-ajout-form form {
+  display: flex;
+  flex-direction: column;
+}
+.actu-ajout .actu-ajout-form form label {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.actu-ajout .actu-ajout-form form #date,
+.actu-ajout .actu-ajout-form form #details,
+.actu-ajout .actu-ajout-form form #titre {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 630px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.actu-ajout .actu-ajout-form form .actu-ajout-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.actu-ajout .actu-ajout-form form #date {
+  font-size: 1.2em;
+  padding: 15px;
+  width: 200px;
+  height: 30px;
+  color: white;
+}
+.actu-ajout .actu-ajout-form form #details {
+  height: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: justify;
+}
+.actu-ajout .actu-ajout-form form #details::-webkit-scrollbar {
+  display: none;
+}
+.actu-ajout .actu-ajout-form form .actu-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.actu-ajout .actu-ajout-form form .actu-image > label {
+  margin-right: 30px;
+}
+.actu-ajout .actu-ajout-form form input[type=file]::-webkit-file-upload-button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  border: 2px solid white;
+  padding: 10px;
+}
+.actu-ajout .actu-ajout-form form input[type=file]::-webkit-file-upload-button:hover {
+  background-color: white;
+  color: black;
+}
+.actu-ajout .actu-ajout-form form button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px;
+  margin-top: 40px;
+  width: 350px;
+  border: 3px solid white;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.actu-ajout .actu-ajout-form form button:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
+}
+.actu-ajout a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+}
+.actu-ajout a:hover {
+  color: #1DA5F3;
+}
+
+/*******************************/
+/******** ARTISTE EDIT *********/
+/*******************************/
+.artiste_edit {
+  padding-top: 10em;
+}
+
 .a-propos {
   display: flex;
   flex-direction: column;
@@ -3095,16 +3240,6 @@ footer .foot-copy p {
   font-style: italic;
   padding-top: 1em;
   margin: 0 auto;
-}
-
-/*******************************/
-/******* ACTU AJOUT *******/
-/*******************************/
-/*******************************/
-/******* ARTISTE EDIT *******/
-/*******************************/
-.artiste_edit {
-  padding-top: 10em;
 }
 
 /*******************************/
