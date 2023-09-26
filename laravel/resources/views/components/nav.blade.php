@@ -1,6 +1,6 @@
 <nav class="nav-menu">
     <a href="{{ route('accueil') }}">
-        <img id="menuImage" src="{{ asset('logos/plat_gold_blanc.png') }}" alt="">
+        <img id="menuImage" src="{{ asset('logos/plat_gold_blanc.png') }}" alt="FestX">
     </a>
     {{-- <a class="nav-a" href="{{ route('actualites.index') }}">Actualités</a>
     <a class="nav-a" href="{{ route('billetterie.index') }}">Billetterie</a>
@@ -11,7 +11,7 @@
     <div id="app_nav" class="nav-btn-menu">
         <div id="app_menu" class="nav-btn-menu">
             <div class="acc-btn">
-                <img src="{{ asset('icones/menu_9_points.png') }}" alt="">
+                <img src="{{ asset('icones/menu_9_points.png') }}" alt="menu">
             </div>
             <p class="acc-menu">menu</p>
         </div>

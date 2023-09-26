@@ -119,7 +119,7 @@ class ProgrammationController extends Controller
         if ((!$artistesFilled && !$spectaclesFilled) ||
             (!$request->filled('nom_scene') && !$request->filled('heure_show') && !$request->filled('nom_spectacle') && !$request->filled('heure_spectacle'))
         ) {
-            // Aucun des deux formulaires n'est rempli ou les deux formulaires sont vides
+
             return redirect()
                 ->back()
                 ->with('error', 'Le formulaire est vide. Veuillez remplir au moins une partie (artistes ou spectacles).');
@@ -141,7 +141,7 @@ class ProgrammationController extends Controller
             ->with('success', 'Les artistes et/ou spectacles ont été ajoutés à la programmation');
     }
 
-    // a enelver a la fin pas sur que ce soit necessaire
+
     // public function destroy($id, $type, $artisteOuSpectacleId)
     // {
 

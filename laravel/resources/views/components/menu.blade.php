@@ -3,7 +3,7 @@
         <h1>menu</h1>
         <div class="nav-hidden-btn-menu">
             <div class="nav-btn">
-                <img class="img-hidden" src="{{ asset('icones/menu-black.png') }}" alt="">
+                <img class="img-hidden" src="{{ asset('icones/menu-black.png') }}" alt="menu">
             </div>
             <p>menu</p>
         </div>
