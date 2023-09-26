@@ -1,6 +1,8 @@
 <nav class="hidden">
     <div class="flex-hidden">
-        <h1>menu</h1>
+        <div class="titre-menu">
+            <h1>menu</h1>
+        </div>
         <div class="nav-hidden-btn-menu">
             <div class="nav-btn">
                 <img class="img-hidden" src="{{ asset('icones/menu-black.png') }}" alt="menu">

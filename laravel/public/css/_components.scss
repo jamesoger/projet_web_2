@@ -263,9 +263,6 @@ footer {
     position: fixed;
     display: flex;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.705);
-    align-items: center;
-    text-align: center;
     background-color: rgba(255, 255, 255, 0.89);
     width: 100%;
     height: 100%;
@@ -275,16 +272,18 @@ footer {
     .flex-hidden {
         display: flex;
         align-items: center;
-        justify-content: center;
-        width: 100%;
+        justify-content: space-between;
 
-        h1 {
-            font-family: $font-gothic;
-            font-weight: 700;
-            font-size: 6em;
-            color: black;
-            text-shadow: 0px 0px 5px black;
-            margin: 2rem auto;
+        .titre-menu {
+
+            h1 {
+                font-family: $font-gothic;
+                font-weight: 700;
+                font-size: 6em;
+                color: black;
+                text-shadow: 0px 0px 5px black;
+                margin: 2rem auto;
+            }
         }
     }
 
@@ -297,14 +296,15 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 20px;
-        margin-right: 2rem;
+        justify-content: center;
+        margin-right: 100px;
+        margin-bottom: 30px;
 
         .nav-btn {
+
             .img-hidden {
                 filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
-                width: 70px;
-                height: 70px;
+                width: 40px;
             }
         }
 
@@ -316,15 +316,12 @@ footer {
 
     .nav-hidden-a {
         display: flex;
-        align-items: center;
-        text-align: center;
         justify-content: center;
         text-decoration: none;
         color: black;
         font-family: $font-ethno;
-        font-size: 3em;
+        font-size: 2.5em;
         margin-top: 3.5rem;
-        margin-right: 2rem;
     }
 
     .bas-nav {

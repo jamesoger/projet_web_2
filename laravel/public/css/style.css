@@ -366,9 +366,6 @@ footer .foot-copy p {
   position: fixed;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.705);
-  align-items: center;
-  text-align: center;
   background-color: rgba(255, 255, 255, 0.89);
   width: 100%;
   height: 100%;
@@ -378,10 +375,9 @@ footer .foot-copy p {
 .hidden .flex-hidden {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-between;
 }
-.hidden .flex-hidden h1 {
+.hidden .flex-hidden .titre-menu h1 {
   font-family: all-round-gothic, sans-serif;
   font-weight: 700;
   font-size: 6em;
@@ -396,13 +392,13 @@ footer .foot-copy p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  margin-right: 2rem;
+  justify-content: center;
+  margin-right: 100px;
+  margin-bottom: 30px;
 }
 .hidden .nav-hidden-btn-menu .nav-btn .img-hidden {
   filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
-  width: 70px;
-  height: 70px;
+  width: 40px;
 }
 .hidden .nav-hidden-btn-menu p {
   font-size: 1.3em;
@@ -410,15 +406,12 @@ footer .foot-copy p {
 }
 .hidden .nav-hidden-a {
   display: flex;
-  align-items: center;
-  text-align: center;
   justify-content: center;
   text-decoration: none;
   color: black;
   font-family: ethnocentric, sans-serif;
-  font-size: 3em;
+  font-size: 2.5em;
   margin-top: 3.5rem;
-  margin-right: 2rem;
 }
 .hidden .bas-nav {
   display: flex;
