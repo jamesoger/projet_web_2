@@ -1559,10 +1559,58 @@ footer .foot-copy p {
 /*******************************/
 /******** ARTISTE EDIT *********/
 /*******************************/
-.artiste_edit {
-  padding-top: 10em;
+.artiste-edit {
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 8em 0;
+  font-family: all-round-gothic, sans-serif;
 }
-
+.artiste-edit h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.artiste-edit h1 span {
+  color: #1DA5F3;
+  font-size: 50px;
+}
+.artiste-edit .artiste-edit-form {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
+  width: 600px;
+  height: 400px;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.artiste-edit .artiste-edit-form form {
+  display: flex;
+  flex-direction: column;
+}
+.artiste-edit .artiste-edit-form form label {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.artiste-edit .artiste-edit-form form input {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 400px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
 .a-propos {
   display: flex;
   flex-direction: column;
