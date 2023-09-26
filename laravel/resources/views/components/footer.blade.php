@@ -3,13 +3,19 @@
         <div class="ligne-gauche"></div>
         <ul class="foot-media">
             <li class="foot-media-fb">
-                <img src="{{ asset('icones/facebook.png') }}" alt="" class="foot-fb">
+                <a href="https://www.facebook.com/?locale=fr_CA" target="_blank">
+                    <img src="{{ asset('icones/facebook.png') }}" alt="Facebook" class="foot-fb">
+                </a>
             </li>
             <li class="foot-media-fb">
-                <img src="{{ asset('icones/twitter.png') }}" alt="" class="foot-tw">
+                <a href="https://twitter.com/?lang=fr" target="_blank">
+                    <img src="{{ asset('icones/twitter.png') }}" alt="Twitter" class="foot-tw">
+                </a>
             </li>
             <li class="foot-media-fb">
-                <img src="{{ asset('icones/instagram.png') }}" alt="" class="foot-in">
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="{{ asset('icones/instagram.png') }}" alt="Instagram" class="foot-in">
+                </a>
             </li>
         </ul>
         <div class="ligne-droite"></div>
@@ -39,7 +45,7 @@
         </ul>
 
         <div class="foot-map">
-            <img src="{{ asset('icones/map-marker.png') }}" alt="">
+            <img src="{{ asset('icones/map-marker.png') }}" alt="marqueur de carte">
             <p>FestX</p>
             <p>189 rue des darons</p>
             <p>Saint-Fulgeance</p>
@@ -49,7 +55,7 @@
         </div>
 
         <div class="foot-logo">
-            <img src="{{ asset('logos/centre_color_blanc.png') }}" alt="">
+            <img src="{{ asset('logos/centre_color_blanc.png') }}" alt="FestX">
             <p>
                 <a href="{{ route('admin_connexion.login') }}">admin</a>
             </p>
@@ -64,15 +70,15 @@
 
     <div class="foot-store">
         <div class="apple">
-            <img src="{{ asset('icones/google.svg') }}" alt="">
+            <img src="{{ asset('icones/google.svg') }}" alt="GooglePlay">
         </div>
         <div class="google">
-            <img src="{{ asset('icones/apple.svg') }}" alt="">
+            <img src="{{ asset('icones/apple.svg') }}" alt="Appstore">
         </div>
     </div>
 
     <div class="foot-copy">
-        <img src="{{ asset('icones/copyright.png') }}" alt="">
+        <img src="{{ asset('icones/copyright.png') }}" alt="Copyright">
         <p>2023 festx</p>
     </div>
 </footer>
