@@ -12,13 +12,19 @@
         <header class="acc-header" id="acc-header">
             <ul class="acc-media">
                 <li class="acc-media-fb">
-                    <img src="{{ asset('icones/facebook.png') }}" alt="" class="acc-fb">
+                    <a href="https://www.facebook.com/?locale=fr_CA" target="_blank">
+                        <img src="{{ asset('icones/facebook.png') }}" alt="Facebook" class="acc-fb">
+                    </a>
                 </li>
                 <li class="acc-media-fb">
-                    <img src="{{ asset('icones/twitter.png') }}" alt="" class="acc-tw">
+                    <a href="https://twitter.com/?lang=fr" target="_blank">
+                        <img src="{{ asset('icones/twitter.png') }}" alt="Twitter" class="acc-tw">
+                    </a>
                 </li>
                 <li class="acc-media-fb">
-                    <img src="{{ asset('icones/instagram.png') }}" alt="" class="acc-in">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="{{ asset('icones/instagram.png') }}" alt="Instagram" class="acc-in">
+                    </a>
                 </li>
             </ul>
 
@@ -27,12 +33,12 @@
                     9.08 au 11.08
                 </p>
                 <div class="acc-logo">
-                    <img src="{{ asset('logos/centre_color_blanc.png') }}" alt="" class="logo">
+                    <img src="{{ asset('logos/centre_color_blanc.png') }}" alt="FestX" class="logo">
                 </div>
                 <div class="acc-fleche">
                     <div class="cercle">
                         <a href="#acc-events">
-                            <img src="{{ asset('icones/fleche.svg') }}" alt="">
+                            <img src="{{ asset('icones/fleche.svg') }}" alt="Fleche">
                         </a>
                     </div>
                 </div>
@@ -41,7 +47,7 @@
             <div class="acc-btn-menu">
                 <div id="app_menu">
                     <div class="acc-btn">
-                        <img src="{{ asset('icones/menu_9_points.png') }}" alt="">
+                        <img src="{{ asset('icones/menu_9_points.png') }}" alt="menu">
                     </div>
                     <p class="acc-menu">
                         menu
@@ -82,7 +88,7 @@
 
                 <div class="events">
                     <div class="vignettes">
-                        <img src="{{ asset('images/evenement1.jpg') }}" alt="">
+                        <img src="{{ asset('images/evenement1.jpg') }}" alt="Spectacle">
                         <div class="cadre">
                             <p class="titre">spectacles</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
@@ -90,7 +96,7 @@
                     </div>
 
                     <div class="vignettes">
-                        <img src="{{ asset('images/evenement2.jpg') }}" alt="">
+                        <img src="{{ asset('images/evenement2.jpg') }}" alt="Drones">
                         <div class="cadre">
                             <p class="titre">drones</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
@@ -98,7 +104,7 @@
                     </div>
 
                     <div class="vignettes">
-                        <img src="{{ asset('images/evenement3.jpg') }}" alt="">
+                        <img src="{{ asset('images/evenement3.jpg') }}" alt="Concours">
                         <div class="cadre">
                             <p class="titre">concours dj</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
@@ -106,7 +112,7 @@
                     </div>
 
                     <div class="vignettes">
-                        <img src="{{ asset('images/evenement4.jpg') }}" alt="">
+                        <img src="{{ asset('images/evenement4.jpg') }}" alt="Laser light">
                         <div class="cadre">
                             <p class="titre">laser light</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
@@ -114,7 +120,7 @@
                     </div>
 
                     <div class="vignettes">
-                        <img src="{{ asset('images/evenement5.jpg') }}" alt="">
+                        <img src="{{ asset('images/evenement5.jpg') }}" alt="Événement">
                         <div class="cadre">
                             <p class="titre">événements</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</p>
@@ -135,7 +141,7 @@
 
             <section class="acc-logo-video">
                 <div class="acc-logo">
-                    <img src="{{ asset('logos/plat_color_blanc.png') }}" alt="" class="logo">
+                    <img src="{{ asset('logos/plat_color_blanc.png') }}" alt="FestX" class="logo">
                     <p>9.08 au 11.08</p>
                 </div>
 

@@ -19,7 +19,7 @@
             <div class="users_admin">
                 <h2>Utilisateurs</h2>
                 @foreach ($users as $user)
-                    <p>{{ $user->nom_complet}}</p>
+                    <p>{{ $user->nom_complet }}</p>
                     @if (auth()->guard('admin')->user()->droits == 1)
                         <a href="{{ route('user.edit', $user->id) }}">Modifier</a>
                     @endif
@@ -35,15 +35,19 @@
             </div>
             <div class="analytics">
                 <h2>Statistiques site FestX</h2>
+                <a href="https://analytics.google.com/analytics/web/#/p406446669/reports/reportinghub?params=_u..nav%3Dmaui"
+                    target="_blank">
+                    <p>Voir les statistiques ici</p>
+                </a>
             </div>
             <div class="forfait_user">
                 <h2>Forfaits</h2>
                 @foreach ($users as $user)
-                    <p>{{ $user->nom_complet}}</p>
+                    <p>{{ $user->nom_complet }}</p>
 
                     @if ($user->forfaits)
                         @if ($user->forfaits->count() > 0)
-                            <p>Forfaits associés :</p>
+                            <p>Forfaits associés</p>
                             @foreach ($user->forfaits as $forfait)
                                 <div class="forfait_associe">
                                     <ul>
@@ -52,7 +56,8 @@
                                         <li>date d'arrivée : {{ $forfait->pivot->date_arrivee }}</li>
                                         <li>date de départ : {{ $forfait->pivot->date_depart }}</li>
                                         @if (auth()->guard('admin')->user()->droits == 1)
-                                            <form onclick="return confirm('Êtes-vous certain de vouloir supprimer cet élément?');"
+                                            <form
+                                                onclick="return confirm('Êtes-vous certain de vouloir supprimer cet élément?');"
                                                 action="{{ route('forfait_admin.destroy', $forfait->pivot->id) }}"
                                                 method="POST">
                                                 @csrf
@@ -78,11 +83,11 @@
                     administrateur</a>
             @endif
             @foreach ($admins as $admin)
-                    @if($admin->droits == 0)
+                @if ($admin->droits == 0)
                     <h3>Employé</h3>
-                    @else
+                @else
                     <h3>Administrateur</h3>
-                     @endif
+                @endif
                 <p>{{ $admin->nom_complet }} </p>
                 @if (auth()->guard('admin')->user()->droits == 1)
                     <a href="{{ route('enregistrement_admin.edit', ['id' => $admin->id]) }}">Modifier</a>
@@ -120,7 +125,8 @@
                                 <td>{{ $artiste->heure_show }}</td>
                                 <td>
                                     @if (auth()->guard('admin')->user()->droits == 1)
-                                        <form onclick="return confirm('Êtes-vous certain de vouloir supprimer cet élément?');"
+                                        <form
+                                            onclick="return confirm('Êtes-vous certain de vouloir supprimer cet élément?');"
                                             action="{{ route('artiste.destroy') }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $artiste->id }}">

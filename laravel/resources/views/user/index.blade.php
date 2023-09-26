@@ -116,7 +116,8 @@
                                                 <div class="show_info">
                                                     <p class="heure">{{ $artiste->heure_show }}</p>
                                                     <p class="nom">{{ $artiste->nom_scene }}</p>
-                                                    <img class="img_user" src="{{ $artiste->image }}" alt="">
+                                                    <img class="img_user" src="{{ $artiste->image }}"
+                                                        alt="{{ $artiste->nom_scene }}">
                                                 </div>
                                             @endforeach
                                         @endif

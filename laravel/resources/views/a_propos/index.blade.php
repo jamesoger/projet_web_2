@@ -4,7 +4,7 @@
         <div class="texte-apropos">
             <div class="titre-apropos">
                 <h1>À propos de </h1>
-                <img src="{{ asset('logos/plat_gold_blanc.png') }}" alt="">
+                <img src="{{ asset('logos/plat_gold_blanc.png') }}" alt="FestX">
             </div>
             <p>Bienvenue dans l'univers époustouflant de FestX, le festival où la musique électronique fusionne avec la
                 technologie pour créer une expérience sensorielle unique en son genre. Au cœur de notre festival, vous
@@ -57,7 +57,7 @@
                             <h1>{{ $admin->nom_complet }}</h1>
                         </div>
                         <div class="img-admin">
-                            <img src="{{ $admin->image }}" alt="">
+                            <img src="{{ $admin->image }}" alt="{{ $admin->nom_complet }}">
                         </div>
                     </div>
                 @endif
@@ -68,7 +68,7 @@
             <div class="info-total">
 
                 <div class="phrases">
-                    <img src="{{ asset('logos/plat_gold_blanc.png') }}" alt="">
+                    <img src="{{ asset('logos/plat_gold_blanc.png') }}" alt="FestX">
                     <p class="titre-info">
                         Adresse
                     </p>

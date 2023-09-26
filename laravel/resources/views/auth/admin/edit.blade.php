@@ -1,11 +1,11 @@
-<x-layout
-    titre="Modification de: {{$admin->nom_complet}}">
+<x-layout titre="Modification de: {{$admin->nom_complet}}">
     <x-nav />
 
     <div class="edit-admin">
         <h1>Modification de
             <br><span> {{ $admin->nom_complet }}</span>
         </h1>
+
         <div class="edit-admin-form">
             <form action="{{ route('enregistrement_admin.update', ['id' => $admin->id]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -27,12 +27,14 @@
                     <x-forms.erreur champ="email" />
                     <input type="email" name="email" placeholder="Son email..." id="email" value="{{ $admin->email }}">
                 </div>
+
                 <div class="edit-admin-img">
                     <label for="image" >Image</label>
                     <input  name="image" type="file">
                     <input id="image" type="hidden" name="image_courante" value="{{$admin->image}}">
                     <x-forms.erreur champ="image" />
                 </div>
+
                 <div class="form-group-droits">
                     <label for="droits">Statut</label>
                     <select name="droits" id="droits">
@@ -45,9 +47,7 @@
                     <button type="submit">Modifier</button>
                 </div>
             </form>
-
         </div>
-
     </div>
     <x-footer />
 </x-layout>
