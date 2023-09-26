@@ -1,10 +1,8 @@
-<x-layout titre="Modification d'une acualité">
+<x-layout titre="Modification de l'actualité: {{$actualites->titre}}">
     <x-nav />
 
     <div class="actu-edit">
-        @if (session('error'))
-            <p style="color: red">{{ session('error') }}</p>
-        @endif
+
         <h1>Modifier l'actualité</h1>
 
         <div class="actu-edit-form">
@@ -15,33 +13,25 @@
 
                 <div class="actu-input">
                     <label for="date">Date</label>
-                    @error('date')
-                        <p>{{ $message }}</p>
-                    @enderror
+                    <x-forms.erreur champ="date" />
                     <input type="date" name="date" id="date" value="{{ $actualites->date }}" required>
                 </div>
 
                 <div class="actu-input">
                     <label for="titre">Titre</label>
-                    @error('titre')
-                        <p>{{ $message }}</p>
-                    @enderror
+                    <x-forms.erreur champ="titre" />
                     <input type="text" name="titre" placeholder="Titre..." id="titre" value="{{ $actualites->titre }}">
                 </div>
 
                 <div class="actu-input">
                     <label for="détails">Détails</label>
-                    @error('details')
-                        <p>{{ $message }}</p>
-                    @enderror
+                    <x-forms.erreur champ="details" />
                     <textarea name="details" placeholder="Détails de l'actu..." id="details">{{ $actualites->details }}</textarea>
                 </div>
 
                 <div class="actu-image">
                     <label for="image">Image</label>
-                    @error('image')
-                        <p>{{ $message }}</p>
-                    @enderror
+                    <x-forms.erreur champ="image" />
                     <input type="file" name="image" id="image">
                     <input type="hidden"name="image_courante" value={{ $actualites->image }}>
                 </div>

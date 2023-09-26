@@ -24,7 +24,7 @@
                         <a href="{{ route('user.edit', $user->id) }}">Modifier</a>
                     @endif
                     @if (auth()->guard('admin')->user()->droits == 1)
-                        <form onclick="return confirm('Are you sure you want to delete?');"
+                        <form onclick="return confirm('Êtes-vous certain de vouloir supprimer cet élément?');"
                             action="{{ route('user.destroy') }}" method="POST">
                             @csrf
                             <input type="hidden" name="id" value="{{ $user->id }}">
@@ -52,7 +52,7 @@
                                         <li>date d'arrivée : {{ $forfait->pivot->date_arrivee }}</li>
                                         <li>date de départ : {{ $forfait->pivot->date_depart }}</li>
                                         @if (auth()->guard('admin')->user()->droits == 1)
-                                            <form onclick="return confirm('Are you sure you want to delete?');"
+                                            <form onclick="return confirm('Êtes-vous certain de vouloir supprimer cet élément?');"
                                                 action="{{ route('forfait_admin.destroy', $forfait->pivot->id) }}"
                                                 method="POST">
                                                 @csrf
@@ -88,7 +88,7 @@
                     <a href="{{ route('enregistrement_admin.edit', ['id' => $admin->id]) }}">Modifier</a>
                 @endif
                 @if (auth()->guard('admin')->user()->droits == 1)
-                    <form onclick="return confirm('Are you sure you want to delete?');"
+                    <form onclick="return confirm('Êtes-vous certain de vouloir supprimer cet élément?');"
                         action="{{ route('admin.destroy') }}" method="POST">
                         @csrf
                         <input type="hidden" name="id" value="{{ $admin->id }}">
@@ -120,7 +120,7 @@
                                 <td>{{ $artiste->heure_show }}</td>
                                 <td>
                                     @if (auth()->guard('admin')->user()->droits == 1)
-                                        <form onclick="return confirm('Are you sure you want to delete?');"
+                                        <form onclick="return confirm('Êtes-vous certain de vouloir supprimer cet élément?');"
                                             action="{{ route('artiste.destroy') }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $artiste->id }}">
@@ -141,7 +141,7 @@
                 <td>{{ $spectacle->heure }}</td>
                 <td>
                     @if (auth()->guard('admin')->user()->droits == 1)
-                        <form onclick="return confirm('Are you sure you want to delete?');"
+                        <form onclick="return confirm('Êtes-vous certain de vouloir supprimer cet élément?');"
                             action="{{ route('spectacle.destroy') }}" method="POST">
                             @csrf
                             <input type="hidden" name="id" value="{{ $spectacle->id }}">
@@ -170,7 +170,7 @@
             <p>{{ $actualite->details }}</p>
             @if (auth()->guard('admin')->user()->droits == 1)
                 <a class="modif_actu" href="{{ route('actualites.edit', $actualite->id) }}">Modifier</a>
-                <form onclick="return confirm('Are you sure you want to delete?');"
+                <form onclick="return confirm('Êtes-vous certain de vouloir supprimer cet élément?');"
                     action="{{ route('actualites.destroy') }}" method="POST">
                     @csrf
                     <input type="hidden" name="id" value="{{ $actualite->id }}">

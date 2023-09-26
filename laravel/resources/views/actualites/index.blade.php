@@ -28,7 +28,7 @@
                     <img src="{{ $actualite->image }}" width="800px" alt="actualite">
                 </div>
             </div>
-            @endforeach
+        @endforeach
 
     </main>
     <x-footer />

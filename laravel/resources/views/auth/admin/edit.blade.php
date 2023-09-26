@@ -1,10 +1,10 @@
 <x-layout
-    titre="Modification de: {{ auth()->guard('admin')->user()->prenom .' ' .auth()->guard('admin')->user()->nom }}">
+    titre="Modification de: {{$admin->nom_complet}}">
     <x-nav />
 
     <div class="edit-admin">
         <h1>Modification de
-            <br><span>{{ auth()->guard('admin')->user()->prenom .' ' .auth()->guard('admin')->user()->nom }}</span>
+            <br><span> {{ $admin->nom_complet }}</span>
         </h1>
         <div class="edit-admin-form">
             <form action="{{ route('enregistrement_admin.update', ['id' => $admin->id]) }}" method="POST" enctype="multipart/form-data">
@@ -36,8 +36,8 @@
                 <div class="form-group-droits">
                     <label for="droits">Statut</label>
                     <select name="droits" id="droits">
-                        <option value="1" @if (old('droits') == '1') selected @endif>Administrateur</option>
-                        <option value="0" @if (old('droits') == '0') selected @endif>Employé</option>
+                        <option value="1" @if( $admin->droits == '1') selected @endif>Administrateur</option>
+                        <option value="0" @if ($admin->droits == '0') selected @endif>Employé</option>
                     </select>
                 </div>
 
