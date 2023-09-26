@@ -466,6 +466,436 @@ footer .foot-copy p {
 }
 
 /*******************************/
+/******** CONNEXION USER *******/
+/*******************************/
+.connexion_user {
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 8em;
+  font-family: all-round-gothic, sans-serif;
+}
+.connexion_user h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.connexion_user h2 {
+  text-align: center;
+}
+.connexion_user p {
+  text-align: center;
+  font-size: 1.5em;
+}
+.connexion_user .connexion_user_form {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
+  width: 600px;
+  height: 400px;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.connexion_user .connexion_user_form label {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.connexion_user .connexion_user_form input {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 400px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.connexion_user .connexion_user_form button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 10px;
+  width: 350px;
+  border: 3px solid white;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.connexion_user .connexion_user_form button:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
+}
+.connexion_user a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: white;
+  padding-bottom: 50px;
+}
+.connexion_user a:hover {
+  color: #1DA5F3;
+}
+
+/*******************************/
+/***** ENREGISTREMENT USER *****/
+/*******************************/
+.enregistrement-user {
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 8em 0;
+  font-family: all-round-gothic, sans-serif;
+}
+.enregistrement-user h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.enregistrement-user p {
+  text-align: center;
+  font-size: 1.5em;
+}
+.enregistrement-user .enregistrement-form {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
+  width: 800px;
+  height: 600px;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.enregistrement-user .enregistrement-form form {
+  display: flex;
+  flex-direction: column;
+}
+.enregistrement-user .enregistrement-form form label {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.enregistrement-user .enregistrement-form form input {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.enregistrement-user .enregistrement-form form .ligne-1 {
+  display: flex;
+}
+.enregistrement-user .enregistrement-form form .ligne-1 .prenom {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.enregistrement-user .enregistrement-form form .ligne-1 .nom {
+  display: flex;
+  flex-direction: column;
+}
+.enregistrement-user .enregistrement-form form .ligne-2 {
+  display: flex;
+}
+.enregistrement-user .enregistrement-form form .ligne-2 .email {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.enregistrement-user .enregistrement-form form .ligne-3 {
+  display: flex;
+}
+.enregistrement-user .enregistrement-form form .ligne-3 .password {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.enregistrement-user .enregistrement-form form .ligne-3 .confirmation {
+  display: flex;
+  flex-direction: column;
+}
+.enregistrement-user .enregistrement-form form button {
+  margin-top: 1rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 10px;
+  width: 350px;
+  border: 3px solid white;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.enregistrement-user .enregistrement-form form button:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
+}
+
+/*******************************/
+/********** USER EDIT **********/
+/*******************************/
+.user-edit {
+  background-image: url(../images/background-sand.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 8em 0;
+  font-family: all-round-gothic, sans-serif;
+}
+.user-edit h1 {
+  text-align: center;
+  font-size: 5em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.user-edit h1 span {
+  color: #1DA5F3;
+  font-size: 50px;
+}
+.user-edit h2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.user-edit p {
+  text-align: center;
+  font-size: 1.5em;
+}
+.user-edit .user-edit-form {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
+  width: 600px;
+  height: 530px;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.user-edit .user-edit-form .user-edit-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.user-edit .user-edit-form .user-edit-input label {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+.user-edit .user-edit-form .user-edit-input input {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 400px;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+}
+.user-edit .user-edit-form .user-edit-input button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 10px;
+  width: 350px;
+  border: 3px solid white;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.user-edit .user-edit-form .user-edit-input button:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
+}
+
+.a-propos {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100vw;
+  padding-top: 3em;
+  background-image: url(../images/bg_apropos2.jpg);
+  background-size: cover;
+  font-family: all-round-gothic, sans-serif;
+  background-attachment: fixed;
+}
+.a-propos .titre-apropos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.a-propos .titre-apropos h1 {
+  font-size: 2.5em;
+}
+.a-propos .titre-apropos img {
+  width: 200px;
+}
+.a-propos .texte-apropos {
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 50px rgb(24, 24, 24);
+  width: 50vw;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  position: relative;
+  padding: 3rem;
+}
+.a-propos .texte-apropos p {
+  font-size: 1.5em;
+  padding-top: 1.5rem;
+}
+.a-propos .titre-admin {
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 15px black;
+}
+.a-propos .ligne-haut {
+  margin-bottom: 15px;
+  height: 2px;
+  width: 50%;
+  box-shadow: 0px 0px 10px white;
+  background: linear-gradient(to left, transparent, white, transparent), linear-gradient(to right, transparent, white, transparent);
+  display: flex;
+  align-self: center;
+}
+.a-propos .ligne-h2 {
+  margin-bottom: 50px;
+  height: 2px;
+  width: 50%;
+  box-shadow: 0px 0px 10px white;
+  background: linear-gradient(to left, transparent, white, transparent), linear-gradient(to right, transparent, white, transparent);
+  display: flex;
+  align-self: center;
+}
+.a-propos .admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3em;
+  gap: 5%;
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 50px rgb(24, 24, 24);
+  padding: 2rem 0rem;
+}
+.a-propos .admin .admin-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.a-propos .admin .admin-total .admin-nom {
+  display: flex;
+}
+.a-propos .admin .admin-total .admin-nom h1 {
+  flex: auto;
+  font-size: 2em;
+  padding-left: 1.5rem;
+}
+.a-propos .admin .admin-total .img-admin {
+  display: flex;
+}
+.a-propos .admin .admin-total .img-admin img {
+  margin-top: 1.5em;
+  border: 1px solid white;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 200px;
+  height: 200px;
+}
+.a-propos .nous-joindre {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+  margin-top: 3em;
+}
+.a-propos .nous-joindre .info-total {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.648);
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 50px rgb(24, 24, 24);
+  padding: 2rem 3rem;
+}
+.a-propos .nous-joindre .info-total .phrases {
+  padding: 3rem;
+  font-size: 2em;
+  text-align: center;
+}
+.a-propos .nous-joindre .info-total .phrases img {
+  width: 300px;
+}
+.a-propos .nous-joindre .info-total .phrases .titre-info {
+  font-size: 1em;
+  font-weight: 500;
+}
+.a-propos .nous-joindre .info-total .phrases .phrase-info {
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+}
+
+/*******************************/
 /*********** ACCUEIL ***********/
 /*******************************/
 .titre-hidden {
@@ -763,139 +1193,83 @@ footer .foot-copy p {
   }
 }
 
-.a-propos {
+/*******************************/
+/********** ACTUALITÉS *********/
+/*******************************/
+.actu {
   display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 100vw;
-  padding-top: 3em;
-  background-image: url(../images/bg_apropos2.jpg);
-  background-size: cover;
-  font-family: all-round-gothic, sans-serif;
+  background-image: url(../images/bg_apropos5.jpg);
   background-attachment: fixed;
-}
-.a-propos .titre-apropos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.a-propos .titre-apropos h1 {
-  font-size: 2.5em;
-}
-.a-propos .titre-apropos img {
-  width: 200px;
-}
-.a-propos .texte-apropos {
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 50px rgb(24, 24, 24);
-  width: 50vw;
-  margin: 5rem auto;
-  display: flex;
+  background-size: cover;
+  padding-top: 15em;
   flex-direction: column;
+  padding-bottom: 150px;
+}
+.actu .actu-h1 {
+  display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: justify;
-  position: relative;
-  padding: 3rem;
+  padding-bottom: 70px;
 }
-.a-propos .texte-apropos p {
-  font-size: 1.5em;
-  padding-top: 1.5rem;
-}
-.a-propos .titre-admin {
-  color: white;
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 15px;
-  font-weight: 600;
+.actu .actu-h1 h1 {
+  display: flex;
+  justify-content: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 5em;
   text-transform: uppercase;
-  text-shadow: 0px 0px 15px black;
-}
-.a-propos .ligne-haut {
-  margin-bottom: 15px;
-  height: 2px;
-  width: 50%;
-  box-shadow: 0px 0px 10px white;
-  background: linear-gradient(to left, transparent, white, transparent), linear-gradient(to right, transparent, white, transparent);
-  display: flex;
-  align-self: center;
-}
-.a-propos .ligne-h2 {
-  margin-bottom: 50px;
-  height: 2px;
-  width: 50%;
-  box-shadow: 0px 0px 10px white;
-  background: linear-gradient(to left, transparent, white, transparent), linear-gradient(to right, transparent, white, transparent);
-  display: flex;
-  align-self: center;
-}
-.a-propos .admin {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 3em;
-  gap: 5%;
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 50px rgb(24, 24, 24);
-  padding: 2rem 0rem;
-}
-.a-propos .admin .admin-total {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.a-propos .admin .admin-total .admin-nom {
-  display: flex;
-}
-.a-propos .admin .admin-total .admin-nom h1 {
-  flex: auto;
-  font-size: 2em;
-  padding-left: 1.5rem;
-}
-.a-propos .admin .admin-total .img-admin {
-  display: flex;
-}
-.a-propos .admin .admin-total .img-admin img {
-  margin-top: 1.5em;
-  border: 1px solid white;
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 200px;
-  height: 200px;
-}
-.a-propos .nous-joindre {
-  max-width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2em;
-  margin-top: 3em;
-}
-.a-propos .nous-joindre .info-total {
-  display: flex;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 50px rgb(24, 24, 24);
-  padding: 2rem 3rem;
-}
-.a-propos .nous-joindre .info-total .phrases {
-  padding: 3rem;
-  font-size: 2em;
-  text-align: center;
-}
-.a-propos .nous-joindre .info-total .phrases img {
-  width: 300px;
-}
-.a-propos .nous-joindre .info-total .phrases .titre-info {
-  font-size: 1em;
   font-weight: 500;
 }
-.a-propos .nous-joindre .info-total .phrases .phrase-info {
-  padding-bottom: 0.5em;
-  padding-top: 0.5em;
+.actu .actu-conteneur {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0px 60px;
+  width: 1500px;
+  height: 600px;
+  margin: 20px auto;
+  align-items: center;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+}
+.actu .actu-conteneur .actu-info {
+  display: flex;
+  flex: 50%;
+  flex-direction: column;
+  font-family: all-round-gothic, sans-serif;
+}
+.actu .actu-conteneur .actu-info .actu-titre {
+  display: flex;
+  font-size: 2em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.actu .actu-conteneur .actu-info .actu-date {
+  display: flex;
+  color: #1DA5F3;
+}
+.actu .actu-conteneur .actu-info .actu-texte {
+  display: flex;
+  text-align: justify;
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-weight: 200;
+  line-height: 1.3;
+  overflow: auto;
+}
+.actu .actu-conteneur .actu-ligne {
+  width: 1px;
+  height: 60%;
+  margin: 0px 70px;
+  background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.5), transparent), linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5), transparent);
+}
+.actu .actu-conteneur .actu-img {
+  display: flex;
+  background-color: black;
+  overflow: hidden;
+  flex: 50%;
+  box-shadow: 20px 20px white;
+  justify-content: center;
+  align-items: center;
+}
+.actu .actu-conteneur .actu-img img {
+  height: 480px;
 }
 
 /*******************************/
@@ -1358,240 +1732,6 @@ footer .foot-copy p {
   border: 3px solid #1DA5F3;
 }
 
-.canvas_lines {
-  min-width: 1800px;
-}
-
-.prog {
-  height: 100%;
-  margin: 0;
-  padding-top: 7em;
-  position: relative;
-  z-index: 2;
-}
-.prog .prog-h1 {
-  font-family: all-round-gothic, sans-serif;
-  font-size: 6em;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 500;
-  text-shadow: 0px 0px 5px white;
-  margin: 50px 0;
-}
-.prog #playPauseButton {
-  background-color: rgba(255, 255, 255, 0);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  margin: auto;
-}
-.prog #playPauseButton #playIcon,
-.prog #playPauseButton #pauseIcon {
-  font-size: 8rem;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-.prog #playPauseButton #playIcon:hover,
-.prog #playPauseButton #pauseIcon:hover {
-  box-shadow: inset 4px 4px 5px 1px rgba(50, 50, 50, 0.75);
-}
-.prog .date-gauche {
-  display: flex;
-  background: linear-gradient(90deg, black, transparent);
-  padding: 20px 50px;
-  margin: 50px 0;
-}
-.prog .date-gauche h1 {
-  text-shadow: 0px 0px 5px white;
-  font-size: 5em;
-  text-transform: uppercase;
-  font-family: all-round-gothic, sans-serif;
-}
-.prog .date-centre {
-  display: flex;
-  background: linear-gradient(270deg, black, transparent);
-  padding: 20px 50px;
-  margin: 50px 0;
-  justify-content: flex-end;
-}
-.prog .date-centre h1 {
-  text-shadow: 0px 0px 5px white;
-  font-size: 5em;
-  text-transform: uppercase;
-  font-family: all-round-gothic, sans-serif;
-}
-.prog .date-droite {
-  display: flex;
-  background: linear-gradient(90deg, black, transparent);
-  padding: 20px 50px;
-  margin: 50px 0;
-}
-.prog .date-droite h1 {
-  text-shadow: 0px 0px 5px white;
-  font-size: 5em;
-  text-transform: uppercase;
-  font-family: all-round-gothic, sans-serif;
-}
-.prog .prog_bubbles {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  position: relative;
-  height: 700px;
-  max-width: 100vw;
-  flex-wrap: wrap;
-  overflow: hidden;
-}
-.prog .prog_bubbles .hide-empty {
-  display: none;
-}
-.prog .prog_bubbles .image_bubbles {
-  min-height: 100%;
-  display: flex;
-  position: relative;
-  transition: transform 0.5s ease;
-  margin-top: 6px;
-}
-.prog .prog_bubbles .image_bubbles img {
-  width: 260px;
-  height: 260px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
-  margin-bottom: 10px;
-  transition: transform 0.7s ease-in-out;
-  position: relative;
-  cursor: pointer;
-}
-.prog .prog_bubbles .image_bubbles img:hover {
-  transform: rotate3d(2, 1, 1, 360deg);
-}
-.prog .prog_bubbles .image_bubbles span {
-  position: absolute;
-  left: 0;
-  color: white;
-  opacity: 0;
-  font-size: 1.5rem;
-  font-family: ethnocentric, sans-serif;
-  text-transform: uppercase;
-  height: 260px;
-  width: 260px;
-  border-radius: 50%;
-  text-shadow: 0px 2px 6px rgb(35, 35, 35);
-  line-height: 260px;
-  text-align: center;
-  font-weight: bold;
-  z-index: -1;
-  transition: z-index 0.7s ease-in-out opacity 0.3s ease;
-}
-.prog .prog_bubbles .image_bubbles #nom {
-  padding-top: 1em;
-}
-.prog .prog_bubbles .image_bubbles:hover span {
-  z-index: 1;
-  transition-delay: 0.7s;
-  opacity: 1;
-}
-.prog .prog_bubbles .image-haut {
-  align-self: flex-start;
-}
-.prog .prog_bubbles .image-haut #nom {
-  margin-top: 1.5rem;
-}
-.prog .prog_bubbles .image-milieu {
-  align-self: center;
-}
-.prog .prog_bubbles .image-milieu #nom {
-  margin-top: 1.5rem;
-}
-.prog .prog_bubbles .image-bas {
-  align-self: flex-end;
-}
-.prog .prog_bubbles .image-bas #nom {
-  margin-top: 2rem;
-}
-
-/*******************************/
-/********** ACTUALITÉS *********/
-/*******************************/
-.actu {
-  display: flex;
-  background-image: url(../images/bg_apropos5.jpg);
-  background-attachment: fixed;
-  background-size: cover;
-  padding-top: 15em;
-  flex-direction: column;
-  padding-bottom: 150px;
-}
-.actu .actu-h1 {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 70px;
-}
-.actu .actu-h1 h1 {
-  display: flex;
-  justify-content: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 5em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.actu .actu-conteneur {
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 0px 60px;
-  width: 1500px;
-  height: 600px;
-  margin: 20px auto;
-  align-items: center;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
-}
-.actu .actu-conteneur .actu-info {
-  display: flex;
-  flex: 50%;
-  flex-direction: column;
-  font-family: all-round-gothic, sans-serif;
-}
-.actu .actu-conteneur .actu-info .actu-titre {
-  display: flex;
-  font-size: 2em;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-}
-.actu .actu-conteneur .actu-info .actu-date {
-  display: flex;
-  color: #1DA5F3;
-}
-.actu .actu-conteneur .actu-info .actu-texte {
-  display: flex;
-  text-align: justify;
-  margin-top: 20px;
-  font-size: 1.5em;
-  font-weight: 200;
-  line-height: 1.3;
-  overflow: auto;
-}
-.actu .actu-conteneur .actu-ligne {
-  width: 1px;
-  height: 60%;
-  margin: 0px 70px;
-  background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.5), transparent), linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5), transparent);
-}
-.actu .actu-conteneur .actu-img {
-  display: flex;
-  background-color: black;
-  overflow: hidden;
-  flex: 50%;
-  box-shadow: 20px 20px white;
-  justify-content: center;
-  align-items: center;
-}
-.actu .actu-conteneur .actu-img img {
-  height: 480px;
-}
-
 .bill {
   width: 100vw;
   height: 100vh;
@@ -1872,6 +2012,161 @@ footer .foot-copy p {
   border: 3px solid white;
 }
 
+.canvas_lines {
+  min-width: 1800px;
+}
+
+.prog {
+  height: 100%;
+  margin: 0;
+  padding-top: 7em;
+  position: relative;
+  z-index: 2;
+}
+.prog .prog-h1 {
+  font-family: all-round-gothic, sans-serif;
+  font-size: 6em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-shadow: 0px 0px 5px white;
+  margin: 50px 0;
+}
+.prog #playPauseButton {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  margin: auto;
+}
+.prog #playPauseButton #playIcon,
+.prog #playPauseButton #pauseIcon {
+  font-size: 8rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+.prog #playPauseButton #playIcon:hover,
+.prog #playPauseButton #pauseIcon:hover {
+  box-shadow: inset 4px 4px 5px 1px rgba(50, 50, 50, 0.75);
+}
+.prog .date-gauche {
+  display: flex;
+  background: linear-gradient(90deg, black, transparent);
+  padding: 20px 50px;
+  margin: 50px 0;
+}
+.prog .date-gauche h1 {
+  text-shadow: 0px 0px 5px white;
+  font-size: 5em;
+  text-transform: uppercase;
+  font-family: all-round-gothic, sans-serif;
+}
+.prog .date-centre {
+  display: flex;
+  background: linear-gradient(270deg, black, transparent);
+  padding: 20px 50px;
+  margin: 50px 0;
+  justify-content: flex-end;
+}
+.prog .date-centre h1 {
+  text-shadow: 0px 0px 5px white;
+  font-size: 5em;
+  text-transform: uppercase;
+  font-family: all-round-gothic, sans-serif;
+}
+.prog .date-droite {
+  display: flex;
+  background: linear-gradient(90deg, black, transparent);
+  padding: 20px 50px;
+  margin: 50px 0;
+}
+.prog .date-droite h1 {
+  text-shadow: 0px 0px 5px white;
+  font-size: 5em;
+  text-transform: uppercase;
+  font-family: all-round-gothic, sans-serif;
+}
+.prog .prog_bubbles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  position: relative;
+  height: 700px;
+  max-width: 100vw;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+.prog .prog_bubbles .hide-empty {
+  display: none;
+}
+.prog .prog_bubbles .image_bubbles {
+  min-height: 100%;
+  display: flex;
+  position: relative;
+  transition: transform 0.5s ease;
+  margin-top: 6px;
+}
+.prog .prog_bubbles .image_bubbles img {
+  width: 260px;
+  height: 260px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+  margin-bottom: 10px;
+  transition: transform 0.7s ease-in-out;
+  position: relative;
+  cursor: pointer;
+}
+.prog .prog_bubbles .image_bubbles img:hover {
+  transform: rotate3d(2, 1, 1, 360deg);
+}
+.prog .prog_bubbles .image_bubbles span {
+  position: absolute;
+  left: 0;
+  color: white;
+  opacity: 0;
+  font-size: 1.5rem;
+  font-family: ethnocentric, sans-serif;
+  text-transform: uppercase;
+  height: 260px;
+  width: 260px;
+  border-radius: 50%;
+  text-shadow: 0px 2px 6px rgb(35, 35, 35);
+  line-height: 260px;
+  text-align: center;
+  font-weight: bold;
+  z-index: -1;
+  transition: z-index 0.7s ease-in-out opacity 0.3s ease;
+}
+.prog .prog_bubbles .image_bubbles #nom {
+  padding-top: 1em;
+}
+.prog .prog_bubbles .image_bubbles:hover span {
+  z-index: 1;
+  transition-delay: 0.7s;
+  opacity: 1;
+}
+.prog .prog_bubbles .image-haut {
+  align-self: flex-start;
+}
+.prog .prog_bubbles .image-haut #nom {
+  margin-top: 1.5rem;
+}
+.prog .prog_bubbles .image-milieu {
+  align-self: center;
+}
+.prog .prog_bubbles .image-milieu #nom {
+  margin-top: 1.5rem;
+}
+.prog .prog_bubbles .image-bas {
+  align-self: flex-end;
+}
+.prog .prog_bubbles .image-bas #nom {
+  margin-top: 2rem;
+}
+
 /*******************************/
 /********** USER INDEX *********/
 /*******************************/
@@ -2142,326 +2437,6 @@ footer .foot-copy p {
   font-style: italic;
   padding-top: 1em;
   margin: 0 auto;
-}
-
-/*******************************/
-/******** FORMULAIRES *******/
-/*******************************/
-/*******************************/
-/******** CONNEXION USER *******/
-/*******************************/
-.connexion_user {
-  background-image: url(../images/background-sand.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  padding-top: 8em;
-  font-family: all-round-gothic, sans-serif;
-}
-.connexion_user h1 {
-  text-align: center;
-  font-size: 5em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.connexion_user h2 {
-  text-align: center;
-}
-.connexion_user p {
-  text-align: center;
-  font-size: 1.5em;
-}
-.connexion_user .connexion_user_form {
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
-  width: 600px;
-  height: 400px;
-  margin: 5rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.connexion_user .connexion_user_form label {
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-.connexion_user .connexion_user_form input {
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 2em;
-  width: 400px;
-  height: 50px;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
-  border: none;
-  text-align: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-.connexion_user .connexion_user_form button {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1.5em;
-  font-weight: 300;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 10px 10px;
-  width: 350px;
-  border: 3px solid white;
-  text-shadow: 0px 0px 5px white;
-  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.connexion_user .connexion_user_form button:hover {
-  background-color: #1DA5F3;
-  color: #06162F;
-  text-shadow: 0px 0px 5px #06162F;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  border: 3px solid #1DA5F3;
-}
-.connexion_user a {
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  font-size: 2em;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: white;
-  padding-bottom: 50px;
-}
-.connexion_user a:hover {
-  color: #1DA5F3;
-}
-
-/*******************************/
-/***** ENREGISTREMENT USER *****/
-/*******************************/
-.enregistrement-user {
-  background-image: url(../images/background-sand.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 8em 0;
-  font-family: all-round-gothic, sans-serif;
-}
-.enregistrement-user h1 {
-  text-align: center;
-  font-size: 5em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.enregistrement-user p {
-  text-align: center;
-  font-size: 1.5em;
-}
-.enregistrement-user .enregistrement-form {
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
-  width: 800px;
-  height: 600px;
-  margin: 5rem auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.enregistrement-user .enregistrement-form form {
-  display: flex;
-  flex-direction: column;
-}
-.enregistrement-user .enregistrement-form form label {
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-.enregistrement-user .enregistrement-form form input {
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 2em;
-  height: 50px;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
-  border: none;
-  text-align: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-.enregistrement-user .enregistrement-form form .ligne-1 {
-  display: flex;
-}
-.enregistrement-user .enregistrement-form form .ligne-1 .prenom {
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-}
-.enregistrement-user .enregistrement-form form .ligne-1 .nom {
-  display: flex;
-  flex-direction: column;
-}
-.enregistrement-user .enregistrement-form form .ligne-2 {
-  display: flex;
-}
-.enregistrement-user .enregistrement-form form .ligne-2 .email {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-.enregistrement-user .enregistrement-form form .ligne-3 {
-  display: flex;
-}
-.enregistrement-user .enregistrement-form form .ligne-3 .password {
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-}
-.enregistrement-user .enregistrement-form form .ligne-3 .confirmation {
-  display: flex;
-  flex-direction: column;
-}
-.enregistrement-user .enregistrement-form form button {
-  margin-top: 1rem;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1.5em;
-  font-weight: 300;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 10px 10px;
-  width: 350px;
-  border: 3px solid white;
-  text-shadow: 0px 0px 5px white;
-  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.enregistrement-user .enregistrement-form form button:hover {
-  background-color: #1DA5F3;
-  color: #06162F;
-  text-shadow: 0px 0px 5px #06162F;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  border: 3px solid #1DA5F3;
-}
-
-/*******************************/
-/********** USER EDIT **********/
-/*******************************/
-.user_edit {
-  background-image: url(../images/background-sand.jpg);
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100vw;
-  padding-top: 10em;
-  font-family: all-round-gothic, sans-serif;
-}
-.user_edit h1 {
-  text-align: center;
-  font-size: 3em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.user_edit h2 {
-  text-align: center;
-  font-size: 2em;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.user_edit p {
-  text-align: center;
-  font-size: 1.5em;
-}
-.user_edit .user_modif_form {
-  background-color: rgba(0, 0, 0, 0.648);
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
-  width: 750px;
-  height: 680px;
-  margin: 5rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.user_edit .user_modif_form form {
-  display: flex;
-  flex-direction: column;
-}
-.user_edit .user_modif_form form label {
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-.user_edit .user_modif_form form #prenom,
-.user_edit .user_modif_form form #nom,
-.user_edit .user_modif_form form #email {
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 2em;
-  width: 630px;
-  height: 50px;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
-  border: none;
-  text-align: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-.user_edit .user_modif_form form input {
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 2em;
-  width: 400px;
-  height: 50px;
-  margin: 2rem;
-  box-shadow: 0px 0px 5px white;
-  text-align: center;
-  font-family: all-round-gothic, sans-serif;
-  font-size: 1.5em;
-  color: white;
-}
-.user_edit .user_modif_form form button {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.005);
-  color: white;
-  font-family: ethnocentric, sans-serif;
-  font-size: 1.5em;
-  font-weight: 300;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 10px 10px;
-  width: 350px;
-  border: 3px solid white;
-  text-shadow: 0px 0px 5px white;
-  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-.user_edit .user_modif_form form button:hover {
-  background-color: #1DA5F3;
-  color: #06162F;
-  text-shadow: 0px 0px 5px #06162F;
-  box-shadow: 0px 0px 10px #1DA5F3;
-  border: 3px solid #1DA5F3;
-}
-.user_edit .user_modif_form a {
-  display: block;
-  text-decoration: none;
-  text-align: center;
-  font-size: 2em;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: white;
-}
-.user_edit .user_modif_form a:hover {
-  color: #1DA5F3;
 }
 
 /*******************************/
