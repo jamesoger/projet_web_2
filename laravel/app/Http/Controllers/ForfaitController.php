@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Forfait;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -135,9 +136,9 @@ class ForfaitController extends Controller
 
             if ($userForfait) {
                 $dateArrivee = $userForfait->date_arrivee;
-                $dateMaxEvenement = '2024-08-11';
+                $today = now();
 
-                if (strtotime($dateArrivee) > strtotime($dateMaxEvenement)) {
+                if ($today >= $dateArrivee) {
                     return redirect()->route('user.index')->with('error', "La date est dépassée. La suppression n'est pas autorisée.");
                 }
 
