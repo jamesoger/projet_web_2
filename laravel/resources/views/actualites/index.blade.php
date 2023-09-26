@@ -25,7 +25,7 @@
                 <div class="actu-ligne"></div>
 
                 <div class="actu-img">
-                    <img src="{{ $actualite->image }}" width="800px" alt="actualite">
+                    <img src="{{ $actualite->image }}" width="800px" alt="{{ $actualite->titre }}">
                 </div>
             </div>
         @endforeach
