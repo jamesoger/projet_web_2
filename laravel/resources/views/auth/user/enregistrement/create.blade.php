@@ -11,36 +11,36 @@
                 <div class="ligne-1">
                     <div class="prenom">
                         <label for="prenom">Prénom</label>
-                        <input id="prenom" name="prenom" type="text" autocomplete="given-name" autofocus value="{{ old('prenom') }}">
                         <x-forms.erreur champ="prenom" />
+                        <input id="prenom" name="prenom" type="text" placeholder="Prénom..." autocomplete="given-name" autofocus value="{{ old('prenom') }}">
                     </div>
 
                     <div class="nom">
                         <label for="nom">Nom</label>
-                        <input id="nom" name="nom" type="text" value="{{ old('nom') }}" autocomplete="family-name">
                         <x-forms.erreur champ="nom" />
+                        <input id="nom" name="nom" type="text" placeholder="Nom..." value="{{ old('nom') }}" autocomplete="family-name">
                     </div>
                 </div>
 
                 <div class="ligne-2">
                     <div class="email">
                         <label for="email">Courriel</label>
-                        <input id="email" name="email" type="email" value="{{ old('email') }}" autocomplete="email">
                         <x-forms.erreur champ="email" />
+                        <input id="email" name="email" type="email" placeholder="Email..." value="{{ old('email') }}" autocomplete="email">
                     </div>
                 </div>
 
                 <div class="ligne-3">
                     <div class="password">
                         <label for="password">Mot de passe</label>
-                        <input id="password" name="password" type="password" autocomplete="current-password">
                         <x-forms.erreur champ="password" />
+                        <input id="password" name="password" type="password" placeholder="Mot de passe..." autocomplete="current-password">
                     </div>
 
                     <div class="confirmation">
                         <label for="confirm-password">Confirmation</label>
-                        <input id="confirm-password" name="confirmation_password" type="password">
                         <x-forms.erreur champ="confirmation_password" />
+                        <input id="confirm-password" name="confirmation_password" placeholder="Confirmation..." type="password">
                     </div>
                 </div>
 

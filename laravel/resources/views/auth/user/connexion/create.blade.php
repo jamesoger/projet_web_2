@@ -23,7 +23,7 @@
                     <x-forms.erreur champ="email" />
 
                     <div>
-                        <input id="email" name="email" type="email" autocomplete="email"
+                        <input id="email" name="email" type="email" placeholder="Email..." autocomplete="email"
                             value="{{ old('email') }}">
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     <x-forms.erreur champ="password" />
 
                     <div>
-                        <input id="password" name="password" type="password" autocomplete="current-password">
+                        <input id="password" name="password" type="password" placeholder="Mot de passe..." autocomplete="current-password">
                     </div>
                 </div>
 
