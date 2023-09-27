@@ -31,13 +31,12 @@
         .bill_boite {
             width: 450px;
             height: 500px;
-            filter: hue-rotate(60deg);
             transition: transform 0.3s ease-in-out;
             box-shadow: 0px 0px 20px white;
+            cursor:pointer;
+
             &:hover {
-                // animation: shake 1s ease infinite;
-            //     filter:hue-rotate(90deg);
-            filter: none;
+                box-shadow: inset 5px 5px 2px 1px rgb(59, 59, 59);
              }
             &.boite_gauche {
 
