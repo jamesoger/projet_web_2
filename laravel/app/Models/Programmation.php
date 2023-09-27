@@ -18,4 +18,8 @@ class Programmation extends Model
     public function spectacles(){
         return $this->belongsToMany(Spectacle::class, 'spectacle_programmation');
     }
+
+    public function prestations() {
+        return $this->artistes->merge($this->spectacles);
+    }
 }
