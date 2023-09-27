@@ -1564,6 +1564,7 @@ footer .foot-copy p {
   font-size: 5em;
   font-weight: 500;
   text-transform: uppercase;
+  margin-top: 50px;
 }
 .artiste-edit h1 span {
   color: #1DA5F3;
@@ -1574,7 +1575,8 @@ footer .foot-copy p {
   border-radius: 0.5em;
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
   width: 600px;
-  height: 400px;
+  height: auto;
+  padding: 40px 0;
   margin: 5rem auto;
   display: flex;
   flex-direction: column;
@@ -1591,8 +1593,6 @@ footer .foot-copy p {
   border-radius: 2em;
   width: 400px;
   height: 50px;
-  margin-top: 10px;
-  margin-bottom: 40px;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
   border: none;
   text-align: center;
@@ -1603,6 +1603,55 @@ footer .foot-copy p {
 .artiste-edit .artiste-edit-form .artiste-edit-groupe {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 10px;
+}
+.artiste-edit .artiste-edit-form #heure {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 200px;
+  height: 60px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+  flex-direction: column;
+}
+.artiste-edit .artiste-edit-form input[type=file]::-webkit-file-upload-button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  border: 2px solid white;
+  padding: 10px;
+}
+.artiste-edit .artiste-edit-form input[type=file]::-webkit-file-upload-button:hover {
+  background-color: white;
+  color: black;
+}
+.artiste-edit .artiste-edit-form .date {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.artiste-edit .artiste-edit-form .date select {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  border: 2px solid white;
+  padding: 10px;
+}
+.artiste-edit .artiste-edit-form .date select option {
+  color: black;
+  font-weight: 300;
 }
 .artiste-edit .artiste-edit-form button {
   cursor: pointer;
