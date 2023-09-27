@@ -73,8 +73,10 @@
                     <p>spectacles événements drones dj laserlight</p>
                     <p>événements laserlight spectacles dj drones événements laserlight</p>
                 </div>
+
                 <div class="video-background" >
                     <video id="video" autoplay loop muted poster="{{ asset('images/cadre_header.png') }}">
+
                         <source src="{{ asset('videos/montage.mp4') }}" type="video/mp4">
                         Votre navigateur ne prend pas en charge la lecture de vidéos.
                     </video>
@@ -247,16 +249,18 @@
         });
     });
 
+    /********** BOUTON MENU HIDDEN A DISPLAY **********/
 
     const menuNav = document.querySelector('.nav-btn')
     const appNav = document.querySelector('#app_menu');
     let menu = document.querySelector('.menu-cache')
-
+    let body = document.querySelector('body')
     menuNav.addEventListener('click', function() {
         if (menu.style.display === 'none' || menu.style.display === "") {
             menu.style.display = 'block';
         } else {
             menu.style.display = 'none'
+            body.classList.remove('popup')
         }
     })
 
@@ -265,6 +269,7 @@
     appNav.addEventListener('click', function() {
         if (menu.style.display === 'none' || menu.style.display === '') {
             menu.style.display = 'block';
+            body.classList.add('popup')
         } else {
             menu.style.display = 'none';
         }
@@ -272,13 +277,12 @@
 
 
     function toggleAudio() {
-    const video = document.getElementById("video");
+        const video = document.getElementById("video");
 
-    if (video.muted) {
-        video.muted = false;
-    } else {
-        video.muted = true;
+        if (video.muted) {
+            video.muted = false;
+        } else {
+            video.muted = true;
+        }
     }
-}
-
 </script>

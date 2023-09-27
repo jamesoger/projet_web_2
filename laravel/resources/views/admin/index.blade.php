@@ -1,6 +1,6 @@
 <x-layout titre="Administration">
     <x-nav />
-    <div class="page_admin">
+    <div class="page_admin" id="acc-header">
         <h1>{{ auth()->guard('admin')->user()->nom_complet }} </h1>
         @if (session('success'))
             <p style="color: green; font-size: 30px;background-color:white ;text-align:center;">{{ session('success') }}
@@ -202,4 +202,42 @@
     </div>
 
     <x-footer />
+
+    <div class="fleche-haut" id="scroll-to-top">
+        <a href="#acc-header">
+            <img src="{{ asset('icones/fleche-haut.svg') }}" alt="Remonter en haut">
+        </a>
+    </div>
 </x-layout>
+
+<script>
+    /********** FLECHE-HAUT **********/
+    document.addEventListener("DOMContentLoaded", function() {
+        const flecheLink = document.querySelector(".fleche-haut");
+        const accHeader = document.getElementById("acc-header");
+
+        flecheLink.style.display = "none";
+
+        // Affiche la flèche lorsque l'utilisateur fait défiler la page
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 100) {
+                flecheLink.style.display = "flex";
+            } else {
+                flecheLink.style.display = "none";
+            }
+        });
+
+        // Fait défiler vers le haut de la page lors du clic sur la flèche
+        flecheLink.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            // Options de défilement
+            const options = {
+                behavior: "smooth",
+                easing: "ease-in-out",
+            };
+
+            accHeader.scrollIntoView(options);
+        });
+    });
+</script>
