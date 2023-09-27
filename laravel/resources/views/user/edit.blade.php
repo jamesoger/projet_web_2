@@ -10,17 +10,17 @@
                 <div class="user-edit-input">
                     <label for="prenom">Prénom</label>
                     <x-forms.erreur champ="prenom" />
-                    <input type="text" name="prenom" id="prenom" value="{{ $user->prenom }}">
+                    <input type="text" name="prenom" id="prenom" placeholder="Prénom..." value="{{ $user->prenom }}">
                 </div>
                 <div class="user-edit-input">
                     <label for="nom">Nom</label>
                     <x-forms.erreur champ="nom" />
-                    <input type="text" name="nom" id="nom" value="{{ $user->nom }}">
+                    <input type="text" name="nom" id="nom" placeholder="Nom..." value="{{ $user->nom }}">
                 </div>
                 <div class="user-edit-input">
                     <label for="email">Adresse e-mail</label>
                     <x-forms.erreur champ="email" />
-                    <input type="email" name="email" id="email" value="{{ $user->email }}">
+                    <input type="email" name="email" id="email" placeholder="Email..." value="{{ $user->email }}">
                 </div>
                 <div class="user-edit-input">
                     <button type="submit">Modifier</button>

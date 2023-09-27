@@ -44,7 +44,7 @@ class EnregistrementAdminController extends Controller
             "image.mimes" => "L'image n'est pas du bon format",
             "password.required" => "Le mot de passe est requis",
             "password.min" => "Le mot de passe doit avoir une longueur de :min caractères",
-            "confirmation_password.required" => "La confirmation du mot de passe est requise",
+            "confirmation_password.required" => "La confirmation requise",
             "confirmation_password.same" => "Le mot de passe n'a pu être confirmé"
         ]);
 

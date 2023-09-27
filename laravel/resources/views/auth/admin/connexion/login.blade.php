@@ -11,14 +11,14 @@
                     <label for="email">Courriel</label>
                     <x-forms.erreur champ="email" />
 
-                    <input id="email" name="email" type="email" autocomplete="email" value="{{ old('email') }}">
+                    <input id="email" name="email" type="email" autocomplete="email" placeholder="Email..." value="{{ old('email') }}">
                 </div>
 
                 <div class="admin-input">
                     <label for="password">Mot de passe</label>
                     <x-forms.erreur champ="password" />
 
-                    <input id="password" name="password" type="password" autocomplete="current-password">
+                    <input id="password" name="password" type="password" placeholder="Mot de passe..." autocomplete="current-password">
                 </div>
 
                 <div>
