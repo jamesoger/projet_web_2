@@ -1,30 +1,37 @@
 <x-layout titre="Modification du spectacle {{$spectacle->nom}}">
     <x-nav />
 
-    <div class="spectacle_edit">
-        <h1>{{ $spectacle->nom }} </h1>
+    <div class="spectacle-edit">
+        <h1>Modification du spectacle
+            <br><span>{{ $spectacle->nom }}</span>
+        </h1>
 
-        <form action="{{ route('programmation.spectacle.update') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <input type="hidden" name="id" value="{{ $spectacle->id }}">
-            <div>
-                <div>
+
+        <div class="spectacle-edit-form">
+            <form action="{{ route('programmation.spectacle.update') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <input type="hidden" name="id" value="{{ $spectacle->id }}">
+
+                <div class="spectacle-edit-groupe">
                     <label for="nom">Nom</label>
                     <x-forms.erreur champ="nom" />
-                    <input type="text" name="nom" value="{{ $spectacle->nom }}">
+                    <input id="input-groupe" type="text" name="nom" placeholder="Spectacle..." value="{{ $spectacle->nom }}">
                 </div>
-                <div>
+
+                <div class="spectacle-edit-groupe heure">
                     <label for="heure">Heure de la représentation</label>
                     <x-forms.erreur champ="heure" />
-                    <input type="time" name="heure" value="{{ $spectacle->heure }}">
+                    <input id="heure" type="time" name="heure" value="{{ $spectacle->heure }}">
                 </div>
-                <div>
+
+                <div class="spectacle-edit-groupe img">
                     <label for="image">Image</label>
                     <x-forms.erreur champ="image" />
                     <input type="file" name="image" accept="image/*">
                     <input type="hidden" name="image_spectacle"value="{{ $spectacle->image }}">
                 </div>
-                <div>
+
+                <div class="spectacle-edit-groupe date">
                     <label for="date">Date de la représentation</label>
                     <x-forms.erreur champ="date" />
                     <select name="date">
@@ -35,12 +42,11 @@
                             </option>
                         @endforeach
                     </select>
-
                 </div>
-            </div>
-            <input type="submit" value="Envoyer">
 
-        </form>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
     </div>
     <x-footer />
 </x-layout>

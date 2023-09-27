@@ -40,7 +40,7 @@ class EnregistrementUserController extends Controller
             "email.unique" => "Ce courriel ne peut pas être utilisé",
             "password.required" => "Le mot de passe est requis",
             "password.min" => "Le mot de passe doit avoir une longueur de :min caractères",
-            "confirmation_password.required" => "La confirmation du mot de passe est requise",
+            "confirmation_password.required" => "La confirmation est requise",
             "confirmation_password.same" => "Le mot de passe n'a pu être confirmé"
         ]);
 

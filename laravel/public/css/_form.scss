@@ -1,3 +1,18 @@
+/********************* SOMMAIRE *********************/
+
+/*** CONNEXION USER ************ ligne : 19
+/*** ENREGISTREMENT USER ******* ligne : 123
+/*** USER EDIT ***************** ligne : 248
+/*** ADMIN CONNEXION *********** ligne : 358
+/*** ADMIN CREATE ************** ligne : 467
+/*** ADMIN EDIT **************** ligne : 659
+/*** ACTUALITÉS EDIT *********** ligne : 808
+/*** PROGRAMMATION AJOUT ******* ligne : 966
+/*** ACTU AJOUT **************** ligne : 1106
+/*** ARTISTE EDIT ************** ligne : 1264
+/*** SPECTACLE EDIT ************ ligne : 1408
+
+
 /*******************************/
 /******** CONNEXION USER *******/
 /*******************************/
@@ -30,7 +45,8 @@
         border-radius: 0.5em;
         box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
         width: 600px;
-        height: 400px;
+        height: auto;
+        padding: 40px 0;
         margin: 5rem auto;
         display: flex;
         flex-direction: column;
@@ -130,7 +146,8 @@
         border-radius: 0.5em;
         box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
         width: 800px;
-        height: 600px;
+        height: auto;
+        padding: 40px 0;
         margin: 5rem auto;
         display: flex;
         flex-direction: row;
@@ -272,7 +289,8 @@
         border-radius: 0.5em;
         box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
         width: 600px;
-        height: 530px;
+        height: auto;
+        padding: 40px 0;
         margin: 5rem auto;
         display: flex;
         flex-direction: column;
@@ -364,7 +382,8 @@
         border-radius: 0.5em;
         box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
         width: 600px;
-        height: 400px;
+        height: auto;
+        padding: 40px 0;
         margin: 5rem auto;
         display: flex;
         flex-direction: column;
@@ -447,7 +466,7 @@
 }
 
 /*******************************/
-/******** ADMIN CREATE  ********/
+/********* ADMIN CREATE ********/
 /*******************************/
 
 .admin-create {
@@ -474,7 +493,8 @@
         border-radius: 0.5em;
         box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
         width: 800px;
-        height: 750px;
+        height: auto;
+        padding: 40px 0;
         margin: 5rem auto;
         display: flex;
         flex-direction: row;
@@ -671,7 +691,8 @@
         border-radius: 0.5em;
         box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
         width: 750px;
-        height: 680px;
+        height: auto;
+        padding: 40px 0;
         margin: 4rem auto;
         display: flex;
         flex-direction: column;
@@ -815,7 +836,8 @@
         border-radius: 0.5em;
         box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
         width: 750px;
-        height: 680px;
+        height: auto;
+        padding: 40px 0;
         margin: 5rem auto;
         display: flex;
         flex-direction: column;
@@ -946,7 +968,7 @@
 }
 
 /*******************************/
-/***** PROGRAMMATION AJOUT *****/
+/***** PROGRAMMATION AJOUT (prog.edit) *****/
 /*******************************/
 
 .prog-edit {
@@ -967,7 +989,6 @@
             font-size: 50px;
         }
     }
-
 
     .form-prog{
         background-color: rgba(0, 0, 0, 0.648);
@@ -1300,6 +1321,150 @@
         }
 
         .artiste-edit-groupe {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 10px;
+        }
+
+        #heure {
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 200px;
+            height: 60px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+            border: none;
+            text-align: center;
+            font-family: $font-gothic;
+            font-size: 1.5em;
+            color: white;
+            flex-direction: column;
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1em;
+            font-weight: 300;
+            border: 2px solid white;
+            padding: 10px;
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+
+        .date {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+
+            select {
+                cursor: pointer;
+                background-color: rgba(255, 255, 255, 0.005);
+                color: white;
+                font-family: $font-ethno;
+                font-size: 1em;
+                font-weight: 300;
+                border: 2px solid white;
+                padding: 10px;
+
+                option {
+                    color: black;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        button {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px 10px;
+            width: 350px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
+        }
+    }
+}
+
+/*******************************/
+/******* SPECTACLE EDIT ********/
+/*******************************/
+
+.spectacle-edit {
+    background-image: url(../images/background-sand.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 8em 0;
+    font-family: $font-gothic;
+
+    h1 {
+        text-align: center;
+        font-size: 5em;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-top: 50px;
+
+        span {
+            color: $blue;
+            font-size: 50px;
+        }
+    }
+
+    .spectacle-edit-form {
+        background-color: rgba(0, 0, 0, 0.648);
+        border-radius: 0.5em;
+        box-shadow: 0px 0px 20px rgb(255 255 255 / 48%);
+        width: 600px;
+        height: auto;
+        padding: 40px 0;
+        margin: 5rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        label {
+            font-size: 1.5em;
+            text-transform: uppercase;
+        }
+
+        #input-groupe {
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 400px;
+            height: 50px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+            border: none;
+            text-align: center;
+            font-family: all-round-gothic, sans-serif;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        .spectacle-edit-groupe {
             display: flex;
             flex-direction: column;
             align-items: center;
