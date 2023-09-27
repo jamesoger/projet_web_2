@@ -11,13 +11,6 @@ class Artiste extends Model
 
     public function programmations(){
         return $this->belongsToMany(Programmation::class, 'artiste_programmation');
-    }
 
-    public function getHeureAttribute() {
-        return $this->heure_show;
-    }
-
-    public function getNomAttribute() {
-        return $this->nom_scene;
     }
 }

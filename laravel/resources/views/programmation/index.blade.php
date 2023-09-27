@@ -25,7 +25,7 @@
 
             @foreach ($programmation as $key => $prog)
                 <div class="date {{ $key % 3 == 0 ? 'date-gauche' : ($key % 3 == 1 ? 'date-centre' : 'date-droite') }}">
-                    <h1>{{ Carbon\Carbon::parse($prog[0]->date)->translatedFormat('d F Y') }}</h1>
+                    <h1>{{ Carbon\Carbon::parse($prog->date)->translatedFormat('d F Y') }}</h1>
                 </div>
 
                 @php
@@ -33,7 +33,7 @@
                     $hasContent = false;
                 @endphp
 
-                @foreach ($prog[1] as $artiste)
+                @foreach ($prog->artistes as $artiste)
                     @if ($totalCount % $maxImagesPerContainer == 0)
                         @if ($hasContent)
         </div>
@@ -46,9 +46,9 @@
 
             <div class="image_bubbles">
                 <img class="{{ $artistImageClasses[$artistClassIndex] }}" src="{{ $artiste->image }}" alt="">
-                <span class="{{ $artistImageClasses[$artistClassIndex] }}"> {{ $artiste->nom }}</span>
+                <span class="{{ $artistImageClasses[$artistClassIndex] }}"> {{ $artiste->nom_scene }}</span>
                 <span id="nom" class="{{ $artistImageClasses[$artistClassIndex] }}">
-                    {{ $artiste->heure }}</span>
+                    {{ $artiste->heure_show }}</span>
             </div>
 
             @php
@@ -58,7 +58,7 @@
             @endphp
             @endforeach
 
-            {{-- @foreach ($prog[1] as $spectacle)
+            @foreach ($prog->spectacles as $spectacle)
                 @if ($totalCount % $maxImagesPerContainer == 0)
                     @if ($hasContent)
         </div>
@@ -82,7 +82,7 @@
                 $totalCount++;
                 $hasContent = true;
             @endphp
-            @endforeach --}}
+            @endforeach
 
             @if ($hasContent)
         </div>

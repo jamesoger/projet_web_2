@@ -19,25 +19,12 @@ class ProgrammationController extends Controller
      */
     public function index()
     {
-        $programmations = Programmation::all();
-
-        $prestations = $this->trier($programmations);
-
-        // Exemple: 0 => Collection ==> 0 - Programmation, 1 - Prestations triées
-        $programmations = $programmations->zip($prestations);
-
+        $programmation = Programmation::with(['artistes', 'spectacles'])
+            ->get();
 
         return view('programmation.index', [
-            "programmation" => $programmations,
+            "programmation" => $programmation,
         ]);
-    }
-
-    private function trier($programmations){
-        return $programmations->map(function($prog) {
-            return $prog->prestations()->sortBy([
-                fn($a, $b) => $a->heure > $b->heure
-            ]);
-        });
     }
 
     /**
