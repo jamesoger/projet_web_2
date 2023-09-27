@@ -166,8 +166,6 @@ body {
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.4784313725);
   width: 100%;
-  height: 80px;
-  z-index: 100;
   height: 130px;
   z-index: 5;
 }
@@ -178,15 +176,6 @@ body {
   top: 25%;
   height: 70%;
   margin-top: 10px;
-}
-.nav-menu .nav-a {
-  display: flex;
-  align-items: center;
-  position: relative;
-  justify-content: flex-end;
-  top: 0px;
-  text-decoration: none;
-  color: white;
 }
 .nav-menu .nav-btn-menu {
   display: flex;
@@ -366,7 +355,7 @@ footer .foot-copy p {
   position: fixed;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.89);
+  background-color: rgba(255, 255, 255, 0.952);
   width: 100%;
   height: 100%;
   z-index: 100;
@@ -374,33 +363,31 @@ footer .foot-copy p {
 }
 .hidden .flex-hidden {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  width: 100%;
+  height: 130px;
+  z-index: 5;
 }
-.hidden .flex-hidden .titre-menu h1 {
-  font-family: all-round-gothic, sans-serif;
-  font-weight: 700;
-  font-size: 6em;
-  color: black;
-  text-shadow: 0px 0px 5px black;
-  margin: 2rem auto;
+.hidden .flex-hidden .logo-nav {
+  margin-left: 80px;
 }
-.hidden .middle-links {
-  margin-top: 20px;
+.hidden .flex-hidden img {
+  top: 25%;
+  height: 70%;
+  margin-top: 10px;
 }
-.hidden .nav-hidden-btn-menu {
+.hidden .flex-hidden .nav-hidden-btn-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-right: 100px;
-  margin-bottom: 30px;
+  margin-right: 50px;
 }
-.hidden .nav-hidden-btn-menu .nav-btn .img-hidden {
+.hidden .flex-hidden .nav-hidden-btn-menu .nav-btn .img-hidden {
   filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
   width: 40px;
 }
-.hidden .nav-hidden-btn-menu p {
+.hidden .flex-hidden .nav-hidden-btn-menu p {
   font-size: 1.3em;
   font-family: all-round-gothic, sans-serif;
 }
@@ -428,18 +415,14 @@ footer .foot-copy p {
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  padding: 30px 20px;
-  width: 500px;
+  padding: 30px 48px;
   margin: 0 10px;
   border: 3px solid black;
-  text-shadow: 0px 0px 5px white;
-  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .hidden .bas-nav .nav-hidden-compte:hover {
   background-color: #1DA5F3;
   color: #06162F;
-  text-shadow: 0px 0px 5px #06162F;
   box-shadow: 0px 0px 10px #1DA5F3;
   border: 3px solid #1DA5F3;
 }
@@ -448,6 +431,7 @@ footer .foot-copy p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 200px;
 }
 .hidden .bas-nav .contact-info p {
   font-size: 1.45em;
@@ -1882,6 +1866,10 @@ footer .foot-copy p {
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+}
+.acc-header .acc-btn-menu .acc-btn {
+  display: flex;
+  justify-content: center;
 }
 .acc-header .acc-btn-menu .acc-btn img {
   filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
@@ -3373,6 +3361,11 @@ footer .foot-copy p {
   text-shadow: 0px 0px 5px #06162F;
   box-shadow: 0px 0px 10px #1DA5F3;
   border: 3px solid #1DA5F3;
+}
+
+body.popup {
+  height: 100vh;
+  overflow: hidden;
 }
 
 /*******************************/
