@@ -3,24 +3,40 @@
 /*******************************/
 .page_admin {
 
-    background-image: url(../images/bg_apropos6.jpg);
+    background-image: url(../images/bg-admin.png);
     background-size: cover;
     background-attachment: fixed;
+
     padding-top: 8em;
+    padding-bottom: 5rem;
     font-family: $font-gothic;
-    .deconnect_admin{
+
+
+    .analytics{
+        border: 1px solid white;
+        width: 500px;
+        height: 150px;
+        margin: 2rem auto;
+        background-image: url(../images/poster_header.jpg);
+        background-size: cover;
+        h2{
+            margin-top: 1rem;
+        }
+        a{
                 cursor: pointer;
+                display: block;
                 background-color: rgba(255, 255, 255, 0.005);
                 color: white;
                 font-family: $font-ethno;
                 font-size: 1em;
                 font-weight: 300;
-                margin: 0 auto;
                 text-decoration: none;
                 text-align: center;
                 text-transform: uppercase;
                 padding: 10px 10px;
                 width: 200px;
+                margin: 1rem auto;
+                text-align: center;
                 border: 3px solid white;
                 text-shadow: 0px 0px 5px white;
                 box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
@@ -28,6 +44,35 @@
 
                 &:hover {
                     background-color: black;
+                    color: $blue;
+                    text-shadow: 0px 0px 5px $blue-fonce;
+                    box-shadow: 0px 0px 10px $blue;
+                    border: 3px solid $blue;
+                }
+        }
+    }
+    .deconnect_admin{
+
+                display:block ;
+                cursor: pointer;
+                background-color: white;
+                font-family: $font-ethno;
+                font-size: 1em;
+                font-weight: 300;
+                margin: 1rem auto 1rem;
+                text-decoration: none;
+                height: 50px;
+                text-align: center;
+                text-transform: uppercase;
+                padding: 10px 10px;
+                width: 300px;
+                border: 3px solid white;
+                text-shadow: 0px 0px 5px white;
+                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: $blue;
                     color: white;
                     text-shadow: 0px 0px 5px $blue-fonce;
                     box-shadow: 0px 0px 10px $blue;
@@ -77,12 +122,20 @@
             background-color: rgba(24, 23, 23, 0.568);
             padding: 20px;
             width: 40%;
+            height: 700px;
             box-shadow: 0px 0px 5px white;
+            overflow-y: auto;
+            background-image: url(../images/lignes.jpg);
+            background-size: contain;
+
+
+            &::-webkit-scrollbar {
+                display: none;
+              }
 
             .submit_suppression_user {
                 cursor: pointer;
-                background-color: rgba(255, 255, 255, 0.005);
-                color: white;
+                background-color: rgba(255, 255, 255, 0.829);
                 font-family: $font-ethno;
                 font-size: 1em;
                 font-weight: 300;
@@ -98,7 +151,7 @@
                 transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
                 &:hover {
-                    background-color: black;
+                    background-color:$blue;
                     color: white;
                     text-shadow: 0px 0px 5px $blue-fonce;
                     box-shadow: 0px 0px 10px $blue;
@@ -140,21 +193,29 @@
             text-align: center;
             display: flex;
             flex-direction: column;
-
+            overflow-y: auto;
             color: white;
             font-family: $font-gothic;
             background-color: rgba(24, 23, 23, 0.568);
             padding: 20px;
             width: 40%;
+            height: 700px;
             margin: 4rem;
             box-shadow: 0px 0px 5px white;
+            background-image: url(../images/dj\ forfait.png);
+            background-size: cover;
+
+
+            &::-webkit-scrollbar {
+                display: none;
+              }
 
             .pas-forfait {
                 font-size: 1em;
             }
 
             .forfait_associe {
-                border: 1px solid black;
+                border: 1px solid rgba(245, 244, 244, 0.747);
                 padding: 1em;
                 margin: 1rem;
                 color: white;
@@ -167,10 +228,9 @@
 
                 input {
                     cursor: pointer;
-                    background-color: rgba(255, 255, 255, 0.005);
-                    color: white;
+                    background-color: rgba(255, 255, 255, 0.877);
                     font-family: $font-ethno;
-                    font-size: 1.5em;
+                    font-size: 1em;
                     font-weight: 300;
                     text-decoration: none;
                     text-align: center;
@@ -178,7 +238,7 @@
                     text-align: center;
                     margin: 1rem auto;
                     padding: 10px 10px;
-                    width: 300px;
+                    width: 200px;
                     border: 3px solid white;
                     text-shadow: 0px 0px 5px white;
                     box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
@@ -186,7 +246,7 @@
 
                     &:hover {
                         background-color: $blue;
-                        color: $blue-fonce;
+                        color: white;
                         text-shadow: 0px 0px 5px $blue-fonce;
                         box-shadow: 0px 0px 10px $blue;
                         border: 3px solid $blue;
@@ -205,18 +265,24 @@
         background-color: rgba(31, 29, 29, 0.568);
         padding: 20px;
         width: 40%;
+        height: 700px;
         margin: 4rem auto;
         box-shadow: 0px 0px 5px white;
+        overflow-y: auto;
+        background-image: url(../images/background-sand.jpg);
+        background-size: cover;
 
+        &::-webkit-scrollbar {
+            display: none;
+          }
         p {
             font-size: 1.5em;
 
         }
         .submit_suppression_user{
             cursor: pointer;
-            color: white;
             font-family: $font-ethno;
-            background-color: rgba(0, 0, 0, 0.402);
+            background-color: rgba(252, 252, 252, 0.904);
             font-size: 1em;
             font-weight: 300;
             text-decoration: none;
@@ -232,7 +298,7 @@
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
             &:hover {
-                background-color: black;
+                background-color: $blue;
                 color: white;
                 text-shadow: 0px 0px 5px $blue-fonce;
                 box-shadow: 0px 0px 10px $blue;
@@ -252,7 +318,7 @@
             text-align: center;
             margin: 1rem auto;
             padding: 10px 10px;
-            width: 300px;
+            width: 400px;
             border: 3px solid white;
             text-shadow: 0px 0px 5px white;
             box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
@@ -303,24 +369,36 @@
         font-family: $font-gothic;
         background-color: rgba(31, 29, 29, 0.568);
         padding: 20px;
-        width: 40%;
+        width: 50%;
+        height: 700px;
         margin: 4rem auto;
         box-shadow: 0px 0px 5px white;
+        overflow-y: auto;
+        background-image: url(../images/poster_lignes.jpg);
+        background-size: cover;
+        background-position: right 10%;
+
+        &::-webkit-scrollbar {
+            display: none;
+          }
+
         caption{
             font-size: 1.75em;
         }
         a.modifier_prog{
+            display: block;
             cursor: pointer;
             color:white;
             font-family: $font-ethno;
-            font-size: 0.75em;
+            font-size: 1em;
             font-weight: 200;
             text-decoration: none;
             text-align: center;
+            margin: 0.5rem auto;
             text-transform: uppercase;
             text-align: center;
             padding: 10px ;
-            width: 150px;
+            width: 200px;
             border: 3px solid white;
             text-shadow: 0px 0px 5px white;
             box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
@@ -377,7 +455,7 @@
         a.ajout_prog {
             display: block;
             cursor: pointer;
-            color: white;
+            background-color: white;
             font-family: $font-ethno;
             font-size: 1em;
             font-weight: 300;

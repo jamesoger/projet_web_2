@@ -15,7 +15,20 @@
         @else
             <h1>Employé</h1>
         @endif
+
+        <form action="{{ route('deconnexion_admin') }}" method="POST">
+            @csrf
+            <input class="deconnect_admin" type="submit" value="Déconnexion">
+        </form>
+        <div class="analytics">
+            <h2>Statistiques site FestX</h2>
+            <a href="https://analytics.google.com/analytics/web/#/p406446669/reports/reportinghub?params=_u..nav%3Dmaui"
+                target="_blank">
+                Voir les statistiques ici
+            </a>
+        </div>
         <div class="vue_admin_users">
+
             <div class="users_admin">
                 <h2>Utilisateurs</h2>
                 @foreach ($users as $user)
@@ -33,13 +46,7 @@
                     @endif
                 @endforeach
             </div>
-            <div class="analytics">
-                <h2>Statistiques site FestX</h2>
-                <a href="https://analytics.google.com/analytics/web/#/p406446669/reports/reportinghub?params=_u..nav%3Dmaui"
-                    target="_blank">
-                    <p>Voir les statistiques ici</p>
-                </a>
-            </div>
+
             <div class="forfait_user">
                 <h2>Forfaits</h2>
                 @foreach ($users as $user)
@@ -76,11 +83,12 @@
         </div>
 
 
-        <h2>Liste des administrateurs</h2>
+
         <div class="admin_modif">
+            <h2>Liste des administrateurs</h2>
             @if (auth()->guard('admin')->user()->droits == 1)
-                <a class="creation_admin" href="{{ route('enregistrement_admin.create') }}">Ajouter un nouvel
-                    administrateur</a>
+                <a class="creation_admin" href="{{ route('enregistrement_admin.create') }}">Ajouter
+                </a>
             @endif
             @foreach ($admins as $admin)
                 @if ($admin->droits == 0)
@@ -103,9 +111,10 @@
             @endforeach
         </div>
 
-        <h2>Programmations</h2>
+
         @foreach ($programmations as $programmation)
             <div class="programmation-list">
+                <h2>Programmations</h2>
                 <table class="programmation" border="1">
                     <caption>{{ $programmation->date }}</caption>
                     <thead>
@@ -164,9 +173,10 @@
         </table>
     </div>
     @endforeach
-    <h1>Vos actualités</h1>
+
 
     <div class="actu">
+        <h2>Vos actualités</h2>
         @if (auth()->guard('admin')->user()->droits == 1)
             <a class="ajout_act" href="{{ route('actualites.create') }}">Ajouter</a>
         @endif
@@ -186,10 +196,6 @@
         @endforeach
 
     </div>
-    <form action="{{ route('deconnexion_admin') }}" method="POST">
-        @csrf
-        <input class="deconnect_admin" type="submit" value="Déconnexion">
-    </form>
 
     </div>
     </div>
