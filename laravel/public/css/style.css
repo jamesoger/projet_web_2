@@ -1562,6 +1562,7 @@ footer .foot-copy p {
   font-size: 5em;
   font-weight: 500;
   text-transform: uppercase;
+  margin-top: 50px;
 }
 .artiste-edit h1 span {
   color: #1DA5F3;
@@ -1572,7 +1573,8 @@ footer .foot-copy p {
   border-radius: 0.5em;
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.48);
   width: 600px;
-  height: 400px;
+  height: auto;
+  padding: 40px 0;
   margin: 5rem auto;
   display: flex;
   flex-direction: column;
@@ -1589,8 +1591,6 @@ footer .foot-copy p {
   border-radius: 2em;
   width: 400px;
   height: 50px;
-  margin-top: 10px;
-  margin-bottom: 40px;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
   border: none;
   text-align: center;
@@ -1601,6 +1601,55 @@ footer .foot-copy p {
 .artiste-edit .artiste-edit-form .artiste-edit-groupe {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 10px;
+}
+.artiste-edit .artiste-edit-form #heure {
+  background-color: rgba(255, 255, 255, 0.155);
+  border-radius: 2em;
+  width: 200px;
+  height: 60px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0, 0, 0);
+  border: none;
+  text-align: center;
+  font-family: all-round-gothic, sans-serif;
+  font-size: 1.5em;
+  color: white;
+  flex-direction: column;
+}
+.artiste-edit .artiste-edit-form input[type=file]::-webkit-file-upload-button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  border: 2px solid white;
+  padding: 10px;
+}
+.artiste-edit .artiste-edit-form input[type=file]::-webkit-file-upload-button:hover {
+  background-color: white;
+  color: black;
+}
+.artiste-edit .artiste-edit-form .date {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.artiste-edit .artiste-edit-form .date select {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  border: 2px solid white;
+  padding: 10px;
+}
+.artiste-edit .artiste-edit-form .date select option {
+  color: black;
+  font-weight: 300;
 }
 .artiste-edit .artiste-edit-form button {
   cursor: pointer;
@@ -2708,7 +2757,7 @@ footer .foot-copy p {
 /*******************************/
 .panier_user {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background-image: url(../images/background-sand.jpg);
   background-size: cover;
   background-attachment: fixed;
@@ -2722,7 +2771,7 @@ footer .foot-copy p {
   font-size: 5em;
   font-weight: 500;
   text-transform: uppercase;
-  padding-top: 1em;
+  padding-top: 2em;
 }
 .panier_user .panier_selection {
   width: 400px;
@@ -2732,8 +2781,8 @@ footer .foot-copy p {
   text-align: center;
   padding: 20px;
   position: absolute;
-  margin-top: 6rem;
-  top: 45%;
+  margin-top: 7rem;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -2856,8 +2905,8 @@ footer .foot-copy p {
   text-shadow: 0px 0px 6px rgb(7, 7, 7);
 }
 .panier_user .deconnect_user {
-  top: 10%;
-  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .panier_user .deconnect_user input {
   cursor: pointer;
@@ -2918,12 +2967,11 @@ footer .foot-copy p {
 .prog #playPauseButton #playIcon,
 .prog #playPauseButton #pauseIcon {
   font-size: 8rem;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  animation: shake 1s ease infinite;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 .prog #playPauseButton #playIcon:hover,
 .prog #playPauseButton #pauseIcon:hover {
-  box-shadow: inset 4px 4px 5px 1px rgba(50, 50, 50, 0.75);
+  box-shadow: inset 4px 4px 5px 1px rgba(255, 255, 255, 0.75);
 }
 .prog .date-gauche {
   display: flex;
@@ -2965,12 +3013,14 @@ footer .foot-copy p {
 .prog .prog_bubbles {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   gap: 10px;
   position: relative;
   height: 700px;
   max-width: 100vw;
+  padding: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
   flex-wrap: wrap;
   overflow: hidden;
 }
@@ -2985,8 +3035,8 @@ footer .foot-copy p {
   margin-top: 6px;
 }
 .prog .prog_bubbles .image_bubbles img {
-  width: 260px;
-  height: 260px;
+  width: 240px;
+  height: 240px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
@@ -3044,23 +3094,6 @@ footer .foot-copy p {
   margin-top: 2rem;
 }
 
-@keyframes shake {
-  0% {
-    box-shadow: 0px 0px 5px white;
-  }
-  25% {
-    box-shadow: 0px 0px 15px white; /* Augmentez l'intensité de l'ombre ici */
-  }
-  50% {
-    box-shadow: 0px 0px 5px white;
-  }
-  75% {
-    box-shadow: 0px 0px 15px white; /* Augmentez l'intensité de l'ombre ici */
-  }
-  100% {
-    box-shadow: 0px 0px 5px white;
-  }
-}
 /*******************************/
 /********** USER INDEX *********/
 /*******************************/
@@ -3076,7 +3109,7 @@ footer .foot-copy p {
   font-size: 5em;
   font-weight: 500;
   text-transform: uppercase;
-  padding-top: 1em;
+  padding-top: 2em;
   font-family: all-round-gothic, sans-serif;
 }
 #app_user .user_index .user_reservations {

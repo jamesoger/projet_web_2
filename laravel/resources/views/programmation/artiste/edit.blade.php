@@ -14,13 +14,13 @@
                 <div class="artiste-edit-groupe">
                     <label for="nom_scene">Nom d'artiste</label>
                     <x-forms.erreur champ="nom_scene" />
-                    <input id="input-groupe" type="text" name="nom_scene" value="{{ $artiste->nom_scene }}">
+                    <input id="input-groupe" type="text" name="nom_scene" placeholder="Artiste..." value="{{ $artiste->nom_scene }}">
                 </div>
 
                 <div class="artiste-edit-groupe heure">
                     <label for="heure_show">Heure de la représentation</label>
                     <x-forms.erreur champ="heure_show" />
-                    <input id="input-groupe" name="heure_show" value="{{ $artiste->heure_show }}">
+                    <input id="heure" type="time" name="heure_show" value="{{ $artiste->heure_show }}">
                 </div>
 
                 <div class="artiste-edit-groupe img">
