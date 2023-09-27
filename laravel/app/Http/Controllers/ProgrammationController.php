@@ -128,7 +128,7 @@ class ProgrammationController extends Controller
         if ((!$request->filled('nom_scene') || !$request->filled('heure_show')) &&
             (!$request->filled('nom_spectacle') || !$request->filled('heure_spectacle'))
         ) {
-            // L'un des deux formulaires (artiste ou spectacle) n'est pas rempli avec au moins un artiste et une heure
+
             return redirect()
                 ->back()
                 ->with('error', 'Veuillez remplir le formulaire des artistes et/ou le formulaire des spectacles avec au moins un artiste et une heure.');
