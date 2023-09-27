@@ -73,8 +73,10 @@
                     <p>spectacles événements drones dj laserlight</p>
                     <p>événements laserlight spectacles dj drones événements laserlight</p>
                 </div>
-                <div class="video-background">
-                    <video id="video" autoplay loop muted poster="{{ asset('images/cadre_header.jpg') }}">
+
+                <div class="video-background" >
+                    <video id="video" autoplay loop muted poster="{{ asset('images/cadre_header.png') }}">
+
                         <source src="{{ asset('videos/montage.mp4') }}" type="video/mp4">
                         Votre navigateur ne prend pas en charge la lecture de vidéos.
                     </video>
