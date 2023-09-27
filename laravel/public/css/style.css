@@ -2749,12 +2749,12 @@ footer .foot-copy p {
 .bill .bill_forfaits .bill_boite {
   width: 450px;
   height: 500px;
-  filter: hue-rotate(60deg);
   transition: transform 0.3s ease-in-out;
   box-shadow: 0px 0px 20px white;
+  cursor: pointer;
 }
 .bill .bill_forfaits .bill_boite:hover {
-  filter: none;
+  box-shadow: inset 5px 5px 2px 1px rgb(59, 59, 59);
 }
 .bill .bill_forfaits .bill_boite.boite_gauche {
   margin-right: 10%;
@@ -2913,7 +2913,7 @@ footer .foot-copy p {
 .panier_user .form_panier {
   text-align: center;
   position: absolute;
-  top: 65%;
+  top: 72%;
   left: 43%;
   width: 300px;
   height: 100px;
