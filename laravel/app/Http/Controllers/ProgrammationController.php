@@ -22,6 +22,7 @@ class ProgrammationController extends Controller
         $programmation = Programmation::with(['artistes', 'spectacles'])
             ->get();
 
+
         return view('programmation.index', [
             "programmation" => $programmation,
         ]);

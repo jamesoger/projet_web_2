@@ -29,10 +29,11 @@
         #playIcon,
         #pauseIcon {
             font-size: 8rem;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            animation: shake 1s ease infinite;
+             text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+
             &:hover {
-                box-shadow: inset 4px 4px 5px 1px rgba(50, 50, 50, 0.75);
+
+                box-shadow: inset 4px 4px 5px 1px rgba(255, 255, 255, 0.75);
             }
 
         }
@@ -85,12 +86,14 @@
     .prog_bubbles {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: space-between;
         gap: 10px;
         position: relative;
         height: 700px;
         max-width: 100vw;
+        padding: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
         flex-wrap: wrap;
         overflow: hidden;
 
@@ -107,8 +110,8 @@
 
 
             img {
-                width: 260px;
-                height: 260px;
+                width: 240px;
+                height: 240px;
                 object-fit: cover;
                 border-radius: 50%;
                 box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
@@ -118,7 +121,6 @@
                 cursor: pointer;
 
                 &:hover {
-                    // transform: rotateY(180deg);
                     transform: rotate3d(2, 1, 1, 360deg);
                 }
             }
@@ -187,20 +189,3 @@
 }
 
 
-@keyframes shake {
-    0% {
-        box-shadow: 0px 0px 5px white;
-    }
-    25% {
-        box-shadow: 0px 0px 15px white; /* Augmentez l'intensité de l'ombre ici */
-    }
-    50% {
-        box-shadow: 0px 0px 5px white;
-    }
-    75% {
-        box-shadow: 0px 0px 15px white; /* Augmentez l'intensité de l'ombre ici */
-    }
-    100% {
-        box-shadow: 0px 0px 5px white;
-    }
-}
