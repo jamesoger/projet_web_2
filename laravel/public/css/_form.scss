@@ -1279,52 +1279,62 @@
         align-items: center;
         text-align: center;
 
-        form {
+        label {
+            font-size: 1.5em;
+            text-transform: uppercase;
+        }
+
+        #input-groupe {
+            background-color: rgba(255, 255, 255, 0.155);
+            border-radius: 2em;
+            width: 400px;
+            height: 50px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
+            border: none;
+            text-align: center;
+            font-family: all-round-gothic, sans-serif;
+            font-size: 1.5em;
+            color: white;
+        }
+
+        .artiste-edit-groupe {
             display: flex;
             flex-direction: column;
+        }
 
-            label {
-                font-size: 1.5em;
-                text-transform: uppercase;
-            }
+        .date {
+            select {
+                option {
 
-            input {
-                background-color: rgba(255, 255, 255, 0.155);
-                border-radius: 2em;
-                width: 400px;
-                height: 50px;
-                margin-top: 10px;
-                margin-bottom: 40px;
-                box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), inset 0px 0px 20px rgb(0 0 0);
-                border: none;
-                text-align: center;
-                font-family: all-round-gothic, sans-serif;
-                font-size: 1.5em;
-                color: white;
-            }
-
-            .artiste-nom {
-
-            }
-
-            .artiste-heure {
-
-            }
-
-            .artiste-img {
-
-            }
-
-            .artiste-date {
-                select {
-                    option {
-
-                    }
                 }
             }
+        }
 
-            .artiste-btn {
+        button {
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1.5em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px 10px;
+            width: 350px;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
+            &:hover {
+                background-color: $blue;
+                color: $blue-fonce;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
             }
         }
     }

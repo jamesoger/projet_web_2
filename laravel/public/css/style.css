@@ -1414,7 +1414,6 @@ footer .foot-copy p {
 /*******************************/
 /********* ACTU AJOUT **********/
 /*******************************/
-
 .actu-ajout {
   background-image: url(../images/background-sand.jpg);
   background-size: cover;
@@ -1583,15 +1582,11 @@ footer .foot-copy p {
   align-items: center;
   text-align: center;
 }
-.artiste-edit .artiste-edit-form form {
-  display: flex;
-  flex-direction: column;
-}
-.artiste-edit .artiste-edit-form form label {
+.artiste-edit .artiste-edit-form label {
   font-size: 1.5em;
   text-transform: uppercase;
 }
-.artiste-edit .artiste-edit-form form input {
+.artiste-edit .artiste-edit-form #input-groupe {
   background-color: rgba(255, 255, 255, 0.155);
   border-radius: 2em;
   width: 400px;
@@ -1604,6 +1599,34 @@ footer .foot-copy p {
   font-family: all-round-gothic, sans-serif;
   font-size: 1.5em;
   color: white;
+}
+.artiste-edit .artiste-edit-form .artiste-edit-groupe {
+  display: flex;
+  flex-direction: column;
+}
+.artiste-edit .artiste-edit-form button {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.005);
+  color: white;
+  font-family: ethnocentric, sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 10px;
+  width: 350px;
+  border: 3px solid white;
+  text-shadow: 0px 0px 5px white;
+  box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.artiste-edit .artiste-edit-form button:hover {
+  background-color: #1DA5F3;
+  color: #06162F;
+  text-shadow: 0px 0px 5px #06162F;
+  box-shadow: 0px 0px 10px #1DA5F3;
+  border: 3px solid #1DA5F3;
 }
 
 .a-propos {
@@ -3314,16 +3337,6 @@ footer .foot-copy p {
 }
 
 /*******************************/
-
-/******* ARTISTE EDIT *******/
-/*******************************/
-.artiste_edit {
-  padding-top: 10em;
-}
-
-/*******************************/
-
-
 /******* SPECTACLE EDIT *******/
 /*******************************/
 .spectacle_edit {

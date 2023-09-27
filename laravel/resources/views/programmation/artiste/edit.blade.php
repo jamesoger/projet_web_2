@@ -11,26 +11,26 @@
                 @csrf
                 <input type="hidden" name="id" value="{{ $artiste->id }}">
 
-                <div class="artiste-nom">
+                <div class="artiste-edit-groupe">
                     <label for="nom_scene">Nom d'artiste</label>
                     <x-forms.erreur champ="nom_scene" />
-                    <input type="text" name="nom_scene" value="{{ $artiste->nom_scene }}">
+                    <input id="input-groupe" type="text" name="nom_scene" value="{{ $artiste->nom_scene }}">
                 </div>
 
-                <div class="artiste-heure">
+                <div class="artiste-edit-groupe heure">
                     <label for="heure_show">Heure de la représentation</label>
                     <x-forms.erreur champ="heure_show" />
-                    <input type="time" name="heure_show" value="{{ $artiste->heure_show }}">
+                    <input id="input-groupe" name="heure_show" value="{{ $artiste->heure_show }}">
                 </div>
 
-                <div class="artiste-img">
+                <div class="artiste-edit-groupe img">
                     <label for="image">Image</label>
                     <x-forms.erreur champ="image" />
                     <input type="file" name="image" accept="image/*">
                     <input type="hidden" name="image_artiste" value="{{ $artiste->image }}">
                 </div>
 
-                <div class="artiste-date">
+                <div class="artiste-edit-groupe date">
                     <label for="date">Date de la représentation</label>
                     <x-forms.erreur champ="date" />
                     <select name="date">
@@ -43,7 +43,7 @@
                     </select>
                 </div>
 
-                <input class="artiste-btn" type="submit" value="Envoyer">
+                <button type="submit">Envoyer</button>
             </form>
         </div>
     </div>
