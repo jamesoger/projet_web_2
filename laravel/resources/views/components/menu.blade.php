@@ -6,12 +6,12 @@
         <div class="nav-hidden-btn-menu">
             <div class="nav-btn">
                 <img class="img-hidden" src="{{ asset('icones/menu-black.png') }}" alt="menu">
+                <p>menu</p>
             </div>
-            <p>menu</p>
         </div>
     </div>
 
-    <ul>
+    <ul class="nav-ul-hidden">
         <li><a class="nav-hidden-a" href="{{ route('accueil') }}">Accueil</a></li>
         <li><a class="nav-hidden-a" href="{{ route('programmation.index') }}">Programmation</a></li>
         <li><a class="nav-hidden-a" href="{{ route('billetterie.index') }}">Billetterie</a></li>
