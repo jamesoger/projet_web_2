@@ -1,8 +1,8 @@
 <nav class="hidden">
     <div class="flex-hidden">
-        <div class="titre-menu">
-            <h1>menu</h1>
-        </div>
+        <a href="{{ route('accueil') }}" class="logo-nav">
+            <img id="menuImage" src="{{ asset('logos/plat_gold_noir.png') }}" alt="FestX">
+        </a>
         <div class="nav-hidden-btn-menu">
             <div class="nav-btn">
                 <img class="img-hidden" src="{{ asset('icones/menu-black.png') }}" alt="menu">
