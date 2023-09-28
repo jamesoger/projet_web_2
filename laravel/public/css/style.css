@@ -1970,15 +1970,11 @@ footer .foot-copy p {
 }
 
 /*********** HEADER ***********/
-html {
-  scroll-behavior: smooth;
-}
-
 .acc-header {
   display: flex;
   position: relative;
   justify-content: space-evenly;
-  height: 97vh;
+  height: 100vh;
 }
 .acc-header .acc-media {
   margin-top: 50px;
@@ -2316,6 +2312,9 @@ html {
   }
   main .acc-text-events {
     background-image: url(../images/bg-admin.png);
+    min-width: 100%;
+    height: 100%;
+    width: 100vh;
   }
   main .acc-text-events .phrases {
     font-size: 2em;
