@@ -6,7 +6,8 @@
             <br><span>{{ Carbon\Carbon::parse($programmation->date)->translatedFormat('d F Y') }}</span>
         </h1>
         @if (session('error'))
-            <p style="color:red; font-size: 30px;background-color:white ;text-align:center;">{{ session('error') }}</p>
+            <p class="message" style="color:red; font-size: 30px;background-color:white ;text-align:center;">
+                {{ session('error') }}</p>
         @endif
 
         <form class="form-prog" action="{{ route('programmation.update', ['id' => $programmation->id]) }}" method="POST"
@@ -55,7 +56,7 @@
                     @error('heure_spectacle')
                         <p>{{ $message }}</p>
                     @enderror
-                    <input id="heure" type="time" name="heure_spectacle" >
+                    <input id="heure" type="time" name="heure_spectacle">
                 </div>
 
                 <div class="image">
@@ -70,5 +71,7 @@
             <input class="submit-prog" type="submit" value="ajouter">
         </form>
     </div>
-    <x-footer/>
+    <x-footer />
 </x-layout>
+
+<x-fade />

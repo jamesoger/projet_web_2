@@ -459,6 +459,22 @@ footer .foot-copy p {
   font-weight: 600;
 }
 
+/*********** MESSAGE *************/
+.fadeOut {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 /********************* SOMMAIRE *********************/
 /*** CONNEXION USER ************ ligne : 19
 /*** ENREGISTREMENT USER ******* ligne : 123

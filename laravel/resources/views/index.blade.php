@@ -1,10 +1,12 @@
 <x-layout titre="Accueil">
     @if (session('success'))
-        <p style="color: green; font-size: 30px;background-color:white ;text-align:center;">{{ session('success') }}
+        <p class="message" style="color: green; font-size: 30px;background-color:white ;text-align:center;">
+            {{ session('success') }}
         </p>
     @endif
     @if (session('error'))
-        <p style="color: red; font-size: 30px;background-color:white ;text-align:center;">{{ session('error') }}</p>
+        <p class="message" style="color: red; font-size: 30px;background-color:white ;text-align:center;">
+            {{ session('error') }}</p>
     @endif
     <h1 class="titre-hidden">Bienvenue sur l'accueil de FestX.com</h1>
 
@@ -75,7 +77,7 @@
                     <p>événements laserlight spectacles dj drones événements laserlight</p>
                 </div>
 
-                <div class="video-background" >
+                <div class="video-background">
                     <video id="video" autoplay loop muted poster="{{ asset('images/cadre_header.png') }}">
 
                         <source src="{{ asset('videos/montage.mp4') }}" type="video/mp4">
@@ -288,3 +290,5 @@
         }
     }
 </script>
+
+<x-fade />
