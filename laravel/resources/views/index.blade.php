@@ -276,12 +276,13 @@
         }
     });
 
-
+    /********** AUDIO ACCUEIL **********/
     function toggleAudio() {
         const video = document.getElementById("video");
 
         if (video.muted) {
             video.muted = false;
+
         } else {
             video.muted = true;
         }

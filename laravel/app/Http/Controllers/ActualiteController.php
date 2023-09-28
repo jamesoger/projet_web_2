@@ -43,10 +43,12 @@ class ActualiteController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
             'details' => 'required|min:30|max:750',
         ], [
-            "date.required" => "lda date est requise",
+            "date.required" => "la date est requise",
+            "titre.required"=>"Le titre est requis",
             "titre.min" => "Le titre doit avoir un minimum de :min caractères",
             "titre.max" => "Le titre doit avoir un maximum de :max caracteres",
             "image" => " L'image n,'est pas du bon format, veuillez réessayez",
+            "details.required"=>"Les details de l'actualité sont requis",
             "details.min" => "Le texte doit avoir un minimum de :min caractères",
             "details.max" => "Le texte doit avoir un maximum de :max caracteres",
         ]);

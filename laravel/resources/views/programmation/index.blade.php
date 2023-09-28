@@ -96,6 +96,8 @@
 
 
 <script type="module">
+
+     /********** ARRIERE PLAN LIGNES **********/
     import {
         BouncingBalls
     } from "{{ asset('js/lines.js') }}";
@@ -112,6 +114,9 @@
 </script>
 
 <script>
+
+     /********** AUDIO PAGE PROGRAMMATION **********/
+
     const audio = document.getElementById("son_prog");
     const playPauseButton = document.getElementById("playPauseButton");
     const playIcon = document.getElementById("playIcon");
@@ -122,14 +127,14 @@
 
 
         if (audioPlaying) {
-            audio.pause(); // Mettre en pause la lecture
+            audio.pause();
             audioPlaying = false;
             playIcon.style.display = "inline";
             pauseIcon.style.display = "none";
 
         } else {
-            audio.muted = false; // Activer le son
-            audio.play(); // Démarrer la lecture
+            audio.muted = false;
+            audio.play();
             audioPlaying = true;
             playIcon.style.display = "none";
             pauseIcon.style.display = "inline";

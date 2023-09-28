@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Modèle User
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -43,13 +46,20 @@ class User extends Authenticatable
     ];
 
 
-
+    /**
+     * relation forfaits et user
+     *
+     * @return Relations
+     */
     public function forfaits()
     {
         return $this->belongsToMany(Forfait::class, 'user_forfait')
         ->withPivot('date_arrivee', 'date_depart', 'id');
     }
 
+    /**
+     * Accesseur pour le nom complet du user
+     */
     public function getNomCompletAttribute(){
         return $this->prenom . " " . $this->nom;
     }
