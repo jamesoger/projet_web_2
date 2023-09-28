@@ -1,4 +1,4 @@
-<x-layout titre="Modification de l'actualité: {{$actualites->titre}}">
+<x-layout titre="Modification de l'actualité: {{ $actualites->titre }}">
     <x-nav />
 
     <div class="actu-edit">
@@ -20,7 +20,8 @@
                 <div class="actu-input">
                     <label for="titre">Titre</label>
                     <x-forms.erreur champ="titre" />
-                    <input type="text" name="titre" placeholder="Titre..." id="titre" value="{{ $actualites->titre }}">
+                    <input type="text" name="titre" placeholder="Titre..." id="titre"
+                        value="{{ $actualites->titre }}">
                 </div>
 
                 <div class="actu-input">
