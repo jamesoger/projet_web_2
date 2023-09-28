@@ -123,7 +123,7 @@
                     <caption>{{ $programmation->date }}</caption>
                     <thead>
                         <tr>
-                            <th>Artiste</th>
+                            <th>Évènements</th>
                             <th>Heure</th>
                         </tr>
                     </thead>
