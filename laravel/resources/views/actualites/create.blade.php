@@ -30,7 +30,7 @@
                 <div class="actu-ajout-input">
                     <label for="details">Details</label>
                     @error('details')
-                    <p>{{ $message }}</p>
+                        <p>{{ $message }}</p>
                     @enderror
                     <textarea name="details" placeholder="Détails de l'actu..." id="details" rows="4" required></textarea>
                 </div>
