@@ -15,7 +15,7 @@ html {
     display: flex;
     position: relative;
     justify-content: space-evenly;
-    height: 100vh;
+    height: 97vh;
 
 
     .acc-media {
@@ -114,6 +114,7 @@ html {
         position: absolute;
         z-index: -1;
         width: 100%;
+        height: 100vh;
         min-width: 1550px;
         overflow: hidden;
 
@@ -135,6 +136,7 @@ html {
     justify-content: center;
     overflow: hidden;
     cursor: url('../images/jouer.png'), pointer;
+    min-width: 1650px;
 
     .phrases {
         position: absolute;
@@ -360,130 +362,134 @@ html {
 
 @media screen and (max-width: 1024px) {
 
-#app_accueil {
-    background-image: url(../images/poster_header.jpg);
-    display: flex;
+    #app_accueil {
+        background-image: url(../images/poster_header.jpg);
+        display: flex;
 
-    .acc-header {
-        padding: 20px;
+        .acc-header {
+            padding: 20px;
 
-        .acc-media {
-            display: flex;
-            flex-direction: column;
-            margin-top: 20px;
-            gap: 10px;
+            .acc-media {
+                display: flex;
+                flex-direction: column;
+                margin-top: 20px;
+                gap: 10px;
 
-            li {
-                margin: 0 10px;
-            }
-        }
-
-        .acc-centre {
-            margin-top: 20px;
-            text-align: center;
-
-            .acc-date {
-                font-size: 4em;
-            }
-
-            .acc-logo {
-                img {
-                    width: 90%;
+                li {
+                    margin: 0 10px;
                 }
             }
 
-            .acc-fleche {
+            .acc-centre {
+                margin-top: 20px;
+                text-align: center;
+
+                .acc-date {
+                    font-size: 4em;
+                }
+
+                .acc-logo {
+                    img {
+                        width: 90%;
+                    }
+                }
+
+                .acc-fleche {
+                    display: none;
+                }
+            }
+
+            .acc-btn-menu {
+                margin-top: 20px;
+
+                .acc-btn {
+                    img {
+                        width: 40px;
+                    }
+                }
+            }
+
+            .menu-cache {
+                display: none;
+            }
+
+            .video-bg-header {
+                display: none;
+            }
+        }
+    }
+
+
+    main {
+        .acc-text-events {
+            background-image: url(../images/bg-admin.png);
+
+            .phrases {
+                font-size: 2em;
+
+                p {
+                    margin: 20px 0px;
+                    word-spacing: 10px;
+                }
+            }
+
+            .video-background {
                 display: none;
             }
         }
 
-        .acc-btn-menu {
-            margin-top: 20px;
+        .acc-events {
+            h2 {
+                font-size: 2.5em;
+                text-align: center;
 
-            .acc-btn {
-                img {
-                    width: 40px;
+                .ligne-h2 {
+                    margin: 20px 0px;
                 }
             }
-        }
 
-        .menu-cache {
-            display: none;
-        }
+            .events {
+                flex-direction: column;
 
-        .video-bg-header {
-            display: none;
-        }
-    }
-}
+                .vignettes {
+                    width: 100%;
+                    max-width: 320px;
+                    margin: 20px 0;
+                }
+            }
 
-    .acc-text-events {
-        .phrases {
-            font-size: 2em;
+            .btn-reservation {
+                padding: 20px;
+                flex-direction: column;
 
-            p {
-                margin: 20px 0px;
-                word-spacing: 10px;
+                a {
+                    padding: 15px 10px;
+                    width: 80%;
+                    margin: 10px 0;
+                    font-size: 1em;
+                }
+            }
+
+            .events-bg {
+                display: none;
             }
         }
 
-        .video-background {
-            display: none;
-        }
-    }
-
-    .acc-events {
-        h2 {
-            font-size: 2.5em;
-            text-align: center;
-
-            .ligne-h2 {
-                margin: 20px 0px;
+        .acc-logo-video {
+            .acc-logo {
+                img {
+                    width: 70%;
+                }
             }
-        }
 
-        .events {
-            flex-direction: column;
-
-            .vignettes {
-                width: 100%;
-                max-width: 320px;
-                margin: 20px 0;
+            .video-bg-logo {
+                display: none;
             }
-        }
-
-        .btn-reservation {
-            padding: 20px;
-            flex-direction: column;
-
-            a {
-                padding: 15px 10px;
-                width: 80%;
-                margin: 10px 0;
-                font-size: 1em;
-            }
-        }
-
-        .events-bg {
-            display: none;
-        }
-    }
-
-    .acc-logo-video {
-        .acc-logo {
-            img {
-                width: 70%;
-            }
-        }
-
-        .video-bg-logo {
-            display: none;
         }
     }
 }
 
 @media screen and (max-width: 412px) {
-    /* Styles pour max-width 412px */
     .acc-header {
         .acc-media {
             li {
@@ -561,7 +567,6 @@ html {
         }
     }
 
-    /* Cacher les vidéos */
     .video-bg-header,
     .video-background,
     .video-bg-logo {
