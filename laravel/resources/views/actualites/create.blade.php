@@ -2,9 +2,6 @@
     <x-nav />
 
     <div class="actu-ajout">
-        @if (session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-        @endif
         <h1>Créer une nouvelle actualité</h1>
 
         <div class="actu-ajout-form">
@@ -13,33 +10,25 @@
 
                 <div class="actu-ajout-input">
                     <label for="date">Date</label>
-                    @error('date')
-                        <p>{{ $message }}</p>
-                    @enderror
-                    <input type="date" name="date" id="date" required>
+                    <x-forms.erreur champ="date" />
+                    <input type="date" name="date" id="date">
                 </div>
 
                 <div class="actu-ajout-input">
                     <label for="titre">Titre</label>
-                    @error('titre')
-                        <p>{{ $message }}</p>
-                    @enderror
-                    <input type="text" name="titre" placeholder="Titre..." id="titre" required>
+                    <x-forms.erreur champ="titre" />
+                    <input type="text" name="titre" placeholder="Titre..." id="titre" >
                 </div>
 
                 <div class="actu-ajout-input">
                     <label for="details">Details</label>
-                    @error('details')
-                        <p>{{ $message }}</p>
-                    @enderror
-                    <textarea name="details" placeholder="Détails de l'actu..." id="details" rows="4" required></textarea>
+                    <x-forms.erreur champ="details" />
+                    <textarea name="details" placeholder="Détails de l'actu..." id="details" rows="4" ></textarea>
                 </div>
 
                 <div class="actu-image">
                     <label for="image">Image</label>
-                    @error('image')
-                        <p>{{ $message }}</p>
-                    @enderror
+                    <x-forms.erreur champ="image" />
                     <input type="file" name="image" id="image">
                 </div>
 

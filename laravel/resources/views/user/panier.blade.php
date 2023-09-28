@@ -5,6 +5,7 @@
 
             <div class="panier_user">
                 <h1>{{ auth()->user()->nom_complet}} </h1>
+                <p>Bienvenue parmi nous! Fais ton choix parmi nos 3 forfaits! </p>
                 <div class="forfaits">
                     @if (session()->has('selected_forfait'))
                         <?php $forfaitDetails = session('selected_forfait'); ?>
@@ -71,6 +72,8 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
 <script>
+    /********** BLOQUER DATES  **********/
+
     document.addEventListener('DOMContentLoaded', function() {
 
         function masquerDatesNonAutorisees(forfaitId) {
@@ -105,6 +108,8 @@
 
         masquerDatesNonAutorisees({{ $forfaitDetails['id'] }});
     });
+
+    /********** AJUSTER PRIX SELON BOUTON QUANTITÉ **********/
 
     var forfaitPrix = {{ $forfaitDetails['prix'] }};
 

@@ -143,24 +143,4 @@ class ProgrammationController extends Controller
     }
 
 
-    // public function destroy($id, $type, $artisteOuSpectacleId)
-    // {
-
-    //     $programmation = Programmation::findOrFail($id);
-
-    //     if ($type === 'artiste') {
-
-    //         $programmation->artistes()->detach($artisteOuSpectacleId);
-    //         return redirect()->back()->with('success', 'L\'artiste a été retiré de la programmation avec succès.');
-    //     } elseif ($type === 'spectacle') {
-
-    //         $programmation->spectacles()->detach($artisteOuSpectacleId);
-    //         return redirect()->back()->with('success', 'Le spectacle a été retiré de la programmation avec succès.');
-    //     } else {
-    //         return redirect()->back()->with('error', 'Type invalide.');
-    //     }
-    // }
-
-
-
 }
