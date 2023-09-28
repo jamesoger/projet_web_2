@@ -172,33 +172,35 @@
 }
 
 .acc-events {
-    display: grid;
-    position: relative;
+    display: flex;
     overflow: hidden;
+    flex-direction: column;
+    height: 100%;
 
     h2 {
-        position: absolute;
-        justify-self: center;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
         margin: 50px 0px;
-        font-family: $font-gothic;
+        font-family: all-round-gothic, sans-serif;
         font-size: 5em;
         font-weight: 500;
         text-transform: uppercase;
-        color: $blue;
+        color: #1DA5F3;
         text-shadow: 0px 0px 10px #1DA5F3;
 
         .ligne-h2 {
             margin: 50px 0px;
             height: 1px;
-            width: 100%;
-            box-shadow: 0px 0px 10px #1DA5F3;
+            width: 50%;
+            display: flex;
+            align-self: center;
             background: linear-gradient(to left, transparent, #1DA5F3, transparent),
-                linear-gradient(to right, transparent, #1DA5F3, transparent);
+                        linear-gradient(to right, transparent, #1DA5F3, transparent);
         }
     }
 
     .events {
-        position: absolute;
         display: flex;
         place-self: center;
         align-items: center;
@@ -240,26 +242,23 @@
     }
 
     .events-bg {
-        position: relative;
+        position: absolute;
         width: 100%;
+        justify-content: center;
         z-index: -1;
         display: flex;
-        align-items: center;
-        justify-content: center;
 
         img {
-            width: 100%;
             opacity: 0.5;
+            width: 100%;
+            object-fit: cover;
         }
     }
 
     .btn-reservation {
-        position: absolute;
-        bottom: 0;
         display: flex;
         justify-content: center;
         width: 100%;
-        padding: 130px;
 
         a {
             color: white;
