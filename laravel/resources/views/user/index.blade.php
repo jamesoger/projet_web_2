@@ -6,20 +6,14 @@
 
 
             <h1>{{ auth()->user()->prenom }} voici tes forfaits!</h1>
-            @if (session('success'))
-                <p style="color: green; font-size: 30px;background-color:white ;text-align:center;">
-                    {{ session('success') }}
-                </p>
-            @endif
-            @if (session('error'))
-                <p style="color: red; font-size: 30px;background-color:white ;text-align:center;">{{ session('error') }}
-                </p>
-            @endif
+            {{-- message de confirmation --}}
+            <x-message />
+
             <div class="user_reservations">
                 <?php
                 $forfaits = auth()->user()->forfaits;
                 $forfaitsGroupes = [];
-
+                
                 foreach ($forfaits as $forfait) {
                     $found = false;
                     foreach ($forfaitsGroupes as &$groupe) {
@@ -33,7 +27,7 @@
                             break;
                         }
                     }
-
+                
                     if (!$found) {
                         $forfaitsGroupes[] = [
                             'id' => $forfait->id,
@@ -98,7 +92,7 @@
                                                 'artistes' => [],
                                             ];
                                         }
-
+                                        
                                         foreach ($programmation->artistes as $artiste) {
                                             $artisteKey = $artiste->id;
                                             if (!isset($datesArtistes[$dateKey]['artistes'][$artisteKey])) {

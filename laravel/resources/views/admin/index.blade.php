@@ -2,13 +2,8 @@
     <x-nav />
     <div class="page_admin" id="acc-header">
         <h1>{{ auth()->guard('admin')->user()->nom_complet }} </h1>
-        @if (session('success'))
-            <p style="color: green; font-size: 30px;background-color:white ;text-align:center;">{{ session('success') }}
-            </p>
-        @endif
-        @if (session('error'))
-            <p style="color: red; font-size: 30px;background-color:white ;text-align:center;">{{ session('error') }}</p>
-        @endif
+        {{-- message de confirmation --}}
+        <x-message />
 
         @if (auth()->guard('admin')->user()->droits == 1)
             <h1>Admin</h1>

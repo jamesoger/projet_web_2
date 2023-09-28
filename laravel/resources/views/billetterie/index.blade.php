@@ -1,5 +1,9 @@
 <x-layout titre="Enregistrement">
     <x-nav />
+    <div class="confirmation-message">
+        {{-- message de confirmation --}}
+        <x-message />
+    </div>
     <div class="bill">
         <div class="bill_forfaits">
             @foreach ($forfaits as $key => $forfait)
@@ -22,4 +26,5 @@
         </div>
     </div>
     <x-footer />
+
 </x-layout>
