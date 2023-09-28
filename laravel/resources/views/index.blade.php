@@ -67,7 +67,7 @@
         </header>
 
         <main>
-            <section class="acc-text-events"onclick="toggleAudio()">
+            <section class="acc-text-events" onclick="toggleAudio()">
                 <div class="phrases">
                     <p>dj spectacles événements laserlight dj spectacles</p>
                     <p>spectacles événements drones dj laserlight</p>

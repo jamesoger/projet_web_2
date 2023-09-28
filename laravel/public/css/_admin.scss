@@ -1,12 +1,11 @@
 /*******************************/
 /********** ADMIN PAGE *********/
 /*******************************/
-.page_admin {
 
+.page_admin {
     background-image: url(../images/bg-admin.png);
     background-size: cover;
     background-attachment: fixed;
-
     padding-top: 8em;
     padding-bottom: 5rem;
     font-family: $font-gothic;
@@ -19,40 +18,42 @@
         margin: 2rem auto;
         background-image: url(../images/poster_header.jpg);
         background-size: cover;
-        h2{
+
+        h2 {
             margin-top: 1rem;
         }
-        a{
-                cursor: pointer;
-                display: block;
-                background-color: rgba(255, 255, 255, 0.005);
-                color: white;
-                font-family: $font-ethno;
-                font-size: 1em;
-                font-weight: 300;
-                text-decoration: none;
-                text-align: center;
-                text-transform: uppercase;
-                padding: 10px 10px;
-                width: 200px;
-                margin: 1rem auto;
-                text-align: center;
-                border: 3px solid white;
-                text-shadow: 0px 0px 5px white;
-                box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
-                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
-                &:hover {
-                    background-color: black;
-                    color: $blue;
-                    text-shadow: 0px 0px 5px $blue-fonce;
-                    box-shadow: 0px 0px 10px $blue;
-                    border: 3px solid $blue;
-                }
+        a {
+            cursor: pointer;
+            display: block;
+            background-color: rgba(255, 255, 255, 0.005);
+            color: white;
+            font-family: $font-ethno;
+            font-size: 1em;
+            font-weight: 300;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px 10px;
+            width: 200px;
+            margin: 1rem auto;
+            text-align: center;
+            border: 3px solid white;
+            text-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+            &:hover {
+                background-color: black;
+                color: $blue;
+                text-shadow: 0px 0px 5px $blue-fonce;
+                box-shadow: 0px 0px 10px $blue;
+                border: 3px solid $blue;
+            }
         }
     }
-    .deconnect_admin{
 
+    .deconnect_admin {
                 display:block ;
                 cursor: pointer;
                 background-color: white;
@@ -95,7 +96,7 @@
         text-shadow: 0px 0px 5px $blue-fonce;
 
     }
-    h3{
+    h3 {
         font-size: 2.5em;
         margin-top: 1em;
 
@@ -123,7 +124,7 @@
             padding: 20px;
             width: 40%;
             height: 700px;
-            box-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 20px white;
             overflow-y: auto;
             background-image: url(../images/lignes.jpg);
             background-size: contain;
@@ -186,7 +187,6 @@
                     border: 3px solid $blue;
                 }
             }
-
         }
 
         .forfait_user {
@@ -201,7 +201,7 @@
             width: 40%;
             height: 700px;
             margin: 4rem;
-            box-shadow: 0px 0px 5px white;
+            box-shadow: 0px 0px 20px white;
             background-image: url(../images/dj\ forfait.png);
             background-size: cover;
 
@@ -267,7 +267,7 @@
         width: 40%;
         height: 700px;
         margin: 4rem auto;
-        box-shadow: 0px 0px 5px white;
+        box-shadow: 0px 0px 20px white;
         overflow-y: auto;
         background-image: url(../images/background-sand.jpg);
         background-size: cover;
@@ -275,11 +275,12 @@
         &::-webkit-scrollbar {
             display: none;
           }
+
         p {
             font-size: 1.5em;
-
         }
-        .submit_suppression_user{
+
+        .submit_suppression_user {
             cursor: pointer;
             font-family: $font-ethno;
             background-color: rgba(252, 252, 252, 0.904);
@@ -372,7 +373,7 @@
         width: 50%;
         height: 700px;
         margin: 4rem auto;
-        box-shadow: 0px 0px 5px white;
+        box-shadow: 0px 0px 20px white;
         overflow-y: auto;
         background-image: url(../images/poster_lignes.jpg);
         background-size: cover;
@@ -382,10 +383,11 @@
             display: none;
           }
 
-        caption{
+        caption {
             font-size: 1.75em;
         }
-        a.modifier_prog{
+
+        a.modifier_prog {
             display: block;
             cursor: pointer;
             color:white;
@@ -412,7 +414,8 @@
                 border: 3px solid $blue;
             }
         }
-       button{
+
+       button {
             cursor: pointer;
             color:black;
             font-family: $font-ethno;
@@ -437,21 +440,25 @@
                 border: 3px solid $blue;
             }
         }
-        table{
+
+        table {
             margin: 1rem;
             border: 1px solid white;
         }
-        thead{
-            border: 1px solid white;
 
+        thead {
+            border: 1px solid white;
         }
-        th{
+
+        th {
             padding: 1em;
         }
-        td{
+
+        td {
             border: 1px solid white;
             padding: 0.5em;
         }
+
         a.ajout_prog {
             display: block;
             cursor: pointer;
@@ -480,7 +487,8 @@
             }
         }
     }
-    .actu{
+
+    .actu {
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -490,8 +498,9 @@
         padding: 20px;
         width: 60%;
         margin: 4rem auto;
-        box-shadow: 0px 0px 5px white;
-        .supp_actu{
+        box-shadow: 0px 0px 20px white;
+
+        .supp_actu {
             cursor: pointer;
             color: black;
             font-family: $font-ethno;
@@ -517,7 +526,8 @@
                 border: 3px solid $blue;
             }
         }
-        a.modif_actu{
+
+        a.modif_actu {
             cursor: pointer;
             color: white;
             font-family: $font-ethno;
@@ -543,7 +553,8 @@
                 border: 3px solid $blue;
             }
         }
-        .ajout_act{
+
+        .ajout_act {
         display: block;
             cursor: pointer;
             color: white;
@@ -569,10 +580,8 @@
                 box-shadow: 0px 0px 10px $blue;
                 border: 3px solid $blue;
             }
-
+        }
     }
-    }
-
 }
 
 
