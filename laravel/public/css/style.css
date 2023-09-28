@@ -1978,7 +1978,7 @@ html {
   display: flex;
   position: relative;
   justify-content: space-evenly;
-  height: 100vh;
+  height: 97vh;
 }
 .acc-header .acc-media {
   margin-top: 50px;
@@ -2054,6 +2054,7 @@ html {
   position: absolute;
   z-index: -1;
   width: 100%;
+  height: 100vh;
   min-width: 1550px;
   overflow: hidden;
 }
@@ -2073,6 +2074,7 @@ html {
   justify-content: center;
   overflow: hidden;
   cursor: url("../images/jouer.png"), pointer;
+  min-width: 1650px;
 }
 .acc-text-events .phrases {
   position: absolute;
@@ -2312,53 +2314,55 @@ html {
   #app_accueil .acc-header .video-bg-header {
     display: none;
   }
-  .acc-text-events .phrases {
+  main .acc-text-events {
+    background-image: url(../images/bg-admin.png);
+  }
+  main .acc-text-events .phrases {
     font-size: 2em;
   }
-  .acc-text-events .phrases p {
+  main .acc-text-events .phrases p {
     margin: 20px 0px;
     word-spacing: 10px;
   }
-  .acc-text-events .video-background {
+  main .acc-text-events .video-background {
     display: none;
   }
-  .acc-events h2 {
+  main .acc-events h2 {
     font-size: 2.5em;
     text-align: center;
   }
-  .acc-events h2 .ligne-h2 {
+  main .acc-events h2 .ligne-h2 {
     margin: 20px 0px;
   }
-  .acc-events .events {
+  main .acc-events .events {
     flex-direction: column;
   }
-  .acc-events .events .vignettes {
+  main .acc-events .events .vignettes {
     width: 100%;
     max-width: 320px;
     margin: 20px 0;
   }
-  .acc-events .btn-reservation {
+  main .acc-events .btn-reservation {
     padding: 20px;
     flex-direction: column;
   }
-  .acc-events .btn-reservation a {
+  main .acc-events .btn-reservation a {
     padding: 15px 10px;
     width: 80%;
     margin: 10px 0;
     font-size: 1em;
   }
-  .acc-events .events-bg {
+  main .acc-events .events-bg {
     display: none;
   }
-  .acc-logo-video .acc-logo img {
+  main .acc-logo-video .acc-logo img {
     width: 70%;
   }
-  .acc-logo-video .video-bg-logo {
+  main .acc-logo-video .video-bg-logo {
     display: none;
   }
 }
 @media screen and (max-width: 412px) {
-  /* Styles pour max-width 412px */
   .acc-header .acc-media li {
     margin: 0 5px;
   }
@@ -2402,7 +2406,6 @@ html {
   .acc-logo-video .acc-logo img {
     width: 80%;
   }
-  /* Cacher les vidéos */
   .video-bg-header,
   .video-background,
   .video-bg-logo {
