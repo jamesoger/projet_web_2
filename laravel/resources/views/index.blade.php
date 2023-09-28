@@ -1,13 +1,6 @@
 <x-layout titre="Accueil">
-    @if (session('success'))
-        <p class="message" style="color: green; font-size: 30px;background-color:white ;text-align:center;">
-            {{ session('success') }}
-        </p>
-    @endif
-    @if (session('error'))
-        <p class="message" style="color: red; font-size: 30px;background-color:white ;text-align:center;">
-            {{ session('error') }}</p>
-    @endif
+    {{-- message de confirmation --}}
+    <x-message />
     <h1 class="titre-hidden">Bienvenue sur l'accueil de FestX.com</h1>
 
     <div id="app_accueil">
@@ -290,5 +283,3 @@
         }
     }
 </script>
-
-<x-fade />

@@ -20,30 +20,30 @@ class UserController extends Controller
      * @return View
      */
     public function index()
-{
+    {
 
-    $programmations = Programmation::all();
-    $artistes = [];
-    $spectacles = [];
+        $programmations = Programmation::all();
+        $artistes = [];
+        $spectacles = [];
 
-    // Parcourir chaque programmation pour récupérer les artistes et les spectacles
-    foreach ($programmations as $programmation) {
-        $artistes[] = $programmation->artistes;
-        $spectacles[] = $programmation->spectacles;
+        // Parcourir chaque programmation pour récupérer les artistes et les spectacles
+        foreach ($programmations as $programmation) {
+            $artistes[] = $programmation->artistes;
+            $spectacles[] = $programmation->spectacles;
+        }
+
+        if (auth()->user()->forfaits->isEmpty()) {
+            return redirect()->route('billetterie.index')
+                ->with('success', 'Vous êtes connecté(e)!');
+        }
+
+        return view('user.index', [
+            'forfaits' => auth()->user()->forfaits,
+            'programmations' => $programmations,
+            'artistes' => $artistes,
+            'spectacles' => $spectacles
+        ]);
     }
-
-    if(auth()->user()->forfaits->isEmpty() ){
-        return redirect()->route('billetterie.index')
-            ->with('succes', 'Vous êtes connecté(e)!');
-    }
-
-    return view('user.index', [
-        'forfaits' => auth()->user()->forfaits,
-        'programmations' => $programmations,
-        'artistes' => $artistes,
-        'spectacles' => $spectacles
-    ]);
-}
     /**
      * Formulaire de modification d'un utilisateur
      *
@@ -65,7 +65,8 @@ class UserController extends Controller
      * @param Request $request
      * @return Redirect/Response
      */
-    public function update(Request $request ){
+    public function update(Request $request)
+    {
         $valides = $request->validate([
             "id" => "required",
             "prenom" => "required|min:4|max:70",
@@ -73,7 +74,7 @@ class UserController extends Controller
             "email" => "required"
         ], [
             "id.required" => "L'id de la note est obligatoire",
-            "prenom.required"=> "Le champ prenom est requis",
+            "prenom.required" => "Le champ prenom est requis",
             "prenom.max" => "Le prenom doit avoir un maximum de :max caractères",
             "prenom.min" => "Le prenom doit avoir un minimum de :min caractères",
             "nom.required" => "La champ nom est requis",
@@ -91,8 +92,8 @@ class UserController extends Controller
 
         // Rediriger
         return redirect()
-                ->route('admin.index')
-                ->with('success', "Cet utilisateur a été modifié avec succès!");
+            ->route('admin.index')
+            ->with('success', "Cet utilisateur a été modifié avec succès!");
     }
 
 

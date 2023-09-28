@@ -6,16 +6,9 @@
 
 
             <h1>{{ auth()->user()->prenom }} voici tes forfaits!</h1>
-            @if (session('success'))
-                <p class="message" style="color: green; font-size: 30px;background-color:white ;text-align:center;">
-                    {{ session('success') }}
-                </p>
-            @endif
-            @if (session('error'))
-                <p class="message" style="color: red; font-size: 30px;background-color:white ;text-align:center;">
-                    {{ session('error') }}
-                </p>
-            @endif
+            {{-- message de confirmation --}}
+            <x-message />
+
             <div class="user_reservations">
                 <?php
                 $forfaits = auth()->user()->forfaits;
@@ -180,4 +173,3 @@
         });
     });
 </script>
-<x-fade />
