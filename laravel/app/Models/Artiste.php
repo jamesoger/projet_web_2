@@ -22,5 +22,18 @@ class Artiste extends Model
 
     }
 
+    /**
+     * attribut pour tri par heure dans la vue programmation
+     */
+    public function getHeureAttribute() {
+        return $this->heure_show;
+    }
+    /**
+     * Attribut pour nom dans la vue programmation
+     */
+    public function getNomAttribute() {
+        return $this->nom_scene;
+    }
+
 
 }
