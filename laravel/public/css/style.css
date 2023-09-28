@@ -2136,13 +2136,15 @@ footer .foot-copy p {
 }
 
 .acc-events {
-  display: grid;
-  position: relative;
+  display: flex;
   overflow: hidden;
+  flex-direction: column;
+  height: 100%;
 }
 .acc-events h2 {
-  position: absolute;
-  justify-self: center;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
   margin: 50px 0px;
   font-family: all-round-gothic, sans-serif;
   font-size: 5em;
@@ -2154,12 +2156,12 @@ footer .foot-copy p {
 .acc-events h2 .ligne-h2 {
   margin: 50px 0px;
   height: 1px;
-  width: 100%;
-  box-shadow: 0px 0px 10px #1DA5F3;
+  width: 50%;
+  display: flex;
+  align-self: center;
   background: linear-gradient(to left, transparent, #1DA5F3, transparent), linear-gradient(to right, transparent, #1DA5F3, transparent);
 }
 .acc-events .events {
-  position: absolute;
   display: flex;
   place-self: center;
   align-items: center;
@@ -2196,24 +2198,22 @@ footer .foot-copy p {
   color: #1DA5F3;
 }
 .acc-events .events-bg {
-  position: relative;
+  position: absolute;
   width: 100%;
+  justify-content: center;
   z-index: -1;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .acc-events .events-bg img {
-  width: 100%;
   opacity: 0.5;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .acc-events .btn-reservation {
-  position: absolute;
-  bottom: 0;
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 130px;
 }
 .acc-events .btn-reservation a {
   color: white;
