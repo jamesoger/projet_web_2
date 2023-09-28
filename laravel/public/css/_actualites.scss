@@ -63,7 +63,11 @@
                 font-size: 1.5em;
                 font-weight: 200;
                 line-height: 1.3;
-                overflow: auto;
+
+
+                p {
+                    word-break: break-all;
+                }
             }
         }
 
@@ -72,7 +76,7 @@
             height: 60%;
             margin: 0px 70px;
             background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.5), transparent),
-                        linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5), transparent);
+                linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5), transparent);
         }
 
         .actu-img {

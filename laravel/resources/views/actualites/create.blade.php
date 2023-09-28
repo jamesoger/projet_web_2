@@ -11,19 +11,19 @@
                 <div class="actu-ajout-input">
                     <label for="date">Date</label>
                     <x-forms.erreur champ="date" />
-                    <input type="date" name="date" id="date">
+                    <input type="date" name="date" value="{{ old('date') }}"id="date">
                 </div>
 
                 <div class="actu-ajout-input">
                     <label for="titre">Titre</label>
                     <x-forms.erreur champ="titre" />
-                    <input type="text" name="titre" placeholder="Titre..." id="titre" >
+                    <input type="text" name="titre" placeholder="Titre..."value="{{ old('titre') }}" id="titre"  >
                 </div>
 
                 <div class="actu-ajout-input">
                     <label for="details">Details</label>
                     <x-forms.erreur champ="details" />
-                    <textarea name="details" placeholder="Détails de l'actu..." id="details" rows="4" ></textarea>
+                    <textarea name="details" placeholder="Détails de l'actu..." id="details" rows="4">{{ old('details') }}</textarea>
                 </div>
 
                 <div class="actu-image">
