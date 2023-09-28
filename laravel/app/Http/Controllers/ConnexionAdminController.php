@@ -80,6 +80,6 @@ class ConnexionAdminController extends Controller
 
         return redirect()
             ->route('accueil')
-            ->with('success', "Vous êtes déconnectés!");
+            ->with('success', "Vous êtes déconnecté(e)!");
     }
 }
