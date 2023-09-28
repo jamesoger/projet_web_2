@@ -23,33 +23,33 @@ class UserController extends Controller
     {
 
 
-    if(auth()->user()->forfaits->isEmpty() ){
-        return redirect()->route('billetterie.index')
-            ->with('success', 'Vous êtes connecté(e)!');
-
-        $programmations = Programmation::all();
-        $artistes = [];
-        $spectacles = [];
-
-        // Parcourir chaque programmation pour récupérer les artistes et les spectacles
-        foreach ($programmations as $programmation) {
-            $artistes[] = $programmation->artistes;
-            $spectacles[] = $programmation->spectacles;
-        }
-
         if (auth()->user()->forfaits->isEmpty()) {
             return redirect()->route('billetterie.index')
                 ->with('success', 'Vous êtes connecté(e)!');
         }
+            $programmations = Programmation::all();
+            $artistes = [];
+            $spectacles = [];
 
-        return view('user.index', [
-            'forfaits' => auth()->user()->forfaits,
-            'programmations' => $programmations,
-            'artistes' => $artistes,
-            'spectacles' => $spectacles
-        ]);
+            // Parcourir chaque programmation pour récupérer les artistes et les spectacles
+            foreach ($programmations as $programmation) {
+                $artistes[] = $programmation->artistes;
+                $spectacles[] = $programmation->spectacles;
+            }
 
-    }
+            if (auth()->user()->forfaits->isEmpty()) {
+                return redirect()->route('billetterie.index')
+                    ->with('success', 'Vous êtes connecté(e)!');
+            }
+
+            return view('user.index', [
+                'forfaits' => auth()->user()->forfaits,
+                'programmations' => $programmations,
+                'artistes' => $artistes,
+                'spectacles' => $spectacles
+            ]);
+        }
+
     /**
      * Formulaire de modification d'un utilisateur
      *
@@ -117,3 +117,5 @@ class UserController extends Controller
             ->with('success', "Cet utilisateur a été supprimé!");
     }
 }
+
+

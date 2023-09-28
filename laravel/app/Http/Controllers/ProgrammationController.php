@@ -19,8 +19,6 @@ class ProgrammationController extends Controller
      */
     public function index()
     {
-
-
         $programmations = Programmation::all();
 
         $prestations = $this->trier($programmations);
@@ -33,6 +31,7 @@ class ProgrammationController extends Controller
         ]);
 
     }
+
     private function trier($programmations){
         return $programmations->map(function($prog) {
             return $prog->prestations()->sortBy([
