@@ -359,11 +359,11 @@
 @media screen and (max-width: 1024px) {
 
     #app_accueil {
-        background-image: url(../images/poster_header.jpg);
-        display: flex;
 
         .acc-header {
-            padding: 20px;
+            background-image: url(../images/poster_header.jpg);
+            padding: 60px 20px;
+            background-attachment: fixed;
 
             .acc-media {
                 display: flex;
@@ -423,15 +423,15 @@
     main {
         .acc-text-events {
             background-image: url(../images/bg-admin.png);
+            background-attachment: fixed;
+            height: 100vh;
+            background-position: center;
             min-width: 100%;
-            height: 100%;
-            width: 100vh;
 
             .phrases {
-                font-size: 2em;
 
                 p {
-                    margin: 20px 0px;
+                    margin: 90px 0px;
                     word-spacing: 10px;
                 }
             }
@@ -442,10 +442,11 @@
         }
 
         .acc-events {
+            position: relative;
             background-image: url(../images/lignes.jpg);
-            min-width: 100%;
-            height: 100%;
-            width: 100vh;
+            background-attachment: fixed;
+            height: 100vh;
+            background-position: center;
 
             h2 {
                 font-size: 2.5em;
@@ -457,18 +458,16 @@
             }
 
             .events {
-                flex-direction: column;
 
                 .vignettes {
-                    width: 100%;
                     max-width: 320px;
-                    margin: 20px 0;
                 }
             }
 
             .btn-reservation {
                 padding: 20px;
                 flex-direction: column;
+                align-items: center;
 
                 a {
                     padding: 15px 10px;
@@ -483,7 +482,22 @@
             }
         }
 
+        .acc-events::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* La couleur noire avec une opacité de 0,5 (50%) */
+            pointer-events: none; /* Permet aux événements de passer à travers le filtre */
+        }
+
         .acc-logo-video {
+            background-image: url(../images/poster_lignes.jpg);
+            height: 50vh;
+            background-position: center;
+
             .acc-logo {
                 img {
                     width: 70%;
@@ -497,7 +511,7 @@
     }
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 480px) {
     .acc-header {
         .acc-media {
             li {

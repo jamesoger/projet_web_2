@@ -373,3 +373,44 @@ footer {
         }
     }
 }
+
+
+@media screen and (max-width: 1024px) {
+
+    footer {
+        .footer-media {
+            .ligne-gauche {
+                width: 100px;
+            }
+
+            .foot-media {
+                li {
+                    img {
+                    }
+                }
+            }
+
+            .ligne-droite {
+                width: 100px;
+            }
+        }
+
+        .foot-app {
+
+            .ligne-gauche {
+                width: 100px;
+            }
+
+            p {
+            }
+
+            .ligne-droite {
+                width: 100px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+}

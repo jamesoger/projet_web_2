@@ -459,6 +459,20 @@ footer .foot-copy p {
   font-weight: 600;
 }
 
+@media screen and (max-width: 1024px) {
+  footer .footer-media .ligne-gauche {
+    width: 100px;
+  }
+  footer .footer-media .ligne-droite {
+    width: 100px;
+  }
+  footer .foot-app .ligne-gauche {
+    width: 100px;
+  }
+  footer .foot-app .ligne-droite {
+    width: 100px;
+  }
+}
 /********************* SOMMAIRE *********************/
 /*** CONNEXION USER ************ ligne : 19
 /*** ENREGISTREMENT USER ******* ligne : 123
@@ -2269,12 +2283,10 @@ footer .foot-copy p {
 
 /************************ RESPONSIVE ************************/
 @media screen and (max-width: 1024px) {
-  #app_accueil {
-    background-image: url(../images/poster_header.jpg);
-    display: flex;
-  }
   #app_accueil .acc-header {
-    padding: 20px;
+    background-image: url(../images/poster_header.jpg);
+    padding: 60px 20px;
+    background-attachment: fixed;
   }
   #app_accueil .acc-header .acc-media {
     display: flex;
@@ -2312,25 +2324,24 @@ footer .foot-copy p {
   }
   main .acc-text-events {
     background-image: url(../images/bg-admin.png);
+    background-attachment: fixed;
+    height: 100vh;
+    background-position: center;
     min-width: 100%;
-    height: 100%;
-    width: 100vh;
-  }
-  main .acc-text-events .phrases {
-    font-size: 2em;
   }
   main .acc-text-events .phrases p {
-    margin: 20px 0px;
+    margin: 90px 0px;
     word-spacing: 10px;
   }
   main .acc-text-events .video-background {
     display: none;
   }
   main .acc-events {
+    position: relative;
     background-image: url(../images/lignes.jpg);
-    min-width: 100%;
-    height: 100%;
-    width: 100vh;
+    background-attachment: fixed;
+    height: 100vh;
+    background-position: center;
   }
   main .acc-events h2 {
     font-size: 2.5em;
@@ -2339,17 +2350,13 @@ footer .foot-copy p {
   main .acc-events h2 .ligne-h2 {
     margin: 20px 0px;
   }
-  main .acc-events .events {
-    flex-direction: column;
-  }
   main .acc-events .events .vignettes {
-    width: 100%;
     max-width: 320px;
-    margin: 20px 0;
   }
   main .acc-events .btn-reservation {
     padding: 20px;
     flex-direction: column;
+    align-items: center;
   }
   main .acc-events .btn-reservation a {
     padding: 15px 10px;
@@ -2360,6 +2367,21 @@ footer .foot-copy p {
   main .acc-events .events-bg {
     display: none;
   }
+  main .acc-events::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* La couleur noire avec une opacité de 0,5 (50%) */
+    pointer-events: none; /* Permet aux événements de passer à travers le filtre */
+  }
+  main .acc-logo-video {
+    background-image: url(../images/poster_lignes.jpg);
+    height: 50vh;
+    background-position: center;
+  }
   main .acc-logo-video .acc-logo img {
     width: 70%;
   }
@@ -2367,7 +2389,7 @@ footer .foot-copy p {
     display: none;
   }
 }
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 480px) {
   .acc-header .acc-media li {
     margin: 0 5px;
   }
