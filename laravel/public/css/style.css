@@ -215,7 +215,7 @@ footer .footer-media .ligne-gauche {
   display: flex;
   margin-right: 30px;
   height: 1px;
-  width: 500px;
+  width: 300px;
   box-shadow: 0px 0px 10px #1DA5F3;
   background: linear-gradient(to left, #ffffff, transparent);
 }
@@ -233,7 +233,7 @@ footer .footer-media .ligne-droite {
   display: flex;
   margin-left: 30px;
   height: 1px;
-  width: 500px;
+  width: 300px;
   box-shadow: 0px 0px 10px #1DA5F3;
   background: linear-gradient(to right, #ffffff, transparent);
 }
@@ -302,7 +302,7 @@ footer .foot-app .ligne-gauche {
   display: flex;
   margin-right: 80px;
   height: 1px;
-  width: 500px;
+  width: 300px;
   box-shadow: 0px 0px 10px #1DA5F3;
   background: linear-gradient(to left, #ffffff, transparent);
 }
@@ -317,7 +317,7 @@ footer .foot-app .ligne-droite {
   display: flex;
   margin-left: 80px;
   height: 1px;
-  width: 500px;
+  width: 300px;
   box-shadow: 0px 0px 10px #1DA5F3;
   background: linear-gradient(to right, #ffffff, transparent);
 }
@@ -459,7 +459,6 @@ footer .foot-copy p {
   font-weight: 600;
 }
 
-
 @media screen and (max-width: 1024px) {
   footer .footer-media .ligne-gauche {
     width: 100px;
@@ -472,7 +471,8 @@ footer .foot-copy p {
   }
   footer .foot-app .ligne-droite {
     width: 100px;
-=======
+  }
+}
 /*********** MESSAGE *************/
 .fadeOut {
   animation-name: fadeOut;
@@ -487,7 +487,6 @@ footer .foot-copy p {
   }
   to {
     opacity: 0;
-
   }
 }
 /********************* SOMMAIRE *********************/
@@ -2083,7 +2082,6 @@ footer .foot-copy p {
   z-index: -1;
   width: 100%;
   height: 100vh;
-  min-width: 1550px;
   overflow: hidden;
 }
 .acc-header .video-bg-header video {
@@ -2102,7 +2100,7 @@ footer .foot-copy p {
   justify-content: center;
   overflow: hidden;
   cursor: url("../images/jouer.png"), pointer;
-  min-width: 1650px;
+  width: 100%;
 }
 .acc-text-events .phrases {
   position: absolute;
@@ -2114,8 +2112,13 @@ footer .foot-copy p {
   white-space: nowrap;
 }
 .acc-text-events .phrases p {
-  margin: 180px 0px;
   word-spacing: 100px;
+}
+.acc-text-events .phrases p:first-child {
+  margin-bottom: 180px;
+}
+.acc-text-events .phrases p:last-child {
+  margin-top: 180px;
 }
 .acc-text-events .video-background {
   position: relative;
@@ -2127,8 +2130,9 @@ footer .foot-copy p {
 }
 .acc-text-events .video-background video {
   width: 100%;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .acc-events {
@@ -2201,7 +2205,6 @@ footer .foot-copy p {
 }
 .acc-events .events-bg img {
   width: 100%;
-  min-width: 1390px;
   opacity: 0.5;
 }
 .acc-events .btn-reservation {
@@ -2258,7 +2261,6 @@ footer .foot-copy p {
 .acc-logo-video .video-bg-logo {
   height: 600px;
   width: 100%;
-  min-width: 1390px;
   overflow: hidden;
 }
 .acc-logo-video .video-bg-logo video {
