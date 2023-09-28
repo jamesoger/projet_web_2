@@ -29,7 +29,7 @@
         #playIcon,
         #pauseIcon {
             font-size: 8rem;
-             text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 
             &:hover {
 
@@ -189,3 +189,41 @@
 }
 
 
+@media screen and (max-width:1024px) {
+    .prog {
+        .prog_bubbles {
+            flex-direction: row;
+            height: auto;
+            .image_bubbles{
+                 img {
+                width: 200px;
+                height: 200px;
+            }
+            }
+
+        }
+
+    }
+}
+@media screen and (max-width:480px) {
+    .prog {
+        .prog-h1 {
+            font-size: 2em;
+            margin: 0 auto;
+        }
+        .prog_bubbles {
+            flex-direction: column;
+            height: auto;
+            margin: 0 auto;
+            justify-content: center;
+            .image_bubbles{
+                 img {
+                width: 200px;
+                height: 200px;
+            }
+            }
+
+        }
+
+    }
+}

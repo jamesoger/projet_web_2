@@ -32,6 +32,11 @@ class UserController extends Controller
         $spectacles[] = $programmation->spectacles;
     }
 
+    if(auth()->user()->forfaits->isEmpty() ){
+        return redirect()->route('billetterie.index')
+            ->with('succes', 'Vous êtes connecté(e)!');
+    }
+
     return view('user.index', [
         'forfaits' => auth()->user()->forfaits,
         'programmations' => $programmations,
