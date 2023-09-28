@@ -23,6 +23,8 @@
         padding-top: 2em;
     }
 
+
+
     .panier_selection {
         width: 400px;
         height: 600px;
@@ -31,11 +33,12 @@
         text-align: center;
         padding: 20px;
         position: absolute;
-        margin-top: 7rem;
+        margin-top: 8rem;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 2;
+        box-shadow: 0px 0px 20px white;
 
 
         .selected_info {
@@ -54,17 +57,22 @@
 
     .forfaits {
         display: flex;
-        margin-top: 1rem;
+        margin-top: 0.25rem;
 
 
 
 
         .un_forfait {
-            width: 300px;
+            width: 320px;
             height: 500px;
             margin: 100px 180px 20px 180px;
             text-align: center;
             background-size: cover;
+            cursor: pointer;
+            &:hover {
+                box-shadow: 0px 0px 10px white;
+                border: 2px inset rgba(168, 167, 167, 0.801);
+             }
 
             .info_forfait {
                 background-color: rgba(255, 255, 255, 0.578);
@@ -173,7 +181,7 @@
     }
 
     .deconnect_user {
-        padding-top: 30px;
+        padding-top: 35px;
         padding-bottom: 30px;
 
 

@@ -27,9 +27,18 @@
                 Voir les statistiques ici
             </a>
         </div>
+        <h2>Menu</h2>
+        <div class="sections">
+            <a href="#users">Users</a>
+            <a href="#forfaits">Forfaits</a>
+            <a href="#admin">Admins</a>
+            <a href="#prog">Programmation</a>
+            <a href="#actualites">Actualités</a>
+        </div>
+
         <div class="vue_admin_users">
 
-            <div class="users_admin">
+            <div id="users" class="users_admin">
                 <h2>Utilisateurs</h2>
                 @foreach ($users as $user)
                     <p>{{ $user->nom_complet }}</p>
@@ -47,7 +56,7 @@
                 @endforeach
             </div>
 
-            <div class="forfait_user">
+            <div id="forfaits" class="forfait_user">
                 <h2>Forfaits</h2>
                 @foreach ($users as $user)
                     <p>{{ $user->nom_complet }}</p>
@@ -84,7 +93,7 @@
 
 
 
-        <div class="admin_modif">
+        <div id="admin" class="admin_modif">
             <h2>Liste des administrateurs</h2>
             @if (auth()->guard('admin')->user()->droits == 1)
                 <a class="creation_admin" href="{{ route('enregistrement_admin.create') }}">Ajouter
@@ -113,7 +122,7 @@
 
 
         @foreach ($programmations as $programmation)
-            <div class="programmation-list">
+            <div id="prog" class="programmation-list">
                 <h2>Programmations</h2>
                 <table class="programmation" border="1">
                     <caption>{{ $programmation->date }}</caption>
@@ -175,7 +184,7 @@
     @endforeach
 
 
-    <div class="actu">
+    <div id="actualites" class="actu">
         <h2>Vos actualités</h2>
         @if (auth()->guard('admin')->user()->droits == 1)
             <a class="ajout_act" href="{{ route('actualites.create') }}">Ajouter</a>

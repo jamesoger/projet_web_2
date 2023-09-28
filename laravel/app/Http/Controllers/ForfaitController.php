@@ -91,7 +91,7 @@ class ForfaitController extends Controller
             }
 
         return redirect()->route('user.index')
-            ->with('success', 'Merci pour votre achat! On se voit bientot!');
+            ->with('success', 'Merci pour votre achat! On se voit bientôt!');
     }
 
     }
