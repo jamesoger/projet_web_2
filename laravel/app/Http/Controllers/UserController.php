@@ -34,7 +34,7 @@ class UserController extends Controller
 
     if(auth()->user()->forfaits->isEmpty() ){
         return redirect()->route('billetterie.index')
-            ->with('succes', 'Vous êtes connecté(e)!');
+            ->with('success', 'Vous êtes connecté(e)!');
     }
 
     return view('user.index', [
