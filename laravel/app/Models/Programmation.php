@@ -31,5 +31,12 @@ class Programmation extends Model
         return $this->belongsToMany(Spectacle::class, 'spectacle_programmation');
     }
 
+    /**
+     * Fusion des artistes et spectacles pour afficher les évenements par heure dans la vue programmation
+     */
+    public function prestations() {
+        return $this->artistes->merge($this->spectacles);
+    }
+
 
 }

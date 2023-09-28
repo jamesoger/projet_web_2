@@ -22,6 +22,11 @@ class UserController extends Controller
     public function index()
     {
 
+
+    if(auth()->user()->forfaits->isEmpty() ){
+        return redirect()->route('billetterie.index')
+            ->with('success', 'Vous êtes connecté(e)!');
+
         $programmations = Programmation::all();
         $artistes = [];
         $spectacles = [];
@@ -43,6 +48,7 @@ class UserController extends Controller
             'artistes' => $artistes,
             'spectacles' => $spectacles
         ]);
+
     }
     /**
      * Formulaire de modification d'un utilisateur

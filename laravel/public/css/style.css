@@ -3527,19 +3527,43 @@ footer .foot-copy p {
   }
 }
 @media screen and (max-width: 480px) {
+  .prog {
+    width: 480px;
+  }
   .prog .prog-h1 {
-    font-size: 2em;
-    margin: 0 auto;
+    font-size: 2.5em;
+    text-align: center;
+    max-width: 100vw;
   }
   .prog .prog_bubbles {
     flex-direction: column;
     height: auto;
-    margin: 0 auto;
-    justify-content: center;
+  }
+  .prog .prog_bubbles .image_bubbles span {
+    left: 93px;
   }
   .prog .prog_bubbles .image_bubbles img {
     width: 200px;
     height: 200px;
+    margin: 0 auto;
+  }
+  .prog .date-gauche {
+    display: block;
+  }
+  .prog .date-gauche h1 {
+    font-size: 3em;
+  }
+  .prog .date-centre {
+    display: block;
+  }
+  .prog .date-centre h1 {
+    font-size: 3em;
+  }
+  .prog .date-droite {
+    display: block;
+  }
+  .prog .date-droite h1 {
+    font-size: 3em;
   }
 }
 /*******************************/
