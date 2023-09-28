@@ -36,7 +36,8 @@
             cursor:pointer;
 
             &:hover {
-                box-shadow: inset 5px 5px 2px 1px rgb(59, 59, 59);
+                box-shadow: none;
+                border: 2px inset rgba(168, 167, 167, 0.801);
              }
             &.boite_gauche {
 

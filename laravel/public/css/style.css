@@ -2507,6 +2507,23 @@ footer .foot-copy p {
   padding-bottom: 5rem;
   font-family: all-round-gothic, sans-serif;
 }
+.page_admin .sections {
+  border: 1px solid white;
+  margin: 1rem auto;
+  width: 800px;
+  height: 50px;
+  display: flex;
+  background-color: black;
+}
+.page_admin .sections a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 0.55em;
+  margin: 0 auto;
+}
 .page_admin .analytics {
   border: 1px solid white;
   width: 500px;
@@ -2613,6 +2630,7 @@ footer .foot-copy p {
   overflow-y: auto;
   background-image: url(../images/lignes.jpg);
   background-size: contain;
+  cursor: pointer;
 }
 .page_admin .vue_admin_users .users_admin::-webkit-scrollbar {
   display: none;
@@ -2682,6 +2700,7 @@ footer .foot-copy p {
   box-shadow: 0px 0px 20px white;
   background-image: url(../images/dj\ forfait.png);
   background-size: cover;
+  cursor: pointer;
 }
 .page_admin .vue_admin_users .forfait_user::-webkit-scrollbar {
   display: none;
@@ -2740,6 +2759,7 @@ footer .foot-copy p {
   overflow-y: auto;
   background-image: url(../images/background-sand.jpg);
   background-size: cover;
+  cursor: pointer;
 }
 .page_admin .admin_modif::-webkit-scrollbar {
   display: none;
@@ -2838,6 +2858,7 @@ footer .foot-copy p {
   background-image: url(../images/poster_lignes.jpg);
   background-size: cover;
   background-position: right 10%;
+  cursor: pointer;
 }
 .page_admin .programmation-list::-webkit-scrollbar {
   display: none;
@@ -3057,7 +3078,8 @@ footer .foot-copy p {
   cursor: pointer;
 }
 .bill .bill_forfaits .bill_boite:hover {
-  box-shadow: inset 5px 5px 2px 1px rgb(59, 59, 59);
+  box-shadow: none;
+  border: 2px inset rgba(168, 167, 167, 0.801);
 }
 .bill .bill_forfaits .bill_boite.boite_gauche {
   margin-right: 10%;
@@ -3152,11 +3174,12 @@ footer .foot-copy p {
   text-align: center;
   padding: 20px;
   position: absolute;
-  margin-top: 7rem;
+  margin-top: 8rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  box-shadow: 0px 0px 20px white;
 }
 .panier_user .panier_selection .selected_info {
   background-color: rgba(255, 255, 255, 0.578);
@@ -3172,14 +3195,19 @@ footer .foot-copy p {
 }
 .panier_user .forfaits {
   display: flex;
-  margin-top: 1rem;
+  margin-top: 0.25rem;
 }
 .panier_user .forfaits .un_forfait {
-  width: 300px;
+  width: 320px;
   height: 500px;
   margin: 100px 180px 20px 180px;
   text-align: center;
   background-size: cover;
+  cursor: pointer;
+}
+.panier_user .forfaits .un_forfait:hover {
+  box-shadow: 0px 0px 10px white;
+  border: 2px inset rgba(168, 167, 167, 0.801);
 }
 .panier_user .forfaits .un_forfait .info_forfait {
   background-color: rgba(255, 255, 255, 0.578);
@@ -3276,7 +3304,7 @@ footer .foot-copy p {
   text-shadow: 0px 0px 6px rgb(7, 7, 7);
 }
 .panier_user .deconnect_user {
-  padding-top: 30px;
+  padding-top: 35px;
   padding-bottom: 30px;
 }
 .panier_user .deconnect_user input {
@@ -3465,6 +3493,32 @@ footer .foot-copy p {
   margin-top: 2rem;
 }
 
+@media screen and (max-width: 1024px) {
+  .prog .prog_bubbles {
+    flex-direction: row;
+    height: auto;
+  }
+  .prog .prog_bubbles .image_bubbles img {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .prog .prog-h1 {
+    font-size: 2em;
+    margin: 0 auto;
+  }
+  .prog .prog_bubbles {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .prog .prog_bubbles .image_bubbles img {
+    width: 200px;
+    height: 200px;
+  }
+}
 /*******************************/
 /********** USER INDEX *********/
 /*******************************/
@@ -3639,8 +3693,8 @@ footer .foot-copy p {
 #app_user .user_index .user_reservations .forfaits_users .programmation_user.expanded h3 {
   font-size: 2em;
   margin-bottom: 1rem;
-  color: white;
-  background-color: black;
+  background-color: rgb(235, 233, 233);
+  color: black;
 }
 #app_user .user_index .user_reservations .forfaits_users .programmation_user.expanded .show_info {
   border-radius: 10px;
@@ -3660,12 +3714,11 @@ footer .foot-copy p {
 #app_user .user_index .user_reservations .forfaits_users .programmation_user.expanded .heure {
   flex: 1;
   text-align: center;
-  margin: 1rem;
 }
 #app_user .user_index .user_reservations .forfaits_users .programmation_user.expanded .nom {
   flex: 1;
   text-align: center;
-  margin: 1rem;
+  margin: 0 12rem 0 0;
 }
 #app_user .user_index .user_reservations .forfaits_users .programmation_user.expanded .img_user {
   width: 90px;
@@ -3673,7 +3726,6 @@ footer .foot-copy p {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
-  margin: 1rem;
   box-shadow: 0px 0px 20px white;
 }
 #app_user .user_index .autre_forfait {
