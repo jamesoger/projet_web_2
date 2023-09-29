@@ -130,5 +130,76 @@
 
 }
 
+@media screen and (max-width:1024px) {
+    .bill {
+        .bill_forfaits {
+            .boite_1 {
+                width: 350px;
+                height: 450px !important;
+                a{
+                    top: 75%;
+                }
+
+            }
+
+            .bill_boite {
+                width: 300px;
+                height: 350px;
+            }
+
+            .bill_nom {
+                font-size: 1.25em;
+            }
+            a{
+                top: 70%;
+            }
+        }
 
 
+    }
+}
+
+@media screen and (max-width:480px) {
+    .bill {
+        .bill_forfaits {
+            .boite_1 {
+                width: 200px!important;
+                height: 350px !important;
+                a{
+                    top: 70%;
+                    width: 80%;
+                    font-size: 1em;
+                    height: 30px;
+                }
+
+            }
+
+            .bill_boite {
+                width: 150px;
+                height: 300px;
+                &.boite_gauche {
+
+                    margin-right: 14%;
+                }
+
+                &.boite_droite {
+                    margin-left: 14%;
+                }
+            }
+
+            .bill_nom {
+                font-size: 1em;
+
+            }
+            a{
+                top: 65%;
+                width: 85%;
+                font-size: 0.75em;
+                height: 30px;
+
+            }
+        }
+
+
+    }
+}

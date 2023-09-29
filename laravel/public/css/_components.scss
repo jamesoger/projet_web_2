@@ -442,6 +442,115 @@ footer {
     }
 }
 
+/*********** RESPONSIVE MENU *************/
+@media screen and (max-width: 1024px) {
+    .hidden {
+
+        .flex-hidden {
+            .nav-hidden-btn-menu {
+
+                .nav-btn {
+
+                    .img-hidden {
+                        width: 40px;
+                    }
+                }
+                p {
+                    font-size: 1em;
+                    font-family: $font-gothic;
+                }
+            }
+        }
+
+        .nav-ul-hidden {
+            .nav-hidden-a {
+
+                font-size: 1.75em;
+                margin-top: 3.5rem;
+
+            }
+        }
+
+        .bas-nav {
+            .nav-hidden-compte {
+                font-size: 1.75em;
+
+            }
+            .contact-info {
+
+                p {
+                    font-size: 1em;
+                }
+
+                .mail-nav {
+                    font-size: 1.55em;
+
+                }
+
+                .tel-nav {
+                    font-size: 1.55em;
+
+                }
+            }
+        }
+    }
+
+}
+@media screen and (max-width: 480px) {
+    .hidden {
+
+        .flex-hidden {
+            .nav-hidden-btn-menu {
+
+                .nav-btn {
+
+                    .img-hidden {
+                        width: 40px;
+                    }
+                }
+                p {
+                    font-size: 1em;
+                    font-family: $font-gothic;
+                }
+            }
+        }
+
+        .nav-ul-hidden {
+            .nav-hidden-a {
+
+                font-size: 1.25em;
+                margin-top: 3.5rem;
+
+            }
+        }
+
+        .bas-nav {
+            .nav-hidden-compte {
+                font-size: 1.25em;
+                padding: 15px;
+
+            }
+            .contact-info {
+
+                p {
+                    font-size: 0.75em;
+                }
+
+                .mail-nav {
+                    font-size: 1em;
+
+                }
+
+                .tel-nav {
+                    font-size: 1em;
+
+                }
+            }
+        }
+    }
+
+}
+
 /*********** MESSAGE *************/
 .fadeOut {
     animation-name: fadeOut;
