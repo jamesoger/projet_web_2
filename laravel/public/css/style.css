@@ -176,6 +176,10 @@ body {
   top: 25%;
   height: 70%;
   margin-top: 10px;
+  transition: filter 0.2s ease-in-out;
+}
+.nav-menu img:hover {
+  filter: drop-shadow(0px 0px 20px white);
 }
 .nav-menu .nav-btn-menu {
   display: flex;
@@ -183,6 +187,11 @@ body {
   align-items: center;
   justify-content: center;
   margin-right: 50px;
+  cursor: pointer;
+  transition: filter 0.2s ease-in-out;
+}
+.nav-menu .nav-btn-menu:hover {
+  filter: drop-shadow(0px 0px 5px white);
 }
 .nav-menu .nav-btn-menu .acc-btn img {
   filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
@@ -386,7 +395,7 @@ footer .foot-copy p {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 65px;
+  margin-right: 50px;
 }
 .hidden .flex-hidden .nav-hidden-btn-menu .nav-btn {
   display: flex;
