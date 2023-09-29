@@ -50,7 +50,7 @@ class SpectacleController extends Controller
             "nom.max" => "Le nom doit avoir un maximum de :max caractères",
             "nom.min" => "Le nom doit avoir un minimum de :min caractères",
             "heure.required" => "L'heure du show est requise",
-            "image.mimes" => "L,image n'est pas du bon format",
+            "image.mimes" => "L'image n'est pas du bon format",
             "date.required" => " la date de représentation est requise"
         ]);
 

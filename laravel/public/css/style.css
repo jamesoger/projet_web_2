@@ -513,6 +513,77 @@ footer .foot-copy p {
     display: none;
   }
 }
+<<<<<<< HEAD
+=======
+/*********** RESPONSIVE *************/
+@media screen and (max-width: 1024px) {
+  .hidden .flex-hidden .nav-hidden-btn-menu .nav-btn .img-hidden {
+    width: 40px;
+  }
+  .hidden .flex-hidden .nav-hidden-btn-menu p {
+    font-size: 1em;
+    font-family: all-round-gothic, sans-serif;
+  }
+  .hidden .nav-ul-hidden .nav-hidden-a {
+    font-size: 1.75em;
+    margin-top: 3.5rem;
+  }
+  .hidden .bas-nav .nav-hidden-compte {
+    font-size: 1.75em;
+  }
+  .hidden .bas-nav .contact-info p {
+    font-size: 1em;
+  }
+  .hidden .bas-nav .contact-info .mail-nav {
+    font-size: 1.55em;
+  }
+  .hidden .bas-nav .contact-info .tel-nav {
+    font-size: 1.55em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .hidden .flex-hidden .nav-hidden-btn-menu .nav-btn .img-hidden {
+    width: 40px;
+  }
+  .hidden .flex-hidden .nav-hidden-btn-menu p {
+    font-size: 1em;
+    font-family: all-round-gothic, sans-serif;
+  }
+  .hidden .nav-ul-hidden .nav-hidden-a {
+    font-size: 1.25em;
+    margin-top: 3.5rem;
+  }
+  .hidden .bas-nav .nav-hidden-compte {
+    font-size: 1.25em;
+    padding: 15px;
+  }
+  .hidden .bas-nav .contact-info p {
+    font-size: 0.75em;
+  }
+  .hidden .bas-nav .contact-info .mail-nav {
+    font-size: 1em;
+  }
+  .hidden .bas-nav .contact-info .tel-nav {
+    font-size: 1em;
+  }
+}
+/*********** MESSAGE *************/
+.fadeOut {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+>>>>>>> 1a7c92252b19f841f5b39c102ea08a91dee29d39
 /********************* SOMMAIRE *********************/
 /*** CONNEXION USER ************ ligne : 19
 /*** ENREGISTREMENT USER ******* ligne : 123
@@ -2017,6 +2088,84 @@ footer .foot-copy p {
   padding-top: 0.5em;
 }
 
+/************************ RESPONSIVE ************************/
+@media screen and (max-width: 1024px) {
+  .a-propos .titre-apropos h1 {
+    font-size: 1.5em;
+  }
+  .a-propos .texte-apropos {
+    margin: 7rem auto;
+  }
+  .a-propos .texte-apropos p {
+    font-size: 1em;
+  }
+  .a-propos .titre-admin {
+    font-size: 2em;
+  }
+  .a-propos .admin .admin-total .admin-nom h1 {
+    font-size: 1em;
+  }
+  .a-propos .admin .admin-total .img-admin img {
+    width: 200px;
+  }
+  .a-propos .nous-joindre .info-total .phrases {
+    font-size: 2em;
+  }
+  .a-propos .nous-joindre .info-total .phrases img {
+    width: 200px;
+  }
+  .a-propos .nous-joindre .info-total .phrases .titre-info {
+    font-size: 0.65em;
+  }
+  .a-propos .nous-joindre .info-total .phrases .phrase-info {
+    font-size: 0.55em;
+  }
+  .a-propos .nous-joindre .carte iframe {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .a-propos .titre-apropos h1 {
+    font-size: 1em;
+  }
+  .a-propos .texte-apropos {
+    width: 400px;
+  }
+  .a-propos .texte-apropos p {
+    font-size: 0.75em;
+  }
+  .a-propos .titre-admin {
+    font-size: 1.5em;
+  }
+  .a-propos .admin {
+    padding: 1em;
+    gap: 3%;
+  }
+  .a-propos .admin .admin-total .admin-nom h1 {
+    font-size: 1em;
+  }
+  .a-propos .admin .admin-total .img-admin img {
+    width: 100px;
+    height: 100px;
+  }
+  .a-propos .nous-joindre .info-total .phrases {
+    font-size: 1em;
+  }
+  .a-propos .nous-joindre .info-total .phrases img {
+    width: 100px;
+  }
+  .a-propos .nous-joindre .info-total .phrases .titre-info {
+    font-size: 0.65em;
+  }
+  .a-propos .nous-joindre .info-total .phrases .phrase-info {
+    font-size: 0.55em;
+  }
+  .a-propos .nous-joindre .carte iframe {
+    width: 200px;
+    height: 200px;
+  }
+}
 /*******************************/
 /*********** ACCUEIL ***********/
 /*******************************/
@@ -2591,6 +2740,66 @@ footer .foot-copy p {
   height: 480px;
 }
 
+/************************ RESPONSIVE ************************/
+@media screen and (max-width: 1024px) {
+  .actu .actu-h1 h1 {
+    font-size: 2.25em;
+    margin-left: 150px;
+  }
+  .actu .actu-conteneur {
+    width: 800px;
+    height: 450px;
+    align-items: flex-start;
+  }
+  .actu .actu-conteneur .actu-info {
+    flex: 20%;
+  }
+  .actu .actu-conteneur .actu-info .actu-titre {
+    font-size: 1em;
+    margin-top: 2rem;
+  }
+  .actu .actu-conteneur .actu-info .actu-texte {
+    margin-top: 10px;
+    font-size: 0.75em;
+  }
+  .actu .actu-conteneur .actu-ligne {
+    margin: 0 50px;
+  }
+  .actu .actu-conteneur .actu-img img {
+    height: 300px;
+    margin-top: 3rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .actu .actu-h1 h1 {
+    font-size: 2em;
+    margin-left: 150px;
+  }
+  .actu .actu-conteneur {
+    width: 500px;
+    height: 300px;
+    align-items: flex-start;
+  }
+  .actu .actu-conteneur .actu-info {
+    flex: 20%;
+  }
+  .actu .actu-conteneur .actu-info .actu-titre {
+    font-size: 0.75em;
+    margin-top: 2rem;
+  }
+  .actu .actu-conteneur .actu-info .actu-texte {
+    margin-top: 10px;
+    font-size: 0.65em;
+    line-height: 0.6;
+  }
+  .actu .actu-conteneur .actu-ligne {
+    margin: 0 30px;
+  }
+  .actu .actu-conteneur .actu-img img {
+    height: 200px;
+    margin-top: 3rem;
+  }
+}
 /*******************************/
 /********** ADMIN PAGE *********/
 /*******************************/
@@ -3251,6 +3460,57 @@ footer .foot-copy p {
   }
 }
 
+/************************ RESPONSIVE ************************/
+@media screen and (max-width: 1024px) {
+  .bill .bill_forfaits .boite_1 {
+    width: 350px;
+    height: 450px !important;
+  }
+  .bill .bill_forfaits .boite_1 a {
+    top: 75%;
+  }
+  .bill .bill_forfaits .bill_boite {
+    width: 300px;
+    height: 350px;
+  }
+  .bill .bill_forfaits .bill_nom {
+    font-size: 1.25em;
+  }
+  .bill .bill_forfaits a {
+    top: 70%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .bill .bill_forfaits .boite_1 {
+    width: 200px !important;
+    height: 350px !important;
+  }
+  .bill .bill_forfaits .boite_1 a {
+    top: 70%;
+    width: 80%;
+    font-size: 1em;
+    height: 30px;
+  }
+  .bill .bill_forfaits .bill_boite {
+    width: 150px;
+    height: 300px;
+  }
+  .bill .bill_forfaits .bill_boite.boite_gauche {
+    margin-right: 14%;
+  }
+  .bill .bill_forfaits .bill_boite.boite_droite {
+    margin-left: 14%;
+  }
+  .bill .bill_forfaits .bill_nom {
+    font-size: 1em;
+  }
+  .bill .bill_forfaits a {
+    top: 65%;
+    width: 85%;
+    font-size: 0.75em;
+    height: 30px;
+  }
+}
 /*******************************/
 /********* PANIER USER *********/
 /*******************************/
@@ -3599,6 +3859,7 @@ footer .foot-copy p {
   margin-top: 2rem;
 }
 
+/************************ RESPONSIVE ************************/
 @media screen and (max-width: 1024px) {
   .prog .prog_bubbles {
     flex-direction: row;
@@ -3692,6 +3953,7 @@ footer .foot-copy p {
   position: relative;
   height: 500px;
   overflow-y: auto;
+  cursor: pointer;
 }
 #app_user .user_index .user_reservations .forfaits_users::-webkit-scrollbar {
   display: none;

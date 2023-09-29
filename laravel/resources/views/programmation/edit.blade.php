@@ -72,4 +72,4 @@
     <x-footer />
 </x-layout>
 
-<x-fade />
+

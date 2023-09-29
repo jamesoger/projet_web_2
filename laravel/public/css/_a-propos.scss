@@ -160,3 +160,145 @@
         }
     }
 }
+
+/************************ RESPONSIVE ************************/
+
+@media screen and (max-width:1024px) {
+    .a-propos {
+        .titre-apropos {
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+
+        .texte-apropos {
+            margin: 7rem auto;
+            p {
+                font-size: 1em;
+            }
+        }
+
+        .titre-admin {
+            font-size: 2em;
+        }
+
+        .admin {
+            .admin-total {
+                .admin-nom {
+                    h1 {
+                        font-size: 1em;
+                    }
+                }
+
+                .img-admin {
+                    img {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+
+        .nous-joindre {
+            .info-total {
+                .phrases {
+                    font-size: 2em;
+
+                    img {
+                        width: 200px;
+                    }
+
+                    .titre-info {
+                        font-size: 0.65em;
+                    }
+                    .phrase-info{
+                        font-size: 0.55em;
+                    }
+
+                }
+            }
+
+            .carte{
+                iframe{
+                    width: 250px;
+                    height: 250px;
+                }
+            }
+
+        }
+
+    }
+
+}
+
+
+@media screen and (max-width:480px) {
+
+    .a-propos {
+        .titre-apropos {
+
+            h1 {
+                font-size: 1em;
+            }
+        }
+
+        .texte-apropos {
+            width: 400px;
+            p {
+                font-size: 0.75em;
+            }
+        }
+
+        .titre-admin {
+            font-size: 1.5em;
+        }
+
+        .admin {
+            padding: 1em;
+            gap: 3%;
+            .admin-total {
+                .admin-nom {
+                    h1 {
+                        font-size: 1em;
+                    }
+                }
+
+                .img-admin {
+                    img {
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+            }
+        }
+
+        .nous-joindre {
+            .info-total {
+                .phrases {
+                    font-size: 1em;
+
+                    img {
+                        width: 100px;
+                    }
+
+                    .titre-info {
+                        font-size: 0.65em;
+                    }
+                    .phrase-info{
+                        font-size: 0.55em;
+                    }
+
+                }
+            }
+
+            .carte{
+                iframe{
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+
+        }
+
+    }
+
+}
