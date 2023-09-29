@@ -17,7 +17,8 @@ class Spectacle extends Model
      *
      * @return Relations
      */
-    public function programmations(){
+    public function programmations()
+    {
         return $this->belongsToMany(Programmation::class, 'spectacle_programmation');
     }
 }

@@ -30,8 +30,8 @@ class Admin extends Model implements AuthenticatableContract
      *
      * @return Attribute
      */
-    public function getNomCompletAttribute(){
+    public function getNomCompletAttribute()
+    {
         return $this->prenom . " " . $this->nom;
     }
-
 }

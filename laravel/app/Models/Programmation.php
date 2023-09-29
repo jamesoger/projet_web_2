@@ -12,14 +12,14 @@ class Programmation extends Model
 {
     use HasFactory;
 
-     /**
-      * Relation programmation et artistes
-      *
-      * @return Relations
-      */
-    public function artistes(){
+    /**
+     * Relation programmation et artistes
+     *
+     * @return Relations
+     */
+    public function artistes()
+    {
         return $this->belongsToMany(Artiste::class, 'artiste_programmation');
-
     }
 
     /**
@@ -27,16 +27,16 @@ class Programmation extends Model
      *
      * @return Relations
      */
-    public function spectacles(){
+    public function spectacles()
+    {
         return $this->belongsToMany(Spectacle::class, 'spectacle_programmation');
     }
 
     /**
      * Fusion des artistes et spectacles pour afficher les évenements par heure dans la vue programmation
      */
-    public function prestations() {
+    public function prestations()
+    {
         return $this->artistes->merge($this->spectacles);
     }
-
-
 }
