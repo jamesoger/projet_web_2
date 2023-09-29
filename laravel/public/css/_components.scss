@@ -66,7 +66,6 @@ footer {
     display: flex;
     flex-direction: column;
     background-color: black;
-    z-index: 3;
 
     .footer-media {
         display: flex;
@@ -92,6 +91,11 @@ footer {
 
                 img {
                     filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+                    transition: filter 0.2s ease-in-out;
+
+                    &:hover {
+                        filter: none;
+                    }
                 }
             }
         }
@@ -255,7 +259,7 @@ footer {
     position: fixed;
     display: flex;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.979);
+    background-color: rgba(255, 255, 255, 0.95);
     width: 100%;
     height: 100%;
     z-index: 100;
@@ -289,9 +293,14 @@ footer {
                 display: flex;
                 align-items: center;
                 flex-direction: column;
+                transition: color 0.2s ease-in-out, filter 0.2s ease-in-out;
+
+                &:hover {
+                    color: $blue;
+                    filter: drop-shadow(0px 0px 20px $blue);
+                }
 
                 .img-hidden {
-                    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
                     width: 40px;
                 }
             }
@@ -319,6 +328,11 @@ footer {
             font-family: $font-ethno;
             font-size: 2.5em;
             margin-top: 3.5rem;
+            transition: color 0.2s ease-in-out;
+
+            &:hover {
+                color: $blue;
+            }
         }
     }
 
@@ -380,7 +394,7 @@ footer {
     footer {
         .footer-media {
             .ligne-gauche {
-                width: 100px;
+                display: none;
             }
 
             .foot-media {
@@ -391,29 +405,42 @@ footer {
             }
 
             .ligne-droite {
-                width: 100px;
+                display: none;
+            }
+        }
+
+        .foot-nav-adresse {
+            flex-direction: column;
+
+            .foot-menu {
+                align-items: center;
+            }
+
+            .foot-map {
+                margin-top: 50px;
+                margin-left: 0;
+            }
+
+            .foot-logo {
+                margin-top: 50px;
             }
         }
 
         .foot-app {
 
             .ligne-gauche {
-                width: 100px;
+                display: none;
             }
 
             p {
             }
 
             .ligne-droite {
-                width: 100px;
+                display: none;
             }
         }
     }
 }
-
-// @media screen and (max-width: 480px) {
-
-// }
 
 /*********** MESSAGE *************/
 .fadeOut {
