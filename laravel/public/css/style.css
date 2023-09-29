@@ -227,6 +227,10 @@ footer .footer-media .foot-media li {
 }
 footer .footer-media .foot-media li img {
   filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+  transition: filter 0.2s ease-in-out;
+}
+footer .footer-media .foot-media li img:hover {
+  filter: none;
 }
 footer .footer-media .ligne-droite {
   display: flex;
@@ -357,7 +361,7 @@ footer .foot-copy p {
   position: fixed;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.979);
+  background-color: rgba(255, 255, 255, 0.95);
   width: 100%;
   height: 100%;
   z-index: 100;
@@ -388,9 +392,13 @@ footer .foot-copy p {
   display: flex;
   align-items: center;
   flex-direction: column;
+  transition: color 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+.hidden .flex-hidden .nav-hidden-btn-menu .nav-btn:hover {
+  color: #1DA5F3;
+  filter: drop-shadow(0px 0px 20px #1DA5F3);
 }
 .hidden .flex-hidden .nav-hidden-btn-menu .nav-btn .img-hidden {
-  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
   width: 40px;
 }
 .hidden .flex-hidden .nav-hidden-btn-menu p {
@@ -412,6 +420,10 @@ footer .foot-copy p {
   font-family: ethnocentric, sans-serif;
   font-size: 2.5em;
   margin-top: 3.5rem;
+  transition: color 0.2s ease-in-out;
+}
+.hidden .nav-ul-hidden .nav-hidden-a:hover {
+  color: #1DA5F3;
 }
 .hidden .bas-nav {
   display: flex;
@@ -2027,6 +2039,10 @@ footer .foot-copy p {
 }
 .acc-header .acc-media li img {
   filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+  transition: filter 0.2s ease-in-out;
+}
+.acc-header .acc-media li img:hover {
+  filter: none;
 }
 .acc-header .acc-centre {
   display: flex;
@@ -2075,18 +2091,24 @@ footer .foot-copy p {
   align-items: center;
   margin-top: 50px;
 }
-.acc-header .acc-btn-menu .acc-btn {
+.acc-header .acc-btn-menu #app_menu {
+  cursor: pointer;
+  transition: filter 0.2s ease-in-out;
+}
+.acc-header .acc-btn-menu #app_menu:hover {
+  filter: drop-shadow(0px 0px 5px white);
+}
+.acc-header .acc-btn-menu #app_menu .acc-btn {
   display: flex;
   justify-content: center;
 }
-.acc-header .acc-btn-menu .acc-btn img {
-  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+.acc-header .acc-btn-menu #app_menu .acc-btn img {
   width: 40px;
 }
-.acc-header .acc-btn-menu p {
+.acc-header .acc-btn-menu #app_menu p {
   font-size: 1.3em;
 }
-.acc-header .acc-btn-menu .acc-menu {
+.acc-header .acc-btn-menu #app_menu .acc-menu {
   font-family: all-round-gothic, sans-serif;
 }
 .acc-header .video-bg-header {
@@ -2177,7 +2199,6 @@ footer .foot-copy p {
   display: flex;
   place-self: center;
   align-items: center;
-  margin-right: 1000px;
 }
 .acc-events .events .vignettes {
   position: relative;
@@ -2318,43 +2339,43 @@ footer .foot-copy p {
 
 /************************ RESPONSIVE ************************/
 @media screen and (max-width: 1024px) {
-  #app_accueil .acc-header {
+  .acc-header {
     background-image: url(../images/poster_header.jpg);
     padding: 60px 20px;
     background-attachment: fixed;
   }
-  #app_accueil .acc-header .acc-media {
+  .acc-header .acc-media {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
     gap: 10px;
   }
-  #app_accueil .acc-header .acc-media li {
+  .acc-header .acc-media li {
     margin: 0 10px;
   }
-  #app_accueil .acc-header .acc-centre {
+  .acc-header .acc-centre {
     margin-top: 20px;
     text-align: center;
   }
-  #app_accueil .acc-header .acc-centre .acc-date {
+  .acc-header .acc-centre .acc-date {
     font-size: 4em;
   }
-  #app_accueil .acc-header .acc-centre .acc-logo img {
+  .acc-header .acc-centre .acc-logo img {
     width: 90%;
   }
-  #app_accueil .acc-header .acc-centre .acc-fleche {
+  .acc-header .acc-centre .acc-fleche {
     display: none;
   }
-  #app_accueil .acc-header .acc-btn-menu {
+  .acc-header .acc-btn-menu {
     margin-top: 20px;
   }
-  #app_accueil .acc-header .acc-btn-menu .acc-btn img {
+  .acc-header .acc-btn-menu .acc-btn img {
     width: 40px;
   }
-  #app_accueil .acc-header .menu-cache {
+  .acc-header .menu-cache {
     display: none;
   }
-  #app_accueil .acc-header .video-bg-header {
+  .acc-header .video-bg-header {
     display: none;
   }
   main .acc-text-events {
@@ -2437,53 +2458,56 @@ footer .foot-copy p {
   }
 }
 @media screen and (max-width: 480px) {
+  .acc-header {
+    flex-direction: column;
+  }
+  .acc-header .acc-media {
+    flex-direction: row;
+    align-self: center;
+  }
   .acc-header .acc-media li {
     margin: 0 5px;
   }
-  .acc-header .acc-centre .acc-date {
-    font-size: 2em;
+  .acc-header .menu-cache .hidden {
+    position: relative;
+    width: 90%;
   }
-  .acc-header .acc-centre .acc-logo img {
-    width: 70%;
+  .acc-header .menu-cache .hidden .flex-hidden {
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-top: 20px;
   }
-  .acc-header .acc-btn-menu .acc-btn img {
-    width: 30px;
+  .acc-header .menu-cache .hidden .flex-hidden a {
+    display: flex;
+    align-items: flex-end;
+    align-self: center;
+    margin-left: 0;
   }
-  .acc-text-events .phrases {
+  .acc-header .menu-cache .hidden .flex-hidden a img {
+    height: 10%;
+    margin-top: 0;
+  }
+  .acc-header .menu-cache .hidden .flex-hidden .nav-hidden-btn-menu {
+    margin-right: 0;
+  }
+  .acc-header .menu-cache .hidden ul li a {
     font-size: 1.5em;
   }
-  .acc-text-events .phrases p {
-    margin: 15px 0px;
-    word-spacing: 8px;
+  .acc-header .menu-cache .hidden .bas-nav {
+    margin-top: 3rem;
   }
-  .acc-events h2 {
-    font-size: 2em;
-  }
-  .acc-events h2 .ligne-h2 {
-    margin: 15px 0px;
-  }
-  .acc-events .events .vignettes {
-    width: 100%;
-    max-width: 280px;
-    margin: 15px 0;
-  }
-  .acc-events .btn-reservation {
-    padding: 15px;
-    flex-direction: column;
-  }
-  .acc-events .btn-reservation a {
-    padding: 10px 8px;
-    width: 80%;
-    margin: 10px 0;
-    font-size: 0.8em;
-  }
-  .acc-logo-video .acc-logo img {
-    width: 80%;
-  }
-  .video-bg-header,
-  .video-background,
-  .video-bg-logo {
+  .acc-header .menu-cache .hidden .bas-nav .contact-info {
     display: none;
+  }
+  .acc-header .menu-cache .hidden .bas-nav a {
+    font-size: 1em;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+  }
+  main .acc-events .events .vignettes {
+    max-width: 190px;
+    max-height: 230px;
+    margin: 100px 10px;
   }
 }
 /*******************************/
