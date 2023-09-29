@@ -60,7 +60,8 @@ class User extends Authenticatable
     /**
      * Accesseur pour le nom complet du user
      */
-    public function getNomCompletAttribute(){
+    public function getNomCompletAttribute()
+    {
         return $this->prenom . " " . $this->nom;
     }
 }

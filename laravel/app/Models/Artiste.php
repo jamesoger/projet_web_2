@@ -17,23 +17,24 @@ class Artiste extends Model
      *
      * @return Relations
      */
-    public function programmations(){
+    public function programmations()
+    {
         return $this->belongsToMany(Programmation::class, 'artiste_programmation');
-
     }
 
     /**
      * attribut pour tri par heure dans la vue programmation
      */
-    public function getHeureAttribute() {
+    public function getHeureAttribute()
+    {
         return $this->heure_show;
     }
+
     /**
      * Attribut pour nom dans la vue programmation
      */
-    public function getNomAttribute() {
+    public function getNomAttribute()
+    {
         return $this->nom_scene;
     }
-
-
 }

@@ -12,12 +12,13 @@ class Forfait extends Model
 {
     use HasFactory;
 
-     /**
-      * Relation forfaits et utilisateurs
-      *
-      * @return Relations
-      */
-    public function users(){
+    /**
+     * Relation forfaits et utilisateurs
+     *
+     * @return Relations
+     */
+    public function users()
+    {
         return $this->belongsToMany(User::class, 'user_forfait');
     }
 }
