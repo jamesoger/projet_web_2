@@ -203,7 +203,6 @@ footer {
   display: flex;
   flex-direction: column;
   background-color: black;
-  z-index: 3;
 }
 footer .footer-media {
   display: flex;
@@ -461,16 +460,29 @@ footer .foot-copy p {
 
 @media screen and (max-width: 1024px) {
   footer .footer-media .ligne-gauche {
-    width: 100px;
+    display: none;
   }
   footer .footer-media .ligne-droite {
-    width: 100px;
+    display: none;
+  }
+  footer .foot-nav-adresse {
+    flex-direction: column;
+  }
+  footer .foot-nav-adresse .foot-menu {
+    align-items: center;
+  }
+  footer .foot-nav-adresse .foot-map {
+    margin-top: 50px;
+    margin-left: 0;
+  }
+  footer .foot-nav-adresse .foot-logo {
+    margin-top: 50px;
   }
   footer .foot-app .ligne-gauche {
-    width: 100px;
+    display: none;
   }
   footer .foot-app .ligne-droite {
-    width: 100px;
+    display: none;
   }
 }
 /*********** MESSAGE *************/
@@ -2139,7 +2151,7 @@ footer .foot-copy p {
   display: flex;
   overflow: hidden;
   flex-direction: column;
-  height: 100%;
+  height: 1060px;
 }
 .acc-events h2 {
   display: flex;
@@ -2165,6 +2177,7 @@ footer .foot-copy p {
   display: flex;
   place-self: center;
   align-items: center;
+  margin-right: 1000px;
 }
 .acc-events .events .vignettes {
   position: relative;
@@ -2200,6 +2213,7 @@ footer .foot-copy p {
 .acc-events .events-bg {
   position: absolute;
   width: 100%;
+  height: 1060px;
   justify-content: center;
   z-index: -1;
   display: flex;
@@ -2207,13 +2221,14 @@ footer .foot-copy p {
 .acc-events .events-bg img {
   opacity: 0.5;
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 .acc-events .btn-reservation {
   display: flex;
   justify-content: center;
-  width: 100%;
+  margin-top: 80px;
 }
 .acc-events .btn-reservation a {
   color: white;
@@ -2345,13 +2360,21 @@ footer .foot-copy p {
   main .acc-text-events {
     background-image: url(../images/bg-admin.png);
     background-attachment: fixed;
-    height: 100vh;
+    height: 65vh;
     background-position: center;
     min-width: 100%;
   }
+  main .acc-text-events .phrases {
+    font-size: 5em;
+  }
   main .acc-text-events .phrases p {
-    margin: 90px 0px;
-    word-spacing: 10px;
+    word-spacing: 70px;
+  }
+  main .acc-text-events .phrases p:first-child {
+    margin-bottom: 100px;
+  }
+  main .acc-text-events .phrases p:last-child {
+    margin-top: 100px;
   }
   main .acc-text-events .video-background {
     display: none;
@@ -2366,17 +2389,21 @@ footer .foot-copy p {
   main .acc-events h2 {
     font-size: 2.5em;
     text-align: center;
+    z-index: 1;
   }
   main .acc-events h2 .ligne-h2 {
     margin: 20px 0px;
   }
   main .acc-events .events .vignettes {
-    max-width: 320px;
+    max-width: 250px;
+    max-height: 330px;
   }
   main .acc-events .btn-reservation {
     padding: 20px;
     flex-direction: column;
     align-items: center;
+    margin-top: 0;
+    z-index: 1;
   }
   main .acc-events .btn-reservation a {
     padding: 15px 10px;

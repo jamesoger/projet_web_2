@@ -66,7 +66,6 @@ footer {
     display: flex;
     flex-direction: column;
     background-color: black;
-    z-index: 3;
 
     .footer-media {
         display: flex;
@@ -380,7 +379,7 @@ footer {
     footer {
         .footer-media {
             .ligne-gauche {
-                width: 100px;
+                display: none;
             }
 
             .foot-media {
@@ -391,29 +390,42 @@ footer {
             }
 
             .ligne-droite {
-                width: 100px;
+                display: none;
+            }
+        }
+
+        .foot-nav-adresse {
+            flex-direction: column;
+
+            .foot-menu {
+                align-items: center;
+            }
+
+            .foot-map {
+                margin-top: 50px;
+                margin-left: 0;
+            }
+
+            .foot-logo {
+                margin-top: 50px;
             }
         }
 
         .foot-app {
 
             .ligne-gauche {
-                width: 100px;
+                display: none;
             }
 
             p {
             }
 
             .ligne-droite {
-                width: 100px;
+                display: none;
             }
         }
     }
 }
-
-// @media screen and (max-width: 480px) {
-
-// }
 
 /*********** MESSAGE *************/
 .fadeOut {
