@@ -68,7 +68,7 @@
 
 
 
-<script type="module">
+<script type="module" async>
 
      /********** ARRIERE PLAN LIGNES **********/
     import {
