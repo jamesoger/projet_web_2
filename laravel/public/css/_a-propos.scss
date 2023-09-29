@@ -100,7 +100,6 @@
                     font-size: 2em;
                     padding-left: 1.5rem;
                 }
-
             }
 
             .img-admin {
@@ -113,11 +112,9 @@
                     object-fit: cover;
                     width: 200px;
                     height: 200px;
-
                 }
             }
         }
-
     }
 
     .nous-joindre {
@@ -154,14 +151,14 @@
                     padding-bottom: 0.5em;
                     padding-top: 0.5em;
                 }
-
             }
-
         }
     }
 }
 
-/************************ RESPONSIVE ************************/
+/*******************************/
+/********** RESPONSIVE *********/
+/*******************************/
 
 @media screen and (max-width:1024px) {
     .a-propos {
@@ -213,23 +210,18 @@
                     .phrase-info{
                         font-size: 0.55em;
                     }
-
                 }
             }
 
-            .carte{
-                iframe{
+            .carte {
+                iframe {
                     width: 250px;
                     height: 250px;
                 }
             }
-
         }
-
     }
-
 }
-
 
 @media screen and (max-width:480px) {
 
@@ -243,6 +235,7 @@
 
         .texte-apropos {
             width: 400px;
+
             p {
                 font-size: 0.75em;
             }
@@ -255,6 +248,7 @@
         .admin {
             padding: 1em;
             gap: 3%;
+
             .admin-total {
                 .admin-nom {
                     h1 {

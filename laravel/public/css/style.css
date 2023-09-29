@@ -2101,7 +2101,9 @@ footer .foot-copy p {
   padding-top: 0.5em;
 }
 
-/************************ RESPONSIVE ************************/
+/*******************************/
+/********** RESPONSIVE *********/
+/*******************************/
 @media screen and (max-width: 1024px) {
   .a-propos .titre-apropos h1 {
     font-size: 1.5em;
