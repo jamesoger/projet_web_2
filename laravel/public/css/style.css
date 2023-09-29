@@ -470,7 +470,7 @@ footer .foot-copy p {
   font-weight: 600;
 }
 
-/*********** MESSAGE *************/
+/*********** MESSAGES *************/
 .fadeOut {
   animation-name: fadeOut;
   animation-duration: 1s;
@@ -486,7 +486,11 @@ footer .foot-copy p {
     opacity: 0;
   }
 }
+/*******************************/
+/********** RESPONSIVE *********/
+/*******************************/
 @media screen and (max-width: 1024px) {
+  /*********** FOOTER *************/
   footer .footer-media .ligne-gauche {
     display: none;
   }
@@ -513,77 +517,77 @@ footer .foot-copy p {
     display: none;
   }
 }
-<<<<<<< HEAD
-=======
-/*********** RESPONSIVE *************/
+/*********** MENU ***********/
 @media screen and (max-width: 1024px) {
-  .hidden .flex-hidden .nav-hidden-btn-menu .nav-btn .img-hidden {
-    width: 40px;
+  .hidden {
+    top: 0;
+    justify-content: center;
   }
-  .hidden .flex-hidden .nav-hidden-btn-menu p {
-    font-size: 1em;
-    font-family: all-round-gothic, sans-serif;
+  .hidden .flex-hidden {
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-top: 20px;
   }
-  .hidden .nav-ul-hidden .nav-hidden-a {
-    font-size: 1.75em;
-    margin-top: 3.5rem;
+  .hidden .flex-hidden .logo-nav {
+    display: flex;
+    align-items: flex-end;
+    align-self: center;
+    margin-left: 0;
+  }
+  .hidden .flex-hidden .logo-nav img {
+    height: 20%;
+    margin-top: 0;
+  }
+  .hidden .flex-hidden .nav-hidden-btn-menu {
+    margin-right: 0;
+  }
+  .hidden .bas-nav {
+    margin-top: 3rem;
   }
   .hidden .bas-nav .nav-hidden-compte {
-    font-size: 1.75em;
-  }
-  .hidden .bas-nav .contact-info p {
     font-size: 1em;
-  }
-  .hidden .bas-nav .contact-info .mail-nav {
-    font-size: 1.55em;
-  }
-  .hidden .bas-nav .contact-info .tel-nav {
-    font-size: 1.55em;
+    padding: 5px 20px;
+    margin-bottom: 20px;
   }
 }
 @media screen and (max-width: 480px) {
-  .hidden .flex-hidden .nav-hidden-btn-menu .nav-btn .img-hidden {
-    width: 40px;
+  .hidden {
+    top: 0;
+    justify-content: center;
   }
-  .hidden .flex-hidden .nav-hidden-btn-menu p {
-    font-size: 1em;
-    font-family: all-round-gothic, sans-serif;
+  .hidden .flex-hidden {
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .hidden .flex-hidden .logo-nav {
+    display: flex;
+    align-items: flex-end;
+    align-self: center;
+    margin-left: 0;
+  }
+  .hidden .flex-hidden .logo-nav img {
+    height: 10%;
+    margin-top: 0;
+  }
+  .hidden .flex-hidden .nav-hidden-btn-menu {
+    margin-right: 0;
   }
   .hidden .nav-ul-hidden .nav-hidden-a {
-    font-size: 1.25em;
-    margin-top: 3.5rem;
+    font-size: 1.5em;
+  }
+  .hidden .bas-nav {
+    margin-top: 3rem;
   }
   .hidden .bas-nav .nav-hidden-compte {
-    font-size: 1.25em;
-    padding: 15px;
-  }
-  .hidden .bas-nav .contact-info p {
-    font-size: 0.75em;
-  }
-  .hidden .bas-nav .contact-info .mail-nav {
     font-size: 1em;
+    padding: 5px 20px;
+    margin-bottom: 20px;
   }
-  .hidden .bas-nav .contact-info .tel-nav {
-    font-size: 1em;
-  }
-}
-/*********** MESSAGE *************/
-.fadeOut {
-  animation-name: fadeOut;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
+  .hidden .bas-nav .contact-info {
+    display: none;
   }
 }
->>>>>>> 1a7c92252b19f841f5b39c102ea08a91dee29d39
 /********************* SOMMAIRE *********************/
 /*** CONNEXION USER ************ ligne : 19
 /*** ENREGISTREMENT USER ******* ligne : 123
@@ -2486,7 +2490,9 @@ footer .foot-copy p {
   }
 }
 
-/************************ RESPONSIVE ************************/
+/*******************************/
+/********** RESPONSIVE *********/
+/*******************************/
 @media screen and (max-width: 1024px) {
   .acc-header {
     background-image: url(../images/poster_header.jpg);
@@ -2609,6 +2615,7 @@ footer .foot-copy p {
 @media screen and (max-width: 480px) {
   .acc-header {
     flex-direction: column;
+    padding: 0;
   }
   .acc-header .acc-media {
     flex-direction: row;
@@ -2616,42 +2623,6 @@ footer .foot-copy p {
   }
   .acc-header .acc-media li {
     margin: 0 5px;
-  }
-  .acc-header .menu-cache .hidden {
-    position: relative;
-    width: 90%;
-  }
-  .acc-header .menu-cache .hidden .flex-hidden {
-    justify-content: flex-end;
-    flex-direction: column;
-    margin-top: 20px;
-  }
-  .acc-header .menu-cache .hidden .flex-hidden a {
-    display: flex;
-    align-items: flex-end;
-    align-self: center;
-    margin-left: 0;
-  }
-  .acc-header .menu-cache .hidden .flex-hidden a img {
-    height: 10%;
-    margin-top: 0;
-  }
-  .acc-header .menu-cache .hidden .flex-hidden .nav-hidden-btn-menu {
-    margin-right: 0;
-  }
-  .acc-header .menu-cache .hidden ul li a {
-    font-size: 1.5em;
-  }
-  .acc-header .menu-cache .hidden .bas-nav {
-    margin-top: 3rem;
-  }
-  .acc-header .menu-cache .hidden .bas-nav .contact-info {
-    display: none;
-  }
-  .acc-header .menu-cache .hidden .bas-nav a {
-    font-size: 1em;
-    padding: 5px 20px;
-    margin-bottom: 20px;
   }
   main .acc-events .events .vignettes {
     max-width: 190px;
@@ -3859,7 +3830,9 @@ footer .foot-copy p {
   margin-top: 2rem;
 }
 
-/************************ RESPONSIVE ************************/
+/*******************************/
+/********** RESPONSIVE *********/
+/*******************************/
 @media screen and (max-width: 1024px) {
   .prog .prog_bubbles {
     flex-direction: row;

@@ -3,6 +3,7 @@
 /*******************************/
 
 /********** NAV *********/
+
 .menu-cache {
     display: none;
     position: absolute;
@@ -56,9 +57,6 @@
         }
     }
 }
-
-
-
 
 /*********** FOOTER ***********/
 
@@ -250,10 +248,7 @@ footer {
     }
 }
 
-
 /*********** MENU ***********/
-
-
 
 .hidden {
     position: fixed;
@@ -388,7 +383,8 @@ footer {
     }
 }
 
-/*********** MESSAGE *************/
+/*********** MESSAGES *************/
+
 .fadeOut {
     animation-name: fadeOut;
     animation-duration: 1s;
@@ -406,8 +402,13 @@ footer {
     }
 }
 
+/*******************************/
+/********** RESPONSIVE *********/
+/*******************************/
 
 @media screen and (max-width: 1024px) {
+
+/*********** FOOTER *************/
 
     footer {
         .footer-media {
@@ -459,135 +460,103 @@ footer {
         }
     }
 }
-<<<<<<< HEAD
-=======
 
-/*********** RESPONSIVE *************/
-
+/*********** MENU ***********/
 
 @media screen and (max-width: 1024px) {
+
     .hidden {
+        top: 0;
+        justify-content: center;
 
         .flex-hidden {
+            justify-content: flex-end;
+            flex-direction: column;
+            margin-top: 20px;
+
+            .logo-nav {
+                display: flex;
+                align-items: flex-end;
+                align-self: center;
+                margin-left: 0;
+
+                img {
+                    height: 20%;
+                    margin-top: 0;
+                }
+            }
+
             .nav-hidden-btn-menu {
-
-                .nav-btn {
-
-                    .img-hidden {
-                        width: 40px;
-                    }
-                }
-                p {
-                    font-size: 1em;
-                    font-family: $font-gothic;
-                }
+                margin-right: 0;
             }
         }
 
         .nav-ul-hidden {
+
             .nav-hidden-a {
-
-                font-size: 1.75em;
-                margin-top: 3.5rem;
-
             }
         }
 
         .bas-nav {
+            margin-top: 3rem;
+
             .nav-hidden-compte {
-                font-size: 1.75em;
-
-            }
-            .contact-info {
-
-                p {
-                    font-size: 1em;
-                }
-
-                .mail-nav {
-                    font-size: 1.55em;
-
-                }
-
-                .tel-nav {
-                    font-size: 1.55em;
-
-                }
+                font-size: 1em;
+                padding: 5px 20px;
+                margin-bottom: 20px;
             }
         }
     }
-
 }
+
 @media screen and (max-width: 480px) {
+
+
     .hidden {
+        top: 0;
+        justify-content: center;
 
         .flex-hidden {
+            justify-content: flex-end;
+            flex-direction: column;
+            margin-top: 20px;
+
+            .logo-nav {
+                display: flex;
+                align-items: flex-end;
+                align-self: center;
+                margin-left: 0;
+
+                img {
+                    height: 10%;
+                    margin-top: 0;
+                }
+            }
+
             .nav-hidden-btn-menu {
-
-                .nav-btn {
-
-                    .img-hidden {
-                        width: 40px;
-                    }
-                }
-                p {
-                    font-size: 1em;
-                    font-family: $font-gothic;
-                }
+                margin-right: 0;
             }
         }
 
         .nav-ul-hidden {
+
             .nav-hidden-a {
-
-                font-size: 1.25em;
-                margin-top: 3.5rem;
-
+                font-size: 1.5em;
             }
         }
 
         .bas-nav {
+            margin-top: 3rem;
+
             .nav-hidden-compte {
-                font-size: 1.25em;
-                padding: 15px;
-
+                font-size: 1em;
+                padding: 5px 20px;
+                margin-bottom: 20px;
             }
+
             .contact-info {
-
-                p {
-                    font-size: 0.75em;
-                }
-
-                .mail-nav {
-                    font-size: 1em;
-
-                }
-
-                .tel-nav {
-                    font-size: 1em;
-
-                }
+                display: none;
             }
         }
     }
-
 }
-
-/*********** MESSAGE *************/
-.fadeOut {
-    animation-name: fadeOut;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
->>>>>>> 1a7c92252b19f841f5b39c102ea08a91dee29d39

@@ -374,7 +374,9 @@
     }
 }
 
-/************************ RESPONSIVE ************************/
+/*******************************/
+/********** RESPONSIVE *********/
+/*******************************/
 
 @media screen and (max-width: 1024px) {
 
@@ -541,8 +543,10 @@
 }
 
 @media screen and (max-width: 480px) {
+
     .acc-header {
         flex-direction: column;
+        padding: 0;
 
         .acc-media {
             flex-direction: row;
@@ -550,57 +554,6 @@
 
             li {
                 margin: 0 5px;
-            }
-        }
-
-        .menu-cache {
-            .hidden {
-                position: relative;
-                width: 90%;
-
-                .flex-hidden {
-                    justify-content: flex-end;
-                    flex-direction: column;
-                    margin-top: 20px;
-
-                    a {
-                        display: flex;
-                        align-items: flex-end;
-                        align-self: center;
-                        margin-left: 0;
-
-                        img {
-                            height: 10%;
-                            margin-top: 0;
-                        }
-                    }
-
-                    .nav-hidden-btn-menu {
-                        margin-right: 0;
-                    }
-                }
-
-                ul {
-                    li {
-                        a {
-                            font-size: 1.5em;
-                        }
-                    }
-                }
-
-                .bas-nav {
-                    margin-top: 3rem;
-
-                    .contact-info {
-                        display: none;
-                    }
-
-                    a {
-                        font-size: 1em;
-                        padding: 5px 20px;
-                        margin-bottom: 20px;
-                    }
-                }
             }
         }
     }
