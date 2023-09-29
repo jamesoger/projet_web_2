@@ -3692,6 +3692,7 @@ footer .foot-copy p {
   position: relative;
   height: 500px;
   overflow-y: auto;
+  cursor: pointer;
 }
 #app_user .user_index .user_reservations .forfaits_users::-webkit-scrollbar {
   display: none;
