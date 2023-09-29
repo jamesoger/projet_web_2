@@ -1,15 +1,16 @@
+
+//>>>>>>>>>>>>>Lignes en mouvement <<<<<<<<<<<<<<<<<//
 export class BouncingBalls {
     constructor(canvas) {
         this.canvas = canvas;
         this.ctx = canvas.getContext("2d");
         this.balles = [];
 
-        // Initialisation du canvas
+
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        // Création des balles
-        for (let i = 0; i < 250; i++) { // Augmentez ou diminuez le nombre de balles ici
+        for (let i = 0; i < 250; i++) {
             const balle = {
                 x: this.aleatoire_entier(50, canvas.width - 50),
                 y: this.aleatoire_entier(50, canvas.height - 50),
@@ -21,7 +22,7 @@ export class BouncingBalls {
             this.balles.push(balle);
         }
 
-        // Définir la boucle d'animation
+
         this.animate();
     }
 
@@ -31,41 +32,41 @@ export class BouncingBalls {
             this.updateBalle(balle);
             this.dessinerBalle(balle);
         }
-        requestAnimationFrame(() => this.animate()); // Utilisation de requestAnimationFrame pour l'animation fluide
+        requestAnimationFrame(() => this.animate());
     }
 
     updateBalle(balle) {
         balle.x += balle.vx;
         balle.y += balle.vy;
 
-        // Rebond gauche/droite
+
         if (balle.x > this.canvas.width || balle.x < 0) {
             balle.vx = -balle.vx;
         }
 
-        // Rebond haut/bas
+
         if (balle.y > this.canvas.height || balle.y < 0) {
             balle.vy = -balle.vy;
         }
     }
 
     dessinerBalle(balle) {
-        // Définir une couleur de base pour la balle
+
         this.ctx.fillStyle = balle.couleur;
 
-        // Générer un nombre aléatoire entre 0 et 1
+
         const randomValue = Math.random();
 
-        // Si le nombre aléatoire est inférieur à 0.1 (par exemple), la balle scintille
+
         if (randomValue < 0.1) {
-            // Changez la couleur de la balle en une couleur plus lumineuse (par exemple, jaune)
+
             this.ctx.fillStyle = "#fff";
 
-            // Augmentez la luminosité de la balle en ajoutant un effet d'ombre ou de lumière
-            this.ctx.shadowColor = "rgba(255, 255, 255, 0.5)"; // Couleur de l'ombre
-            this.ctx.shadowBlur = 20; // Flou de l'ombre
+
+            this.ctx.shadowColor = "rgba(255, 255, 255, 0.5)";
+            this.ctx.shadowBlur = 20;
         } else {
-            // Réinitialisez l'ombre pour les balles qui ne scintillent pas
+
             this.ctx.shadowColor = "transparent";
             this.ctx.shadowBlur = 0;
         }
@@ -99,13 +100,12 @@ export class BouncingBalls {
     }
 
     clearCanvas() {
-        // Créer un dégradé linéaire du haut vers le bas (du noir à la couleur avec de la transparence)
-        const gradient = this.ctx.createLinearGradient(0, 0, 0, this.canvas.height);
-        gradient.addColorStop(0, "rgba(0, 0, 0, 1)"); // Noir complet en haut
-        gradient.addColorStop(0.5, "rgba(42, 100, 112, 0.2)"); // Couleur avec de la transparence au milieu
-        gradient.addColorStop(1, "rgba(0, 0, 0, 1)"); // Noir complet en bas
 
-        // Remplir le canvas avec le dégradé
+        const gradient = this.ctx.createLinearGradient(0, 0, 0, this.canvas.height);
+        gradient.addColorStop(0, "rgba(0, 0, 0, 1)");
+        gradient.addColorStop(0.5, "rgba(42, 100, 112, 0.2)");
+        gradient.addColorStop(1, "rgba(0, 0, 0, 1)");
+
         this.ctx.fillStyle = gradient;
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     }
