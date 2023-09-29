@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ActualiteController extends Controller
 {
+
     /**
      * Affichage de la page actualités
      *
@@ -19,6 +20,7 @@ class ActualiteController extends Controller
             'actualites' => Actualite::all()
         ]);
     }
+
     /**
      * Creation d'une nouvelle actualité
      *
@@ -85,6 +87,7 @@ class ActualiteController extends Controller
             "actualites" => $actualites
         ]);
     }
+
     /**
      * Traitement de la modification
      *
@@ -134,6 +137,7 @@ class ActualiteController extends Controller
             ->route('admin.index')
             ->with('success', "Cette actualité a été modifiée avec succès!");
     }
+
     /**
      * Suppression d'une actualité
      *

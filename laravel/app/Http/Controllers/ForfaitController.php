@@ -92,19 +92,18 @@ class ForfaitController extends Controller
 
         return redirect()->route('user.index')
             ->with('success', 'Merci pour votre achat! On se voit bientôt!');
+        }
     }
 
-    }
-
-     /**
-      * Modifier le forfait de la session
-      *
-      * @param Request $request
-      * @param int $forfaitId
-      * @return Redirect/Response
-      */
+    /**
+     * Modifier le forfait de la session
+     *
+     * @param Request $request
+     * @param int $forfaitId
+     * @return Redirect/Response
+     */
     public function update(Request $request, $forfaitId)
-{
+    {
 
     $forfait = Forfait::find($forfaitId);
 
@@ -121,6 +120,7 @@ class ForfaitController extends Controller
 
     return redirect()->route('user.panier')->with('error', 'Forfait introuvable.');
 }
+
     /**
      * Supprimer un forfait
      *

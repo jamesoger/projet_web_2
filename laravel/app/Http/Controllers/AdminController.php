@@ -13,11 +13,12 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
-        /**
-         * Affichage de la page admin
-         *
-         * @return View
-         */
+
+    /**
+     * Affichage de la page admin
+     *
+     * @return View
+     */
     public function index()
     {
 

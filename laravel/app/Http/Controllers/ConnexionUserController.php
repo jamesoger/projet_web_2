@@ -81,6 +81,7 @@ class ConnexionUserController extends Controller
 
             ->onlyInput('email');
     }
+
     /**
      * Deconnexion de l'utilisateur
      *
