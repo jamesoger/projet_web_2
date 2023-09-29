@@ -29,7 +29,6 @@ class ProgrammationController extends Controller
         return view('programmation.index', [
             "programmation" => $programmations,
         ]);
-
     }
 
     private function trier($programmations){
@@ -60,6 +59,7 @@ class ProgrammationController extends Controller
 
         ]);
     }
+
     /**
      * Traitement de la modification
      *
@@ -153,6 +153,4 @@ class ProgrammationController extends Controller
             ->route('admin.index')
             ->with('success', 'Les artistes et/ou spectacles ont été ajoutés à la programmation');
     }
-
-
 }

@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 class AccueilController extends Controller
 {
-  /**
- * affichage de l'acceuil
- *
- * @return view
- */
+    /**
+     * affichage de l'acceuil
+     *
+     * @return view
+     */
     public function index() {
         return view('index');
     }

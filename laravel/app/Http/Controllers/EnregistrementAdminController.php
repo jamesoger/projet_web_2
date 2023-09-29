@@ -10,15 +10,16 @@ use Illuminate\Support\Facades\Storage;
 
 class EnregistrementAdminController extends Controller
 {
-        /**
-         * Formulaire de création nouvel administrateur
-         *
-         * @return View
-         */
+    /**
+     * Formulaire de création nouvel administrateur
+     *
+     * @return View
+     */
     public function create()
     {
         return view('auth.admin.create');
     }
+
     /**
      * Enregsitrement du nouvel administrateur
      *
@@ -44,7 +45,7 @@ class EnregistrementAdminController extends Controller
             "image.mimes" => "L'image n'est pas du bon format",
             "password.required" => "Le mot de passe est requis",
             "password.min" => "Le mot de passe doit avoir une longueur de :min caractères",
-            "confirmation_password.required" => "La confirmation requise",
+            "confirmation_password.required" => "La confirmation est requise",
             "confirmation_password.same" => "Le mot de passe n'a pu être confirmé"
         ]);
 
@@ -71,7 +72,4 @@ class EnregistrementAdminController extends Controller
             ->route('admin.index')
             ->with('success', 'Votre compte admin a été créé');
     }
-
-
-
 }

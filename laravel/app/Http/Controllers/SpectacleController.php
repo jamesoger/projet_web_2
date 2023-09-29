@@ -74,6 +74,7 @@ class SpectacleController extends Controller
             ->route('admin.index')
             ->with('success', "ce spectacle été modifié avec succès!");
     }
+
     /**
      * Suppression d'un spectacle
      *
@@ -86,7 +87,4 @@ class SpectacleController extends Controller
 
         return redirect()->route('admin.index')->with('success', 'Spectacle supprimé avec succès.');
     }
-
-
-
 }

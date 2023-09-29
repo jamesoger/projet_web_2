@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Hash;
 
 class EnregistrementUserController extends Controller
 {
-        /**
-         * Formulaire de creation d'un nouvel utilisateur
-         *
-         * @return View
-         */
+    /**
+     * Formulaire de creation d'un nouvel utilisateur
+     *
+     * @return View
+     */
     public function create(){
         return view('auth.user.enregistrement.create');
     }
@@ -24,7 +24,8 @@ class EnregistrementUserController extends Controller
      * @param Request $request
      * @return Redirect/Response
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
 
         $valides = $request->validate([
             "prenom" => "required",
