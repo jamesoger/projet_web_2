@@ -14,7 +14,7 @@
     position: absolute;
     display: flex;
     justify-content: space-between;
-    background-color: #0000007a;
+    background-image: linear-gradient(to bottom, rgb(0 0 0), rgb(0 0 0 / 0%));
     width: 100%;
     height: 130px;
     z-index: 5;
@@ -491,12 +491,6 @@ footer {
             }
         }
 
-        .nav-ul-hidden {
-
-            .nav-hidden-a {
-            }
-        }
-
         .bas-nav {
             margin-top: 3rem;
 
@@ -510,7 +504,6 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-
 
     .hidden {
         top: 0;
