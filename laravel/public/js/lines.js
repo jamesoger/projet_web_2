@@ -120,7 +120,7 @@ export class BouncingBalls {
         this.canvas = canvas;
         this.ctx = canvas.getContext("2d");
         this.balles = [];
-        this.numBalls = 200; // Réduit le nombre de balles à 200
+        this.numBalls = 100; // Réduit le nombre de balles à 100
 
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
