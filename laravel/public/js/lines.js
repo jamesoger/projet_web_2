@@ -120,10 +120,13 @@ export class BouncingBalls {
         this.canvas = canvas;
         this.ctx = canvas.getContext("2d");
         this.balles = [];
-        this.numBalls = 100; // Réduit le nombre de balles à 100
+        this.numBalls = 150; // Réduit le nombre de balles à 100
 
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+
+        canvas.style.width = "100%"; // GEOFF A AJOUTÉ
+        canvas.style.height = "100%"; // GEOFF A AJOUTÉ
 
         for (let i = 0; i < this.numBalls; i++) {
             const balle = {
@@ -138,6 +141,10 @@ export class BouncingBalls {
         }
 
         this.animate();
+
+        // Appelez la fonction de mise à jour de la taille du canvas lorsque la fenêtre est redimensionnée.
+        window.addEventListener('resize', () => this.handleResize()); // GEOFF A AJOUTÉ
+        this.handleResize(); // GEOFF A AJOUTÉ
     }
 
     animate() {
@@ -218,6 +225,14 @@ export class BouncingBalls {
 
     distance(x1, y1, x2, y2) {
         return Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+    }
+
+    handleResize() {
+        // Mettez à jour la taille du canvas en fonction de la taille de la fenêtre sans redimensionner le canvas lui-même.
+        this.canvas.style.width = "100%";// GEOFF A AJOUTÉ
+        this.canvas.style.height = "100%";// GEOFF A AJOUTÉ
+        this.canvas.width = this.canvas.offsetWidth;// GEOFF A AJOUTÉ
+        this.canvas.height = this.canvas.offsetHeight;// GEOFF A AJOUTÉ
     }
 }
 
