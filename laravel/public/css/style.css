@@ -3794,7 +3794,7 @@ footer .foot-copy p {
   cursor: grab;
 }
 .prog .prog_bubbles .image_bubbles img:hover {
-  transform: rotate3d(2, 1, 1, 360deg);
+  transform: matrix3d(-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   filter: blur(2px);
 }
 .prog .prog_bubbles .image_bubbles span {
@@ -3817,7 +3817,7 @@ footer .foot-copy p {
   cursor: grab;
 }
 .prog .prog_bubbles .image_bubbles #nom {
-  padding-top: 1em;
+  padding-top: 1.2em;
 }
 .prog .prog_bubbles .image_bubbles:hover span {
   z-index: 1;
@@ -3854,6 +3854,11 @@ footer .foot-copy p {
   .prog .prog_bubbles .image_bubbles img {
     width: 200px;
     height: 200px;
+  }
+  .prog .prog_bubbles .image_bubbles span {
+    font-size: 1.1rem;
+    height: 220px;
+    width: 200px;
   }
 }
 @media screen and (max-width: 480px) {

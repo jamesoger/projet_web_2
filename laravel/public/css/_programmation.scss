@@ -121,13 +121,13 @@
                 cursor: grab;
 
                 &:hover {
-                    transform: rotate3d(2, 1, 1, 360deg);
-                    // transform: matrix3d(
-                    //     -1, 0, 0, 0,
-                    //     0, 1, 0, 0,
-                    //     0, 0, 1, 0,
-                    //     0, 0, 0, 1
-                    //   );
+                    // transform: rotate3d(2, 1, 1, 360deg);
+                    transform: matrix3d(
+                        -1, 0, 0, 0,
+                        0, 1, 0, 0,
+                        0, 0, 1, 0,
+                        0, 0, 0, 1
+                      );
                       filter: blur(2px);
                 }
             }
@@ -150,11 +150,10 @@
                 z-index: -1;
                 transition: z-index 0.5s ease-in-out opacity 0.3s ease;
                 cursor: grab;
-
             }
 
             #nom {
-                padding-top: 1em;
+                padding-top: 1.2em;
             }
 
 
@@ -204,15 +203,20 @@
         .prog_bubbles {
             flex-direction: row;
             height: auto;
+
             .image_bubbles{
                  img {
-                width: 200px;
-                height: 200px;
-            }
-            }
+                    width: 200px;
+                    height: 200px;
+                }
 
+                span {
+                    font-size: 1.1rem;
+                    height: 220px;
+                    width: 200px;
+                }
+            }
         }
-
     }
 }
 
@@ -223,31 +227,29 @@
         .prog-h1 {
             font-size: 2.5em;
             text-align: center;
-
             max-width: 100vw;
         }
+
         .prog_bubbles {
             flex-direction: column;
             height: auto;
 
-
-            .image_bubbles{
-                span{
+            .image_bubbles {
+                span {
                     left: 93px;
                 }
-                 img {
+
+                img {
                 width: 200px;
                 height: 200px;
                 margin: 0 auto;
-
-
+                }
             }
-            }
-
         }
 
         .date-gauche {
             display: block;
+
             h1 {
                 font-size: 3em;
             }
@@ -255,6 +257,7 @@
 
         .date-centre {
             display: block;
+
             h1 {
                 font-size: 3em;
             }
@@ -262,6 +265,7 @@
 
         .date-droite {
             display: block;
+
             h1 {
                 font-size: 3em;
             }
