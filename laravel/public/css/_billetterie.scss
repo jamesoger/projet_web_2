@@ -33,75 +33,126 @@
         }
 
         .bill_boite {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             width: 450px;
             height: 500px;
             transition: transform 0.3s ease-in-out;
-            box-shadow: 0px 0px 20px white;
+            box-shadow: 0px 0px 40px rgb(255 255 255 / 70%);
             cursor: pointer;
 
             &:hover {
                 box-shadow: none;
-                border: 2px inset rgba(168, 167, 167, 0.801);
+                // border: 2px inset rgba(168, 167, 167, 0.801);
             }
 
             &.boite_gauche {
-
                 margin-right: 10%;
+                box-shadow: none;
+
+                p {
+                    margin-right: 60px;
+                }
+
+                .prix {
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                .btn-reserver {
+                    margin-right: 60px;
+                }
+
             }
 
             &.boite_droite {
                 margin-left: 10%;
+                box-shadow: none;
+
+                p {
+                    margin-left: 60px;
+                }
+
+                .prix {
+                    p {
+                        margin: 0;
+                    }
+                }
+
+                .btn-reserver {
+                    margin-left: 60px;
+                }
             }
         }
 
         .bill_nom {
-            padding: 0.5em;
-            background-color: rgba(255, 255, 255, 0.646);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.4);
             width: 100%;
-            height: 50px;
+            height: 80px;
             text-align: center;
             color: black;
             font-family: 'all-round-gothic';
             font-weight: 600;
-            font-size: 1.75em;
+            font-size: 2.5em;
             text-transform: uppercase;
-
         }
 
-
-        a {
-
-            display: block;
-            border: 2px solid white;
-            height: 40px;
+        .prix {
+            background-color: rgb(0 0 0 / 65%);
+            backdrop-filter: blur(3px);
             text-align: center;
-            text-decoration: none;
-            position: relative;
-            top: 80%;
-            font-family: $font-ethno;
+            text-transform: uppercase;
+            font-family: $font-gothic;
+
+            p {
+                font-size: 2em;
+
+            }
+
+            .tarif {
+                font-size: 2.5em;
+
+            }
+        }
+
+        .btn-reserver {
+            display: flex;
+            justify-content: center;
+            font-family: ethnocentric, sans-serif;
             text-transform: uppercase;
             font-weight: 300;
             font-size: 1.5em;
-            color: white;
-            padding: 0.25em;
-            margin: 0 auto;
-            width: 280px;
+            padding: 10px;
+            margin-bottom: 40px;
+            width: 260px;
             border: 3px solid white;
             box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
             text-shadow: 0px 0px 5px white;
             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
-            &:hover {
+            a {
+                text-decoration: none;
+                color: white;
+            }
 
+            &:hover {
                 background-color: $blue;
                 color: $blue-fonce;
                 text-shadow: 0px 0px 5px $blue-fonce;
                 box-shadow: 0px 0px 10px $blue;
                 border: 3px solid $blue;
+
+                a {
+                    color: $blue-fonce;
+                }
             }
-
         }
-
     }
 
     @keyframes shake {
@@ -127,21 +178,23 @@
             box-shadow: 0px 0px 5px white;
         }
     }
-
 }
 
-/************************ RESPONSIVE ************************/
+/*******************************/
+/********** RESPONSIVE *********/
+/*******************************/
 
 @media screen and (max-width:1024px) {
+
     .bill {
         .bill_forfaits {
             .boite_1 {
                 width: 350px;
                 height: 450px !important;
-                a{
+
+                a {
                     top: 75%;
                 }
-
             }
 
             .bill_boite {
@@ -152,35 +205,35 @@
             .bill_nom {
                 font-size: 1.25em;
             }
-            a{
+
+            a {
                 top: 70%;
             }
         }
-
-
     }
 }
 
 @media screen and (max-width:480px) {
+
     .bill {
         .bill_forfaits {
             .boite_1 {
                 width: 200px!important;
                 height: 350px !important;
-                a{
+
+                a {
                     top: 70%;
                     width: 80%;
                     font-size: 1em;
                     height: 30px;
                 }
-
             }
 
             .bill_boite {
                 width: 150px;
                 height: 300px;
-                &.boite_gauche {
 
+                &.boite_gauche {
                     margin-right: 14%;
                 }
 
@@ -193,7 +246,8 @@
                 font-size: 1em;
 
             }
-            a{
+
+            a {
                 top: 65%;
                 width: 85%;
                 font-size: 0.75em;
@@ -201,7 +255,5 @@
 
             }
         }
-
-
     }
 }
