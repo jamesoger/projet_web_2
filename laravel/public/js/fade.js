@@ -1,4 +1,5 @@
-/********** MESSAGE **********/
+/********** MESSAGES **********/
+
 setTimeout(function () {
     let messageElement = document.querySelector('.message');
     if (messageElement) {

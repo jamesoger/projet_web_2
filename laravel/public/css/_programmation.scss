@@ -116,33 +116,40 @@
                 border-radius: 50%;
                 box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
                 margin-bottom: 10px;
-                transition: transform 0.7s ease-in-out;
+                transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;;
                 position: relative;
-                cursor: pointer;
+                cursor: grab;
 
                 &:hover {
                     transform: rotate3d(2, 1, 1, 360deg);
+                    // transform: matrix3d(
+                    //     -1, 0, 0, 0,
+                    //     0, 1, 0, 0,
+                    //     0, 0, 1, 0,
+                    //     0, 0, 0, 1
+                    //   );
+                      filter: blur(2px);
                 }
             }
 
             span {
-
                 position: absolute;
                 left: 0;
                 color: white;
                 opacity: 0;
-                font-size: 1.25rem;
+                font-size: 1.5rem;
                 font-family: $font-ethno;
                 text-transform: uppercase;
                 height: 260px;
-                width: 260px;
+                width: 240px;
                 border-radius: 50%;
-                text-shadow: 0px 2px 6px rgb(35, 35, 35);
+                text-shadow: 6px 6px 2px rgb(0, 0, 0), -6px -6px 2px #1da5f3;
                 line-height: 260px;
                 text-align: center;
                 font-weight: bold;
                 z-index: -1;
-                transition: z-index 0.7s ease-in-out opacity 0.3s ease;
+                transition: z-index 0.5s ease-in-out opacity 0.3s ease;
+                cursor: grab;
 
             }
 
@@ -153,7 +160,7 @@
 
             &:hover span {
                 z-index: 1;
-                transition-delay: 0.7s;
+                transition-delay: 0.5s;
                 opacity: 1;
             }
 

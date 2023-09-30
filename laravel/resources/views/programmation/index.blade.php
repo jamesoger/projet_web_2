@@ -48,7 +48,7 @@
                 <img class="{{ $artistImageClasses[$artistClassIndex] }}" src="{{ $artiste->image }}" alt="">
                 <span class="{{ $artistImageClasses[$artistClassIndex] }}"> {{ $artiste->nom }}</span>
                 <span id="nom" class="{{ $artistImageClasses[$artistClassIndex] }}">
-                    {{ $artiste->heure }}</span>
+                    {{ date('H:i', strtotime($artiste->heure)) }}</span>
             </div>
 
             @php
