@@ -3836,7 +3836,7 @@ footer .foot-copy p {
   cursor: grab;
 }
 .prog .prog_bubbles .image_bubbles img:hover {
-  transform: matrix3d(-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform: rotate3d(2, 1, 1, 360deg);
   filter: blur(2px);
 }
 .prog .prog_bubbles .image_bubbles span {
@@ -3850,7 +3850,7 @@ footer .foot-copy p {
   height: 260px;
   width: 240px;
   border-radius: 50%;
-  text-shadow: 6px 6px 2px rgb(0, 0, 0), -6px -6px 2px #1da5f3;
+  text-shadow: 6px 6px 2px rgb(0, 0, 0);
   line-height: 260px;
   text-align: center;
   font-weight: bold;
