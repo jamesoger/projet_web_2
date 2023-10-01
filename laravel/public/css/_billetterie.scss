@@ -194,7 +194,9 @@
             .boite_1 {
                 width: 200px!important;
                 height: 350px !important;
-
+                .btn-reserver{
+                    width: 150px;
+                }
                 a {
                     top: 70%;
                     width: 90%;
@@ -209,21 +211,41 @@
 
                 &.boite_gauche {
                     margin-right: 14%;
+                    .bill_nom{
+                        p{
+                            margin-left: 30px;
+                        }
+                    }
+                    .btn-reserver{
+                        margin-left: 60px;
+                        width: 110px;
+
+                    }
                 }
 
                 &.boite_droite {
-                    margin-left: 14%;
+                    margin-left: 13%;
+                    .bill_nom{
+                        p{
+                            margin-right: 30px;
+                        }
+                    }
+                    .btn-reserver{
+                        width: 110px;
+                        margin-right: 60px;
+                    }
                 }
             }
 
             .bill_nom {
                 font-size: 1em;
 
+
             }
 
             .btn-reserver {
                 font-size: 1em;
-                width: 150px;
+
             }
 
             a {

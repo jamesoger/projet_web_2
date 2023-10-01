@@ -3494,6 +3494,9 @@ footer .foot-copy p {
     width: 200px !important;
     height: 350px !important;
   }
+  .bill .bill_forfaits .boite_1 .btn-reserver {
+    width: 150px;
+  }
   .bill .bill_forfaits .boite_1 a {
     top: 70%;
     width: 90%;
@@ -3507,15 +3510,28 @@ footer .foot-copy p {
   .bill .bill_forfaits .bill_boite.boite_gauche {
     margin-right: 14%;
   }
+  .bill .bill_forfaits .bill_boite.boite_gauche .bill_nom p {
+    margin-left: 30px;
+  }
+  .bill .bill_forfaits .bill_boite.boite_gauche .btn-reserver {
+    margin-left: 60px;
+    width: 110px;
+  }
   .bill .bill_forfaits .bill_boite.boite_droite {
-    margin-left: 14%;
+    margin-left: 13%;
+  }
+  .bill .bill_forfaits .bill_boite.boite_droite .bill_nom p {
+    margin-right: 30px;
+  }
+  .bill .bill_forfaits .bill_boite.boite_droite .btn-reserver {
+    width: 110px;
+    margin-right: 60px;
   }
   .bill .bill_forfaits .bill_nom {
     font-size: 1em;
   }
   .bill .bill_forfaits .btn-reserver {
     font-size: 1em;
-    width: 150px;
   }
   .bill .bill_forfaits a {
     top: 65%;
@@ -3623,10 +3639,10 @@ footer .foot-copy p {
 .panier_user .form_panier {
   text-align: center;
   position: absolute;
-  top: 72%;
-  left: 40%;
-  width: 300px;
-  height: 100px;
+  top: 70%;
+  left: 41%;
+  width: 350px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3826,7 +3842,6 @@ footer .foot-copy p {
 }
 .prog .prog_bubbles .image_bubbles img:hover {
   transform: rotate3d(2, 1, 1, 360deg);
-  filter: blur(2px);
 }
 .prog .prog_bubbles .image_bubbles span {
   position: absolute;
