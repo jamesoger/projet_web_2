@@ -3481,6 +3481,10 @@ footer .foot-copy p {
   .bill .bill_forfaits .bill_nom {
     font-size: 1.25em;
   }
+  .bill .bill_forfaits .btn-reserver {
+    font-size: 1.2em;
+    width: 200px;
+  }
   .bill .bill_forfaits a {
     top: 70%;
   }
@@ -3492,9 +3496,9 @@ footer .foot-copy p {
   }
   .bill .bill_forfaits .boite_1 a {
     top: 70%;
-    width: 80%;
+    width: 90%;
     font-size: 1em;
-    height: 30px;
+    height: 15px;
   }
   .bill .bill_forfaits .bill_boite {
     width: 150px;
@@ -3509,11 +3513,15 @@ footer .foot-copy p {
   .bill .bill_forfaits .bill_nom {
     font-size: 1em;
   }
+  .bill .bill_forfaits .btn-reserver {
+    font-size: 1em;
+    width: 150px;
+  }
   .bill .bill_forfaits a {
     top: 65%;
     width: 85%;
     font-size: 0.75em;
-    height: 30px;
+    height: 15px;
   }
 }
 /*******************************/

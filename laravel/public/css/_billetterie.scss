@@ -59,7 +59,6 @@
                 .btn-reserver {
                     margin-right: 60px;
                 }
-
             }
 
             &.boite_droite {
@@ -176,6 +175,11 @@
                 font-size: 1.25em;
             }
 
+            .btn-reserver {
+                font-size: 1.2em;
+                width: 200px;
+            }
+
             a {
                 top: 70%;
             }
@@ -193,9 +197,9 @@
 
                 a {
                     top: 70%;
-                    width: 80%;
+                    width: 90%;
                     font-size: 1em;
-                    height: 30px;
+                    height: 15px;
                 }
             }
 
@@ -217,11 +221,16 @@
 
             }
 
+            .btn-reserver {
+                font-size: 1em;
+                width: 150px;
+            }
+
             a {
                 top: 65%;
                 width: 85%;
                 font-size: 0.75em;
-                height: 30px;
+                height: 15px;
 
             }
         }
