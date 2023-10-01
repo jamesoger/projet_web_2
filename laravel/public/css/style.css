@@ -3387,9 +3387,6 @@ footer .foot-copy p {
 .bill .bill_forfaits .bill_boite.boite_gauche p {
   margin-right: 60px;
 }
-.bill .bill_forfaits .bill_boite.boite_gauche .prix p {
-  margin: 0;
-}
 .bill .bill_forfaits .bill_boite.boite_gauche .btn-reserver {
   margin-right: 60px;
 }
@@ -3399,9 +3396,6 @@ footer .foot-copy p {
 }
 .bill .bill_forfaits .bill_boite.boite_droite p {
   margin-left: 60px;
-}
-.bill .bill_forfaits .bill_boite.boite_droite .prix p {
-  margin: 0;
 }
 .bill .bill_forfaits .bill_boite.boite_droite .btn-reserver {
   margin-left: 60px;
@@ -3419,20 +3413,6 @@ footer .foot-copy p {
   font-weight: 600;
   font-size: 2em;
   text-transform: uppercase;
-}
-.bill .bill_forfaits .prix {
-  background-color: rgba(0, 0, 0, 0.65);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
-  text-align: center;
-  text-transform: uppercase;
-  font-family: all-round-gothic, sans-serif;
-}
-.bill .bill_forfaits .prix p {
-  font-size: 2em;
-}
-.bill .bill_forfaits .prix .tarif {
-  font-size: 2.5em;
 }
 .bill .bill_forfaits .btn-reserver {
   display: flex;
