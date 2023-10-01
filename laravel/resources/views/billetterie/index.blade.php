@@ -19,11 +19,6 @@
                         <p>{{ $forfait->nom }}</p>
                     </div>
 
-                    {{-- <div class="prix">
-                        <p>à partir de</p>
-                        <p class="tarif">99$</p>
-                    </div> --}}
-
                     <div class="btn-reserver">
                         @if (auth()->check())
                             <a href="{{ route('user.panier', ['forfait_id' => $forfait->id]) }}">Réservez</a>
