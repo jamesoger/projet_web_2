@@ -3378,6 +3378,7 @@ footer .foot-copy p {
 }
 .bill .bill_forfaits .bill_boite:hover {
   box-shadow: none;
+  border: 2px inset rgba(168, 167, 167, 0.801);
 }
 .bill .bill_forfaits .bill_boite.boite_gauche {
   margin-right: 10%;
@@ -3416,7 +3417,7 @@ footer .foot-copy p {
   color: black;
   font-family: "all-round-gothic";
   font-weight: 600;
-  font-size: 2.5em;
+  font-size: 2em;
   text-transform: uppercase;
 }
 .bill .bill_forfaits .prix {
@@ -3836,8 +3837,7 @@ footer .foot-copy p {
   cursor: grab;
 }
 .prog .prog_bubbles .image_bubbles img:hover {
-  transform: matrix3d(-1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  filter: blur(2px);
+  transform: rotate3d(2, 1, 1, 360deg);
 }
 .prog .prog_bubbles .image_bubbles span {
   position: absolute;
@@ -3850,7 +3850,6 @@ footer .foot-copy p {
   height: 260px;
   width: 240px;
   border-radius: 50%;
-  text-shadow: 6px 6px 2px rgb(0, 0, 0), -6px -6px 2px #1da5f3;
   line-height: 260px;
   text-align: center;
   font-weight: bold;

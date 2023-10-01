@@ -19,10 +19,10 @@
                         <p>{{ $forfait->nom }}</p>
                     </div>
 
-                    <div class="prix">
+                    {{-- <div class="prix">
                         <p>à partir de</p>
                         <p class="tarif">99$</p>
-                    </div>
+                    </div> --}}
 
                     <div class="btn-reserver">
                         @if (auth()->check())

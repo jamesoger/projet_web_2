@@ -121,14 +121,14 @@
                 cursor: grab;
 
                 &:hover {
-                    // transform: rotate3d(2, 1, 1, 360deg);
-                    transform: matrix3d(
-                        -1, 0, 0, 0,
-                        0, 1, 0, 0,
-                        0, 0, 1, 0,
-                        0, 0, 0, 1
-                      );
-                      filter: blur(2px);
+                    transform: rotate3d(2, 1, 1, 360deg);
+                    // transform: matrix3d(
+                    //     -1, 0, 0, 0,
+                    //     0, 1, 0, 0,
+                    //     0, 0, 1, 0,
+                    //     0, 0, 0, 1
+                    //   );
+                    //   filter: blur(2px);
                 }
             }
 
@@ -143,7 +143,7 @@
                 height: 260px;
                 width: 240px;
                 border-radius: 50%;
-                text-shadow: 6px 6px 2px rgb(0, 0, 0), -6px -6px 2px #1da5f3;
+                // text-shadow: 6px 6px 2px rgb(0, 0, 0), -6px -6px 2px #1da5f3;
                 line-height: 260px;
                 text-align: center;
                 font-weight: bold;
