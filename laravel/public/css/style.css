@@ -3378,6 +3378,7 @@ footer .foot-copy p {
 }
 .bill .bill_forfaits .bill_boite:hover {
   box-shadow: none;
+  border: 2px inset rgba(168, 167, 167, 0.801);
 }
 .bill .bill_forfaits .bill_boite.boite_gauche {
   margin-right: 10%;
@@ -3416,7 +3417,7 @@ footer .foot-copy p {
   color: black;
   font-family: "all-round-gothic";
   font-weight: 600;
-  font-size: 2.5em;
+  font-size: 2em;
   text-transform: uppercase;
 }
 .bill .bill_forfaits .prix {
