@@ -118,7 +118,7 @@ class ProgrammationController extends Controller
                 Storage::putFile("public/uploads", $request->file('image_spectacle'));
                 $spectacle->image = "/storage/uploads/" . $request->file('image_spectacle')->hashName();
             } else {
-                $spectacle->image = "/images/evenement3.jpg";
+                $spectacle->image = "/logos/centre_gold_blanc.png";
             }
 
             $spectacle->save();

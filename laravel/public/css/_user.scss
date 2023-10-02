@@ -7,14 +7,15 @@
         height: 100vh;
         background-image: url(/images/lignes.jpg);
         background-size: cover;
-        overflow: auto;
+
+
 
         h1 {
             text-align: center;
             font-size: 5em;
             font-weight: 500;
             text-transform: uppercase;
-            padding-top: 2em;
+            padding-top: 1.25em;
             font-family: $font-gothic;
         }
 
@@ -26,7 +27,7 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            padding-bottom: 60px;
+            padding-bottom: 10px;
             position: relative;
 
 
@@ -45,7 +46,7 @@
                 box-shadow: 0px 0px 5px white;
                 margin-bottom: 30px;
                 position: relative;
-                height: 500px;
+                height: 450px;
                 overflow-y: auto;
                 cursor: pointer;
 
@@ -255,8 +256,10 @@
 
         .autre_forfait {
             cursor: pointer;
-            display: block;
+            display: flex;
             border: 2px solid white;
+            justify-content: center;
+            align-items: center;
             background-color: $blue;
             height: 60px;
             text-align: center;
@@ -264,11 +267,11 @@
             font-family: $font-ethno;
             text-transform: uppercase;
             font-weight: 300;
-            font-size: 0.75em;
+            font-size: 1.25em;
             color: white;
             padding: 1.5em;
-            margin: 1.25rem auto;
-            width: 200px;
+            margin: 1rem auto;
+            width: 250px;
             border: 3px solid white;
             box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
             text-shadow: 0px 0px 5px white;
@@ -286,7 +289,9 @@
 
         .submit_forfait {
             cursor: pointer;
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border: 2px solid white;
             height: 60px;
             text-align: center;
@@ -294,11 +299,11 @@
             font-family: $font-ethno;
             text-transform: uppercase;
             font-weight: 300;
-            font-size: 0.75em;
+            font-size: 1.25em;
             color: black;
-            padding: 1.5em;
-            margin: 1.25rem auto;
-            width: 200px;
+            padding: 0.95em;
+            margin: 1rem auto;
+            width: 250px;
             border: 3px solid white;
             box-shadow: 0px 0px 5px white, inset 0px 0px 5px white;
             text-shadow: 0px 0px 5px white;

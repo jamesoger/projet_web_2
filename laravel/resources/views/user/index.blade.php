@@ -161,7 +161,7 @@
                 @endforeach
             </div>
 
-            <a class="autre_forfait" href="{{ route('billetterie.index') }}">Réservez un autre forfait?</a>
+            <a class="autre_forfait" href="{{ route('billetterie.index') }}">Billetterie</a>
             <form action="{{ route('deconnexion_user') }}" method="POST">
                 @csrf
                 <input class="submit_forfait" type="submit" value="Déconnexion">
