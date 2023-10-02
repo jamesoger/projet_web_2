@@ -19,6 +19,7 @@ class AdminFactory extends Factory
             'nom' => $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
+            'image' => 'laravel/public/images/default.png',
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'droits' => 0,
             'remember_token' => Str::random(10),

@@ -246,8 +246,9 @@
         }
 
         .admin {
-            padding: 1em;
+            padding: 0.75em;
             gap: 3%;
+            flex-direction: column;
 
             .admin-total {
                 .admin-nom {
@@ -257,6 +258,7 @@
                 }
 
                 .img-admin {
+
                     img {
                         width: 100px;
                         height: 100px;
