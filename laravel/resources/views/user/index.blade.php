@@ -113,8 +113,17 @@
                                             </h3>
 
                                             <?php $datesDejaAffichees[] = $programmation->date; ?>
+                                            <?php
 
-                                            @foreach ($datesArtistes[$dateKey]['artistes'] as $artiste)
+                                            $artistesTri = $datesArtistes[$dateKey]['artistes'];
+                                            usort($artistesTri, function ($a, $b) {
+                                                return strtotime($a->heure_show) - strtotime($b->heure_show);
+                                            });
+                                            ?>
+                                             @if($artistesTri)
+                                             <h4>Artistes</h4>
+                                             @endif
+                                            @foreach ($artistesTri as $artiste)
                                                 <div class="show_info">
                                                     <p class="heure">{{ $artiste->heure_show }}</p>
                                                     <p class="nom">{{ $artiste->nom_scene }}</p>
@@ -122,7 +131,18 @@
                                                         alt="{{ $artiste->nom_scene }}">
                                                 </div>
                                             @endforeach
-                                            @foreach ($datesArtistes[$dateKey]['spectacles'] as $spectacle)
+
+                                            <?php
+
+                                            $spectaclesTri = $datesArtistes[$dateKey]['spectacles'];
+                                            usort($spectaclesTri, function ($a, $b) {
+                                                return strtotime($a->heure) - strtotime($b->heure);
+                                            });
+                                            ?>
+                                            @if($spectaclesTri)
+                                            <h4>Spectacles</h4>
+                                            @endif
+                                            @foreach ($spectaclesTri as $spectacle)
                                                 <div class="show_info">
                                                     <p class="heure">{{ $spectacle->heure }}</p>
                                                     <p class="nom">{{ $spectacle->nom }}</p>
@@ -135,6 +155,7 @@
                                 @endforeach
                             @endforeach
                         </div>
+
 
                     </div>
                 @endforeach
