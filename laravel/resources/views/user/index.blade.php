@@ -13,7 +13,7 @@
                 <?php
                 $forfaits = auth()->user()->forfaits;
                 $forfaitsGroupes = [];
-                
+
                 foreach ($forfaits as $forfait) {
                     $found = false;
                     foreach ($forfaitsGroupes as &$groupe) {
@@ -27,7 +27,7 @@
                             break;
                         }
                     }
-                
+
                     if (!$found) {
                         $forfaitsGroupes[] = [
                             'id' => $forfait->id,
@@ -90,13 +90,21 @@
                                             $datesArtistes[$dateKey] = [
                                                 'date' => $programmation->date,
                                                 'artistes' => [],
+                                                'spectacles' => [],
                                             ];
                                         }
-                                        
+
                                         foreach ($programmation->artistes as $artiste) {
                                             $artisteKey = $artiste->id;
                                             if (!isset($datesArtistes[$dateKey]['artistes'][$artisteKey])) {
                                                 $datesArtistes[$dateKey]['artistes'][$artisteKey] = $artiste;
+                                            }
+                                        }
+
+                                        foreach ($programmation->spectacles as $spectacle) {
+                                            $spectacleKey = $spectacle->id;
+                                            if (!isset($datesArtistes[$dateKey]['spectacles'][$spectacleKey])) {
+                                                $datesArtistes[$dateKey]['spectacles'][$spectacleKey] = $spectacle;
                                             }
                                         }
                                         ?>
@@ -112,6 +120,14 @@
                                                     <p class="nom">{{ $artiste->nom_scene }}</p>
                                                     <img class="img_user" src="{{ $artiste->image }}"
                                                         alt="{{ $artiste->nom_scene }}">
+                                                </div>
+                                            @endforeach
+                                            @foreach ($datesArtistes[$dateKey]['spectacles'] as $spectacle)
+                                                <div class="show_info">
+                                                    <p class="heure">{{ $spectacle->heure }}</p>
+                                                    <p class="nom">{{ $spectacle->nom }}</p>
+                                                    <img class="img_user" src="{{ $spectacle->image }}"
+                                                        alt="{{ $spectacle->nom }}">
                                                 </div>
                                             @endforeach
                                         @endif

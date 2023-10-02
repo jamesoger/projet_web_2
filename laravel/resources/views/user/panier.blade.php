@@ -1,10 +1,11 @@
 <div id="app_panier">
     <x-layout titre="panier de {{ auth()->user()->prenom }}">
         <x-nav />
-        <div id="app">
-            <x-message />
-            <div class="panier_user">
 
+        <div id="app">
+
+            <div class="panier_user">
+                <x-message />
                 <h1>{{ auth()->user()->nom_complet }} </h1>
                 <p>Bienvenue parmi nous! Fais ton choix parmi nos 3 forfaits! </p>
                 <div class="forfaits">

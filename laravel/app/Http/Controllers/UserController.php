@@ -28,10 +28,12 @@ class UserController extends Controller
                 ->with('success', 'Vous êtes connecté(e)!');
         }
             $programmations = Programmation::all();
+
+
             $artistes = [];
             $spectacles = [];
 
-            // Parcourir chaque programmation pour récupérer les artistes et les spectacles
+
             foreach ($programmations as $programmation) {
                 $artistes[] = $programmation->artistes;
                 $spectacles[] = $programmation->spectacles;

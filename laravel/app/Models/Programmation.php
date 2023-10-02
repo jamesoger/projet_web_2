@@ -39,4 +39,5 @@ class Programmation extends Model
     {
         return $this->artistes->merge($this->spectacles);
     }
+
 }
