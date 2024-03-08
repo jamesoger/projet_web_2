@@ -1,6 +1,6 @@
 # Fest-X Projet web 2 en équipe
 
-<img src="" style="width: 200px" alt="">
+<img src="/laravel/public/logos/centre_color_blanc.png?raw=true" style="width: 200px" alt="">
 
 ## Installation:
 
