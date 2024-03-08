@@ -1,6 +1,6 @@
 # Fest-X Projet web 2 en équipe
 
-<img src="" alt="">
+<img src="/public/logos/centre_color_blanc.png?raw=true" alt="">
 
 ## Installation:
 
